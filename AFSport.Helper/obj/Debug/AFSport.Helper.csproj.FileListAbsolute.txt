@@ -1,5 +1,0 @@
-C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Helper\bin\Debug\AFSport.Helper.dll
-C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Helper\bin\Debug\AFSport.Helper.pdb
-C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Helper\obj\Debug\AFSport.Helper.csproj.CoreCompileInputs.cache
-C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Helper\obj\Debug\AFSport.Helper.dll
-C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Helper\obj\Debug\AFSport.Helper.pdb
