@@ -1,0 +1,27 @@
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\EntityFramework.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\EntityFramework.xml
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.Init.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.GenerateResource.cache
+E:\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+E:\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+E:\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+E:\AFSport\AFSport.Service\bin\Debug\EntityFramework.dll
+E:\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.dll
+E:\AFSport\AFSport.Service\bin\Debug\EntityFramework.xml
+E:\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.Init.resources
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.GenerateResource.cache
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+E:\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb

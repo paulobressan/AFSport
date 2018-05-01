@@ -1,0 +1,43 @@
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe.config
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.pdb
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll.config
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.xml
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmCadastroBase.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmFormularioBase.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmCategorias.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmFormulario.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Properties.Resources.resources
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.GenerateResource.cache
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CopyComplete
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.exe
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.pdb
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paulo Bressan\Desktop\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.SqlServer.xml
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe.config
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.pdb
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll
+E:\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.dll
+E:\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.SqlServer.dll
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.pdb
+E:\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll.config
+E:\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.xml
+E:\AFSport\AFSport.WindowsForms\bin\Debug\EntityFramework.SqlServer.xml
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csprojResolveAssemblyReference.cache
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmCadastroBase.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmFormularioBase.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmModal.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmCategorias.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmFormulario.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Properties.Resources.resources
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.GenerateResource.cache
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CoreCompileInputs.cache
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.exe
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.pdb
+E:\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menus.SideBar.resources
