@@ -7,13 +7,13 @@ namespace AFSport.Service.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class Inicio : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicio));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804241543371_Init"; }
+            get { return "201805010507536_Inicio"; }
         }
         
         string IMigrationMetadata.Source

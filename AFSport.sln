@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.WindowsForms", "AFSport.WindowsForms\AFSport.WindowsForms.csproj", "{752E9103-4363-4F7F-A576-7F928C07FE03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.Service", "AFSport.Service\AFSport.Service.csproj", "{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.Helper", "AFSport.Helper\AFSport.Helper.csproj", "{4F0EB46F-3884-47ED-AC89-A433F659A285}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.DAO", "AFSport.Service\AFSport.DAO.csproj", "{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F0EB46F-3884-47ED-AC89-A433F659A285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F0EB46F-3884-47ED-AC89-A433F659A285}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F0EB46F-3884-47ED-AC89-A433F659A285}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F0EB46F-3884-47ED-AC89-A433F659A285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

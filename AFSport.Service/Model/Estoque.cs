@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.Model
+namespace AFSport.DAO.Model
 {
     public class Estoque
     {
@@ -12,11 +12,13 @@ namespace AFSport.Service.Model
         {
             this.Quantidade = quantidade;
             this.Produto = produto;
+            this.IsAtivo = true;
         }
 
         public int Id { get; set; }
         public int Quantidade { get; set; }
         public Produto Produto { get; set; }
+        public bool IsAtivo { get; set; }
 
         public void Incrementa(int quantidade)
         {

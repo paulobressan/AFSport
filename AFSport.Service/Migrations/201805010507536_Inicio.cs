@@ -3,7 +3,7 @@ namespace AFSport.Service.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class Inicio : DbMigration
     {
         public override void Up()
         {

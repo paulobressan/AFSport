@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.Model
+namespace AFSport.DAO.Model
 {
     public class Preco
     {
@@ -14,6 +14,7 @@ namespace AFSport.Service.Model
             this.DataFinal = dataFim;
             this.Valor = valor;
             this.Produto = produto;
+            this.IsAtivo = true;
         }
 
         public int Id { get; set; }
@@ -21,6 +22,8 @@ namespace AFSport.Service.Model
         public DateTime DataFinal { get; set; }
         public decimal Valor { get; private set; }
         public Produto Produto { get; set; }
+        public bool IsAtivo { get; set; }
+
         public void SetValor(decimal valor)
         {
             this.Valor = valor > 0 ? valor : 0;

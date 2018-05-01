@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.Model
+namespace AFSport.DAO.Model
 {
     public class Cliente : Pessoa
     {

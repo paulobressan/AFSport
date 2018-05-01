@@ -1,4 +1,5 @@
-﻿using AFSport.Service.Model;
+﻿using AFSport.DAO.Model;
+using AFSport.Service.DAO;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -15,16 +16,15 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 {
     public partial class FrmCategorias : FrmCadastroBase
     {
-        //private readonly ICategoriaService _categoriaService;
+        private readonly CategoriaDAO _categoriaDao;
         public FrmCategorias()
         {
             InitializeComponent();
-            //_categoriaService = new CategoriaService();
+            this._categoriaDao = new CategoriaDAO();
         }
 
         protected override void BtnNovo_Click(object sender, EventArgs e)
         {
-            Categoria obj = new Categoria();
             using (FrmFormulario form = new FrmFormulario())
             {
                 using (FrmModal modal = new FrmModal(form))
@@ -38,14 +38,13 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         protected override void FrmCadastroBase_Load(object sender, EventArgs e)
         {
+            gridPesq.DataSource = ListarTodasCategorias();
             base.FrmCadastroBase_Load(sender, e);
-            //gridPesq.DataSource = ListarTodasCategorias();
         }
 
-        //private List<Categoria> ListarTodasCategorias()
-        //{
-
-            //return _categoriaService.RetornarTodasCategorias().ToList();
-        //}
+        private List<Categoria> ListarTodasCategorias()
+        {
+            return _categoriaDao.SelecionarTodos();
+        }
     }
 }

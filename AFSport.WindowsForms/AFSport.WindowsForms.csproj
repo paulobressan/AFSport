@@ -138,9 +138,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AFSport.Service\AFSport.Service.csproj">
+    <ProjectReference Include="..\AFSport.Service\AFSport.DAO.csproj">
       <Project>{9e2a8847-0095-4abb-b48b-89f5ef92de6f}</Project>
-      <Name>AFSport.Service</Name>
+      <Name>AFSport.DAO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

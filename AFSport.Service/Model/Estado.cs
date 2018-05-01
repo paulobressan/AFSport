@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.Model
+namespace AFSport.DAO.Model
 {
     public class Estado
     {
@@ -12,10 +12,12 @@ namespace AFSport.Service.Model
         {
             this.Nome = nome;
             this.Sigla = sigla;
+            this.IsAtivo = true;
         }
 
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Sigla { get; set; }
+        public bool IsAtivo { get; set; }
     }
 }

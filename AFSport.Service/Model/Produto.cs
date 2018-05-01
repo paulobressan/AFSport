@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.Model
+namespace AFSport.DAO.Model
 {
     public class Produto
     {
@@ -14,6 +14,7 @@ namespace AFSport.Service.Model
             this.ValorCompra = valorCompra;
             this.ValorVenda = ValorVenda;
             this.Categoria = categoria;
+            this.IsAtivo = true;
         }
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -21,6 +22,7 @@ namespace AFSport.Service.Model
         public decimal ValorCompra { get; private set; }
         public decimal ValorVenda { get; private set; }
         public Categoria Categoria { get; set; }
+        public bool IsAtivo { get; set; }
 
         public void SetValorCompra(decimal valor)
         {

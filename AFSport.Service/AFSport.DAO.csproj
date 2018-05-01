@@ -47,10 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseDAO.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201804241543371_Init.cs" />
-    <Compile Include="Migrations\201804241543371_Init.Designer.cs">
-      <DependentUpon>201804241543371_Init.cs</DependentUpon>
+    <Compile Include="DAO\CategoriaDAO.cs" />
+    <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="Interfaces\ICRUD.cs" />
+    <Compile Include="Migrations\201805010507536_Inicio.cs" />
+    <Compile Include="Migrations\201805010507536_Inicio.Designer.cs">
+      <DependentUpon>201805010507536_Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805010513245_Criação de tabelas iniciais.cs" />
+    <Compile Include="Migrations\201805010513245_Criação de tabelas iniciais.Designer.cs">
+      <DependentUpon>201805010513245_Criação de tabelas iniciais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805010535141_IsAtivo em todas tabelas.cs" />
+    <Compile Include="Migrations\201805010535141_IsAtivo em todas tabelas.Designer.cs">
+      <DependentUpon>201805010535141_IsAtivo em todas tabelas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Caixa.cs" />
@@ -75,13 +87,17 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804241543371_Init.resx">
-      <DependentUpon>201804241543371_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805010507536_Inicio.resx">
+      <DependentUpon>201805010507536_Inicio.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
+    <EmbeddedResource Include="Migrations\201805010513245_Criação de tabelas iniciais.resx">
+      <DependentUpon>201805010513245_Criação de tabelas iniciais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805010535141_IsAtivo em todas tabelas.resx">
+      <DependentUpon>201805010535141_IsAtivo em todas tabelas.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
