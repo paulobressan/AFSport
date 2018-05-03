@@ -1,0 +1,14 @@
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\EntityFramework.dll
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\EntityFramework.xml
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.Init.resources
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.GenerateResource.cache
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+C:\Users\vinicius\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb

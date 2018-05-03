@@ -17,7 +17,7 @@ namespace AFSport.WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AFSport.WindowsForms.Formularios.Menus.SideBar());
+            Application.Run(new AFSport.WindowsForms.Formularios.Categorias.FrmCategorias());
         }
     }
 }
