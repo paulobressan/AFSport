@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class Categoria
     {
+        public Categoria()
+        {
+
+        }
+
         public Categoria(string nome, string descricao)
         {
             this.Nome = nome;

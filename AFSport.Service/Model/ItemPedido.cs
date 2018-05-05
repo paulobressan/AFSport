@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class ItemPedido
     {
+        public ItemPedido()
+        {
+
+        }
+
         public ItemPedido(int quantidade, Produto produto, Pedido pedido)
         {
             this.Quantidade = quantidade;

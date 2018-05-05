@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class Movimentacao
     {
+        public Movimentacao()
+        {
+
+        }
+
         public Movimentacao(decimal valor, Pedido pedido, Operacao operacao)
         {
             this.Valor = valor;

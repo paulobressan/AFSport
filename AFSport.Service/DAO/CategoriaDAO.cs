@@ -4,6 +4,7 @@ using AFSport.Service.Base;
 using AFSport.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace AFSport.Service.DAO
 {
     public class CategoriaDAO : BaseDAO, ICRUD<Categoria>
-    {      
+    {
         public Categoria Ativar(Categoria obj)
         {
             Categoria categoria = SelecionarId(obj.Id);
@@ -37,16 +38,14 @@ namespace AFSport.Service.DAO
                 this._context.Categorias
                     .Add(obj);
                 this._context.SaveChanges();
-                return _context.Categorias
-                    .Last();
+                return _context.Categorias.ToList().LastOrDefault();
+                   
             }
-            else
-            {
-                Categoria categoria = SelecionarId(obj.Id);
-                categoria = obj;
-                this._context.SaveChanges();
-                return categoria;
-            } 
+            this._context.Categorias.Attach(obj);
+            this._context.Entry(obj).State = EntityState.Modified;
+            this._context.SaveChanges();
+            return obj;
+
         }
 
         public Categoria SelecionarId(int id)
