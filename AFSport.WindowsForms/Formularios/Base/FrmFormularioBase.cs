@@ -22,20 +22,17 @@ namespace AFSport.WindowsForms.Formularios.Base
 
         }
 
-        protected virtual void BtnSalvar_Click(object sender, EventArgs e)
+        protected virtual void btnSalvar_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected virtual void BtnCancelar_Click(object sender, EventArgs e)
+        protected virtual void btnCancelar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Confimar em cancelar a operação?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Close();
-            }
+
         }
 
-        private void LblSair_Click(object sender, EventArgs e)
+        private void lblSair_Click(object sender, EventArgs e)
         {
             Close();
         }

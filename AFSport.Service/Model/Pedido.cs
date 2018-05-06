@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Pedido
     {
-        public Pedido()
-        {
-
-        }
-
         public Pedido(Cliente cliente, Usuario usuario)
         {
             this.Data = DateTime.Now;

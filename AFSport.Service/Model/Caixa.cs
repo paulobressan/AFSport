@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Caixa
     {
-        public Caixa()
-        {
-
-        }
-
         public Caixa(decimal valorInicial, Usuario usuario)
         {
             this.ValorInicial = valorInicial;

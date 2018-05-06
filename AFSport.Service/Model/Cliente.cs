@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Cliente : Pessoa
     {
-        public Cliente() : base()
-        {
-
-        }
-
         public Cliente(string nome, string logradouro, string bairro, int numero) : base(nome)
         {
             this.Logradouro = logradouro;

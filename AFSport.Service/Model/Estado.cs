@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Estado
     {
-        public Estado()
-        {
-
-        }
-
         public Estado(string nome, string sigla)
         {
             this.Nome = nome;

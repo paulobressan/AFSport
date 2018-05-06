@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Preco
     {
-        public Preco()
-        {
-
-        }
-
         public Preco(DateTime dataInicio, DateTime dataFim, decimal valor, Produto produto)
         {
             this.DataInicio = DataInicio;

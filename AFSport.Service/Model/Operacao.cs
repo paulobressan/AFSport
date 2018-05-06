@@ -8,11 +8,6 @@ namespace AFSport.DAO.Model
 {
     public class Operacao
     {
-        public Operacao()
-        {
-                
-        }
-
         public Operacao(string nome)
         {
             this.Nome = nome;

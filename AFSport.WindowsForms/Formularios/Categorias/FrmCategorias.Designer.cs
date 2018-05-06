@@ -28,32 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GridPesq = new System.Windows.Forms.DataGridView();
+            this.gridPesq = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPesq)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNovo
             // 
-            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btnNovo.Location = new System.Drawing.Point(569, 4);
+            this.btnNovo.Location = new System.Drawing.Point(551, 0);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
-            this.btnAlterar.Location = new System.Drawing.Point(644, 4);
+            this.btnAlterar.Location = new System.Drawing.Point(634, 0);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnDeletar.Location = new System.Drawing.Point(719, 4);
+            this.btnDeletar.Location = new System.Drawing.Point(717, 0);
             // 
             // pnlmargin
             // 
@@ -67,6 +61,11 @@
             // 
             this.pnlmargin2.Size = new System.Drawing.Size(800, 10);
             // 
+            // pnlBody
+            // 
+            this.pnlBody.Controls.Add(this.gridPesq);
+            this.pnlBody.Size = new System.Drawing.Size(800, 365);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.Size = new System.Drawing.Size(56, 36);
@@ -78,37 +77,26 @@
             this.label1.Size = new System.Drawing.Size(325, 32);
             this.label1.Text = "Categorias de produtos";
             // 
-            // btnPesquisa
+            // gridPesq
             // 
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnPesquisa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            // 
-            // pnlBody
-            // 
-            this.pnlBody.Controls.Add(this.GridPesq);
-            this.pnlBody.Size = new System.Drawing.Size(800, 327);
-            // 
-            // GridPesq
-            // 
-            this.GridPesq.AllowUserToAddRows = false;
-            this.GridPesq.AllowUserToDeleteRows = false;
-            this.GridPesq.AllowUserToResizeColumns = false;
-            this.GridPesq.AllowUserToResizeRows = false;
-            this.GridPesq.BackgroundColor = System.Drawing.Color.White;
-            this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridPesq.AllowUserToAddRows = false;
+            this.gridPesq.AllowUserToDeleteRows = false;
+            this.gridPesq.AllowUserToResizeColumns = false;
+            this.gridPesq.AllowUserToResizeRows = false;
+            this.gridPesq.BackgroundColor = System.Drawing.Color.White;
+            this.gridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Nome,
             this.descricao});
-            this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridPesq.Location = new System.Drawing.Point(5, 5);
-            this.GridPesq.MultiSelect = false;
-            this.GridPesq.Name = "GridPesq";
-            this.GridPesq.ReadOnly = true;
-            this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPesq.Size = new System.Drawing.Size(790, 317);
-            this.GridPesq.TabIndex = 0;
-            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
+            this.gridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPesq.Location = new System.Drawing.Point(0, 0);
+            this.gridPesq.MultiSelect = false;
+            this.gridPesq.Name = "gridPesq";
+            this.gridPesq.ReadOnly = true;
+            this.gridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridPesq.Size = new System.Drawing.Size(800, 365);
+            this.gridPesq.TabIndex = 0;
             // 
             // id
             // 
@@ -143,14 +131,14 @@
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPesq)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GridPesq;
+        private System.Windows.Forms.DataGridView gridPesq;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
