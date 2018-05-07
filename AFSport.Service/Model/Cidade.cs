@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class Cidade
     {
+        public Cidade()
+        {
+
+        }
+
         public Cidade(string nome, Estado estado)
         {
             this.Nome = nome;

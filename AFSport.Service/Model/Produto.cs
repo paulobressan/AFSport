@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class Produto
     {
+        public Produto()
+        {
+
+        }
+
         public Produto(string nome, decimal valorCompra, decimal valorVenda, Categoria categoria)
         {
             this.Nome = nome;

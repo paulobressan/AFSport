@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public class Estoque
     {
+        public Estoque()
+        {
+
+        }
+
         public Estoque(int quantidade, Produto produto)
         {
             this.Quantidade = quantidade;

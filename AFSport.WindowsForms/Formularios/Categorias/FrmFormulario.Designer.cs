@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.LblNome = new System.Windows.Forms.Label();
+            this.LblDescricao = new System.Windows.Forms.Label();
+            this.TxtNome = new System.Windows.Forms.TextBox();
+            this.TxtDescricao = new System.Windows.Forms.TextBox();
             this.pblHead.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pblMain.SuspendLayout();
+            this.pnlId.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSalvar
+            // BtnSalvar
             // 
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
-            // btnCancelar
+            // BtnCancelar
             // 
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // pblHead
             // 
@@ -57,78 +56,68 @@
             // 
             // pblMain
             // 
-            this.pblMain.Controls.Add(this.txtDescricao);
-            this.pblMain.Controls.Add(this.txtNome);
-            this.pblMain.Controls.Add(this.txtId);
-            this.pblMain.Controls.Add(this.lblDescricao);
-            this.pblMain.Controls.Add(this.lblNome);
-            this.pblMain.Controls.Add(this.lblId);
+            this.pblMain.Controls.Add(this.TxtDescricao);
+            this.pblMain.Controls.Add(this.TxtNome);
+            this.pblMain.Controls.Add(this.LblDescricao);
+            this.pblMain.Controls.Add(this.LblNome);
             this.pblMain.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pblMain.Controls.SetChildIndex(this.pnlId, 0);
+            this.pblMain.Controls.SetChildIndex(this.LblNome, 0);
+            this.pblMain.Controls.SetChildIndex(this.LblDescricao, 0);
+            this.pblMain.Controls.SetChildIndex(this.TxtNome, 0);
+            this.pblMain.Controls.SetChildIndex(this.TxtDescricao, 0);
             // 
             // label1
             // 
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Size = new System.Drawing.Size(268, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.label1.Size = new System.Drawing.Size(217, 32);
             this.label1.Text = "Nova Categoria";
             // 
-            // lblId
+            // LblNome
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(47, 65);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(72, 23);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "Código";
+            this.LblNome.AutoSize = true;
+            this.LblNome.Location = new System.Drawing.Point(41, 68);
+            this.LblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNome.Name = "LblNome";
+            this.LblNome.Size = new System.Drawing.Size(50, 18);
+            this.LblNome.TabIndex = 1;
+            this.LblNome.Text = "Nome";
             // 
-            // lblNome
+            // LblDescricao
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(58, 115);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(61, 23);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "Nome";
+            this.LblDescricao.AutoSize = true;
+            this.LblDescricao.Location = new System.Drawing.Point(13, 106);
+            this.LblDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDescricao.Name = "LblDescricao";
+            this.LblDescricao.Size = new System.Drawing.Size(80, 18);
+            this.LblDescricao.TabIndex = 2;
+            this.LblDescricao.Text = "Descrição";
             // 
-            // lblDescricao
+            // TxtNome
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(21, 161);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(98, 23);
-            this.lblDescricao.TabIndex = 2;
-            this.lblDescricao.Text = "Descrição";
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtNome.Location = new System.Drawing.Point(91, 66);
+            this.TxtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(482, 26);
+            this.TxtNome.TabIndex = 4;
             // 
-            // txtId
+            // TxtDescricao
             // 
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId.Location = new System.Drawing.Point(125, 62);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 30);
-            this.txtId.TabIndex = 3;
-            // 
-            // txtNome
-            // 
-            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(125, 112);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(642, 30);
-            this.txtNome.TabIndex = 4;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricao.Location = new System.Drawing.Point(125, 158);
-            this.txtDescricao.Multiline = true;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(642, 65);
-            this.txtDescricao.TabIndex = 5;
+            this.TxtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtDescricao.Location = new System.Drawing.Point(91, 103);
+            this.TxtDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtDescricao.Multiline = true;
+            this.TxtDescricao.Name = "TxtDescricao";
+            this.TxtDescricao.Size = new System.Drawing.Size(482, 53);
+            this.TxtDescricao.TabIndex = 5;
             // 
             // FrmFormulario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 506);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ClientSize = new System.Drawing.Size(584, 411);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmFormulario";
             this.Text = "FrmFormulario";
             this.pblHead.ResumeLayout(false);
@@ -136,17 +125,17 @@
             this.panel2.ResumeLayout(false);
             this.pblMain.ResumeLayout(false);
             this.pblMain.PerformLayout();
+            this.pnlId.ResumeLayout(false);
+            this.pnlId.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox TxtDescricao;
+        private System.Windows.Forms.TextBox TxtNome;
+        private System.Windows.Forms.Label LblDescricao;
+        private System.Windows.Forms.Label LblNome;
     }
 }

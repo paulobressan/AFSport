@@ -8,10 +8,9 @@ namespace AFSport.Service.Interfaces
 {
     public interface ICRUD<T>
     {
-        List<T> SelecionarTodos();
-        T SelecionarId(int id);
-        T Salvar(T obj);
-        T Ativar(T obj);
-        T Inativar(T obj);
+        Task<List<T>> SelecionarTodos(bool selecionarTodos);
+        Task<T> SelecionarId(int id);
+        Task<T> Salvar(T obj);
+        Task<T> Remover(T obj);
     }
 }

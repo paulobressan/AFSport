@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridPesq = new System.Windows.Forms.DataGridView();
+            this.GridPesq = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPesq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(551, 0);
+            this.btnNovo.Location = new System.Drawing.Point(569, 4);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(634, 0);
+            this.btnAlterar.Location = new System.Drawing.Point(644, 4);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(717, 0);
+            this.btnDeletar.Location = new System.Drawing.Point(719, 4);
             // 
             // pnlmargin
             // 
@@ -63,7 +64,7 @@
             // 
             // pnlBody
             // 
-            this.pnlBody.Controls.Add(this.gridPesq);
+            this.pnlBody.Controls.Add(this.GridPesq);
             this.pnlBody.Size = new System.Drawing.Size(800, 365);
             // 
             // lblTitulo
@@ -77,26 +78,28 @@
             this.label1.Size = new System.Drawing.Size(325, 32);
             this.label1.Text = "Categorias de produtos";
             // 
-            // gridPesq
+            // GridPesq
             // 
-            this.gridPesq.AllowUserToAddRows = false;
-            this.gridPesq.AllowUserToDeleteRows = false;
-            this.gridPesq.AllowUserToResizeColumns = false;
-            this.gridPesq.AllowUserToResizeRows = false;
-            this.gridPesq.BackgroundColor = System.Drawing.Color.White;
-            this.gridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridPesq.AllowUserToAddRows = false;
+            this.GridPesq.AllowUserToDeleteRows = false;
+            this.GridPesq.AllowUserToResizeColumns = false;
+            this.GridPesq.AllowUserToResizeRows = false;
+            this.GridPesq.BackgroundColor = System.Drawing.Color.White;
+            this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Nome,
-            this.descricao});
-            this.gridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPesq.Location = new System.Drawing.Point(0, 0);
-            this.gridPesq.MultiSelect = false;
-            this.gridPesq.Name = "gridPesq";
-            this.gridPesq.ReadOnly = true;
-            this.gridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridPesq.Size = new System.Drawing.Size(800, 365);
-            this.gridPesq.TabIndex = 0;
+            this.descricao,
+            this.IsAtivo});
+            this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridPesq.Location = new System.Drawing.Point(4, 4);
+            this.GridPesq.MultiSelect = false;
+            this.GridPesq.Name = "GridPesq";
+            this.GridPesq.ReadOnly = true;
+            this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPesq.Size = new System.Drawing.Size(790, 355);
+            this.GridPesq.TabIndex = 0;
+            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
             // id
             // 
@@ -121,6 +124,13 @@
             this.descricao.Name = "descricao";
             this.descricao.ReadOnly = true;
             // 
+            // IsAtivo
+            // 
+            this.IsAtivo.DataPropertyName = "IsAtivo";
+            this.IsAtivo.HeaderText = "Ativo";
+            this.IsAtivo.Name = "IsAtivo";
+            this.IsAtivo.ReadOnly = true;
+            // 
             // FrmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,16 +141,17 @@
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridPesq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridPesq;
+        private System.Windows.Forms.DataGridView GridPesq;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsAtivo;
     }
 }

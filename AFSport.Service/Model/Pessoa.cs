@@ -8,6 +8,11 @@ namespace AFSport.DAO.Model
 {
     public abstract class Pessoa
     {
+        public Pessoa()
+        {
+
+        }
+
         public Pessoa(string nome)
         {
             this.Nome = nome;
