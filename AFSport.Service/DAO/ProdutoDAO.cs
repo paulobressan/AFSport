@@ -16,7 +16,8 @@ namespace AFSport.Service.DAO
         {
             if(obj.Id == 0)
             {
-                this._context.Produto.Add(obj);
+                this._context.Produto.Attach(obj);
+                this._context.Entry(obj).State = EntityState.Added;
                 await this._context.SaveChangesAsync();
                 return obj;
             }
@@ -32,6 +33,7 @@ namespace AFSport.Service.DAO
         public async Task<Produto> SelecionarId(int id)
         {
             return await this._context.Produto
+                .Include(p => p.Categoria)
                 .Where(p => p.Id == id && p.IsAtivo == true && p.Categoria.IsAtivo == true)
                 .SingleOrDefaultAsync();
         }
@@ -40,6 +42,7 @@ namespace AFSport.Service.DAO
         {
             return selecionarTodos
                 ? await this._context.Produto
+                .Include(p=>p.Categoria)
                 .ToListAsync()
                 : await this._context.Produto
                 .Where(p => p.Categoria.IsAtivo == true)
@@ -49,13 +52,17 @@ namespace AFSport.Service.DAO
         public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
         {
             return await this._context.Produto
+                .Include(p => p.Categoria)
                 .Where(p => p.Categoria.Id == idCategoria)
                 .ToListAsync();
         }
 
-        public Task<Produto> Remover(Produto obj)
+        public async Task<Produto> Remover(Produto obj)
         {
-            throw new NotImplementedException();
+            _context.Produto.Attach(obj);
+            _context.Entry(obj).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
+            return obj;
         }
     }
 }

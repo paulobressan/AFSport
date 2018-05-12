@@ -58,14 +58,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
-        {
-            CarregarGrid();
-            base.FrmCadastroBase_Load(sender, e);
-        }
-
         protected override async void CarregarGrid()
         {
+
             GridPesq.DataSource = await ListarTodasCategorias();
         }
 

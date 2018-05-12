@@ -40,43 +40,64 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(569, 4);
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNovo.Location = new System.Drawing.Point(853, 8);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovo.Size = new System.Drawing.Size(112, 71);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(644, 4);
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAlterar.Location = new System.Drawing.Point(965, 8);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Size = new System.Drawing.Size(112, 71);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(719, 4);
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeletar.Location = new System.Drawing.Point(1077, 8);
+            this.btnDeletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeletar.Size = new System.Drawing.Size(112, 71);
             // 
             // pnlmargin
             // 
-            this.pnlmargin.Size = new System.Drawing.Size(800, 10);
+            this.pnlmargin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlmargin.Size = new System.Drawing.Size(1200, 14);
             // 
             // pnlNavBar
             // 
-            this.pnlNavBar.Size = new System.Drawing.Size(800, 65);
+            this.pnlNavBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlNavBar.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.pnlNavBar.Size = new System.Drawing.Size(1200, 89);
             // 
             // pnlmargin2
             // 
-            this.pnlmargin2.Size = new System.Drawing.Size(800, 10);
+            this.pnlmargin2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlmargin2.Size = new System.Drawing.Size(1200, 14);
             // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.GridPesq);
-            this.pnlBody.Size = new System.Drawing.Size(800, 365);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlBody.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.pnlBody.Size = new System.Drawing.Size(1200, 506);
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Size = new System.Drawing.Size(56, 36);
-            this.lblTitulo.Text = "";
+            this.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(52, 36);
+            this.lblTitulo.Text = "";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(74, 18);
-            this.label1.Size = new System.Drawing.Size(325, 32);
-            this.label1.Text = "Categorias de produtos";
+            this.label1.Location = new System.Drawing.Point(88, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Size = new System.Drawing.Size(326, 32);
+            this.label1.Text = "Categorias de Produtos";
             // 
             // GridPesq
             // 
@@ -92,12 +113,13 @@
             this.descricao,
             this.IsAtivo});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridPesq.Location = new System.Drawing.Point(4, 4);
+            this.GridPesq.Location = new System.Drawing.Point(9, 8);
+            this.GridPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridPesq.Size = new System.Drawing.Size(790, 355);
+            this.GridPesq.Size = new System.Drawing.Size(1180, 488);
             this.GridPesq.TabIndex = 0;
             this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
@@ -133,9 +155,10 @@
             // 
             // FrmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmCategorias";
             this.Text = "FrmCategorias";
             this.pnlNavBar.ResumeLayout(false);

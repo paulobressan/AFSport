@@ -14,6 +14,7 @@ namespace AFSport.DAO
         {
 
         }
+
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Caixa> Caixa { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
@@ -27,5 +28,10 @@ namespace AFSport.DAO
         public DbSet<Preco> Preco { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+             Database.SetInitializer<Context>(null);
+        }
     }
 }

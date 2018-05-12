@@ -1,6 +1,6 @@
-﻿namespace AFSport.WindowsForms.Formularios.Produtos
+﻿namespace AFSport.WindowsForms.Formularios.Clientes
 {
-    partial class FrmProdutos
+    partial class FrmClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -31,44 +31,25 @@
             this.GridPesq = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(985, 6);
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(1097, 6);
-            // 
-            // btnDeletar
-            // 
-            this.btnDeletar.Location = new System.Drawing.Point(1209, 6);
-            // 
-            // pnlmargin
-            // 
-            this.pnlmargin.Size = new System.Drawing.Size(1329, 14);
-            // 
-            // pnlNavBar
-            // 
-            this.pnlNavBar.Size = new System.Drawing.Size(1329, 89);
-            // 
-            // pnlmargin2
-            // 
-            this.pnlmargin2.Size = new System.Drawing.Size(1329, 14);
-            // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.GridPesq);
-            this.pnlBody.Size = new System.Drawing.Size(1329, 505);
+            // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(122, 32);
+            this.label1.Text = "Clientes";
             // 
             // GridPesq
             // 
@@ -81,21 +62,20 @@
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nome,
-            this.descricao,
-            this.categoria,
-            this.valorCompra,
-            this.valorVenda,
+            this.email,
+            this.logradouro,
+            this.numero,
+            this.bairro,
+            this.cidade,
             this.isAtivo});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(6, 6);
-            this.GridPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(1315, 491);
             this.GridPesq.TabIndex = 0;
-            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
             // id
             // 
@@ -113,34 +93,44 @@
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
             // 
-            // descricao
+            // email
             // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.DataPropertyName = "Descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
-            // categoria
+            // logradouro
             // 
-            this.categoria.DataPropertyName = "Categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
+            this.logradouro.DataPropertyName = "Logradouro";
+            this.logradouro.HeaderText = "Logradouro";
+            this.logradouro.Name = "logradouro";
+            this.logradouro.ReadOnly = true;
             // 
-            // valorCompra
+            // numero
             // 
-            this.valorCompra.DataPropertyName = "ValorCompra";
-            this.valorCompra.HeaderText = "Valor de Compra";
-            this.valorCompra.Name = "valorCompra";
-            this.valorCompra.ReadOnly = true;
+            this.numero.DataPropertyName = "Numero";
+            this.numero.HeaderText = "Numero";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Width = 50;
             // 
-            // valorVenda
+            // bairro
             // 
-            this.valorVenda.DataPropertyName = "ValorVenda";
-            this.valorVenda.HeaderText = "Valor de Venda";
-            this.valorVenda.Name = "valorVenda";
-            this.valorVenda.ReadOnly = true;
+            this.bairro.DataPropertyName = "Bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.ReadOnly = true;
+            this.bairro.Width = 50;
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "Cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            this.cidade.Width = 50;
             // 
             // isAtivo
             // 
@@ -150,14 +140,13 @@
             this.isAtivo.ReadOnly = true;
             this.isAtivo.Width = 50;
             // 
-            // FrmProdutos
+            // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 622);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FrmProdutos";
-            this.Text = "frmProdutos";
+            this.Name = "FrmClientes";
+            this.Text = "FrmClientes";
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
@@ -171,10 +160,11 @@
         private System.Windows.Forms.DataGridView GridPesq;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorVenda;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isAtivo;
     }
 }

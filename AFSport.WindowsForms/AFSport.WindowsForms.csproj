@@ -82,6 +82,18 @@
     <Compile Include="Formularios\Categorias\FrmFormulario.Designer.cs">
       <DependentUpon>FrmFormulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Clientes\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FrmFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FrmFormulario.Designer.cs">
+      <DependentUpon>FrmFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Menus\SideBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +129,20 @@
     <EmbeddedResource Include="Formularios\Categorias\FrmFormulario.resx">
       <DependentUpon>FrmFormulario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FrmFormulario.resx">
+      <DependentUpon>FrmFormulario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menus\SideBar.resx">
       <DependentUpon>SideBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Produtos\FrmFormulario.resx">
       <DependentUpon>FrmFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Produtos\FrmProdutos.resx">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

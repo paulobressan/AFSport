@@ -17,7 +17,7 @@ namespace AFSport.DAO.Model
         {
             this.Valor = valor;
             this.Pedido = pedido;
-            this.Operecao = operacao;
+            this.Operacao = operacao;
             this.Data = DateTime.Now;
             this.IsAtivo = true;
         }
@@ -26,7 +26,7 @@ namespace AFSport.DAO.Model
         public decimal Valor { get; set; }
         public DateTime Data { get; set; }
         public Pedido Pedido { get; set; }
-        public Operacao Operecao { get; set; }
+        public Operacao Operacao { get; set; }
         public bool IsAtivo { get; set; }
     }
 }

@@ -12,4 +12,3 @@ D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.DAO.csproj.GenerateResource.
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.DAO.csproj.CoreCompileInputs.cache
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb
-D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.DAO.csprojResolveAssemblyReference.cache

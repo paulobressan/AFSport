@@ -24,5 +24,10 @@ namespace AFSport.DAO.Model
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public bool IsAtivo { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }

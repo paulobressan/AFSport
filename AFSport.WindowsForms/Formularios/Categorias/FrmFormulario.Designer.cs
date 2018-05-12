@@ -33,7 +33,7 @@
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
             this.pblHead.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlBtns.SuspendLayout();
             this.pblMain.SuspendLayout();
             this.pnlId.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             // panel2
             // 
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pnlBtns.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // pblMain
             // 
@@ -69,9 +69,9 @@
             // 
             // label1
             // 
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.label1.Size = new System.Drawing.Size(217, 32);
-            this.label1.Text = "Nova Categoria";
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(217, 32);
+            this.lblTitulo.Text = "Nova Categoria";
             // 
             // LblNome
             // 
@@ -122,7 +122,7 @@
             this.Text = "FrmFormulario";
             this.pblHead.ResumeLayout(false);
             this.pblHead.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlBtns.ResumeLayout(false);
             this.pblMain.ResumeLayout(false);
             this.pblMain.PerformLayout();
             this.pnlId.ResumeLayout(false);

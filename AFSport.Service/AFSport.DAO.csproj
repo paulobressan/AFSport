@@ -50,6 +50,14 @@
     <Compile Include="Base\BaseDAO.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\EstoqueDAO.cs" />
+    <Compile Include="DAO\ItemPedidoDAO.cs" />
+    <Compile Include="DAO\MovimentacaoDAO.cs" />
+    <Compile Include="DAO\OperacaoDAO.cs" />
+    <Compile Include="DAO\PedidoDAO.cs" />
+    <Compile Include="DAO\PrecoDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="Interfaces\ICRUD.cs" />
     <Compile Include="Migrations\201805010507536_Inicio.cs" />

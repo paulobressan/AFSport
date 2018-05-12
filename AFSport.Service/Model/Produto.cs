@@ -10,14 +10,14 @@ namespace AFSport.DAO.Model
     {
         public Produto()
         {
-
+            this.IsAtivo = true;
         }
 
         public Produto(string nome, decimal valorCompra, decimal valorVenda, Categoria categoria)
         {
             this.Nome = nome;
             this.ValorCompra = valorCompra;
-            this.ValorVenda = ValorVenda;
+            this.ValorVenda = valorVenda;
             this.Categoria = categoria;
             this.IsAtivo = true;
         }
