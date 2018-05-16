@@ -42,9 +42,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnNovo
+            // 
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNovo.Location = new System.Drawing.Point(985, 6);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAlterar.Location = new System.Drawing.Point(1097, 6);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDeletar.Location = new System.Drawing.Point(1209, 6);
+            // 
+            // pnlmargin
+            // 
+            this.pnlmargin.Size = new System.Drawing.Size(1329, 14);
+            // 
+            // pnlNavBar
+            // 
+            this.pnlNavBar.Size = new System.Drawing.Size(1329, 89);
+            // 
+            // pnlmargin2
+            // 
+            this.pnlmargin2.Size = new System.Drawing.Size(1329, 14);
+            // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.GridPesq);
+            this.pnlBody.Size = new System.Drawing.Size(1329, 505);
             // 
             // label1
             // 
@@ -73,6 +104,7 @@
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
+            this.GridPesq.RowHeadersVisible = false;
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(1315, 491);
             this.GridPesq.TabIndex = 0;

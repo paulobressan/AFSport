@@ -1,4 +1,5 @@
 ﻿using AFSport.DAO.Model;
+using AFSport.Service.DAO;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,13 @@ namespace AFSport.WindowsForms.Formularios.Clientes
 
         protected override void BtnNovo_Click(object sender, EventArgs e)
         {
+            using (FrmFormClientes frm = new FrmFormClientes(new Cliente()))
+            {
+                using (FrmModal frmModal = new FrmModal(frm))
+                    frmModal.ShowDialog();
+                if (frm.DialogResult == DialogResult.OK)
+                    CarregarGrid();
+            }
             base.BtnNovo_Click(sender, e);
         }
 
@@ -34,9 +42,9 @@ namespace AFSport.WindowsForms.Formularios.Clientes
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override void CarregarGrid()
+        protected override async void CarregarGrid()
         {
-            base.CarregarGrid();
+            GridPesq.DataSource = await ListarTodosProdutos();
         }
 
         protected override void Remover()
@@ -44,9 +52,12 @@ namespace AFSport.WindowsForms.Formularios.Clientes
             base.Remover();
         }
 
-        //private Task<List<Cliente>> ListarTodosClientes()
-        //{
-
-        //}
+        private async Task<List<Cliente>> ListarTodosProdutos()
+        {
+            using (ClienteDAO dao = new ClienteDAO())
+            {
+                return await dao.SelecionarTodos(true);
+            }
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace AFSport.WindowsForms.Formularios.Base
 
         protected virtual void BtnSalvar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+
         }
 
         protected virtual void BtnCancelar_Click(object sender, EventArgs e)

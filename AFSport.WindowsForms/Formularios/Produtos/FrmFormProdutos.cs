@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace AFSport.WindowsForms.Formularios.Produtos
 {
-    public partial class FrmFormulario : FrmFormularioBase
+    public partial class FrmFormProdutos : FrmFormularioBase
     {
         Produto produto;
-        public FrmFormulario(Produto produto)
+        public FrmFormProdutos(Produto produto)
         {
             InitializeComponent();
             this.produto = produto;
@@ -39,7 +39,6 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             else
             {
                 Salvar();
-                base.BtnSalvar_Click(sender, e);
             }
         }
 
@@ -54,10 +53,11 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             chkAtivo.Checked = produto.IsAtivo;
         }
 
-        protected async override void Salvar()
+        protected override async void Salvar()
         {
             var categoriaSelecionada = await SelecionarCategoriaSelecionada();
             using (ProdutoDAO dao = new ProdutoDAO())
+            {
                 await dao.Salvar(new Produto(
                     txtNome.Text,
                     Convert.ToDecimal(txtValorCompra.Text),
@@ -69,12 +69,14 @@ namespace AFSport.WindowsForms.Formularios.Produtos
                     Descricao = txtDescricao.Text
                 }
                 );
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private async Task<Categoria> SelecionarCategoriaSelecionada()
         {
             using (CategoriaDAO dao = new CategoriaDAO())
-                return await dao.SelecionarId((int)cmbCategoria.SelectedValue);
+                    return await dao.SelecionarId((int)cmbCategoria.SelectedValue);
         }
 
         private async void CarregarCmbCategoria()

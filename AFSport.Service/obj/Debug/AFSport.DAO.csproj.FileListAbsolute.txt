@@ -5,6 +5,7 @@ D:\Source\AFSport\AFSport.Service\bin\Debug\EntityFramework.dll
 D:\Source\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.dll
 D:\Source\AFSport\AFSport.Service\bin\Debug\EntityFramework.xml
 D:\Source\AFSport\AFSport.Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.DAO.csprojResolveAssemblyReference.cache
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.Inicio.resources
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.Criaçãodetabelasiniciais.resources
 D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.Migrations.IsAtivoemtodastabelas.resources

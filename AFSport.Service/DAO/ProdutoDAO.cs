@@ -39,14 +39,15 @@ namespace AFSport.Service.DAO
         }
 
         public async Task<List<Produto>> SelecionarTodos(bool selecionarTodos)
-        {
-            return selecionarTodos
+        { 
+            var valores = selecionarTodos
                 ? await this._context.Produto
-                .Include(p=>p.Categoria)
+                .Include(p => p.Categoria)
                 .ToListAsync()
                 : await this._context.Produto
                 .Where(p => p.Categoria.IsAtivo == true)
                 .ToListAsync();
+            return valores;
         }
 
         public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)

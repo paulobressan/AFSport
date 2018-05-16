@@ -22,9 +22,15 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             InitializeComponent();
         }
 
+        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+            base.FrmCadastroBase_Load(sender, e);
+        }
+
         protected override void BtnNovo_Click(object sender, EventArgs e)
         {
-            using (FrmFormulario frm = new FrmFormulario(new Categoria()))
+            using (FrmFormCategoria frm = new FrmFormCategoria(new Categoria()))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
@@ -37,7 +43,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
         protected override void BtnAlterar_Click(object sender, EventArgs e)
         {
             if (categoria != null)
-                using (FrmFormulario frm = new FrmFormulario(categoria))
+                using (FrmFormCategoria frm = new FrmFormCategoria(categoria))
                 {
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
@@ -51,7 +57,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         protected override void BtnDeletar_Click(object sender, EventArgs e)
         {
-            if(categoria != null && MessageBox.Show($"Confirma a remoção da categoria {categoria.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (categoria != null && MessageBox.Show($"Confirma a remoção da categoria {categoria.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Remover();
             }
@@ -60,7 +66,6 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         protected override async void CarregarGrid()
         {
-
             GridPesq.DataSource = await ListarTodasCategorias();
         }
 

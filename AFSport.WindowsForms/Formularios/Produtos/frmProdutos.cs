@@ -21,9 +21,15 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             InitializeComponent();
         }
 
+        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+            base.FrmCadastroBase_Load(sender, e);
+        }
+
         protected override void BtnNovo_Click(object sender, EventArgs e)
         {
-            using (FrmFormulario frm = new FrmFormulario(new Produto()))
+            using (FrmFormProdutos frm = new FrmFormProdutos(new Produto()))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
@@ -36,7 +42,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
         protected override void BtnAlterar_Click(object sender, EventArgs e)
         {
             if (produto != null)
-                using (FrmFormulario frm = new FrmFormulario(produto))
+                using (FrmFormProdutos frm = new FrmFormProdutos(produto))
                 {
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
@@ -52,7 +58,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
         {
             if (produto != null && MessageBox.Show($"Confirma a remoção do produto {produto.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Remover();
+                
             }
             base.BtnDeletar_Click(sender, e);
         }
@@ -68,11 +74,6 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             {
                 return await dao.SelecionarTodos(true);
             }
-        }
-
-        protected override void Remover()
-        {
-            base.Remover();
         }
 
         private void GridPesq_SelectionChanged(object sender, EventArgs e)

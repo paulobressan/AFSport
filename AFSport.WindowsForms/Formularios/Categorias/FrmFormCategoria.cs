@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace AFSport.WindowsForms.Formularios.Categorias
 {
-    public partial class FrmFormulario : FrmFormularioBase
+    public partial class FrmFormCategoria : FrmFormularioBase
     {
         private readonly Categoria _categoria;
-        public FrmFormulario(Categoria categoria)
+        public FrmFormCategoria(Categoria categoria)
         {
             InitializeComponent();
             _categoria = categoria;
@@ -39,7 +39,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             TxtNome.Text = _categoria.Nome;
         }
 
-        protected async override void Salvar()
+        protected override async void Salvar()
         {
             using (CategoriaDAO dao = new CategoriaDAO())
             {
@@ -49,6 +49,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                 {
                     Id = _categoria.Id
                 });
+                DialogResult = DialogResult.OK;
             }
         }
     }

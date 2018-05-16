@@ -1,6 +1,6 @@
 ﻿namespace AFSport.WindowsForms.Formularios.Categorias
 {
-    partial class FrmFormulario
+    partial class FrmFormCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -32,27 +32,37 @@
             this.LblDescricao = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
-            this.pblHead.SuspendLayout();
             this.pnlBtns.SuspendLayout();
+            this.pblHead.SuspendLayout();
             this.pblMain.SuspendLayout();
             this.pnlId.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtnSalvar
-            // 
-            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            // 
             // BtnCancelar
             // 
+            this.BtnCancelar.FlatAppearance.BorderSize = 0;
+            this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            // 
+            // BtnSalvar
+            // 
+            this.BtnSalvar.FlatAppearance.BorderSize = 0;
+            this.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            // 
+            // pnlBtns
+            // 
+            this.pnlBtns.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // pblHead
             // 
             this.pblHead.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
-            // panel2
+            // lblTitulo
             // 
-            this.pnlBtns.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(217, 32);
+            this.lblTitulo.Text = "Nova Categoria";
             // 
             // pblMain
             // 
@@ -67,62 +77,52 @@
             this.pblMain.Controls.SetChildIndex(this.TxtNome, 0);
             this.pblMain.Controls.SetChildIndex(this.TxtDescricao, 0);
             // 
-            // label1
-            // 
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.lblTitulo.Size = new System.Drawing.Size(217, 32);
-            this.lblTitulo.Text = "Nova Categoria";
-            // 
             // LblNome
             // 
             this.LblNome.AutoSize = true;
-            this.LblNome.Location = new System.Drawing.Point(41, 68);
-            this.LblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblNome.Location = new System.Drawing.Point(34, 102);
             this.LblNome.Name = "LblNome";
-            this.LblNome.Size = new System.Drawing.Size(50, 18);
+            this.LblNome.Size = new System.Drawing.Size(45, 20);
             this.LblNome.TabIndex = 1;
             this.LblNome.Text = "Nome";
             // 
             // LblDescricao
             // 
             this.LblDescricao.AutoSize = true;
-            this.LblDescricao.Location = new System.Drawing.Point(13, 106);
-            this.LblDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDescricao.Location = new System.Drawing.Point(10, 158);
             this.LblDescricao.Name = "LblDescricao";
-            this.LblDescricao.Size = new System.Drawing.Size(80, 18);
+            this.LblDescricao.Size = new System.Drawing.Size(69, 20);
             this.LblDescricao.TabIndex = 2;
             this.LblDescricao.Text = "Descrição";
             // 
             // TxtNome
             // 
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtNome.Location = new System.Drawing.Point(91, 66);
-            this.TxtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNome.Location = new System.Drawing.Point(85, 100);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(482, 26);
+            this.TxtNome.Size = new System.Drawing.Size(642, 26);
             this.TxtNome.TabIndex = 4;
             // 
             // TxtDescricao
             // 
             this.TxtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtDescricao.Location = new System.Drawing.Point(91, 103);
-            this.TxtDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtDescricao.Location = new System.Drawing.Point(85, 156);
             this.TxtDescricao.Multiline = true;
             this.TxtDescricao.Name = "TxtDescricao";
-            this.TxtDescricao.Size = new System.Drawing.Size(482, 53);
+            this.TxtDescricao.Size = new System.Drawing.Size(642, 80);
             this.TxtDescricao.TabIndex = 5;
             // 
-            // FrmFormulario
+            // FrmFormCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 411);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmFormulario";
+            this.ClientSize = new System.Drawing.Size(779, 632);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "FrmFormCategoria";
             this.Text = "FrmFormulario";
+            this.pnlBtns.ResumeLayout(false);
             this.pblHead.ResumeLayout(false);
             this.pblHead.PerformLayout();
-            this.pnlBtns.ResumeLayout(false);
             this.pblMain.ResumeLayout(false);
             this.pblMain.PerformLayout();
             this.pnlId.ResumeLayout(false);
