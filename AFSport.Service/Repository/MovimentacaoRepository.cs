@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class MovimentacaoDAO : BaseDAO, ICRUD<Movimentacao>
+    public class MovimentacaoRepository : BaseDAO, ICRUD<Movimentacao>
     {
         public Task<Movimentacao> Remover(Movimentacao obj)
         {

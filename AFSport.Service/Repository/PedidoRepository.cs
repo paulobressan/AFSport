@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class PedidoDAO : BaseDAO, ICRUD<Pedido>
+    public class PedidoRepository : BaseDAO, ICRUD<Pedido>
     {
         public async Task<Pedido> Remover(Pedido obj)
         {

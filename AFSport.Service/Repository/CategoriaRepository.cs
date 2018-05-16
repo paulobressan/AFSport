@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class CategoriaDAO : BaseDAO, ICRUD<Categoria>
+    public class CategoriaRepository : BaseDAO, ICRUD<Categoria>
     {
         public async Task<Categoria> Remover(Categoria obj)
         {

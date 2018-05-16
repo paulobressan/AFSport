@@ -49,16 +49,16 @@
   <ItemGroup>
     <Compile Include="Base\BaseDAO.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="DAO\CategoriaDAO.cs" />
-    <Compile Include="DAO\ClienteDAO.cs" />
-    <Compile Include="DAO\EstoqueDAO.cs" />
-    <Compile Include="DAO\ItemPedidoDAO.cs" />
-    <Compile Include="DAO\MovimentacaoDAO.cs" />
-    <Compile Include="DAO\OperacaoDAO.cs" />
-    <Compile Include="DAO\PedidoDAO.cs" />
-    <Compile Include="DAO\PrecoDAO.cs" />
-    <Compile Include="DAO\UsuarioDAO.cs" />
-    <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="Repository\CategoriaRepository.cs" />
+    <Compile Include="Repository\ClienteRepository.cs" />
+    <Compile Include="Repository\EstoqueRepository.cs" />
+    <Compile Include="Repository\ItemPedidoRepository.cs" />
+    <Compile Include="Repository\MovimentacaoRepository.cs" />
+    <Compile Include="Repository\OperacaoRepository.cs" />
+    <Compile Include="Repository\PedidoRepository.cs" />
+    <Compile Include="Repository\PrecoRepository.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="Repository\ProdutoRepository.cs" />
     <Compile Include="Interfaces\ICRUD.cs" />
     <Compile Include="Migrations\201805010507536_Inicio.cs" />
     <Compile Include="Migrations\201805010507536_Inicio.Designer.cs">

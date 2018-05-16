@@ -8,56 +8,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class PrecoDAO : BaseDAO, ICRUD<Preco>
+    public class OperacaoRepository : BaseDAO, ICRUD<Operacao>
     {
-        public async Task<Preco> Remover(Preco obj)
+        public async Task<Operacao> Remover(Operacao obj)
         {
-            _context.Preco.Attach(obj);
+            _context.Operacao.Attach(obj);
             _context.Entry(obj).State = EntityState.Deleted;
             await _context.SaveChangesAsync();
             return obj;
         }
 
-        public async Task<Preco> Salvar(Preco obj)
+        public async Task<Operacao> Salvar(Operacao obj)
         {
             if(obj.Id == 0)
             {
-                _context.Preco.Attach(obj);
+                _context.Operacao.Attach(obj);
                 _context.Entry(obj).State = EntityState.Added;
                 await _context.SaveChangesAsync();
                 return obj;
             }
             else
             {
-                _context.Preco.Attach(obj);
+                _context.Operacao.Attach(obj);
                 _context.Entry(obj).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 return obj;
             }
         }
 
-        public async Task<Preco> SelecionarId(int id)
+        public async Task<Operacao> SelecionarId(int id)
         {
-            return await _context.Preco
-                .Include(p => p.Produto)
-                .Where(p => p.Id == id)
+            return await _context.Operacao
+                .Where(o => o.Id == id)
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<List<Preco>> SelecionarTodos(bool selecionarTodos)
+        public async Task<List<Operacao>> SelecionarTodos(bool selecionarTodos)
         {
-            return await _context.Preco
-                .Include(p => p.Produto)
-                .ToListAsync();
-        }
-
-        public async Task<List<Preco>> SelecionarPrecoProduto(int id)
-        {
-            return await _context.Preco
-                .Include(p=>p.Produto)
-                .Where(p => p.Produto.Id == id)
+            return await _context.Operacao
                 .ToListAsync();
         }
     }

@@ -1,5 +1,5 @@
 ﻿using AFSport.DAO.Model;
-using AFSport.Service.DAO;
+using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -41,9 +41,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         protected override async void Salvar()
         {
-            using (CategoriaDAO dao = new CategoriaDAO())
+            using (CategoriaRepository repository = new CategoriaRepository())
             {
-               await dao.Salvar(new Categoria(
+               await repository.Salvar(new Categoria(
                     TxtNome.Text,
                     TxtDescricao.Text)
                 {

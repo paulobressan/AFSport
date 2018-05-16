@@ -1,5 +1,5 @@
 ﻿using AFSport.DAO.Model;
-using AFSport.Service.DAO;
+using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -71,9 +71,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         private async Task<List<Categoria>> ListarTodasCategorias()
         {
-            using (CategoriaDAO dao = new CategoriaDAO())
+            using (CategoriaRepository repository = new CategoriaRepository())
             {
-                return await dao.SelecionarTodos(true);
+                return await repository.SelecionarTodos(true);
             }
         }
 
@@ -86,9 +86,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
 
         private async Task<bool> ExisteDependencia()
         {
-            using (ProdutoDAO daoProduto = new ProdutoDAO())
+            using (ProdutoRepository repository = new ProdutoRepository())
             {
-                var produtos = await daoProduto.SelecionarProdutosPorCategoria(categoria.Id);
+                var produtos = await repository.SelecionarProdutosPorCategoria(categoria.Id);
                 if (produtos.Count > 0)
                     return true;
                 else
@@ -103,9 +103,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                 if (MessageBox.Show($"A categoria {categoria.Nome} não pode ser excluida, por que existe dependencias. Deseja inativar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     categoria.IsAtivo = false;
-                    using (CategoriaDAO dao = new CategoriaDAO())
+                    using (CategoriaRepository repository = new CategoriaRepository())
                     {
-                        var categoriaInativada = await dao.Salvar(categoria);
+                        var categoriaInativada = await repository.Salvar(categoria);
                         MessageBox.Show($"Categoria {categoriaInativada.Nome} foi inativada com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CarregarGrid();
                     }
@@ -113,9 +113,9 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             }
             else
             {
-                using (CategoriaDAO dao = new CategoriaDAO())
+                using (CategoriaRepository repository = new CategoriaRepository())
                 {
-                    var categoriaRemovida = await dao.Remover(categoria);
+                    var categoriaRemovida = await repository.Remover(categoria);
                     MessageBox.Show($"Categoria {categoriaRemovida.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CarregarGrid();
                 }

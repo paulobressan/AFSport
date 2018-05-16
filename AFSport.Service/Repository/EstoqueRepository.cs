@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class EstoqueDAO : BaseDAO, ICRUD<Estoque>
+    public class EstoqueRepository : BaseDAO, ICRUD<Estoque>
     {
         public Task<Estoque> Remover(Estoque obj)
         {

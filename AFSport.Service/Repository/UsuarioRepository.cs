@@ -8,48 +8,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Service.DAO
+namespace AFSport.Service.Repository
 {
-    public class ClienteDAO : BaseDAO, ICRUD<Cliente>
+    public class UsuarioRepository : BaseDAO, ICRUD<Usuario>
     {
-        public async Task<Cliente> Remover(Cliente obj)
+        public async Task<Usuario> Remover(Usuario obj)
         {
-            _context.Cliente.Attach(obj);
+            _context.Usuario.Attach(obj);
             _context.Entry(obj).State = EntityState.Deleted;
             await _context.SaveChangesAsync();
             return obj;
         }
 
-        public async Task<Cliente> Salvar(Cliente obj)
+        public async Task<Usuario> Salvar(Usuario obj)
         {
             if(obj.Id == 0)
             {
-                _context.Cliente.Attach(obj);
+                _context.Usuario.Attach(obj);
                 _context.Entry(obj).State = EntityState.Added;
                 await _context.SaveChangesAsync();
                 return obj;
             }
             else
             {
-                _context.Cliente.Attach(obj);
+                _context.Usuario.Attach(obj);
                 _context.Entry(obj).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 return obj;
             }
         }
 
-        public async Task<Cliente> SelecionarId(int id)
+        public async Task<Usuario> SelecionarId(int id)
         {
-            return await _context.Cliente
-                .Include(c => c.Cidade)
-                .Where(c => c.Id == id)
+            return await _context.Usuario
+                .Where(u => u.Id == id)
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<List<Cliente>> SelecionarTodos(bool selecionarTodos)
+        public async Task<List<Usuario>> SelecionarTodos(bool selecionarTodos)
         {
-            return await _context.Cliente
-                .Include(c=>c.Cidade)
+            return await _context.Usuario
                 .ToListAsync();
         }
     }

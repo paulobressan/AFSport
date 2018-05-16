@@ -1,5 +1,5 @@
 ﻿using AFSport.DAO.Model;
-using AFSport.Service.DAO;
+using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -70,9 +70,9 @@ namespace AFSport.WindowsForms.Formularios.Produtos
 
         private async Task<List<Produto>> ListarTodosProdutos()
         {
-            using (ProdutoDAO dao = new ProdutoDAO())
+            using (ProdutoRepository repository = new ProdutoRepository())
             {
-                return await dao.SelecionarTodos(true);
+                return await repository.SelecionarTodos(true);
             }
         }
 

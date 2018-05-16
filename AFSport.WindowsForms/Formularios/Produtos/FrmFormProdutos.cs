@@ -1,5 +1,5 @@
 ﻿using AFSport.DAO.Model;
-using AFSport.Service.DAO;
+using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -56,9 +56,9 @@ namespace AFSport.WindowsForms.Formularios.Produtos
         protected override async void Salvar()
         {
             var categoriaSelecionada = await SelecionarCategoriaSelecionada();
-            using (ProdutoDAO dao = new ProdutoDAO())
+            using (ProdutoRepository repository = new ProdutoRepository())
             {
-                await dao.Salvar(new Produto(
+                await repository.Salvar(new Produto(
                     txtNome.Text,
                     Convert.ToDecimal(txtValorCompra.Text),
                     Convert.ToDecimal(txtValorVenda.Text),
@@ -75,8 +75,8 @@ namespace AFSport.WindowsForms.Formularios.Produtos
 
         private async Task<Categoria> SelecionarCategoriaSelecionada()
         {
-            using (CategoriaDAO dao = new CategoriaDAO())
-                    return await dao.SelecionarId((int)cmbCategoria.SelectedValue);
+            using (CategoriaRepository repository = new CategoriaRepository())
+                    return await repository.SelecionarId((int)cmbCategoria.SelectedValue);
         }
 
         private async void CarregarCmbCategoria()
@@ -89,8 +89,8 @@ namespace AFSport.WindowsForms.Formularios.Produtos
 
         private async Task<List<Categoria>> ListarTodasCategorias()
         {
-            using (CategoriaDAO dao = new CategoriaDAO())
-                return await dao.SelecionarTodos(false);
+            using (CategoriaRepository repository = new CategoriaRepository())
+                return await repository.SelecionarTodos(false);
         }
     }
 }

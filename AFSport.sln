@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.WindowsForms", "AFSport.WindowsForms\AFSport.WindowsForms.csproj", "{752E9103-4363-4F7F-A576-7F928C07FE03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.DAO", "AFSport.Service\AFSport.DAO.csproj", "{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSport.Service", "AFSport.Service\AFSport.Service.csproj", "{9E2A8847-0095-4ABB-B48B-89F5EF92DE6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
