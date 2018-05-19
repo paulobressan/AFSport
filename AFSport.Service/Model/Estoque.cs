@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public class Estoque
     {
         public Estoque()
         {
-
+            this.IsAtivo = true;
         }
 
         public Estoque(int quantidade, Produto produto)

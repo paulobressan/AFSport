@@ -1,4 +1,4 @@
-﻿using AFSport.DAO.Model;
+﻿using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
@@ -30,67 +30,63 @@ namespace AFSport.WindowsForms.Formularios.Produtos
 
         protected override void BtnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text.Length == 0)
+            if (String.IsNullOrEmpty(txtNome.Text))
                 MessageBox.Show("Campo nome obrigatório", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else if (txtValorCompra.Text.Length == 0)
+            else if (String.IsNullOrEmpty(txtValorCompra.Text))
                 MessageBox.Show("Campo Valor Compra obrigatório", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else if (txtValorVenda.Text.Length == 0)
+            else if (String.IsNullOrEmpty(txtValorVenda.Text))
                 MessageBox.Show("Campo Valor Venda obrigatório", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if(cmbCategoria.SelectedValue == null)
+                MessageBox.Show("Seleção de categoria obrigatória", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-            {
                 Salvar();
-            }
         }
 
         protected override void MontarFormulario()
         {
-            LblId.Text = produto.Id.ToString();
+            LblId.Text = produto.IdProduto.ToString();
             txtNome.Text = produto.Nome;
             txtDescricao.Text = produto.Descricao;
             txtValorCompra.Text = produto.ValorCompra.ToString();
             txtValorVenda.Text = produto.ValorVenda.ToString();
-            cmbCategoria.SelectedValue = produto.Categoria?.Id ?? 0;
+            cmbCategoria.SelectedValue = produto.Categoria?.IdCategoria ?? 0;
             chkAtivo.Checked = produto.IsAtivo;
         }
 
         protected override async void Salvar()
         {
-            var categoriaSelecionada = await SelecionarCategoriaSelecionada();
             using (ProdutoRepository repository = new ProdutoRepository())
             {
                 await repository.Salvar(new Produto(
                     txtNome.Text,
                     Convert.ToDecimal(txtValorCompra.Text),
                     Convert.ToDecimal(txtValorVenda.Text),
-                    categoriaSelecionada
+                    (int)cmbCategoria.SelectedValue
                     )
                 {
-                    Id = produto.Id,
-                    Descricao = txtDescricao.Text
+                    IdProduto = produto.IdProduto,
+                    Descricao = txtDescricao.Text,
+                    IsAtivo = chkAtivo.Checked
                 }
                 );
                 DialogResult = DialogResult.OK;
             }
         }
 
-        private async Task<Categoria> SelecionarCategoriaSelecionada()
-        {
-            using (CategoriaRepository repository = new CategoriaRepository())
-                    return await repository.SelecionarId((int)cmbCategoria.SelectedValue);
-        }
-
         private async void CarregarCmbCategoria()
         {
             cmbCategoria.Items.Clear();
             cmbCategoria.DataSource = await ListarTodasCategorias();
-            cmbCategoria.ValueMember = "Id";
+            cmbCategoria.ValueMember = "IdCategoria";
             cmbCategoria.DisplayMember = "Nome";
+            cmbCategoria.Refresh();
+            MontarFormulario();
         }
 
         private async Task<List<Categoria>> ListarTodasCategorias()
         {
             using (CategoriaRepository repository = new CategoriaRepository())
-                return await repository.SelecionarTodos(false);
+                return await repository.SelecionarTodos(true);
         }
     }
 }

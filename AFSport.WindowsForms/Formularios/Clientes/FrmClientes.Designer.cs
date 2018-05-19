@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.GridPesq = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -77,6 +78,11 @@
             this.pnlBody.Controls.Add(this.GridPesq);
             this.pnlBody.Size = new System.Drawing.Size(1329, 505);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Size = new System.Drawing.Size(61, 36);
+            this.lblTitulo.Text = "";
+            // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(122, 32);
@@ -91,14 +97,15 @@
             this.GridPesq.BackgroundColor = System.Drawing.Color.White;
             this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.IdCliente,
             this.nome,
             this.email,
             this.logradouro,
             this.numero,
             this.bairro,
             this.cidade,
-            this.isAtivo});
+            this.isAtivo,
+            this.idCidade});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(6, 6);
             this.GridPesq.MultiSelect = false;
@@ -108,14 +115,15 @@
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(1315, 491);
             this.GridPesq.TabIndex = 0;
+            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
-            // id
+            // IdCliente
             // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Código";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 50;
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.HeaderText = "Código";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            this.IdCliente.Width = 50;
             // 
             // nome
             // 
@@ -139,11 +147,12 @@
             this.logradouro.HeaderText = "Logradouro";
             this.logradouro.Name = "logradouro";
             this.logradouro.ReadOnly = true;
+            this.logradouro.Width = 200;
             // 
             // numero
             // 
             this.numero.DataPropertyName = "Numero";
-            this.numero.HeaderText = "Numero";
+            this.numero.HeaderText = "Nº";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
             this.numero.Width = 50;
@@ -154,7 +163,6 @@
             this.bairro.HeaderText = "Bairro";
             this.bairro.Name = "bairro";
             this.bairro.ReadOnly = true;
-            this.bairro.Width = 50;
             // 
             // cidade
             // 
@@ -162,7 +170,6 @@
             this.cidade.HeaderText = "Cidade";
             this.cidade.Name = "cidade";
             this.cidade.ReadOnly = true;
-            this.cidade.Width = 50;
             // 
             // isAtivo
             // 
@@ -170,7 +177,17 @@
             this.isAtivo.HeaderText = "Ativo";
             this.isAtivo.Name = "isAtivo";
             this.isAtivo.ReadOnly = true;
+            this.isAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.isAtivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.isAtivo.Width = 50;
+            // 
+            // idCidade
+            // 
+            this.idCidade.DataPropertyName = "idCidade";
+            this.idCidade.HeaderText = "idCidade";
+            this.idCidade.Name = "idCidade";
+            this.idCidade.ReadOnly = true;
+            this.idCidade.Visible = false;
             // 
             // FrmClientes
             // 
@@ -179,6 +196,7 @@
             this.ClientSize = new System.Drawing.Size(1329, 622);
             this.Name = "FrmClientes";
             this.Text = "FrmClientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
@@ -190,13 +208,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn logradouro;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isAtivo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCidade;
     }
 }

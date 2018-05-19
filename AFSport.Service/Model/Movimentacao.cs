@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public class Movimentacao
     {
         public Movimentacao()
         {
-
+            this.IsAtivo = true;
         }
 
         public Movimentacao(decimal valor, Pedido pedido, Operacao operacao)

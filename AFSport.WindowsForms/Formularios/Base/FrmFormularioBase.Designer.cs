@@ -168,6 +168,7 @@
             // 
             // pblMain
             // 
+            this.pblMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pblMain.Controls.Add(this.pnlId);
             this.pblMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pblMain.Location = new System.Drawing.Point(0, 70);
@@ -185,7 +186,7 @@
             this.pnlId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlId.Name = "pnlId";
             this.pnlId.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlId.Size = new System.Drawing.Size(765, 78);
+            this.pnlId.Size = new System.Drawing.Size(763, 78);
             this.pnlId.TabIndex = 0;
             // 
             // LblId
@@ -195,7 +196,7 @@
             this.LblId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblId.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblId.ForeColor = System.Drawing.Color.Red;
-            this.LblId.Location = new System.Drawing.Point(691, 10);
+            this.LblId.Location = new System.Drawing.Point(689, 10);
             this.LblId.Name = "LblId";
             this.LblId.Size = new System.Drawing.Size(64, 57);
             this.LblId.TabIndex = 0;

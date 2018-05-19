@@ -1,6 +1,6 @@
-﻿using AFSport.DAO.Model;
-using AFSport.Service.Base;
+﻿using AFSport.Service.Base;
 using AFSport.Service.Interfaces;
+using AFSport.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace AFSport.Service.Repository
 {
-    public class EstoqueRepository : BaseDAO, ICRUD<Estoque>
+    public class EstoqueRepository : BaseRepository, ICRUD<Estoque>
     {
-        public Task<Estoque> Remover(Estoque obj)
+        public void Remover(Estoque obj)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,4 @@
-﻿using AFSport.DAO.Model;
+﻿using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
@@ -23,20 +23,27 @@ namespace AFSport.WindowsForms.Formularios.Produtos
 
         protected override void FrmCadastroBase_Load(object sender, EventArgs e)
         {
-            CarregarGrid();
+            GridPesq.AutoGenerateColumns = false;
             base.FrmCadastroBase_Load(sender, e);
         }
 
-        protected override void BtnNovo_Click(object sender, EventArgs e)
+        protected override async void BtnNovo_Click(object sender, EventArgs e)
         {
-            using (FrmFormProdutos frm = new FrmFormProdutos(new Produto()))
+            using (CategoriaRepository repository = new CategoriaRepository())
             {
-                using (FrmModal frmModal = new FrmModal(frm))
-                    frmModal.ShowDialog();
-                if (frm.DialogResult == DialogResult.OK)
-                    CarregarGrid();
+                if (await repository.TotalRegistros() > 0)
+                    using (FrmFormProdutos frm = new FrmFormProdutos(new Produto()))
+                    {
+                        using (FrmModal frmModal = new FrmModal(frm))
+                            frmModal.ShowDialog();
+                        if (frm.DialogResult == DialogResult.OK)
+                            CarregarGrid();
+                    }
+                else
+                    MessageBox.Show("Por favor, antes de cadastrar um produto, cadastre uma categoria para seus produtos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                base.BtnNovo_Click(sender, e);
             }
-            base.BtnNovo_Click(sender, e);
         }
 
         protected override void BtnAlterar_Click(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
         {
             if (produto != null && MessageBox.Show($"Confirma a remoção do produto {produto.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                
+
             }
             base.BtnDeletar_Click(sender, e);
         }

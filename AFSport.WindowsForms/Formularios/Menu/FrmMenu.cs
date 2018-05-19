@@ -1,4 +1,8 @@
-﻿using AFSport.WindowsForms.Formularios.Categorias;
+﻿using AFSport.Service.Repository;
+using AFSport.WindowsForms.Formularios.Categorias;
+using AFSport.WindowsForms.Formularios.Cidades;
+using AFSport.WindowsForms.Formularios.Clientes;
+using AFSport.WindowsForms.Formularios.Estados;
 using AFSport.WindowsForms.Formularios.Produtos;
 using System;
 using System.Collections.Generic;
@@ -31,7 +35,7 @@ namespace AFSport.WindowsForms.Formularios.Menu
                     SideBar = false;
                     break;
                 case false:
-                    pnlSideBar.Width = 200;
+                    pnlSideBar.Width = 200;                                   
                     SideBar = true;
                     break;
             }
@@ -44,12 +48,14 @@ namespace AFSport.WindowsForms.Formularios.Menu
 
         private void RenderForm(Form formRender)
         {
+            Cursor = Cursors.WaitCursor;
             if (form != null) form.Close();
             form = formRender;
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             PnlRenderForm.Controls.Add(form);
             form.Show();
+            Cursor = Cursors.Default;
         }
 
         private void LblSair_Click_1(object sender, EventArgs e)
@@ -76,5 +82,21 @@ namespace AFSport.WindowsForms.Formularios.Menu
         {
             RenderForm(new FrmProdutos());
         }
+
+        private void BtnIconClientes_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmClientes());
+        }
+
+        private void BtnIconEstado_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmEstados());
+        }
+
+        private void BtnIconCidade_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmCidades());
+        }
+
     }
 }

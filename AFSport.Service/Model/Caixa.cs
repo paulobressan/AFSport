@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public class Caixa
     {
         public Caixa()
         {
-
+            this.IsAtivo = true;        
         }
 
         public Caixa(decimal valorInicial, Usuario usuario)

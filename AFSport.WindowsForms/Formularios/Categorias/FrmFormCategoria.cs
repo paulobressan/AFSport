@@ -1,4 +1,4 @@
-﻿using AFSport.DAO.Model;
+﻿using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
@@ -22,9 +22,14 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             _categoria = categoria;
         }
 
+        protected override void FrmFormularioBase_Load(object sender, EventArgs e)
+        {
+            MontarFormulario();
+        }
+
         protected override void BtnSalvar_Click(object sender, EventArgs e)
         {
-            if (TxtNome.Text.Length > 0)
+            if (!String.IsNullOrEmpty(TxtNome.Text))
                 Salvar();
             else
                 MessageBox.Show("Campo nome obrigatório","Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -34,9 +39,10 @@ namespace AFSport.WindowsForms.Formularios.Categorias
         protected override void MontarFormulario()
         {
             base.MontarFormulario();
-            LblId.Text = _categoria.Id.ToString();
+            LblId.Text = _categoria.IdCategoria.ToString();
             TxtDescricao.Text = _categoria.Descricao;
             TxtNome.Text = _categoria.Nome;
+            chkAtivo.Checked = _categoria.IsAtivo;
         }
 
         protected override async void Salvar()
@@ -47,7 +53,8 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                     TxtNome.Text,
                     TxtDescricao.Text)
                 {
-                    Id = _categoria.Id
+                    IdCategoria = _categoria.IdCategoria,
+                    IsAtivo = chkAtivo.Checked
                 });
                 DialogResult = DialogResult.OK;
             }

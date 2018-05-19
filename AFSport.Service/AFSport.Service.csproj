@@ -30,15 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.11\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,10 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseDAO.cs" />
-    <Compile Include="Context.cs" />
+    <Compile Include="Base\BaseRepository.cs" />
     <Compile Include="Repository\CategoriaRepository.cs" />
+    <Compile Include="Repository\CidadeRepository.cs" />
     <Compile Include="Repository\ClienteRepository.cs" />
+    <Compile Include="Repository\EstadoRepository.cs" />
     <Compile Include="Repository\EstoqueRepository.cs" />
     <Compile Include="Repository\ItemPedidoRepository.cs" />
     <Compile Include="Repository\MovimentacaoRepository.cs" />
@@ -60,19 +71,6 @@
     <Compile Include="Repository\UsuarioRepository.cs" />
     <Compile Include="Repository\ProdutoRepository.cs" />
     <Compile Include="Interfaces\ICRUD.cs" />
-    <Compile Include="Migrations\201805010507536_Inicio.cs" />
-    <Compile Include="Migrations\201805010507536_Inicio.Designer.cs">
-      <DependentUpon>201805010507536_Inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805010513245_Criação de tabelas iniciais.cs" />
-    <Compile Include="Migrations\201805010513245_Criação de tabelas iniciais.Designer.cs">
-      <DependentUpon>201805010513245_Criação de tabelas iniciais.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805010535141_IsAtivo em todas tabelas.cs" />
-    <Compile Include="Migrations\201805010535141_IsAtivo em todas tabelas.Designer.cs">
-      <DependentUpon>201805010535141_IsAtivo em todas tabelas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Caixa.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Cidade.cs" />
@@ -96,16 +94,5 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805010507536_Inicio.resx">
-      <DependentUpon>201805010507536_Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805010513245_Criação de tabelas iniciais.resx">
-      <DependentUpon>201805010513245_Criação de tabelas iniciais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805010535141_IsAtivo em todas tabelas.resx">
-      <DependentUpon>201805010535141_IsAtivo em todas tabelas.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

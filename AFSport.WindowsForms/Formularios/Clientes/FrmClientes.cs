@@ -1,4 +1,4 @@
-﻿using AFSport.DAO.Model;
+﻿using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
@@ -15,9 +15,16 @@ namespace AFSport.WindowsForms.Formularios.Clientes
 {
     public partial class FrmClientes : FrmCadastroBase
     {
+        Cliente cliente;
         public FrmClientes()
         {
             InitializeComponent();
+        }
+
+        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        {
+            GridPesq.AutoGenerateColumns = false;
+            base.FrmCadastroBase_Load(sender, e);
         }
 
         protected override void BtnNovo_Click(object sender, EventArgs e)
@@ -34,6 +41,17 @@ namespace AFSport.WindowsForms.Formularios.Clientes
 
         protected override void BtnAlterar_Click(object sender, EventArgs e)
         {
+            if(cliente != null)
+                using (FrmFormClientes frm = new FrmFormClientes(cliente))
+                {
+                    using (FrmModal frmModal = new FrmModal(frm))
+                        frmModal.ShowDialog();
+                    if (frm.DialogResult == DialogResult.OK)
+                        CarregarGrid();
+                }
+            else
+                MessageBox.Show("Seleciona um cliente para altera-lo.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             base.BtnAlterar_Click(sender, e);
         }
 
@@ -44,7 +62,7 @@ namespace AFSport.WindowsForms.Formularios.Clientes
 
         protected override async void CarregarGrid()
         {
-            GridPesq.DataSource = await ListarTodosProdutos();
+            GridPesq.DataSource = await SelecionarTodosClientes();
         }
 
         protected override void Remover()
@@ -52,12 +70,18 @@ namespace AFSport.WindowsForms.Formularios.Clientes
             base.Remover();
         }
 
-        private async Task<List<Cliente>> ListarTodosProdutos()
+        private async Task<List<Cliente>> SelecionarTodosClientes()
         {
             using (ClienteRepository repository = new ClienteRepository())
             {
                 return await repository.SelecionarTodos(true);
             }
+        }
+
+        private void GridPesq_SelectionChanged(object sender, EventArgs e)
+        {
+            if (GridPesq.SelectedRows.Count > 0)
+                cliente = (Cliente)GridPesq.SelectedRows[0].DataBoundItem;
         }
     }
 }

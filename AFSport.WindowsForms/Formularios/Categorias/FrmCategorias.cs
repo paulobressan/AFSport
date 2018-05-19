@@ -1,4 +1,4 @@
-﻿using AFSport.DAO.Model;
+﻿using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using System;
@@ -88,7 +88,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
         {
             using (ProdutoRepository repository = new ProdutoRepository())
             {
-                var produtos = await repository.SelecionarProdutosPorCategoria(categoria.Id);
+                var produtos = await repository.SelecionarProdutosPorCategoria(categoria.IdCategoria);
                 if (produtos.Count > 0)
                     return true;
                 else
@@ -115,8 +115,8 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             {
                 using (CategoriaRepository repository = new CategoriaRepository())
                 {
-                    var categoriaRemovida = await repository.Remover(categoria);
-                    MessageBox.Show($"Categoria {categoriaRemovida.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    repository.Remover(categoria);
+                    MessageBox.Show($"Categoria {categoria.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CarregarGrid();
                 }
             }

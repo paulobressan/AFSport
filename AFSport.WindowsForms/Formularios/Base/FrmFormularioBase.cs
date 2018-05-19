@@ -19,7 +19,7 @@ namespace AFSport.WindowsForms.Formularios.Base
 
         protected virtual void FrmFormularioBase_Load(object sender, EventArgs e)
         {
-            MontarFormulario();
+           // MontarFormulario();
         }
 
         protected virtual void BtnSalvar_Click(object sender, EventArgs e)

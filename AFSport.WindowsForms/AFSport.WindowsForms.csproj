@@ -31,13 +31,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -82,6 +80,18 @@
     <Compile Include="Formularios\Categorias\FrmFormCategoria.Designer.cs">
       <DependentUpon>FrmFormCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Cidades\FrmCidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cidades\FrmCidades.Designer.cs">
+      <DependentUpon>FrmCidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cidades\FrmFormCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cidades\FrmFormCidade.Designer.cs">
+      <DependentUpon>FrmFormCidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Clientes\FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +103,18 @@
     </Compile>
     <Compile Include="Formularios\Clientes\FrmFormClientes.Designer.cs">
       <DependentUpon>FrmFormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estados\FrmEstados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estados\FrmEstados.Designer.cs">
+      <DependentUpon>FrmEstados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estados\FrmFormEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estados\FrmFormEstado.Designer.cs">
+      <DependentUpon>FrmFormEstado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Estoque\FrmEstoque.cs">
       <SubType>Form</SubType>
@@ -171,11 +193,23 @@
     <EmbeddedResource Include="Formularios\Categorias\FrmFormCategoria.resx">
       <DependentUpon>FrmFormCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cidades\FrmCidades.resx">
+      <DependentUpon>FrmCidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cidades\FrmFormCidade.resx">
+      <DependentUpon>FrmFormCidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\FrmFormClientes.resx">
       <DependentUpon>FrmFormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estados\FrmEstados.resx">
+      <DependentUpon>FrmEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estados\FrmFormEstado.resx">
+      <DependentUpon>FrmFormEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Estoque\FrmEstoque.resx">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
@@ -244,6 +278,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="AfSportIco.ico" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
   </ItemGroup>

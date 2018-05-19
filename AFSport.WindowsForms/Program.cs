@@ -13,7 +13,7 @@ namespace AFSport.WindowsForms
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AFSport.WindowsForms.Formularios.Menu.FrmMenu());

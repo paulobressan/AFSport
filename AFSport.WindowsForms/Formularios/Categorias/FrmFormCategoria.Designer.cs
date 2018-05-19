@@ -32,6 +32,7 @@
             this.LblDescricao = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.pnlBtns.SuspendLayout();
             this.pblHead.SuspendLayout();
             this.pblMain.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // pblMain
             // 
+            this.pblMain.Controls.Add(this.chkAtivo);
             this.pblMain.Controls.Add(this.TxtDescricao);
             this.pblMain.Controls.Add(this.TxtNome);
             this.pblMain.Controls.Add(this.LblDescricao);
@@ -76,6 +78,7 @@
             this.pblMain.Controls.SetChildIndex(this.LblDescricao, 0);
             this.pblMain.Controls.SetChildIndex(this.TxtNome, 0);
             this.pblMain.Controls.SetChildIndex(this.TxtDescricao, 0);
+            this.pblMain.Controls.SetChildIndex(this.chkAtivo, 0);
             // 
             // LblNome
             // 
@@ -112,6 +115,17 @@
             this.TxtDescricao.Size = new System.Drawing.Size(642, 80);
             this.TxtDescricao.TabIndex = 5;
             // 
+            // chkAtivo
+            // 
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkAtivo.Location = new System.Drawing.Point(85, 242);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(55, 24);
+            this.chkAtivo.TabIndex = 6;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            // 
             // FrmFormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -137,5 +151,6 @@
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label LblDescricao;
         private System.Windows.Forms.Label LblNome;
+        private System.Windows.Forms.CheckBox chkAtivo;
     }
 }

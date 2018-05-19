@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public class Pedido
     {
         public Pedido()
         {
-
+            this.IsAtivo = true;
         }
 
         public Pedido(Cliente cliente, Usuario usuario)

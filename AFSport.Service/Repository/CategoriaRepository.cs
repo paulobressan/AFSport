@@ -1,60 +1,63 @@
-﻿using AFSport.DAO;
-using AFSport.DAO.Model;
-using AFSport.Service.Base;
+﻿using AFSport.Service.Base;
 using AFSport.Service.Interfaces;
+using AFSport.Service.Model;
+using Dapper;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AFSport.Service.Repository
 {
-    public class CategoriaRepository : BaseDAO, ICRUD<Categoria>
+    public class CategoriaRepository : BaseRepository, ICRUD<Categoria>
     {
-        public async Task<Categoria> Remover(Categoria obj)
+        public void Remover(Categoria obj)
         {
-            this._context.Categorias.Attach(obj);
-            this._context.Entry(obj).State = EntityState.Deleted;
-            await this._context.SaveChangesAsync();
-            return obj;
+             _context.Query<Categoria>(@"delete from categoria 
+                where idCategoria = @idCategoria", obj);
         }
 
         public async Task<Categoria> Salvar(Categoria obj)
         {
-            if (obj.Id == 0)
+            if (obj.IdCategoria == 0)
             {
-                this._context.Categorias
-                    .Add(obj);
-                await this._context.SaveChangesAsync();
-                return obj;
+                var result = await _context.QueryAsync<Categoria>(@"insert into categoria(nome,descricao,isAtivo) 
+                    values (@nome,@descricao,@isAtivo);
+                    select idCategoria, nome, descricao, isAtivo from categoria
+                    where idCategoria = (select last_insert_id() as idCategoria);", obj);
+                return result.Single();
             }
             else
             {
-                this._context.Categorias.Attach(obj);
-                this._context.Entry(obj).State = EntityState.Modified;
-                await this._context.SaveChangesAsync();
-                return obj;
+                var result = await _context.QueryAsync<Categoria>(@"update categoria set nome = @nome, descricao = @descricao, isAtivo = @isAtivo 
+                    where idCategoria = @idCategoria;
+                    select idCategoria, nome, descricao, isAtivo from categoria
+                    where idCategoria = @IdCategoria", obj);
+                return result.Single();
             } 
         }
 
         public async Task<Categoria> SelecionarId(int id)
         {
-            return await this._context.Categorias
-                .Where(c => c.Id == id && c.IsAtivo == true)
-                .SingleOrDefaultAsync();
-                
+            var result = await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
+                where idCategoria = @idCategoria;", new { idCategoria = id });
+            return result.SingleOrDefault();
         }
 
         public async Task<List<Categoria>> SelecionarTodos(bool selecionarTodos)
         {
-            return selecionarTodos
-                ? await this._context.Categorias
-                .ToListAsync()
-                : await this._context.Categorias
-                .Where(c => c.IsAtivo == true)
-                .ToListAsync();
+            var result = selecionarTodos 
+                ? await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria;", null)
+                : await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
+                where isAtivo = true;", null);
+            return result.ToList();
+        }
+
+        public async Task<int> TotalRegistros()
+        {
+            var result = await _context.QueryAsync<int>(@"select count(*) from categoria;", null);
+            return result.Single();
         }
     }
 }

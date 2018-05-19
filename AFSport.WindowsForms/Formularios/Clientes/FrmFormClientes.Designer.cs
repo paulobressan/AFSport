@@ -37,9 +37,11 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.cmbCidade = new System.Windows.Forms.ComboBox();
+            this.CmbEstados = new System.Windows.Forms.ComboBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.pnlBtns.SuspendLayout();
             this.pblHead.SuspendLayout();
             this.pblMain.SuspendLayout();
@@ -65,11 +67,18 @@
             this.lblTitulo.Size = new System.Drawing.Size(289, 32);
             this.lblTitulo.Text = "Cadastro de Clientes";
             // 
+            // lblIcone
+            // 
+            this.lblIcone.Size = new System.Drawing.Size(47, 28);
+            this.lblIcone.Text = "";
+            // 
             // pblMain
             // 
+            this.pblMain.Controls.Add(this.CmbEstados);
+            this.pblMain.Controls.Add(this.lblEstado);
             this.pblMain.Controls.Add(this.cmbCidade);
             this.pblMain.Controls.Add(this.lblCidade);
-            this.pblMain.Controls.Add(this.textBox5);
+            this.pblMain.Controls.Add(this.txtBairro);
             this.pblMain.Controls.Add(this.txtNumero);
             this.pblMain.Controls.Add(this.txtLogradouro);
             this.pblMain.Controls.Add(this.txtEmail);
@@ -90,9 +99,11 @@
             this.pblMain.Controls.SetChildIndex(this.txtEmail, 0);
             this.pblMain.Controls.SetChildIndex(this.txtLogradouro, 0);
             this.pblMain.Controls.SetChildIndex(this.txtNumero, 0);
-            this.pblMain.Controls.SetChildIndex(this.textBox5, 0);
+            this.pblMain.Controls.SetChildIndex(this.txtBairro, 0);
             this.pblMain.Controls.SetChildIndex(this.lblCidade, 0);
             this.pblMain.Controls.SetChildIndex(this.cmbCidade, 0);
+            this.pblMain.Controls.SetChildIndex(this.lblEstado, 0);
+            this.pblMain.Controls.SetChildIndex(this.CmbEstados, 0);
             // 
             // lblNome
             // 
@@ -171,18 +182,18 @@
             this.txtNumero.Size = new System.Drawing.Size(46, 26);
             this.txtNumero.TabIndex = 9;
             // 
-            // textBox5
+            // txtBairro
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(94, 222);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 26);
-            this.textBox5.TabIndex = 10;
+            this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBairro.Location = new System.Drawing.Point(94, 222);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(250, 26);
+            this.txtBairro.TabIndex = 10;
             // 
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(36, 257);
+            this.lblCidade.Location = new System.Drawing.Point(155, 257);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(52, 20);
             this.lblCidade.TabIndex = 11;
@@ -193,10 +204,30 @@
             this.cmbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Location = new System.Drawing.Point(94, 254);
+            this.cmbCidade.Location = new System.Drawing.Point(213, 254);
             this.cmbCidade.Name = "cmbCidade";
-            this.cmbCidade.Size = new System.Drawing.Size(250, 28);
+            this.cmbCidade.Size = new System.Drawing.Size(131, 28);
             this.cmbCidade.TabIndex = 12;
+            // 
+            // CmbEstados
+            // 
+            this.CmbEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CmbEstados.FormattingEnabled = true;
+            this.CmbEstados.Location = new System.Drawing.Point(94, 254);
+            this.CmbEstados.Name = "CmbEstados";
+            this.CmbEstados.Size = new System.Drawing.Size(55, 28);
+            this.CmbEstados.TabIndex = 14;
+            this.CmbEstados.SelectionChangeCommitted += new System.EventHandler(this.CmbEstados_SelectionChangeCommitted);
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(36, 257);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(51, 20);
+            this.lblEstado.TabIndex = 13;
+            this.lblEstado.Text = "Estado";
             // 
             // FrmFormClientes
             // 
@@ -221,12 +252,14 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.ComboBox cmbCidade;
         private System.Windows.Forms.Label lblCidade;
+        private System.Windows.Forms.ComboBox CmbEstados;
+        private System.Windows.Forms.Label lblEstado;
     }
 }

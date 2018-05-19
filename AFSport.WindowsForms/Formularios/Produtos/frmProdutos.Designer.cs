@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.GridPesq = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -43,14 +44,20 @@
             // 
             // btnNovo
             // 
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNovo.Location = new System.Drawing.Point(985, 6);
             // 
             // btnAlterar
             // 
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAlterar.Location = new System.Drawing.Point(1097, 6);
             // 
             // btnDeletar
             // 
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeletar.Location = new System.Drawing.Point(1209, 6);
             // 
             // pnlmargin
@@ -70,6 +77,11 @@
             this.pnlBody.Controls.Add(this.GridPesq);
             this.pnlBody.Size = new System.Drawing.Size(1329, 505);
             // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(136, 32);
+            this.label1.Text = "Produtos";
+            // 
             // GridPesq
             // 
             this.GridPesq.AllowUserToAddRows = false;
@@ -79,16 +91,17 @@
             this.GridPesq.BackgroundColor = System.Drawing.Color.White;
             this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.idProduto,
             this.nome,
             this.descricao,
             this.categoria,
             this.valorCompra,
             this.valorVenda,
-            this.isAtivo});
+            this.isAtivo,
+            this.idCategoria});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(6, 6);
-            this.GridPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridPesq.Margin = new System.Windows.Forms.Padding(4);
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
@@ -97,13 +110,13 @@
             this.GridPesq.TabIndex = 0;
             this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
-            // id
+            // idProduto
             // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Código";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 50;
+            this.idProduto.DataPropertyName = "IdProduto";
+            this.idProduto.HeaderText = "Código";
+            this.idProduto.Name = "idProduto";
+            this.idProduto.ReadOnly = true;
+            this.idProduto.Width = 50;
             // 
             // nome
             // 
@@ -150,12 +163,20 @@
             this.isAtivo.ReadOnly = true;
             this.isAtivo.Width = 50;
             // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Visible = false;
+            // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 622);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProdutos";
             this.Text = "frmProdutos";
             this.pnlNavBar.ResumeLayout(false);
@@ -169,12 +190,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorVenda;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
     }
 }

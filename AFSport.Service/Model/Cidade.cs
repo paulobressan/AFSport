@@ -4,25 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public class Cidade
     {
         public Cidade()
         {
-
-        }
-
-        public Cidade(string nome, Estado estado)
-        {
-            this.Nome = nome;
-            this.Estado = estado;
             this.IsAtivo = true;
         }
 
-        public int Id { get; set; }
+        public Cidade(string nome, int idEstado)
+        {
+            this.Nome = nome;
+            this.IdEstado = idEstado;
+            this.IsAtivo = true;
+        }
+
+        public int IdCidade { get; set; }
         public string Nome { get; set; }
+        public int IdEstado { get; set; }
         public Estado Estado { get; set; }
         public bool IsAtivo { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Nome}-{this.Estado.Sigla}";
+        }
     }
 }

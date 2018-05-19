@@ -1,69 +1,89 @@
-﻿using AFSport.DAO.Model;
-using AFSport.Service.Base;
+﻿using AFSport.Service.Base;
 using AFSport.Service.Interfaces;
+using AFSport.Service.Model;
+using Dapper;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AFSport.Service.Repository
 {
-    public class ProdutoRepository : BaseDAO, ICRUD<Produto>
+    public class ProdutoRepository : BaseRepository, ICRUD<Produto>
     {
         public async Task<Produto> Salvar(Produto obj)
         {
-            if(obj.Id == 0)
+            if(obj.IdProduto == 0)
             {
-                this._context.Produto.Attach(obj);
-                this._context.Entry(obj).State = EntityState.Added;
-                await this._context.SaveChangesAsync();
-                return obj;
+                var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"insert into produto(idCategoria, nome, descricao, valorCompra, valorVenda, isAtivo) values (@idCategoria, @nome, @descricao, @valorCompra, @valorVenda, @isAtivo);
+                    select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                    inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = (select last_insert_id() as id);", 
+                    (produto, categoria) =>
+                    {
+                        produto.Categoria = categoria;
+                        return produto;
+                    }, obj, splitOn: "idCategoria");
+                return result.Single();
             }
             else
             {
-                this._context.Produto.Attach(obj);
-                this._context.Entry(obj).State = EntityState.Modified;
-                await this._context.SaveChangesAsync();
-                return obj;
+                var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"update produto set idCategoria = @idCategoria,  nome = @nome, descricao = @descricao, valorCompra = @valorCompra, valorVenda = @valorVenda, isAtivo = @isAtivo 
+                    where idProduto = @idProduto;
+                    select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                    inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = @idProduto;",
+                    (produto, categoria) =>
+                    {
+                        produto.Categoria = categoria;
+                        return produto;
+                    }, obj, splitOn: "idCategoria");
+                return result.Single();
             }
         }
 
         public async Task<Produto> SelecionarId(int id)
         {
-            return await this._context.Produto
-                .Include(p => p.Categoria)
-                .Where(p => p.Id == id && p.IsAtivo == true && p.Categoria.IsAtivo == true)
-                .SingleOrDefaultAsync();
+            var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria where c.idCategoria = true and c.idProduto = @idProduto;", (produto, categoria) =>
+            {
+                produto.Categoria = categoria;
+                return produto;
+            }, new { idProduto = id }, splitOn: "idCategoria");
+            return result.Single();
         }
 
         public async Task<List<Produto>> SelecionarTodos(bool selecionarTodos)
-        { 
-            var valores = selecionarTodos
-                ? await this._context.Produto
-                .Include(p => p.Categoria)
-                .ToListAsync()
-                : await this._context.Produto
-                .Where(p => p.Categoria.IsAtivo == true)
-                .ToListAsync();
-            return valores;
+        {
+            var result = selecionarTodos 
+                ? await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria where c.isAtivo = true", (produto, categoria) => 
+                {
+                    produto.Categoria = categoria;
+                    return produto;
+                },null, splitOn:"idCategoria")
+                : await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria where c.isAtivo = true and p.isAtivo = true;", (produto, categoria) =>
+                {
+                    produto.Categoria = categoria;
+                    return produto;
+                }, null, splitOn: "idCategoria");
+            return result.ToList();
         }
 
         public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
         {
-            return await this._context.Produto
-                .Include(p => p.Categoria)
-                .Where(p => p.Categoria.Id == idCategoria)
-                .ToListAsync();
+            var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria where c.isAtivo = true and c.idCategoria = @idCategoria;", (produto, categoria) =>
+            {
+                produto.Categoria = categoria;
+                return produto;
+            }, new { idCategoria }, splitOn:"idCategoria");
+            return result.ToList();
         }
 
-        public async Task<Produto> Remover(Produto obj)
+        public async void Remover(Produto obj)
         {
-            _context.Produto.Attach(obj);
-            _context.Entry(obj).State = EntityState.Deleted;
-            await _context.SaveChangesAsync();
-            return obj;
+            await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto");
         }
     }
 }

@@ -184,6 +184,7 @@
             this.Name = "FrmCadastroBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroBase";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCadastroBase_Load);
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();

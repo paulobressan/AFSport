@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.GridPesq = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -43,7 +43,7 @@
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNovo.Location = new System.Drawing.Point(853, 8);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Size = new System.Drawing.Size(112, 71);
             // 
             // btnAlterar
@@ -51,7 +51,7 @@
             this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAlterar.Location = new System.Drawing.Point(965, 8);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Size = new System.Drawing.Size(112, 71);
             // 
             // btnDeletar
@@ -59,29 +59,29 @@
             this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeletar.Location = new System.Drawing.Point(1077, 8);
-            this.btnDeletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeletar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeletar.Size = new System.Drawing.Size(112, 71);
             // 
             // pnlmargin
             // 
-            this.pnlmargin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlmargin.Margin = new System.Windows.Forms.Padding(6);
             this.pnlmargin.Size = new System.Drawing.Size(1200, 14);
             // 
             // pnlNavBar
             // 
-            this.pnlNavBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlNavBar.Margin = new System.Windows.Forms.Padding(6);
             this.pnlNavBar.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.pnlNavBar.Size = new System.Drawing.Size(1200, 89);
             // 
             // pnlmargin2
             // 
-            this.pnlmargin2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlmargin2.Margin = new System.Windows.Forms.Padding(6);
             this.pnlmargin2.Size = new System.Drawing.Size(1200, 14);
             // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.GridPesq);
-            this.pnlBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(6);
             this.pnlBody.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.pnlBody.Size = new System.Drawing.Size(1200, 506);
             // 
@@ -108,13 +108,13 @@
             this.GridPesq.BackgroundColor = System.Drawing.Color.White;
             this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.idCategoria,
             this.Nome,
             this.descricao,
             this.IsAtivo});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(9, 8);
-            this.GridPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridPesq.Margin = new System.Windows.Forms.Padding(4);
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
@@ -123,12 +123,12 @@
             this.GridPesq.TabIndex = 0;
             this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
-            // id
+            // idCategoria
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Código";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "Código";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
             // 
             // Nome
             // 
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCategorias";
             this.Text = "FrmCategorias";
             this.pnlNavBar.ResumeLayout(false);
@@ -172,7 +172,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsAtivo;

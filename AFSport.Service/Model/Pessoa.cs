@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.DAO.Model
+namespace AFSport.Service.Model
 {
     public abstract class Pessoa
     {
         public Pessoa()
         {
-
+            this.IsAtivo = true;
         }
 
         public Pessoa(string nome)
@@ -19,7 +19,6 @@ namespace AFSport.DAO.Model
             this.IsAtivo = true;
         }
 
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public bool IsAtivo { get; set; }
