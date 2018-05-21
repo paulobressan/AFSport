@@ -21,9 +21,10 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             InitializeComponent();
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
         {
             GridPesq.AutoGenerateColumns = false;
+            await CarregarGrid();
             base.FrmCadastroBase_Load(sender, e);
         }
 
@@ -37,7 +38,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
                         using (FrmModal frmModal = new FrmModal(frm))
                             frmModal.ShowDialog();
                         if (frm.DialogResult == DialogResult.OK)
-                            CarregarGrid();
+                            await CarregarGrid();
                     }
                 else
                     MessageBox.Show("Por favor, antes de cadastrar um produto, cadastre uma categoria para seus produtos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,7 +47,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             }
         }
 
-        protected override void BtnAlterar_Click(object sender, EventArgs e)
+        protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
             if (produto != null)
                 using (FrmFormProdutos frm = new FrmFormProdutos(produto))
@@ -54,7 +55,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
                     if (frm.DialogResult == DialogResult.OK)
-                        CarregarGrid();
+                        await CarregarGrid();
                 }
             else
                 MessageBox.Show("Seleciona um produto para altera-lo.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -70,12 +71,12 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override async void CarregarGrid()
+        private async Task CarregarGrid()
         {
-            GridPesq.DataSource = await ListarTodosProdutos();
+            GridPesq.DataSource = await SelecionarTodosProdutos();
         }
 
-        private async Task<List<Produto>> ListarTodosProdutos()
+        private async Task<List<Produto>> SelecionarTodosProdutos()
         {
             using (ProdutoRepository repository = new ProdutoRepository())
             {
@@ -87,6 +88,42 @@ namespace AFSport.WindowsForms.Formularios.Produtos
         {
             if (GridPesq.SelectedRows.Count > 0)
                 produto = (Produto)GridPesq.SelectedRows[0].DataBoundItem;
+        }
+
+        private async void BtnGerarEstoque_Click(object sender, EventArgs e)
+        {
+            if (categoria == null)
+                MessageBox.Show("Selecione um Produto para gerar o estoque.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                if(await SelecionarEstoquePorProduto() != null)
+                    MessageBox.Show($"Atenção! Já existe um estoque para o produto {produto.Nome}. Acessa a tela de estoque para gerenciá-lo.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    await GerarEstoque();
+                    MessageBox.Show($"O estoque do produto {produto.Nome} foi gerado com sucesso.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private async Task<Estoque> SelecionarEstoquePorProduto()
+        {
+            using(EstoqueRepository repository = new EstoqueRepository())
+            {
+                return await repository.SelecionarEstoquePorProduto(produto.IdProduto);
+            }
+        }
+
+        private async Task GerarEstoque()
+        {
+            using (EstoqueRepository repository = new EstoqueRepository())
+            {
+                await repository.Salvar(new Estoque(
+                        0,
+                        produto.IdProduto,
+                        1
+                    ));
+            }
         }
     }
 }

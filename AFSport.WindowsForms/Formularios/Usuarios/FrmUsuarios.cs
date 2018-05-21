@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFSport.WindowsForms.Formularios.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AFSport.WindowsForms.Formularios.Usuario
+namespace AFSport.WindowsForms.Formularios.Usuarios
 {
-    public partial class FrmUsuarios : Form
+    public partial class FrmUsuarios : FrmCadastroBase
     {
         public FrmUsuarios()
         {

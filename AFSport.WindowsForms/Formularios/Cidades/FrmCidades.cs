@@ -21,9 +21,10 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             InitializeComponent();
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
         {
             GridPesq.AutoGenerateColumns = false;
+            await CarregarGrid();
             base.FrmCadastroBase_Load(sender, e);
         }
 
@@ -31,13 +32,13 @@ namespace AFSport.WindowsForms.Formularios.Cidades
         {
             using (EstadoRepository repository = new EstadoRepository())
             {
-                if(await repository.TotalRegistros() > 0)
+                if (await repository.TotalRegistros() > 0)
                     using (FrmFormCidade frm = new FrmFormCidade(new Cidade()))
                     {
                         using (FrmModal frmModal = new FrmModal(frm))
                             frmModal.ShowDialog();
                         if (frm.DialogResult == DialogResult.OK)
-                            CarregarGrid();
+                            await CarregarGrid();
                     }
                 else
                     MessageBox.Show("Por favor, antes de cadastrar uma cidade, cadastre um estado para suas cidades.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45,7 +46,7 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             base.BtnNovo_Click(sender, e);
         }
 
-        protected override void BtnAlterar_Click(object sender, EventArgs e)
+        protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
             if (cidade != null)
                 using (FrmFormCidade frm = new FrmFormCidade(cidade))
@@ -53,7 +54,7 @@ namespace AFSport.WindowsForms.Formularios.Cidades
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
                     if (frm.DialogResult == DialogResult.OK)
-                        CarregarGrid();
+                        await CarregarGrid();
                 }
             else
                 MessageBox.Show("Seleciona uma cidade para altera-la.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -61,19 +62,57 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             base.BtnAlterar_Click(sender, e);
         }
 
-        protected override void BtnDeletar_Click(object sender, EventArgs e)
+        protected override async void BtnDeletar_Click(object sender, EventArgs e)
         {
+            if (cidade != null && MessageBox.Show($"Confirma a remoção da cidade {cidade.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                await Remover();
+            }
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override async void CarregarGrid()
+        private async Task CarregarGrid()
         {
             GridPesq.DataSource = await SelecionarTodasCidades();
         }
 
-        protected override void Remover()
+        private async Task Remover()
         {
-            base.Remover();
+            if (await ExisteDependencia())
+            {
+                if (MessageBox.Show($"A cidade {cidade.Nome} não pode ser excluida, por que existe dependencias. Deseja inativar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    cidade.IsAtivo = false;
+                    cidade.IdEstado = cidade.Estado.IdEstado;
+                    using (CidadeRepository repository = new CidadeRepository())
+                    {
+                        var cidadeInativada = await repository.Salvar(cidade);
+                        MessageBox.Show($"A cidade {cidadeInativada.Nome} foi inativada com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await CarregarGrid();
+                    }
+                }
+            }
+            else
+            {
+                using (CidadeRepository repository = new CidadeRepository())
+                {
+                    repository.Remover(cidade);
+                    MessageBox.Show($"A cidade {cidade.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CarregarGrid();
+                }
+            }
+        }
+
+        private async Task<bool> ExisteDependencia()
+        {
+            using (ClienteRepository repository = new ClienteRepository())
+            {
+                var clientes = await repository.SelecionarPorCidade(cidade.IdCidade);
+                if (clientes.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
 
         private async Task<List<Cidade>> SelecionarTodasCidades()

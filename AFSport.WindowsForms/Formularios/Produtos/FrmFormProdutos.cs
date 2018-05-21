@@ -22,13 +22,14 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             this.produto = produto;
         }
 
-        protected override void FrmFormularioBase_Load(object sender, EventArgs e)
+        protected override async void FrmFormularioBase_Load(object sender, EventArgs e)
         {
-            CarregarCmbCategoria();
+            await CarregarCmbCategoria();
+            MontarFormulario();
             base.FrmFormularioBase_Load(sender, e);
         }
 
-        protected override void BtnSalvar_Click(object sender, EventArgs e)
+        protected override async void BtnSalvar_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNome.Text))
                 MessageBox.Show("Campo nome obrigatório", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -39,10 +40,10 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             else if(cmbCategoria.SelectedValue == null)
                 MessageBox.Show("Seleção de categoria obrigatória", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                Salvar();
+                await Salvar();
         }
 
-        protected override void MontarFormulario()
+        private void MontarFormulario()
         {
             LblId.Text = produto.IdProduto.ToString();
             txtNome.Text = produto.Nome;
@@ -53,7 +54,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             chkAtivo.Checked = produto.IsAtivo;
         }
 
-        protected override async void Salvar()
+        private async Task Salvar()
         {
             using (ProdutoRepository repository = new ProdutoRepository())
             {
@@ -73,20 +74,19 @@ namespace AFSport.WindowsForms.Formularios.Produtos
             }
         }
 
-        private async void CarregarCmbCategoria()
+        private async Task CarregarCmbCategoria()
         {
             cmbCategoria.Items.Clear();
             cmbCategoria.DataSource = await ListarTodasCategorias();
             cmbCategoria.ValueMember = "IdCategoria";
             cmbCategoria.DisplayMember = "Nome";
-            cmbCategoria.Refresh();
-            MontarFormulario();
+            cmbCategoria.Refresh();            
         }
 
         private async Task<List<Categoria>> ListarTodasCategorias()
         {
             using (CategoriaRepository repository = new CategoriaRepository())
-                return await repository.SelecionarTodos(true);
+                return await repository.SelecionarTodos(false);
         }
     }
 }

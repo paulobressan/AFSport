@@ -42,13 +42,15 @@ namespace AFSport.Service.Repository
 
         public async Task<List<Estado>> SelecionarTodos(bool selecionarTodos)
         {
-            var result = await _context.QueryAsync<Estado>(@"select idEstado, nome, sigla, isAtivo from estado;", null);
+            var result = selecionarTodos
+                ? await _context.QueryAsync<Estado>(@"select idEstado, nome, sigla, isAtivo from estado;", null)      
+                : await _context.QueryAsync<Estado>(@"select idEstado, nome, sigla, isAtivo from estado where isAtivo = true;", null);
             return result.ToList();
         }
 
         public async Task<int> TotalRegistros()
         {
-            var result = await _context.QueryAsync<int>(@"select count(8) from estado;", null);
+            var result = await _context.QueryAsync<int>(@"select count(8) from estado where isAtivo = true;", null);
             return result.Single();
         }
     }

@@ -60,7 +60,7 @@ namespace AFSport.Service.Repository
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
-                    where ci.isAtivo = true and c.idCliente = @idCliente", (cliente, cidade, estado) =>
+                    where ci.isAtivo = true and e.isAtivo = true and c.idCliente = @idCliente", (cliente, cidade, estado) =>
                     {
                         cliente.Cidade = cidade;
                         cliente.Cidade.Estado = estado;
@@ -77,7 +77,7 @@ namespace AFSport.Service.Repository
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
-                    where ci.isAtivo = true", (cliente, cidade, estado) =>
+                    where ci.isAtivo = true and e.isAtivo = true;", (cliente, cidade, estado) =>
                     {
                         cliente.Cidade = cidade;
                         cliente.Cidade.Estado = estado;
@@ -88,13 +88,35 @@ namespace AFSport.Service.Repository
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
-                    where ci.isAtivo = true and c.isAtivo = true", (cliente, cidade, estado) =>
+                    where ci.isAtivo = true and e.isAtivo = true and c.isAtivo = true", (cliente, cidade, estado) =>
                     {
                         cliente.Cidade = cidade;
                         cliente.Cidade.Estado = estado;
                         return cliente;
                     },null, splitOn: "idCidade, IdEstado");
             return result.ToList();
+        }
+
+        public async Task<List<Cliente>> SelecionarPorCidade(int idCidade)
+        {
+            var result = await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
+                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    from cliente as c
+                    inner join cidade ci on c.idCidade = ci.idCidade
+                    inner join estado e on ci.idEstado = e.idEstado 
+                    where ci.isAtivo = true and e.isAtivo = true and c.idCidade = @idCidade", (cliente, cidade, estado) =>
+                    {
+                        cliente.Cidade = cidade;
+                        cliente.Cidade.Estado = estado;
+                        return cliente;
+                    }, new { idCidade }, splitOn: "idCidade, IdEstado");
+            return result.ToList();
+        }
+
+        public async Task<int> TotalRegistros()
+        {
+            var result = await _context.QueryAsync<int>(@"select count(*) from cliente where isAtivo = true;", null);
+            return result.Single();
         }
     }
 }

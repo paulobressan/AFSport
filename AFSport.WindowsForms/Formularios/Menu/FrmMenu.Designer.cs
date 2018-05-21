@@ -85,6 +85,9 @@
             this.TmrHora = new System.Windows.Forms.Timer(this.components);
             this.PnlRenderForm = new System.Windows.Forms.Panel();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.LblLogoft = new System.Windows.Forms.Label();
+            this.lblIcoLogin = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlSideBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -538,6 +541,7 @@
             this.BtnIconEstoque.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconEstoque, "Estoque");
             this.BtnIconEstoque.UseVisualStyleBackColor = true;
+            this.BtnIconEstoque.Click += new System.EventHandler(this.BtnIconEstoque_Click);
             // 
             // PnlPrecos
             // 
@@ -846,13 +850,14 @@
             // 
             this.pnlBarSuperior.BackColor = System.Drawing.Color.White;
             this.pnlBarSuperior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBarSuperior.Controls.Add(this.LblLogoft);
             this.pnlBarSuperior.Controls.Add(this.LblTituloEmpresa);
             this.pnlBarSuperior.Controls.Add(this.LblSair);
             this.pnlBarSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarSuperior.Location = new System.Drawing.Point(55, 0);
             this.pnlBarSuperior.Name = "pnlBarSuperior";
             this.pnlBarSuperior.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlBarSuperior.Size = new System.Drawing.Size(945, 45);
+            this.pnlBarSuperior.Size = new System.Drawing.Size(945, 48);
             this.pnlBarSuperior.TabIndex = 1;
             // 
             // LblTituloEmpresa
@@ -860,7 +865,7 @@
             this.LblTituloEmpresa.AutoSize = true;
             this.LblTituloEmpresa.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblTituloEmpresa.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTituloEmpresa.ForeColor = System.Drawing.Color.Gray;
+            this.LblTituloEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LblTituloEmpresa.Location = new System.Drawing.Point(5, 5);
             this.LblTituloEmpresa.Name = "LblTituloEmpresa";
             this.LblTituloEmpresa.Size = new System.Drawing.Size(128, 34);
@@ -880,12 +885,15 @@
             this.LblSair.Size = new System.Drawing.Size(52, 36);
             this.LblSair.TabIndex = 3;
             this.LblSair.Text = "";
+            this.ToolTip.SetToolTip(this.LblSair, "Fechar");
             this.LblSair.Click += new System.EventHandler(this.LblSair_Click_1);
             // 
             // pnlBarInferior
             // 
             this.pnlBarInferior.BackColor = System.Drawing.Color.White;
             this.pnlBarInferior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBarInferior.Controls.Add(this.lblUsuario);
+            this.pnlBarInferior.Controls.Add(this.lblIcoLogin);
             this.pnlBarInferior.Controls.Add(this.lblHora);
             this.pnlBarInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBarInferior.Location = new System.Drawing.Point(55, 719);
@@ -899,7 +907,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblHora.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.Gray;
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblHora.Location = new System.Drawing.Point(877, 5);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(61, 22);
@@ -915,10 +923,50 @@
             // 
             this.PnlRenderForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlRenderForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlRenderForm.Location = new System.Drawing.Point(55, 45);
+            this.PnlRenderForm.Location = new System.Drawing.Point(55, 48);
             this.PnlRenderForm.Name = "PnlRenderForm";
-            this.PnlRenderForm.Size = new System.Drawing.Size(945, 674);
+            this.PnlRenderForm.Size = new System.Drawing.Size(945, 671);
             this.PnlRenderForm.TabIndex = 3;
+            // 
+            // LblLogoft
+            // 
+            this.LblLogoft.AutoSize = true;
+            this.LblLogoft.BackColor = System.Drawing.Color.White;
+            this.LblLogoft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblLogoft.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LblLogoft.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLogoft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LblLogoft.Location = new System.Drawing.Point(834, 5);
+            this.LblLogoft.Name = "LblLogoft";
+            this.LblLogoft.Size = new System.Drawing.Size(52, 36);
+            this.LblLogoft.TabIndex = 5;
+            this.LblLogoft.Text = "";
+            this.ToolTip.SetToolTip(this.LblLogoft, "Sair");
+            this.LblLogoft.Click += new System.EventHandler(this.LblLogoft_Click);
+            // 
+            // lblIcoLogin
+            // 
+            this.lblIcoLogin.AutoSize = true;
+            this.lblIcoLogin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblIcoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblIcoLogin.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIcoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblIcoLogin.Location = new System.Drawing.Point(5, 5);
+            this.lblIcoLogin.Name = "lblIcoLogin";
+            this.lblIcoLogin.Size = new System.Drawing.Size(24, 17);
+            this.lblIcoLogin.TabIndex = 1;
+            this.lblIcoLogin.Text = "";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsuario.Location = new System.Drawing.Point(29, 5);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(39, 18);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "Nulo";
             // 
             // FrmMenu
             // 
@@ -938,6 +986,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AFSport";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.pnlSideBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1021,5 +1070,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtnUsuarios;
         private System.Windows.Forms.Button BtnIconUsuarios;
+        protected System.Windows.Forms.Label LblLogoft;
+        private System.Windows.Forms.Label lblIcoLogin;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

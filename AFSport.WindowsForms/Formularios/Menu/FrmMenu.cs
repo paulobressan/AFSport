@@ -1,8 +1,12 @@
-﻿using AFSport.Service.Repository;
+﻿using AFSport.Service.Model;
+using AFSport.Service.Repository;
+using AFSport.WindowsForms.Formularios.Base;
 using AFSport.WindowsForms.Formularios.Categorias;
 using AFSport.WindowsForms.Formularios.Cidades;
 using AFSport.WindowsForms.Formularios.Clientes;
 using AFSport.WindowsForms.Formularios.Estados;
+using AFSport.WindowsForms.Formularios.Estoques;
+using AFSport.WindowsForms.Formularios.Login;
 using AFSport.WindowsForms.Formularios.Produtos;
 using System;
 using System.Collections.Generic;
@@ -20,10 +24,36 @@ namespace AFSport.WindowsForms.Formularios.Menu
     {
         private bool SideBar = false;
         Form form;
-
+        Usuario usuario;
         public FrmMenu()
         {
             InitializeComponent();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPainelInicial());
+            Login();
+        }
+
+        private void Login()
+        {
+            if (usuario == null)
+            {
+                using (FrmLogin frm = new FrmLogin())
+                {
+                    using (FrmModal frmModal = new FrmModal(frm))
+                        frmModal.ShowDialog();
+                    usuario = frm.usuario;
+                    if (usuario == null)
+                        Application.Exit();
+                    else
+                    {
+                        lblUsuario.Text = usuario.Nome;
+                        MessageBox.Show("Bem Vindo ao Sistema AFSport.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
         private void ControleSideBar()
@@ -98,5 +128,17 @@ namespace AFSport.WindowsForms.Formularios.Menu
             RenderForm(new FrmCidades());
         }
 
+        private void BtnIconEstoque_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmEstoque());
+        }
+
+        private void LblLogoft_Click(object sender, EventArgs e)
+        {
+            usuario = null;
+            RenderForm(new FrmPainelInicial());
+            lblUsuario.Text = "Nulo";
+            Login();
+        }
     }
 }

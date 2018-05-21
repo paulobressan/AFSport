@@ -22,24 +22,24 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             this.cidade = cidade;
         }
 
-        protected override void FrmFormularioBase_Load(object sender, EventArgs e)
+        protected override async void FrmFormularioBase_Load(object sender, EventArgs e)
         {
-            CarregarCmbEstados();
+            await CarregarCmbEstados();
+            MontarFormulario();
             base.FrmFormularioBase_Load(sender, e);
         }
-
-        protected override void BtnSalvar_Click(object sender, EventArgs e)
+        protected override async void BtnSalvar_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNome.Text))
                 MessageBox.Show("Campo nome obrigatório", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else if(cmbEstado.SelectedValue == null)
+            else if (cmbEstado.SelectedValue == null)
                 MessageBox.Show("Seleção de estado obrigatória", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                Salvar();
+                await Salvar();
             base.BtnSalvar_Click(sender, e);
         }
 
-        protected override async void Salvar()
+        private async Task Salvar()
         {
             using (CidadeRepository repository = new CidadeRepository())
             {
@@ -56,7 +56,7 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             }
         }
 
-        protected override void MontarFormulario()
+       private void MontarFormulario()
         {
             LblId.Text = cidade.IdCidade.ToString();
             txtNome.Text = cidade.Nome;
@@ -64,14 +64,13 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             cmbEstado.SelectedValue = cidade?.Estado?.IdEstado ?? 0;
         }
 
-        private async void CarregarCmbEstados()
+        private async Task CarregarCmbEstados()
         {
             cmbEstado.Items.Clear();
             cmbEstado.DataSource = await SelecionarTodosEstados();
             cmbEstado.DisplayMember = "Nome";
             cmbEstado.ValueMember = "IdEstado";
-            cmbEstado.Refresh();
-            MontarFormulario();
+            cmbEstado.Refresh();         
         }
 
         private async Task<List<Estado>> SelecionarTodosEstados()

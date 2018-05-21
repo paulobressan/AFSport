@@ -53,11 +53,16 @@
             // 
             // pnlBtns
             // 
+            this.pnlBtns.Location = new System.Drawing.Point(0, 314);
             this.pnlBtns.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // pblHead
             // 
             this.pblHead.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            // 
+            // lblSair
+            // 
+            this.lblSair.Location = new System.Drawing.Point(547, 9);
             // 
             // lblTitulo
             // 
@@ -65,25 +70,31 @@
             this.lblTitulo.Size = new System.Drawing.Size(217, 32);
             this.lblTitulo.Text = "Nova Categoria";
             // 
+            // lblIcone
+            // 
+            this.lblIcone.Size = new System.Drawing.Size(40, 28);
+            this.lblIcone.Text = "";
+            // 
             // pblMain
             // 
             this.pblMain.Controls.Add(this.chkAtivo);
+            this.pblMain.Controls.Add(this.LblNome);
             this.pblMain.Controls.Add(this.TxtDescricao);
             this.pblMain.Controls.Add(this.TxtNome);
             this.pblMain.Controls.Add(this.LblDescricao);
-            this.pblMain.Controls.Add(this.LblNome);
             this.pblMain.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.pblMain.Size = new System.Drawing.Size(600, 244);
             this.pblMain.Controls.SetChildIndex(this.pnlId, 0);
-            this.pblMain.Controls.SetChildIndex(this.LblNome, 0);
             this.pblMain.Controls.SetChildIndex(this.LblDescricao, 0);
             this.pblMain.Controls.SetChildIndex(this.TxtNome, 0);
             this.pblMain.Controls.SetChildIndex(this.TxtDescricao, 0);
+            this.pblMain.Controls.SetChildIndex(this.LblNome, 0);
             this.pblMain.Controls.SetChildIndex(this.chkAtivo, 0);
             // 
             // LblNome
             // 
             this.LblNome.AutoSize = true;
-            this.LblNome.Location = new System.Drawing.Point(34, 102);
+            this.LblNome.Location = new System.Drawing.Point(11, 91);
             this.LblNome.Name = "LblNome";
             this.LblNome.Size = new System.Drawing.Size(45, 20);
             this.LblNome.TabIndex = 1;
@@ -92,7 +103,7 @@
             // LblDescricao
             // 
             this.LblDescricao.AutoSize = true;
-            this.LblDescricao.Location = new System.Drawing.Point(10, 158);
+            this.LblDescricao.Location = new System.Drawing.Point(8, 143);
             this.LblDescricao.Name = "LblDescricao";
             this.LblDescricao.Size = new System.Drawing.Size(69, 20);
             this.LblDescricao.TabIndex = 2;
@@ -101,25 +112,25 @@
             // TxtNome
             // 
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtNome.Location = new System.Drawing.Point(85, 100);
+            this.TxtNome.Location = new System.Drawing.Point(12, 114);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(642, 26);
+            this.TxtNome.Size = new System.Drawing.Size(579, 26);
             this.TxtNome.TabIndex = 4;
             // 
             // TxtDescricao
             // 
             this.TxtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtDescricao.Location = new System.Drawing.Point(85, 156);
+            this.TxtDescricao.Location = new System.Drawing.Point(12, 166);
             this.TxtDescricao.Multiline = true;
             this.TxtDescricao.Name = "TxtDescricao";
-            this.TxtDescricao.Size = new System.Drawing.Size(642, 80);
+            this.TxtDescricao.Size = new System.Drawing.Size(579, 40);
             this.TxtDescricao.TabIndex = 5;
             // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAtivo.Location = new System.Drawing.Point(85, 242);
+            this.chkAtivo.Location = new System.Drawing.Point(12, 212);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(55, 24);
             this.chkAtivo.TabIndex = 6;
@@ -130,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 632);
+            this.ClientSize = new System.Drawing.Size(600, 403);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmFormCategoria";
             this.Text = "FrmFormulario";

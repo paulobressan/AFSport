@@ -39,5 +39,10 @@ namespace AFSport.Service.Model
         {
             this.ValorVenda = valor > 0 ? valor : 0;
         }
+
+        public override string ToString()
+        {
+            return $"Código: {this.IdProduto} - Nome: {this.Nome}";
+        }
     }
 }

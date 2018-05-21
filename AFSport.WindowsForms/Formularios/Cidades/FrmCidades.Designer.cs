@@ -47,11 +47,13 @@
             // btnAlterar
             // 
             this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             // 
             // btnDeletar
             // 
             this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatAppearance.BorderSize = 0;
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             // 
             // pnlBody
@@ -86,6 +88,7 @@
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
+            this.GridPesq.RowHeadersVisible = false;
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(770, 430);
             this.GridPesq.TabIndex = 0;
@@ -136,6 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmCidades";
             this.Text = "FrmCidades";
             this.pnlNavBar.ResumeLayout(false);

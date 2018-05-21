@@ -21,33 +21,34 @@ namespace AFSport.WindowsForms.Formularios.Estados
             InitializeComponent();
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
         {
             GridPesq.AutoGenerateColumns = false;
+            await CarregarGrid();
             base.FrmCadastroBase_Load(sender, e);
         }
 
-        protected override void BtnNovo_Click(object sender, EventArgs e)
+        protected override async void BtnNovo_Click(object sender, EventArgs e)
         {
-            using(FrmFormEstado frm = new FrmFormEstado(new Estado()))
+            using (FrmFormEstado frm = new FrmFormEstado(new Estado()))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
                 if (frm.DialogResult == DialogResult.OK)
-                    CarregarGrid();
+                    await CarregarGrid();
             }
             base.BtnNovo_Click(sender, e);
         }
 
-        protected override void BtnAlterar_Click(object sender, EventArgs e)
+        protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
-            if(estado != null)
+            if (estado != null)
                 using (FrmFormEstado frm = new FrmFormEstado(estado))
                 {
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
                     if (frm.DialogResult == DialogResult.OK)
-                        CarregarGrid();
+                        await CarregarGrid();
                 }
             else
                 MessageBox.Show("Seleciona um estado para altera-lo.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -55,24 +56,61 @@ namespace AFSport.WindowsForms.Formularios.Estados
             base.BtnAlterar_Click(sender, e);
         }
 
-        protected override void BtnDeletar_Click(object sender, EventArgs e)
+        protected override async void BtnDeletar_Click(object sender, EventArgs e)
         {
+            if (estado != null && MessageBox.Show($"Confirma a remoção do estado {estado.Nome}?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                await Remover();
+            }
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override async void CarregarGrid()
+        private async Task CarregarGrid()
         {
             GridPesq.DataSource = await SelecionarTodosEstados();
         }
 
-        protected override void Remover()
+        private async Task Remover()
         {
-            base.Remover();
+            if (await ExisteDependencia())
+            {
+                if (MessageBox.Show($"O estado {estado.Nome} não pode ser excluido, por que existe dependencias. Deseja inativar?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    estado.IsAtivo = false;
+                    using (EstadoRepository repository = new EstadoRepository())
+                    {
+                        var estadoInativado = await repository.Salvar(estado);
+                        MessageBox.Show($"O estado {estadoInativado.Nome} foi inativado com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await CarregarGrid();
+                    }
+                }
+            }
+            else
+            {
+                using (EstadoRepository repository = new EstadoRepository())
+                {
+                    repository.Remover(estado);
+                    MessageBox.Show($"O estado {estado.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CarregarGrid();
+                }
+            }
+        }
+
+        private async Task<bool> ExisteDependencia()
+        {
+            using (CidadeRepository repository = new CidadeRepository())
+            {
+                var cidades = await repository.SelecionarTodosPorEstado(estado.IdEstado);
+                if (cidades.Count > 0)
+                    return true;
+                else
+                    return false;
+            }
         }
 
         private async Task<List<Estado>> SelecionarTodosEstados()
         {
-            using(EstadoRepository repository = new EstadoRepository())
+            using (EstadoRepository repository = new EstadoRepository())
             {
                 return await repository.SelecionarTodos(true);
             }

@@ -70,6 +70,33 @@ namespace AFSport.Service.Repository
             return result.ToList();
         }
 
+        public async Task<List<Produto>> SelecionarProdutosComEstoque()
+        {
+            var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria
+                inner join estoque e on p.idProduto = e.idProduto
+                where c.isAtivo = true;", (produto, categoria) =>
+                {
+                    produto.Categoria = categoria;
+                    return produto;
+                }, null, splitOn: "idCategoria");              
+            return result.ToList();
+        }
+
+
+        public async Task<List<Produto>> SelecionarProdutosSemEstoque()
+        {
+            var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria
+                left join estoque e on p.idProduto = e.idProduto
+                where c.isAtivo = true and e.idEstoque is null;", (produto, categoria) =>
+            {
+                produto.Categoria = categoria;
+                return produto;
+            }, null, splitOn: "idCategoria");
+            return result.ToList();
+        }
+
         public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
         {
             var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
@@ -84,6 +111,12 @@ namespace AFSport.Service.Repository
         public async void Remover(Produto obj)
         {
             await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto");
+        }
+
+        public async Task<int> TotalRegistros()
+        {
+            var result = await _context.QueryAsync<int>(@"select count(*) from produto isAtivo = true;", null);
+            return result.Single();
         }
     }
 }

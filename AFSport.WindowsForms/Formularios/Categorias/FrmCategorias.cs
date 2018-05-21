@@ -22,25 +22,25 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             InitializeComponent();
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
         {
-            CarregarGrid();
+            await CarregarGrid();
             base.FrmCadastroBase_Load(sender, e);
         }
 
-        protected override void BtnNovo_Click(object sender, EventArgs e)
+        protected override async void BtnNovo_Click(object sender, EventArgs e)
         {
             using (FrmFormCategoria frm = new FrmFormCategoria(new Categoria()))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
                 if (frm.DialogResult == DialogResult.OK)
-                    CarregarGrid();
+                    await CarregarGrid();
             }
             base.BtnNovo_Click(sender, e);
         }
 
-        protected override void BtnAlterar_Click(object sender, EventArgs e)
+        protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
             if (categoria != null)
                 using (FrmFormCategoria frm = new FrmFormCategoria(categoria))
@@ -48,7 +48,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
                     if (frm.DialogResult == DialogResult.OK)
-                        CarregarGrid();
+                        await CarregarGrid();
                 }
             else
                 MessageBox.Show("Seleciona uma categoria para altera-la.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -64,7 +64,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override async void CarregarGrid()
+        private async Task CarregarGrid()
         {
             GridPesq.DataSource = await ListarTodasCategorias();
         }
@@ -96,7 +96,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             }
         }
 
-        protected override async void Remover()
+        private async void Remover()
         {
             if (await ExisteDependencia())
             {
@@ -107,7 +107,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                     {
                         var categoriaInativada = await repository.Salvar(categoria);
                         MessageBox.Show($"Categoria {categoriaInativada.Nome} foi inativada com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CarregarGrid();
+                        await CarregarGrid();
                     }
                 }
             }
@@ -116,8 +116,8 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                 using (CategoriaRepository repository = new CategoriaRepository())
                 {
                     repository.Remover(categoria);
-                    MessageBox.Show($"Categoria {categoria.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CarregarGrid();
+                    MessageBox.Show($"A Categoria {categoria.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CarregarGrid();
                 }
             }
         }

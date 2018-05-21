@@ -10,20 +10,22 @@ namespace AFSport.Service.Model
     {
         public Estoque()
         {
-            this.IsAtivo = true;
+
         }
 
-        public Estoque(int quantidade, Produto produto)
+        public Estoque(int quantidade, int idProduto, int idUsuario)
         {
             this.Quantidade = quantidade;
-            this.Produto = produto;
-            this.IsAtivo = true;
+            this.IdProduto = idProduto;
+            this.IdUsuario = idUsuario;
         }
 
-        public int Id { get; set; }
+        public int IdEstoque { get; set; }
         public int Quantidade { get; set; }
+        public int IdProduto { get; set; }
         public Produto Produto { get; set; }
-        public bool IsAtivo { get; set; }
+        public int IdUsuario { get; set; }
+        public Usuario Usuario { get; set; }
 
         public void Incrementa(int quantidade)
         {

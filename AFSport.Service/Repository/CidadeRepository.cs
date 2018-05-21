@@ -55,7 +55,7 @@ namespace AFSport.Service.Repository
             return result.SingleOrDefault();
         }
 
-        public async Task<List<Cidade>> SelecionarTodosPorEstado(int id)
+        public async Task<List<Cidade>> SelecionarTodosPorEstado(int idEstado)
         {
             var result = await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado 
@@ -63,7 +63,7 @@ namespace AFSport.Service.Repository
                 {
                     cidade.Estado = estado;
                     return cidade;
-                }, new { idEstado = id }, splitOn: "idEstado");
+                }, new { idEstado }, splitOn: "idEstado");
             return result.ToList();
         }
 
@@ -83,6 +83,12 @@ namespace AFSport.Service.Repository
                     return cidade;
                 },null, splitOn: "idEstado");
             return result.ToList();
+        }
+
+        public async Task<int> TotalRegistros()
+        {
+            var result = await _context.QueryAsync<int>(@"select count(*) from cidade where isAtivo = true;", null);
+            return result.Single();
         }
     }
 }

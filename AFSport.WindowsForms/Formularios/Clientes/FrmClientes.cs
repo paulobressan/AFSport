@@ -21,37 +21,45 @@ namespace AFSport.WindowsForms.Formularios.Clientes
             InitializeComponent();
         }
 
-        protected override void FrmCadastroBase_Load(object sender, EventArgs e)
+        protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
         {
             GridPesq.AutoGenerateColumns = false;
+            await CarregarGrid();
             base.FrmCadastroBase_Load(sender, e);
         }
 
-        protected override void BtnNovo_Click(object sender, EventArgs e)
+        protected override async void BtnNovo_Click(object sender, EventArgs e)
         {
-            using (FrmFormClientes frm = new FrmFormClientes(new Cliente()))
+            using (CidadeRepository repository = new CidadeRepository())
             {
-                using (FrmModal frmModal = new FrmModal(frm))
-                    frmModal.ShowDialog();
-                if (frm.DialogResult == DialogResult.OK)
-                    CarregarGrid();
+                if (await repository.TotalRegistros() > 0)
+                    using (FrmFormClientes frm = new FrmFormClientes(new Cliente()))
+                    {
+                        using (FrmModal frmModal = new FrmModal(frm))
+                            frmModal.ShowDialog();
+                        if (frm.DialogResult == DialogResult.OK)
+                            await CarregarGrid();
+                    }
+                else
+                    MessageBox.Show("Por favor, antes de cadastrar um cliente, cadastre uma cidade para seus clientes.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             base.BtnNovo_Click(sender, e);
         }
 
-        protected override void BtnAlterar_Click(object sender, EventArgs e)
+        protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
-            if(cliente != null)
+            if (cliente != null)
                 using (FrmFormClientes frm = new FrmFormClientes(cliente))
                 {
                     using (FrmModal frmModal = new FrmModal(frm))
                         frmModal.ShowDialog();
                     if (frm.DialogResult == DialogResult.OK)
-                        CarregarGrid();
+                        await CarregarGrid();
                 }
             else
                 MessageBox.Show("Seleciona um cliente para altera-lo.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             base.BtnAlterar_Click(sender, e);
         }
 
@@ -60,14 +68,14 @@ namespace AFSport.WindowsForms.Formularios.Clientes
             base.BtnDeletar_Click(sender, e);
         }
 
-        protected override async void CarregarGrid()
+        private async Task CarregarGrid()
         {
             GridPesq.DataSource = await SelecionarTodosClientes();
         }
 
-        protected override void Remover()
+        private void Remover()
         {
-            base.Remover();
+
         }
 
         private async Task<List<Cliente>> SelecionarTodosClientes()

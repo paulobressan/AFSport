@@ -27,25 +27,24 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             MontarFormulario();
         }
 
-        protected override void BtnSalvar_Click(object sender, EventArgs e)
+        protected override async void BtnSalvar_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(TxtNome.Text))
-                Salvar();
+                await Salvar();
             else
                 MessageBox.Show("Campo nome obrigatório","Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             base.BtnSalvar_Click(sender, e);
         }
-        protected override void MontarFormulario()
+        private  void MontarFormulario()
         {
-            base.MontarFormulario();
             LblId.Text = _categoria.IdCategoria.ToString();
             TxtDescricao.Text = _categoria.Descricao;
             TxtNome.Text = _categoria.Nome;
             chkAtivo.Checked = _categoria.IsAtivo;
         }
 
-        protected override async void Salvar()
+        private async Task Salvar()
         {
             using (CategoriaRepository repository = new CategoriaRepository())
             {

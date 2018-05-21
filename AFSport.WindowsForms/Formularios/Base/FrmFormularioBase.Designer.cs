@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlbar = new System.Windows.Forms.Panel();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.pblMain = new System.Windows.Forms.Panel();
             this.pnlId = new System.Windows.Forms.Panel();
             this.LblId = new System.Windows.Forms.Label();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlBtns.SuspendLayout();
             this.pblHead.SuspendLayout();
             this.pblMain.SuspendLayout();
@@ -53,7 +55,7 @@
             this.pnlbar.Location = new System.Drawing.Point(0, 0);
             this.pnlbar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlbar.Name = "pnlbar";
-            this.pnlbar.Size = new System.Drawing.Size(779, 10);
+            this.pnlbar.Size = new System.Drawing.Size(600, 10);
             this.pnlbar.TabIndex = 0;
             // 
             // BtnCancelar
@@ -66,11 +68,12 @@
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.BtnCancelar.Location = new System.Drawing.Point(660, 6);
+            this.BtnCancelar.Location = new System.Drawing.Point(481, 6);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(112, 75);
             this.BtnCancelar.TabIndex = 2;
             this.BtnCancelar.Text = "";
+            this.ToolTip.SetToolTip(this.BtnCancelar, "Cancelar");
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
@@ -84,11 +87,12 @@
             this.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalvar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.BtnSalvar.Location = new System.Drawing.Point(548, 6);
+            this.BtnSalvar.Location = new System.Drawing.Point(369, 6);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(112, 75);
             this.BtnSalvar.TabIndex = 1;
             this.BtnSalvar.Text = "";
+            this.ToolTip.SetToolTip(this.BtnSalvar, "Salvar");
             this.BtnSalvar.UseVisualStyleBackColor = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
@@ -102,7 +106,7 @@
             this.pnlBtns.Location = new System.Drawing.Point(0, 543);
             this.pnlBtns.Name = "pnlBtns";
             this.pnlBtns.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.pnlBtns.Size = new System.Drawing.Size(779, 89);
+            this.pnlBtns.Size = new System.Drawing.Size(600, 89);
             this.pnlBtns.TabIndex = 4;
             // 
             // pblHead
@@ -115,7 +119,7 @@
             this.pblHead.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pblHead.Location = new System.Drawing.Point(0, 10);
             this.pblHead.Name = "pblHead";
-            this.pblHead.Size = new System.Drawing.Size(779, 50);
+            this.pblHead.Size = new System.Drawing.Size(600, 50);
             this.pblHead.TabIndex = 5;
             // 
             // lblSair
@@ -125,11 +129,12 @@
             this.lblSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSair.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair.ForeColor = System.Drawing.Color.Red;
-            this.lblSair.Location = new System.Drawing.Point(715, 11);
+            this.lblSair.Location = new System.Drawing.Point(547, 9);
             this.lblSair.Name = "lblSair";
             this.lblSair.Size = new System.Drawing.Size(40, 28);
             this.lblSair.TabIndex = 2;
             this.lblSair.Text = "";
+            this.ToolTip.SetToolTip(this.lblSair, "Sair");
             this.lblSair.Click += new System.EventHandler(this.LblSair_Click);
             // 
             // lblTitulo
@@ -137,7 +142,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitulo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.Gray;
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTitulo.Location = new System.Drawing.Point(54, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(92, 32);
@@ -149,7 +154,7 @@
             this.lblIcone.AutoSize = true;
             this.lblIcone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIcone.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIcone.ForeColor = System.Drawing.Color.Gray;
+            this.lblIcone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblIcone.Location = new System.Drawing.Point(11, 11);
             this.lblIcone.Name = "lblIcone";
             this.lblIcone.Size = new System.Drawing.Size(37, 28);
@@ -163,7 +168,7 @@
             this.pnlbar2.Location = new System.Drawing.Point(0, 60);
             this.pnlbar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlbar2.Name = "pnlbar2";
-            this.pnlbar2.Size = new System.Drawing.Size(779, 10);
+            this.pnlbar2.Size = new System.Drawing.Size(600, 10);
             this.pnlbar2.TabIndex = 6;
             // 
             // pblMain
@@ -175,7 +180,7 @@
             this.pblMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pblMain.Name = "pblMain";
             this.pblMain.Padding = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.pblMain.Size = new System.Drawing.Size(779, 473);
+            this.pblMain.Size = new System.Drawing.Size(600, 473);
             this.pblMain.TabIndex = 7;
             // 
             // pnlId
@@ -186,17 +191,17 @@
             this.pnlId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlId.Name = "pnlId";
             this.pnlId.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlId.Size = new System.Drawing.Size(763, 78);
+            this.pnlId.Size = new System.Drawing.Size(584, 78);
             this.pnlId.TabIndex = 0;
             // 
             // LblId
             // 
             this.LblId.AutoSize = true;
-            this.LblId.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LblId.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblId.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblId.ForeColor = System.Drawing.Color.Red;
-            this.LblId.Location = new System.Drawing.Point(689, 10);
+            this.LblId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LblId.Location = new System.Drawing.Point(10, 10);
             this.LblId.Name = "LblId";
             this.LblId.Size = new System.Drawing.Size(64, 57);
             this.LblId.TabIndex = 0;
@@ -207,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(779, 632);
+            this.ClientSize = new System.Drawing.Size(600, 632);
             this.Controls.Add(this.pblMain);
             this.Controls.Add(this.pnlbar2);
             this.Controls.Add(this.pblHead);
@@ -244,5 +249,6 @@
         protected System.Windows.Forms.Panel pblMain;
         protected System.Windows.Forms.Panel pnlId;
         protected System.Windows.Forms.Label LblId;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

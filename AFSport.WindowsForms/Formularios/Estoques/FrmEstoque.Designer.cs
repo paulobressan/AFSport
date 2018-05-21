@@ -1,6 +1,6 @@
-﻿namespace AFSport.WindowsForms.Formularios.Estados
+﻿namespace AFSport.WindowsForms.Formularios.Estoques
 {
-    partial class FrmEstados
+    partial class FrmEstoque
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.GridPesq = new System.Windows.Forms.DataGridView();
-            this.IdEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -61,13 +61,13 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Size = new System.Drawing.Size(52, 36);
-            this.lblTitulo.Text = "";
+            this.lblTitulo.Size = new System.Drawing.Size(61, 36);
+            this.lblTitulo.Text = "";
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(121, 32);
-            this.label1.Text = "Estados";
+            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.Text = "Estoques";
             // 
             // GridPesq
             // 
@@ -78,10 +78,10 @@
             this.GridPesq.BackgroundColor = System.Drawing.Color.White;
             this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdEstado,
-            this.nome,
-            this.Sigla,
-            this.IsAtivo});
+            this.idEstoque,
+            this.produto,
+            this.usuario,
+            this.quantidade});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(6, 6);
             this.GridPesq.MultiSelect = false;
@@ -93,47 +93,46 @@
             this.GridPesq.TabIndex = 0;
             this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
-            // IdEstado
+            // idEstoque
             // 
-            this.IdEstado.DataPropertyName = "IdEstado";
-            this.IdEstado.HeaderText = "Código";
-            this.IdEstado.Name = "IdEstado";
-            this.IdEstado.ReadOnly = true;
-            this.IdEstado.Width = 70;
+            this.idEstoque.DataPropertyName = "idEstoque";
+            this.idEstoque.HeaderText = "Código Estoque";
+            this.idEstoque.Name = "idEstoque";
+            this.idEstoque.ReadOnly = true;
+            this.idEstoque.Width = 110;
             // 
-            // nome
+            // produto
             // 
-            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nome.DataPropertyName = "Nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
+            this.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.produto.DataPropertyName = "Produto";
+            this.produto.HeaderText = "Produto";
+            this.produto.Name = "produto";
+            this.produto.ReadOnly = true;
             // 
-            // Sigla
+            // usuario
             // 
-            this.Sigla.DataPropertyName = "Sigla";
-            this.Sigla.HeaderText = "Sigla";
-            this.Sigla.Name = "Sigla";
-            this.Sigla.ReadOnly = true;
+            this.usuario.DataPropertyName = "Usuario";
+            this.usuario.HeaderText = "Usuário";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Width = 150;
             // 
-            // IsAtivo
+            // quantidade
             // 
-            this.IsAtivo.DataPropertyName = "IsAtivo";
-            this.IsAtivo.HeaderText = "Ativo";
-            this.IsAtivo.Name = "IsAtivo";
-            this.IsAtivo.ReadOnly = true;
-            this.IsAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IsAtivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IsAtivo.Width = 50;
+            this.quantidade.DataPropertyName = "quantidade";
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
+            this.quantidade.Width = 70;
             // 
-            // FrmEstados
+            // FrmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "FrmEstados";
-            this.Text = "FrmEstados";
+            this.Name = "FrmEstoque";
+            this.Text = "FrmEstoque";
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
@@ -145,9 +144,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sigla;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEstoque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
     }
 }

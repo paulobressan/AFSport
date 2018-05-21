@@ -60,7 +60,11 @@
             // 
             // pnlBtns
             // 
-            this.pnlBtns.Location = new System.Drawing.Point(0, 377);
+            this.pnlBtns.Location = new System.Drawing.Point(0, 441);
+            // 
+            // lblSair
+            // 
+            this.lblSair.Location = new System.Drawing.Point(547, 9);
             // 
             // lblTitulo
             // 
@@ -88,7 +92,7 @@
             this.pblMain.Controls.Add(this.lblEmail);
             this.pblMain.Controls.Add(this.lblLogradouro);
             this.pblMain.Controls.Add(this.lblNome);
-            this.pblMain.Size = new System.Drawing.Size(779, 307);
+            this.pblMain.Size = new System.Drawing.Size(600, 371);
             this.pblMain.Controls.SetChildIndex(this.pnlId, 0);
             this.pblMain.Controls.SetChildIndex(this.lblNome, 0);
             this.pblMain.Controls.SetChildIndex(this.lblLogradouro, 0);
@@ -108,7 +112,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(43, 96);
+            this.lblNome.Location = new System.Drawing.Point(10, 91);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 20);
             this.lblNome.TabIndex = 1;
@@ -117,7 +121,7 @@
             // lblLogradouro
             // 
             this.lblLogradouro.AutoSize = true;
-            this.lblLogradouro.Location = new System.Drawing.Point(10, 160);
+            this.lblLogradouro.Location = new System.Drawing.Point(10, 195);
             this.lblLogradouro.Name = "lblLogradouro";
             this.lblLogradouro.Size = new System.Drawing.Size(78, 20);
             this.lblLogradouro.TabIndex = 2;
@@ -126,7 +130,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(46, 128);
+            this.lblEmail.Location = new System.Drawing.Point(10, 143);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 20);
             this.lblEmail.TabIndex = 3;
@@ -135,7 +139,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(32, 192);
+            this.lblNumero.Location = new System.Drawing.Point(10, 247);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(56, 20);
             this.lblNumero.TabIndex = 4;
@@ -144,7 +148,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(44, 224);
+            this.lblBairro.Location = new System.Drawing.Point(84, 247);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(44, 20);
             this.lblBairro.TabIndex = 5;
@@ -153,31 +157,31 @@
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(94, 94);
+            this.txtNome.Location = new System.Drawing.Point(14, 114);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(331, 26);
+            this.txtNome.Size = new System.Drawing.Size(579, 26);
             this.txtNome.TabIndex = 6;
             // 
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(94, 126);
+            this.txtEmail.Location = new System.Drawing.Point(14, 166);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(675, 26);
+            this.txtEmail.Size = new System.Drawing.Size(579, 26);
             this.txtEmail.TabIndex = 7;
             // 
             // txtLogradouro
             // 
             this.txtLogradouro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLogradouro.Location = new System.Drawing.Point(94, 158);
+            this.txtLogradouro.Location = new System.Drawing.Point(14, 218);
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(675, 26);
+            this.txtLogradouro.Size = new System.Drawing.Size(579, 26);
             this.txtLogradouro.TabIndex = 8;
             // 
             // txtNumero
             // 
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumero.Location = new System.Drawing.Point(94, 190);
+            this.txtNumero.Location = new System.Drawing.Point(14, 270);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(46, 26);
             this.txtNumero.TabIndex = 9;
@@ -185,15 +189,15 @@
             // txtBairro
             // 
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairro.Location = new System.Drawing.Point(94, 222);
+            this.txtBairro.Location = new System.Drawing.Point(88, 270);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(250, 26);
+            this.txtBairro.Size = new System.Drawing.Size(257, 26);
             this.txtBairro.TabIndex = 10;
             // 
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(155, 257);
+            this.lblCidade.Location = new System.Drawing.Point(84, 299);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(52, 20);
             this.lblCidade.TabIndex = 11;
@@ -204,9 +208,9 @@
             this.cmbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Location = new System.Drawing.Point(213, 254);
+            this.cmbCidade.Location = new System.Drawing.Point(88, 322);
             this.cmbCidade.Name = "cmbCidade";
-            this.cmbCidade.Size = new System.Drawing.Size(131, 28);
+            this.cmbCidade.Size = new System.Drawing.Size(257, 28);
             this.cmbCidade.TabIndex = 12;
             // 
             // CmbEstados
@@ -214,16 +218,16 @@
             this.CmbEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmbEstados.FormattingEnabled = true;
-            this.CmbEstados.Location = new System.Drawing.Point(94, 254);
+            this.CmbEstados.Location = new System.Drawing.Point(14, 322);
             this.CmbEstados.Name = "CmbEstados";
-            this.CmbEstados.Size = new System.Drawing.Size(55, 28);
+            this.CmbEstados.Size = new System.Drawing.Size(46, 28);
             this.CmbEstados.TabIndex = 14;
             this.CmbEstados.SelectionChangeCommitted += new System.EventHandler(this.CmbEstados_SelectionChangeCommitted);
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(36, 257);
+            this.lblEstado.Location = new System.Drawing.Point(12, 299);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(51, 20);
             this.lblEstado.TabIndex = 13;
@@ -232,7 +236,7 @@
             // FrmFormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.ClientSize = new System.Drawing.Size(779, 466);
+            this.ClientSize = new System.Drawing.Size(600, 530);
             this.Name = "FrmFormClientes";
             this.pnlBtns.ResumeLayout(false);
             this.pblHead.ResumeLayout(false);

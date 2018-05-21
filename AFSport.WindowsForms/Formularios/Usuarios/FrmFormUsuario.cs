@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFSport.WindowsForms.Formularios.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AFSport.WindowsForms.Formularios.Estoque
+namespace AFSport.WindowsForms.Formularios.Usuarios
 {
-    public partial class FrmFormEstoque : Form
+    public partial class FrmFormUsuario : FrmFormularioBase
     {
-        public FrmFormEstoque()
+        public FrmFormUsuario()
         {
             InitializeComponent();
         }

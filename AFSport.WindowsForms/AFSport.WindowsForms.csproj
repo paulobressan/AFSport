@@ -116,17 +116,23 @@
     <Compile Include="Formularios\Estados\FrmFormEstado.Designer.cs">
       <DependentUpon>FrmFormEstado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Estoque\FrmEstoque.cs">
+    <Compile Include="Formularios\Estoques\FrmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Estoque\FrmEstoque.Designer.cs">
+    <Compile Include="Formularios\Estoques\FrmEstoque.Designer.cs">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Estoque\FrmFormEstoque.cs">
+    <Compile Include="Formularios\Estoques\FrmFormEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Estoque\FrmFormEstoque.Designer.cs">
+    <Compile Include="Formularios\Estoques\FrmFormEstoque.Designer.cs">
       <DependentUpon>FrmFormEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Menu\FrmMenu.cs">
       <SubType>Form</SubType>
@@ -164,16 +170,16 @@
     <Compile Include="Formularios\Produtos\FrmProdutos.Designer.cs">
       <DependentUpon>FrmProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario\FrmFormUsuario.cs">
+    <Compile Include="Formularios\Usuarios\FrmFormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario\FrmFormUsuario.Designer.cs">
+    <Compile Include="Formularios\Usuarios\FrmFormUsuario.Designer.cs">
       <DependentUpon>FrmFormUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario\FrmUsuarios.cs">
+    <Compile Include="Formularios\Usuarios\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario\FrmUsuarios.Designer.cs">
+    <Compile Include="Formularios\Usuarios\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -211,11 +217,14 @@
     <EmbeddedResource Include="Formularios\Estados\FrmFormEstado.resx">
       <DependentUpon>FrmFormEstado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Estoque\FrmEstoque.resx">
+    <EmbeddedResource Include="Formularios\Estoques\FrmEstoque.resx">
       <DependentUpon>FrmEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Estoque\FrmFormEstoque.resx">
+    <EmbeddedResource Include="Formularios\Estoques\FrmFormEstoque.resx">
       <DependentUpon>FrmFormEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -235,10 +244,10 @@
     <EmbeddedResource Include="Formularios\Produtos\FrmProdutos.resx">
       <DependentUpon>FrmProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario\FrmFormUsuario.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\FrmFormUsuario.resx">
       <DependentUpon>FrmFormUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario\FrmUsuarios.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

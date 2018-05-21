@@ -1,40 +1,6 @@
 create database afsportdb;
 use afsportdb;
 
-create table categoria(
-	idCategoria int unsigned auto_increment primary key,
-	nome varchar(50) not null,
-    descricao varchar(255),
-    isAtivo bool not null
-);
-
-create table produto(
-	idProduto int unsigned auto_increment primary key,
-    idCategoria int unsigned not null,
-    nome varchar(100) not null,
-    descricao varchar(255),
-    valorCompra decimal(12,2) not null,
-    valorVenda decimal(12,2) not null,
-    isAtivo bool,
-    foreign key(idCategoria) references categoria(idCategoria)
-);
-
-create table preco(
-	idPreco int unsigned auto_increment primary key,
-    idProduto int unsigned not null,
-    dataInicio date not null,
-    dataFim date not null,
-    valor decimal(12,2) not null,
-    foreign key(idProduto) references produto(idProduto)
-);
-
-create table estoque(
-	idEstoque int unsigned auto_increment primary key,
-    idProduto int unsigned not null,
-    quantidade int not null,
-    foreign key(idProduto) references produto(idProduto)
-);
-
 create table estado(
 	idEstado int unsigned auto_increment primary key,
     nome varchar(50) not null,
@@ -69,7 +35,43 @@ create table usuario(
     senha varchar(30) not null,
     isAtivo bool not null
 );
-    
+
+create table categoria(
+	idCategoria int unsigned auto_increment primary key,
+	nome varchar(50) not null,
+    descricao varchar(255),
+    isAtivo bool not null
+);
+
+create table produto(
+	idProduto int unsigned auto_increment primary key,
+    idCategoria int unsigned not null,
+    nome varchar(100) not null,
+    descricao varchar(255),
+    valorCompra decimal(12,2) not null,
+    valorVenda decimal(12,2) not null,
+    isAtivo bool,
+    foreign key(idCategoria) references categoria(idCategoria)
+);
+
+create table preco(
+	  idPreco int unsigned auto_increment primary key,
+    idProduto int unsigned not null,
+    dataInicio date not null,
+    dataFim date not null,
+    valor decimal(12,2) not null,
+    foreign key(idProduto) references produto(idProduto)
+);
+
+create table estoque(
+	  idEstoque int unsigned auto_increment primary key,
+    idProduto int unsigned not null,
+    idUsuario int unsigned not null,
+    quantidade int not null,
+    foreign key(idProduto) references produto(idProduto),
+    foreign key (idUsuario) references usuario(idUsuario)
+);
+
 create table pedido(
 	idPedido int unsigned auto_increment primary key,
     idUsuario int unsigned not null,

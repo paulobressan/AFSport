@@ -1,6 +1,6 @@
-﻿namespace AFSport.WindowsForms.Formularios.Estados
+﻿namespace AFSport.WindowsForms.Formularios.Usuarios
 {
-    partial class FrmEstados
+    partial class FrmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.GridPesq = new System.Windows.Forms.DataGridView();
-            this.IdEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -62,12 +64,12 @@
             // lblTitulo
             // 
             this.lblTitulo.Size = new System.Drawing.Size(52, 36);
-            this.lblTitulo.Text = "";
+            this.lblTitulo.Text = "";
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(121, 32);
-            this.label1.Text = "Estados";
+            this.label1.Size = new System.Drawing.Size(133, 32);
+            this.label1.Text = "Usuários";
             // 
             // GridPesq
             // 
@@ -78,10 +80,12 @@
             this.GridPesq.BackgroundColor = System.Drawing.Color.White;
             this.GridPesq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPesq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdEstado,
+            this.idUsuario,
             this.nome,
-            this.Sigla,
-            this.IsAtivo});
+            this.email,
+            this.login,
+            this.isAtivo,
+            this.senha});
             this.GridPesq.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPesq.Location = new System.Drawing.Point(6, 6);
             this.GridPesq.MultiSelect = false;
@@ -91,49 +95,62 @@
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(770, 430);
             this.GridPesq.TabIndex = 0;
-            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
-            // IdEstado
+            // idUsuario
             // 
-            this.IdEstado.DataPropertyName = "IdEstado";
-            this.IdEstado.HeaderText = "Código";
-            this.IdEstado.Name = "IdEstado";
-            this.IdEstado.ReadOnly = true;
-            this.IdEstado.Width = 70;
+            this.idUsuario.DataPropertyName = "idUsuario";
+            this.idUsuario.HeaderText = "Código";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 70;
             // 
             // nome
             // 
             this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nome.DataPropertyName = "Nome";
+            this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
             // 
-            // Sigla
+            // email
             // 
-            this.Sigla.DataPropertyName = "Sigla";
-            this.Sigla.HeaderText = "Sigla";
-            this.Sigla.Name = "Sigla";
-            this.Sigla.ReadOnly = true;
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
-            // IsAtivo
+            // login
             // 
-            this.IsAtivo.DataPropertyName = "IsAtivo";
-            this.IsAtivo.HeaderText = "Ativo";
-            this.IsAtivo.Name = "IsAtivo";
-            this.IsAtivo.ReadOnly = true;
-            this.IsAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IsAtivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IsAtivo.Width = 50;
+            this.login.DataPropertyName = "login";
+            this.login.HeaderText = "Login";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
             // 
-            // FrmEstados
+            // isAtivo
+            // 
+            this.isAtivo.DataPropertyName = "isAtivo";
+            this.isAtivo.HeaderText = "Ativo";
+            this.isAtivo.Name = "isAtivo";
+            this.isAtivo.ReadOnly = true;
+            this.isAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.isAtivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // senha
+            // 
+            this.senha.DataPropertyName = "senha";
+            this.senha.HeaderText = "Senha";
+            this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
+            // 
+            // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "FrmEstados";
-            this.Text = "FrmEstados";
+            this.Name = "FrmUsuarios";
+            this.Text = "FrmUsuarios";
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.pnlBody.ResumeLayout(false);
@@ -145,9 +162,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sigla;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn login;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senha;
     }
 }

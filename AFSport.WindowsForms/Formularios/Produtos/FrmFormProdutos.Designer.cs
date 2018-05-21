@@ -55,6 +55,24 @@
             this.BtnSalvar.FlatAppearance.BorderSize = 0;
             this.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             // 
+            // pnlBtns
+            // 
+            this.pnlBtns.Location = new System.Drawing.Point(0, 434);
+            // 
+            // lblSair
+            // 
+            this.lblSair.Location = new System.Drawing.Point(547, 11);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Size = new System.Drawing.Size(303, 32);
+            this.lblTitulo.Text = "Cadastro de Produtos";
+            // 
+            // lblIcone
+            // 
+            this.lblIcone.Size = new System.Drawing.Size(40, 28);
+            this.lblIcone.Text = "";
+            // 
             // pblMain
             // 
             this.pblMain.Controls.Add(this.chkAtivo);
@@ -68,6 +86,7 @@
             this.pblMain.Controls.Add(this.lblValorCompra);
             this.pblMain.Controls.Add(this.lblDescricao);
             this.pblMain.Controls.Add(this.lblNome);
+            this.pblMain.Size = new System.Drawing.Size(600, 364);
             this.pblMain.Controls.SetChildIndex(this.pnlId, 0);
             this.pblMain.Controls.SetChildIndex(this.lblNome, 0);
             this.pblMain.Controls.SetChildIndex(this.lblDescricao, 0);
@@ -84,7 +103,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(59, 115);
+            this.lblNome.Location = new System.Drawing.Point(11, 91);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 20);
@@ -94,7 +113,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(36, 151);
+            this.lblDescricao.Location = new System.Drawing.Point(12, 144);
             this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(69, 20);
@@ -104,7 +123,7 @@
             // lblValorVenda
             // 
             this.lblValorVenda.AutoSize = true;
-            this.lblValorVenda.Location = new System.Drawing.Point(22, 276);
+            this.lblValorVenda.Location = new System.Drawing.Point(153, 214);
             this.lblValorVenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValorVenda.Name = "lblValorVenda";
             this.lblValorVenda.Size = new System.Drawing.Size(83, 20);
@@ -114,7 +133,7 @@
             // lblValorCompra
             // 
             this.lblValorCompra.AutoSize = true;
-            this.lblValorCompra.Location = new System.Drawing.Point(14, 240);
+            this.lblValorCompra.Location = new System.Drawing.Point(12, 214);
             this.lblValorCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValorCompra.Name = "lblValorCompra";
             this.lblValorCompra.Size = new System.Drawing.Size(91, 20);
@@ -124,7 +143,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(39, 313);
+            this.lblCategoria.Location = new System.Drawing.Point(12, 270);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(66, 20);
@@ -134,26 +153,26 @@
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(112, 113);
+            this.txtNome.Location = new System.Drawing.Point(16, 113);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(660, 26);
+            this.txtNome.Size = new System.Drawing.Size(575, 26);
             this.txtNome.TabIndex = 7;
             // 
             // txtDescricao
             // 
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricao.Location = new System.Drawing.Point(112, 149);
+            this.txtDescricao.Location = new System.Drawing.Point(16, 169);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(661, 79);
+            this.txtDescricao.Size = new System.Drawing.Size(575, 40);
             this.txtDescricao.TabIndex = 8;
             // 
             // txtValorCompra
             // 
             this.txtValorCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorCompra.Location = new System.Drawing.Point(112, 238);
+            this.txtValorCompra.Location = new System.Drawing.Point(16, 239);
             this.txtValorCompra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtValorCompra.Name = "txtValorCompra";
             this.txtValorCompra.Size = new System.Drawing.Size(113, 26);
@@ -163,7 +182,7 @@
             // txtValorVenda
             // 
             this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorVenda.Location = new System.Drawing.Point(112, 274);
+            this.txtValorVenda.Location = new System.Drawing.Point(157, 239);
             this.txtValorVenda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtValorVenda.Name = "txtValorVenda";
             this.txtValorVenda.Size = new System.Drawing.Size(113, 26);
@@ -175,17 +194,17 @@
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(112, 310);
+            this.cmbCategoria.Location = new System.Drawing.Point(16, 295);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(345, 28);
+            this.cmbCategoria.Size = new System.Drawing.Size(254, 28);
             this.cmbCategoria.TabIndex = 11;
             // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkAtivo.Location = new System.Drawing.Point(112, 348);
+            this.chkAtivo.Location = new System.Drawing.Point(15, 333);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(55, 24);
@@ -197,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 632);
+            this.ClientSize = new System.Drawing.Size(600, 523);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmFormProdutos";
             this.Text = "FrmFormulario";

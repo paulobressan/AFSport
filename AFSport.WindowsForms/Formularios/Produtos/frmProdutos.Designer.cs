@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GridPesq = new System.Windows.Forms.DataGridView();
             this.idProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +38,8 @@
             this.valorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnGerarEstoque = new System.Windows.Forms.Button();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -51,12 +54,14 @@
             // btnAlterar
             // 
             this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnAlterar.Location = new System.Drawing.Point(1097, 6);
             // 
             // btnDeletar
             // 
             this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatAppearance.BorderSize = 0;
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDeletar.Location = new System.Drawing.Point(1209, 6);
             // 
@@ -66,7 +71,14 @@
             // 
             // pnlNavBar
             // 
+            this.pnlNavBar.Controls.Add(this.BtnGerarEstoque);
             this.pnlNavBar.Size = new System.Drawing.Size(1329, 89);
+            this.pnlNavBar.Controls.SetChildIndex(this.btnDeletar, 0);
+            this.pnlNavBar.Controls.SetChildIndex(this.btnAlterar, 0);
+            this.pnlNavBar.Controls.SetChildIndex(this.btnNovo, 0);
+            this.pnlNavBar.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.pnlNavBar.Controls.SetChildIndex(this.label1, 0);
+            this.pnlNavBar.Controls.SetChildIndex(this.BtnGerarEstoque, 0);
             // 
             // pnlmargin2
             // 
@@ -76,6 +88,11 @@
             // 
             this.pnlBody.Controls.Add(this.GridPesq);
             this.pnlBody.Size = new System.Drawing.Size(1329, 505);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Size = new System.Drawing.Size(51, 36);
+            this.lblTitulo.Text = "";
             // 
             // label1
             // 
@@ -105,6 +122,7 @@
             this.GridPesq.MultiSelect = false;
             this.GridPesq.Name = "GridPesq";
             this.GridPesq.ReadOnly = true;
+            this.GridPesq.RowHeadersVisible = false;
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(1315, 491);
             this.GridPesq.TabIndex = 0;
@@ -171,11 +189,31 @@
             this.idCategoria.ReadOnly = true;
             this.idCategoria.Visible = false;
             // 
+            // BtnGerarEstoque
+            // 
+            this.BtnGerarEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGerarEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGerarEstoque.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnGerarEstoque.FlatAppearance.BorderSize = 0;
+            this.BtnGerarEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.BtnGerarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGerarEstoque.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F);
+            this.BtnGerarEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnGerarEstoque.Location = new System.Drawing.Point(873, 6);
+            this.BtnGerarEstoque.Name = "BtnGerarEstoque";
+            this.BtnGerarEstoque.Size = new System.Drawing.Size(112, 75);
+            this.BtnGerarEstoque.TabIndex = 8;
+            this.BtnGerarEstoque.Text = "";
+            this.ToolTip.SetToolTip(this.BtnGerarEstoque, "Gerar Estoque");
+            this.BtnGerarEstoque.UseVisualStyleBackColor = false;
+            this.BtnGerarEstoque.Click += new System.EventHandler(this.BtnGerarEstoque_Click);
+            // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 622);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProdutos";
             this.Text = "frmProdutos";
@@ -198,5 +236,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valorVenda;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isAtivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
+        private System.Windows.Forms.Button BtnGerarEstoque;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }
