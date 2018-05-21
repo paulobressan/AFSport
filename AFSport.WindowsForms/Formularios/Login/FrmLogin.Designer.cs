@@ -39,8 +39,8 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.pnlBarBtn = new System.Windows.Forms.Panel();
-            this.BtnEntrar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnEntrar = new System.Windows.Forms.Button();
             this.pblHead.SuspendLayout();
             this.pnlBarBtn.SuspendLayout();
             this.SuspendLayout();
@@ -172,24 +172,6 @@
             this.pnlBarBtn.Size = new System.Drawing.Size(377, 59);
             this.pnlBarBtn.TabIndex = 14;
             // 
-            // BtnEntrar
-            // 
-            this.BtnEntrar.BackColor = System.Drawing.Color.White;
-            this.BtnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEntrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnEntrar.FlatAppearance.BorderSize = 0;
-            this.BtnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEntrar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.BtnEntrar.Location = new System.Drawing.Point(302, 5);
-            this.BtnEntrar.Name = "BtnEntrar";
-            this.BtnEntrar.Size = new System.Drawing.Size(70, 49);
-            this.BtnEntrar.TabIndex = 3;
-            this.BtnEntrar.Text = "";
-            this.BtnEntrar.UseVisualStyleBackColor = false;
-            this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
-            // 
             // BtnCancelar
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.White;
@@ -208,6 +190,24 @@
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // BtnEntrar
+            // 
+            this.BtnEntrar.BackColor = System.Drawing.Color.White;
+            this.BtnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEntrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnEntrar.FlatAppearance.BorderSize = 0;
+            this.BtnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEntrar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnEntrar.Location = new System.Drawing.Point(302, 5);
+            this.BtnEntrar.Name = "BtnEntrar";
+            this.BtnEntrar.Size = new System.Drawing.Size(70, 49);
+            this.BtnEntrar.TabIndex = 3;
+            this.BtnEntrar.Text = "";
+            this.BtnEntrar.UseVisualStyleBackColor = false;
+            this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -224,10 +224,12 @@
             this.Controls.Add(this.pnlbar);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmLogin_KeyPress);
             this.pblHead.ResumeLayout(false);
             this.pblHead.PerformLayout();
             this.pnlBarBtn.ResumeLayout(false);

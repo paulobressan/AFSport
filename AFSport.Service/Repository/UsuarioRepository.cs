@@ -30,7 +30,7 @@ namespace AFSport.Service.Repository
             {
                 var result = await _context.QueryAsync<Usuario>(@"update usuario set nome = @nome, email = @email, login = @login, senha = @senha where idUsuario = @idUsuario;
                     select idUsuario, nome, email, login, senha from usuario 
-                    where idUsuario = (select last_insert_id() as id);", obj);
+                    where idUsuario = @idUsuario;", obj);
                 return result.Single();
             }
         }

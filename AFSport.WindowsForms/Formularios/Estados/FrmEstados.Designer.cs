@@ -40,20 +40,20 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnNovo.FlatAppearance.BorderSize = 0;
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             // 
             // btnAlterar
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAlterar.FlatAppearance.BorderSize = 0;
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             // 
             // btnDeletar
             // 
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDeletar.FlatAppearance.BorderSize = 0;
+            this.BtnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             // 
             // pnlBody
             // 

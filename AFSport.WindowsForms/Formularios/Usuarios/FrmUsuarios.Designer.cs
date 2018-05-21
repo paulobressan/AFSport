@@ -42,20 +42,20 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnNovo.FlatAppearance.BorderSize = 0;
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             // 
             // btnAlterar
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAlterar.FlatAppearance.BorderSize = 0;
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             // 
             // btnDeletar
             // 
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDeletar.FlatAppearance.BorderSize = 0;
+            this.BtnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             // 
             // pnlBody
             // 
@@ -95,6 +95,7 @@
             this.GridPesq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPesq.Size = new System.Drawing.Size(770, 430);
             this.GridPesq.TabIndex = 0;
+            this.GridPesq.SelectionChanged += new System.EventHandler(this.GridPesq_SelectionChanged);
             // 
             // idUsuario
             // 
@@ -135,6 +136,7 @@
             this.isAtivo.ReadOnly = true;
             this.isAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.isAtivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.isAtivo.Width = 50;
             // 
             // senha
             // 
@@ -142,6 +144,7 @@
             this.senha.HeaderText = "Senha";
             this.senha.Name = "senha";
             this.senha.ReadOnly = true;
+            this.senha.Visible = false;
             // 
             // FrmUsuarios
             // 

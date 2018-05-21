@@ -16,10 +16,12 @@ namespace AFSport.WindowsForms.Formularios.Estoques
     public partial class FrmFormEstoque : FrmFormularioBase
     {
         Estoque estoque;
-        public FrmFormEstoque(Estoque estoque)
+        Usuario usuario;
+        public FrmFormEstoque(Estoque estoque, Usuario usuario)
         {
             InitializeComponent();
             this.estoque = estoque;
+            this.usuario = usuario;
         }
 
         protected override async void FrmFormularioBase_Load(object sender, EventArgs e)

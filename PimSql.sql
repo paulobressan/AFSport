@@ -111,3 +111,71 @@ create table movimentacao(
     data date not null,
     foreign key(idUsuario) references usuario(idUsuario)
 );
+
+create database questionario;
+use questionario;
+
+create table participantes(
+  idParticipante int unsigned auto_increment primary key ,
+  nome varchar(100),
+  Telefone varchar(20)
+);
+
+create table tiposRespostas(
+  idTipoResposta int unsigned auto_increment primary key,
+  idPergunta int unsigned,
+  descricao varchar(50),
+  foreign key (idPergunta) references perguntas(idPergunta)
+);
+
+create table perguntas(
+  idPergunta int unsigned auto_increment primary key ,
+  descricao varchar(500),
+  sequencia int
+);
+
+create table respostas (
+  idRespota int unsigned auto_increment primary key,
+  idParticipante int unsigned,
+  idTipoResposta int unsigned null,
+  idPergunta int unsigned,
+  observacao varchar(500),
+  foreign key (idParticipante) references participantes(idParticipante),
+  foreign key (idTipoResposta) references tiposRespostas(idTipoResposta),
+  foreign key (idPergunta) references perguntas(idPergunta)
+);
+
+insert into tiposRespostas(descricao, idPergunta) values ("Muito Intuitiva",1), ("Moderamente Intuitiva",1), ( "Pouco Intuitiva",1), ("Sim",2), ("Não",2);
+insert into perguntas(descricao, sequencia) values ("Como você qualifica a experiência de utilização do sistema?",1), ("Mudaria algo no software? Se sim, o que?",2), ("Em poucas palavras defina o sistema AFSport.", 3);
+
+insert into perguntas(descricao, sequencia) values("Teste", 4);
+insert into tiposRespostas(descricao, idPergunta) values ("teste1", 4), ("teste2", 4);
+
+
+
+
+
+
+
+
+
+
+
+
+select idPergunta, descricao, sequencia from perguntas where sequencia = @sequencia;
+
+update participantes set nome = @nome, Telefone = @Telefone where idParticipante = @idParticipante;
+insert into participantes( nome, Telefone) values (@nome, @Telefone);
+select idParticipante, nome, Telefone from participantes where idParticipante = (select last_insert_id() as id);
+
+select idTipoResposta, idPergunta, descricao from tiposRespostas where idPergunta = @idPergunta;
+
+update respostas set idParticipante = @dParticipante, idTipoResposta = @idTipoResposta, idPergunta = @idPergunta, observacao = @observacao where idRespota = @idResposta;
+insert into respostas(idParticipante, idTipoResposta, idPergunta, observacao) values (@dParticipante, @idTipoResposta, @idPergunta, @observacao);
+select idRespota, idPergunta, idTipoResposta, idParticipante, observacao from respostas where idRespota = (select last_insert_id() as id);
+
+select idParticipante, nome, Telefone from participantes ;
+select * from respostas;
+select * from tiposRespostas;
+
+select idParticipante, nome, Telefone from participantes order by idParticipante;

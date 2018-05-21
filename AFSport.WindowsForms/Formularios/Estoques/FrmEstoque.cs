@@ -16,9 +16,11 @@ namespace AFSport.WindowsForms.Formularios.Estoques
     public partial class FrmEstoque : FrmCadastroBase
     {
         Estoque estoque;
-        public FrmEstoque()
+        Usuario usuarioConectado;
+        public FrmEstoque(Usuario usuario)
         {
             InitializeComponent();
+            this.usuarioConectado = usuario;
         }
 
         protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace AFSport.WindowsForms.Formularios.Estoques
 
         protected override async void BtnNovo_Click(object sender, EventArgs e)
         {
-            using (FrmFormEstoque frm = new FrmFormEstoque(new Estoque()))
+            using (FrmFormEstoque frm = new FrmFormEstoque(new Estoque(), usuarioConectado))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
@@ -43,7 +45,7 @@ namespace AFSport.WindowsForms.Formularios.Estoques
         protected override async void BtnAlterar_Click(object sender, EventArgs e)
         {
             if(estoque != null) 
-            using (FrmFormEstoque frm = new FrmFormEstoque(estoque))
+            using (FrmFormEstoque frm = new FrmFormEstoque(estoque, usuarioConectado))
             {
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();

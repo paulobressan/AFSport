@@ -60,10 +60,6 @@
             // 
             this.pblHead.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
-            // lblSair
-            // 
-            this.lblSair.Location = new System.Drawing.Point(547, 9);
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -114,7 +110,7 @@
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtNome.Location = new System.Drawing.Point(12, 114);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(579, 26);
+            this.TxtNome.Size = new System.Drawing.Size(319, 26);
             this.TxtNome.TabIndex = 4;
             // 
             // TxtDescricao

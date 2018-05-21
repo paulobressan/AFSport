@@ -280,6 +280,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AFSport.Questionario\AFSport.Questionario.csproj">
+      <Project>{00818ac7-28a4-42f5-a101-ffb7de818f8c}</Project>
+      <Name>AFSport.Questionario</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AFSport.Service\AFSport.Service.csproj">
       <Project>{9e2a8847-0095-4abb-b48b-89f5ef92de6f}</Project>
       <Name>AFSport.Service</Name>

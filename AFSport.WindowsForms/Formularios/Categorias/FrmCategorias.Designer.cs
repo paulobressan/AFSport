@@ -38,31 +38,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNovo
+            // BtnNovo
             // 
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNovo.Location = new System.Drawing.Point(853, 8);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Size = new System.Drawing.Size(112, 71);
+            this.BtnNovo.FlatAppearance.BorderSize = 0;
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnNovo.Location = new System.Drawing.Point(853, 8);
+            this.BtnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNovo.Size = new System.Drawing.Size(112, 71);
             // 
-            // btnAlterar
+            // BtnAlterar
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAlterar.Location = new System.Drawing.Point(965, 8);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAlterar.Size = new System.Drawing.Size(112, 71);
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAlterar.FlatAppearance.BorderSize = 0;
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BtnAlterar.Location = new System.Drawing.Point(965, 8);
+            this.BtnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnAlterar.Size = new System.Drawing.Size(112, 71);
             // 
-            // btnDeletar
+            // BtnDeletar
             // 
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDeletar.Location = new System.Drawing.Point(1077, 8);
-            this.btnDeletar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDeletar.Size = new System.Drawing.Size(112, 71);
+            this.BtnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDeletar.FlatAppearance.BorderSize = 0;
+            this.BtnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnDeletar.Location = new System.Drawing.Point(1077, 8);
+            this.BtnDeletar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnDeletar.Size = new System.Drawing.Size(112, 71);
             // 
             // pnlmargin
             // 

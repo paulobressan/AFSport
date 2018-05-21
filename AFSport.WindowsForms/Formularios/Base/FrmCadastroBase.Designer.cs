@@ -33,9 +33,9 @@
             this.pnlNavBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
+            this.BtnNovo = new System.Windows.Forms.Button();
+            this.BtnAlterar = new System.Windows.Forms.Button();
+            this.BtnDeletar = new System.Windows.Forms.Button();
             this.pnlmargin2 = new System.Windows.Forms.Panel();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -58,9 +58,9 @@
             this.pnlNavBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlNavBar.Controls.Add(this.label1);
             this.pnlNavBar.Controls.Add(this.lblTitulo);
-            this.pnlNavBar.Controls.Add(this.btnNovo);
-            this.pnlNavBar.Controls.Add(this.btnAlterar);
-            this.pnlNavBar.Controls.Add(this.btnDeletar);
+            this.pnlNavBar.Controls.Add(this.BtnNovo);
+            this.pnlNavBar.Controls.Add(this.BtnAlterar);
+            this.pnlNavBar.Controls.Add(this.BtnDeletar);
             this.pnlNavBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNavBar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNavBar.Location = new System.Drawing.Point(0, 14);
@@ -94,64 +94,64 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "";
             // 
-            // btnNovo
+            // BtnNovo
             // 
-            this.btnNovo.BackColor = System.Drawing.Color.White;
-            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.ForeColor = System.Drawing.Color.Green;
-            this.btnNovo.Location = new System.Drawing.Point(440, 6);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(112, 75);
-            this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "";
-            this.ToolTip.SetToolTip(this.btnNovo, "Novo");
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
+            this.BtnNovo.BackColor = System.Drawing.Color.White;
+            this.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnNovo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnNovo.FlatAppearance.BorderSize = 0;
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNovo.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNovo.ForeColor = System.Drawing.Color.Green;
+            this.BtnNovo.Location = new System.Drawing.Point(440, 6);
+            this.BtnNovo.Name = "BtnNovo";
+            this.BtnNovo.Size = new System.Drawing.Size(112, 75);
+            this.BtnNovo.TabIndex = 1;
+            this.BtnNovo.Text = "";
+            this.ToolTip.SetToolTip(this.BtnNovo, "Novo");
+            this.BtnNovo.UseVisualStyleBackColor = false;
+            this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
-            // btnAlterar
+            // BtnAlterar
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.White;
-            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAlterar.Location = new System.Drawing.Point(552, 6);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(112, 75);
-            this.btnAlterar.TabIndex = 2;
-            this.btnAlterar.Text = "";
-            this.ToolTip.SetToolTip(this.btnAlterar, "Alterar");
-            this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
+            this.BtnAlterar.BackColor = System.Drawing.Color.White;
+            this.BtnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAlterar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAlterar.FlatAppearance.BorderSize = 0;
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BtnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAlterar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BtnAlterar.Location = new System.Drawing.Point(552, 6);
+            this.BtnAlterar.Name = "BtnAlterar";
+            this.BtnAlterar.Size = new System.Drawing.Size(112, 75);
+            this.BtnAlterar.TabIndex = 2;
+            this.BtnAlterar.Text = "";
+            this.ToolTip.SetToolTip(this.BtnAlterar, "Alterar");
+            this.BtnAlterar.UseVisualStyleBackColor = false;
+            this.BtnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
-            // btnDeletar
+            // BtnDeletar
             // 
-            this.btnDeletar.BackColor = System.Drawing.Color.White;
-            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeletar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.ForeColor = System.Drawing.Color.Red;
-            this.btnDeletar.Location = new System.Drawing.Point(664, 6);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(112, 75);
-            this.btnDeletar.TabIndex = 3;
-            this.btnDeletar.Text = "";
-            this.ToolTip.SetToolTip(this.btnDeletar, "Apagar");
-            this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            this.BtnDeletar.BackColor = System.Drawing.Color.White;
+            this.BtnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDeletar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDeletar.FlatAppearance.BorderSize = 0;
+            this.BtnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeletar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeletar.ForeColor = System.Drawing.Color.Red;
+            this.BtnDeletar.Location = new System.Drawing.Point(664, 6);
+            this.BtnDeletar.Name = "BtnDeletar";
+            this.BtnDeletar.Size = new System.Drawing.Size(112, 75);
+            this.BtnDeletar.TabIndex = 3;
+            this.BtnDeletar.Text = "";
+            this.ToolTip.SetToolTip(this.BtnDeletar, "Apagar");
+            this.BtnDeletar.UseVisualStyleBackColor = false;
+            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
             // 
             // pnlmargin2
             // 
@@ -193,6 +193,7 @@
             this.Text = "CadastroBase";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCadastroBase_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCadastroBase_KeyDown);
             this.pnlNavBar.ResumeLayout(false);
             this.pnlNavBar.PerformLayout();
             this.ResumeLayout(false);
@@ -200,9 +201,9 @@
         }
 
         #endregion
-        protected System.Windows.Forms.Button btnNovo;
-        protected System.Windows.Forms.Button btnAlterar;
-        protected System.Windows.Forms.Button btnDeletar;
+        protected System.Windows.Forms.Button BtnNovo;
+        protected System.Windows.Forms.Button BtnAlterar;
+        protected System.Windows.Forms.Button BtnDeletar;
         protected System.Windows.Forms.Panel pnlmargin;
         protected System.Windows.Forms.Panel pnlNavBar;
         protected System.Windows.Forms.Panel pnlmargin2;

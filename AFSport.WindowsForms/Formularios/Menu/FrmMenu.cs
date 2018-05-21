@@ -1,4 +1,5 @@
-﻿using AFSport.Service.Model;
+﻿using AFSport.Questionario.Formularios;
+using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
 using AFSport.WindowsForms.Formularios.Categorias;
@@ -8,6 +9,7 @@ using AFSport.WindowsForms.Formularios.Estados;
 using AFSport.WindowsForms.Formularios.Estoques;
 using AFSport.WindowsForms.Formularios.Login;
 using AFSport.WindowsForms.Formularios.Produtos;
+using AFSport.WindowsForms.Formularios.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +34,7 @@ namespace AFSport.WindowsForms.Formularios.Menu
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-            RenderForm(new FrmPainelInicial());
+            RenderForm(new FrmPainelInicial(usuario));
             Login();
         }
 
@@ -49,6 +51,7 @@ namespace AFSport.WindowsForms.Formularios.Menu
                         Application.Exit();
                     else
                     {
+                        RenderForm(new FrmPainelInicial(usuario));
                         lblUsuario.Text = usuario.Nome;
                         MessageBox.Show("Bem Vindo ao Sistema AFSport.", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -100,7 +103,12 @@ namespace AFSport.WindowsForms.Formularios.Menu
 
         private void BtnIconInicio_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmPainelInicial());
+            RenderForm(new FrmPainelInicial(usuario));
+        }
+
+        private void BtnInicio_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPainelInicial(usuario));
         }
 
         private void BtnIconCategorias_Click(object sender, EventArgs e)
@@ -108,12 +116,27 @@ namespace AFSport.WindowsForms.Formularios.Menu
             RenderForm(new FrmCategorias());
         }
 
+        private void BtnCategorias_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmCategorias());
+        }
+
         private void BtnIconProdutos_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmProdutos());
+            RenderForm(new FrmProdutos(usuario));
+        }
+
+        private void BtnProdutos_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmProdutos(usuario));
         }
 
         private void BtnIconClientes_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmClientes());
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
         {
             RenderForm(new FrmClientes());
         }
@@ -123,22 +146,74 @@ namespace AFSport.WindowsForms.Formularios.Menu
             RenderForm(new FrmEstados());
         }
 
+        private void BtnEstados_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmEstados());
+        }
+
         private void BtnIconCidade_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmCidades());
+        }
+
+        private void BtnCidades_Click(object sender, EventArgs e)
         {
             RenderForm(new FrmCidades());
         }
 
         private void BtnIconEstoque_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmEstoque());
+            RenderForm(new FrmEstoque(usuario));
+        }
+
+        private void BtnEstoque_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmEstoque(usuario));
         }
 
         private void LblLogoft_Click(object sender, EventArgs e)
         {
+            RenderForm(new FrmPainelInicial(usuario));
             usuario = null;
-            RenderForm(new FrmPainelInicial());
             lblUsuario.Text = "Nulo";
             Login();
+        }
+
+        private void BtnIconQuestionario_Click(object sender, EventArgs e)
+        {
+            using(FrmParticipante frm = new FrmParticipante())
+            {
+                using (FrmModal frmModal = new FrmModal(frm))
+                    frmModal.ShowDialog();
+            }
+        }
+
+        private void BtnQuestionario_Click(object sender, EventArgs e)
+        {
+            using (FrmParticipante frm = new FrmParticipante())
+            {
+                using (FrmModal frmModal = new FrmModal(frm))
+                    frmModal.ShowDialog();
+            }
+        }
+
+        private void BtnIconUsuarios_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmUsuarios());
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmUsuarios());
+        }
+
+        private void LblIcoLogin_Click(object sender, EventArgs e)
+        {
+            using (FrmSorteio frm = new FrmSorteio())
+            {
+                using (FrmModal frmModal = new FrmModal(frm))
+                    frmModal.ShowDialog();
+            }
         }
     }
 }

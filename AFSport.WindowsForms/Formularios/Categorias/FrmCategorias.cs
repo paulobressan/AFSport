@@ -84,6 +84,11 @@ namespace AFSport.WindowsForms.Formularios.Categorias
                 : null;
         }
 
+        protected override void FrmCadastroBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            base.FrmCadastroBase_KeyDown(sender, e);
+        }
+
         private async Task<bool> ExisteDependencia()
         {
             using (ProdutoRepository repository = new ProdutoRepository())

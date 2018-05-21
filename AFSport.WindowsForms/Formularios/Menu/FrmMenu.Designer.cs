@@ -78,16 +78,19 @@
             this.pnlBtnSideOpen = new System.Windows.Forms.Panel();
             this.BtnOpenSideBar = new System.Windows.Forms.Button();
             this.pnlBarSuperior = new System.Windows.Forms.Panel();
+            this.LblLogoft = new System.Windows.Forms.Label();
             this.LblTituloEmpresa = new System.Windows.Forms.Label();
             this.LblSair = new System.Windows.Forms.Label();
             this.pnlBarInferior = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.LblIcoLogin = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.TmrHora = new System.Windows.Forms.Timer(this.components);
             this.PnlRenderForm = new System.Windows.Forms.Panel();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.LblLogoft = new System.Windows.Forms.Label();
-            this.lblIcoLogin = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.pnlQuestionario = new System.Windows.Forms.Panel();
+            this.BtnQuestionario = new System.Windows.Forms.Button();
+            this.BtnIconQuestionario = new System.Windows.Forms.Button();
             this.pnlSideBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,11 +110,13 @@
             this.pnlBtnSideOpen.SuspendLayout();
             this.pnlBarSuperior.SuspendLayout();
             this.pnlBarInferior.SuspendLayout();
+            this.pnlQuestionario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideBar
             // 
             this.pnlSideBar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnlSideBar.Controls.Add(this.pnlQuestionario);
             this.pnlSideBar.Controls.Add(this.panel2);
             this.pnlSideBar.Controls.Add(this.panel1);
             this.pnlSideBar.Controls.Add(this.PnlAjuda);
@@ -207,6 +212,7 @@
             this.BtnUsuarios.Text = "Usuários";
             this.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnUsuarios.UseVisualStyleBackColor = false;
+            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // BtnIconUsuarios
             // 
@@ -224,6 +230,7 @@
             this.BtnIconUsuarios.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconUsuarios, "Ajuda");
             this.BtnIconUsuarios.UseVisualStyleBackColor = true;
+            this.BtnIconUsuarios.Click += new System.EventHandler(this.BtnIconUsuarios_Click);
             // 
             // PnlAjuda
             // 
@@ -252,6 +259,7 @@
             this.BtnCidades.Text = "Cidades";
             this.BtnCidades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCidades.UseVisualStyleBackColor = false;
+            this.BtnCidades.Click += new System.EventHandler(this.BtnCidades_Click);
             // 
             // BtnIconCidade
             // 
@@ -298,6 +306,7 @@
             this.BtnEstados.Text = "Estados";
             this.BtnEstados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEstados.UseVisualStyleBackColor = false;
+            this.BtnEstados.Click += new System.EventHandler(this.BtnEstados_Click);
             // 
             // BtnIconEstado
             // 
@@ -524,6 +533,7 @@
             this.BtnEstoque.Text = "Estoque";
             this.BtnEstoque.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEstoque.UseVisualStyleBackColor = false;
+            this.BtnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
             // 
             // BtnIconEstoque
             // 
@@ -615,6 +625,7 @@
             this.BtnProdutos.Text = "Produtos";
             this.BtnProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnProdutos.UseVisualStyleBackColor = false;
+            this.BtnProdutos.Click += new System.EventHandler(this.BtnProdutos_Click);
             // 
             // BtnIconProdutos
             // 
@@ -661,6 +672,7 @@
             this.BtnCategorias.Text = "Categorias";
             this.BtnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCategorias.UseVisualStyleBackColor = false;
+            this.BtnCategorias.Click += new System.EventHandler(this.BtnCategorias_Click);
             // 
             // BtnIconCategorias
             // 
@@ -707,6 +719,7 @@
             this.BtnClientes.Text = "Clientes";
             this.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnClientes.UseVisualStyleBackColor = false;
+            this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
             // BtnIconClientes
             // 
@@ -799,6 +812,7 @@
             this.BtnInicio.Text = "Início";
             this.BtnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnInicio.UseVisualStyleBackColor = false;
+            this.BtnInicio.Click += new System.EventHandler(this.BtnInicio_Click);
             // 
             // BtnIconInicio
             // 
@@ -860,6 +874,22 @@
             this.pnlBarSuperior.Size = new System.Drawing.Size(945, 48);
             this.pnlBarSuperior.TabIndex = 1;
             // 
+            // LblLogoft
+            // 
+            this.LblLogoft.AutoSize = true;
+            this.LblLogoft.BackColor = System.Drawing.Color.White;
+            this.LblLogoft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblLogoft.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LblLogoft.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLogoft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LblLogoft.Location = new System.Drawing.Point(834, 5);
+            this.LblLogoft.Name = "LblLogoft";
+            this.LblLogoft.Size = new System.Drawing.Size(52, 36);
+            this.LblLogoft.TabIndex = 5;
+            this.LblLogoft.Text = "";
+            this.ToolTip.SetToolTip(this.LblLogoft, "Sair");
+            this.LblLogoft.Click += new System.EventHandler(this.LblLogoft_Click);
+            // 
             // LblTituloEmpresa
             // 
             this.LblTituloEmpresa.AutoSize = true;
@@ -893,7 +923,7 @@
             this.pnlBarInferior.BackColor = System.Drawing.Color.White;
             this.pnlBarInferior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlBarInferior.Controls.Add(this.lblUsuario);
-            this.pnlBarInferior.Controls.Add(this.lblIcoLogin);
+            this.pnlBarInferior.Controls.Add(this.LblIcoLogin);
             this.pnlBarInferior.Controls.Add(this.lblHora);
             this.pnlBarInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBarInferior.Location = new System.Drawing.Point(55, 719);
@@ -901,6 +931,31 @@
             this.pnlBarInferior.Padding = new System.Windows.Forms.Padding(5);
             this.pnlBarInferior.Size = new System.Drawing.Size(945, 30);
             this.pnlBarInferior.TabIndex = 2;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsuario.Location = new System.Drawing.Point(29, 5);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(39, 18);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "Nulo";
+            // 
+            // LblIcoLogin
+            // 
+            this.LblIcoLogin.AutoSize = true;
+            this.LblIcoLogin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblIcoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblIcoLogin.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIcoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LblIcoLogin.Location = new System.Drawing.Point(5, 5);
+            this.LblIcoLogin.Name = "LblIcoLogin";
+            this.LblIcoLogin.Size = new System.Drawing.Size(24, 17);
+            this.LblIcoLogin.TabIndex = 1;
+            this.LblIcoLogin.Text = "";
+            this.LblIcoLogin.Click += new System.EventHandler(this.LblIcoLogin_Click);
             // 
             // lblHora
             // 
@@ -928,45 +983,52 @@
             this.PnlRenderForm.Size = new System.Drawing.Size(945, 671);
             this.PnlRenderForm.TabIndex = 3;
             // 
-            // LblLogoft
+            // pnlQuestionario
             // 
-            this.LblLogoft.AutoSize = true;
-            this.LblLogoft.BackColor = System.Drawing.Color.White;
-            this.LblLogoft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblLogoft.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LblLogoft.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLogoft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LblLogoft.Location = new System.Drawing.Point(834, 5);
-            this.LblLogoft.Name = "LblLogoft";
-            this.LblLogoft.Size = new System.Drawing.Size(52, 36);
-            this.LblLogoft.TabIndex = 5;
-            this.LblLogoft.Text = "";
-            this.ToolTip.SetToolTip(this.LblLogoft, "Sair");
-            this.LblLogoft.Click += new System.EventHandler(this.LblLogoft_Click);
+            this.pnlQuestionario.Controls.Add(this.BtnQuestionario);
+            this.pnlQuestionario.Controls.Add(this.BtnIconQuestionario);
+            this.pnlQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlQuestionario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlQuestionario.Location = new System.Drawing.Point(5, 645);
+            this.pnlQuestionario.Name = "pnlQuestionario";
+            this.pnlQuestionario.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlQuestionario.Size = new System.Drawing.Size(45, 40);
+            this.pnlQuestionario.TabIndex = 16;
             // 
-            // lblIcoLogin
+            // BtnQuestionario
             // 
-            this.lblIcoLogin.AutoSize = true;
-            this.lblIcoLogin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblIcoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblIcoLogin.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIcoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIcoLogin.Location = new System.Drawing.Point(5, 5);
-            this.lblIcoLogin.Name = "lblIcoLogin";
-            this.lblIcoLogin.Size = new System.Drawing.Size(24, 17);
-            this.lblIcoLogin.TabIndex = 1;
-            this.lblIcoLogin.Text = "";
+            this.BtnQuestionario.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnQuestionario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnQuestionario.FlatAppearance.BorderSize = 0;
+            this.BtnQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnQuestionario.ForeColor = System.Drawing.Color.White;
+            this.BtnQuestionario.Location = new System.Drawing.Point(39, 5);
+            this.BtnQuestionario.Name = "BtnQuestionario";
+            this.BtnQuestionario.Size = new System.Drawing.Size(1, 30);
+            this.BtnQuestionario.TabIndex = 2;
+            this.BtnQuestionario.Text = "Questionario";
+            this.BtnQuestionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnQuestionario.UseVisualStyleBackColor = false;
+            this.BtnQuestionario.Click += new System.EventHandler(this.BtnQuestionario_Click);
             // 
-            // lblUsuario
+            // BtnIconQuestionario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUsuario.Location = new System.Drawing.Point(29, 5);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(39, 18);
-            this.lblUsuario.TabIndex = 2;
-            this.lblUsuario.Text = "Nulo";
+            this.BtnIconQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnIconQuestionario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIconQuestionario.FlatAppearance.BorderSize = 0;
+            this.BtnIconQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnIconQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIconQuestionario.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIconQuestionario.ForeColor = System.Drawing.Color.White;
+            this.BtnIconQuestionario.Location = new System.Drawing.Point(5, 5);
+            this.BtnIconQuestionario.Name = "BtnIconQuestionario";
+            this.BtnIconQuestionario.Size = new System.Drawing.Size(34, 30);
+            this.BtnIconQuestionario.TabIndex = 1;
+            this.BtnIconQuestionario.Text = "";
+            this.ToolTip.SetToolTip(this.BtnIconQuestionario, "Questionario");
+            this.BtnIconQuestionario.UseVisualStyleBackColor = true;
+            this.BtnIconQuestionario.Click += new System.EventHandler(this.BtnIconQuestionario_Click);
             // 
             // FrmMenu
             // 
@@ -1008,6 +1070,7 @@
             this.pnlBarSuperior.PerformLayout();
             this.pnlBarInferior.ResumeLayout(false);
             this.pnlBarInferior.PerformLayout();
+            this.pnlQuestionario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1071,7 +1134,10 @@
         private System.Windows.Forms.Button BtnUsuarios;
         private System.Windows.Forms.Button BtnIconUsuarios;
         protected System.Windows.Forms.Label LblLogoft;
-        private System.Windows.Forms.Label lblIcoLogin;
+        private System.Windows.Forms.Label LblIcoLogin;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Panel pnlQuestionario;
+        private System.Windows.Forms.Button BtnQuestionario;
+        private System.Windows.Forms.Button BtnIconQuestionario;
     }
 }

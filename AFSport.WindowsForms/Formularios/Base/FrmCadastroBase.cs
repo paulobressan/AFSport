@@ -20,6 +20,24 @@ namespace AFSport.WindowsForms.Formularios.Base
 
         protected virtual void BtnNovo_Click(object sender, EventArgs e) { }
 
-        protected virtual void FrmCadastroBase_Load(object sender, EventArgs e) { }   
+        protected virtual void FrmCadastroBase_Load(object sender, EventArgs e) { }
+
+        protected virtual void FrmCadastroBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F5:
+                    BtnNovo.PerformClick();
+                    break;
+                case Keys.F6:
+                    BtnAlterar.PerformClick();
+                    break;
+                case Keys.F7:
+                    BtnDeletar.PerformClick();
+                    break;
+
+            }
+                
+        }
     }
 }

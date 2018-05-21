@@ -16,9 +16,11 @@ namespace AFSport.WindowsForms.Formularios.Produtos
     public partial class FrmProdutos : FrmCadastroBase
     {
         Produto produto;
-        public FrmProdutos()
+        Usuario usuario;
+        public FrmProdutos(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         protected override async void FrmCadastroBase_Load(object sender, EventArgs e)
@@ -121,7 +123,7 @@ namespace AFSport.WindowsForms.Formularios.Produtos
                 await repository.Salvar(new Estoque(
                         0,
                         produto.IdProduto,
-                        1
+                        usuario.IdUsuario
                     ));
             }
         }

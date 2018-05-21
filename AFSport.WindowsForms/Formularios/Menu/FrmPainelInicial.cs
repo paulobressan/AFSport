@@ -1,4 +1,5 @@
-﻿using AFSport.WindowsForms.Formularios.Categorias;
+﻿using AFSport.Service.Model;
+using AFSport.WindowsForms.Formularios.Categorias;
 using AFSport.WindowsForms.Formularios.Cidades;
 using AFSport.WindowsForms.Formularios.Clientes;
 using AFSport.WindowsForms.Formularios.Estados;
@@ -19,9 +20,11 @@ namespace AFSport.WindowsForms.Formularios.Menu
     public partial class FrmPainelInicial : Form
     {
         Form form;
-        public FrmPainelInicial()
+        Usuario usuario;
+        public FrmPainelInicial(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void RenderForm(Form formRender)
@@ -48,12 +51,12 @@ namespace AFSport.WindowsForms.Formularios.Menu
 
         private void BtnProdutos_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmProdutos());
+            RenderForm(new FrmProdutos(usuario));
         }
 
         private void BtnEstoque_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmEstoque());
+            RenderForm(new FrmEstoque(usuario));
         }
 
         private void BtnEstados_Click(object sender, EventArgs e)

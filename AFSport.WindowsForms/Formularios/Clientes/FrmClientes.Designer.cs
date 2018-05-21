@@ -45,23 +45,23 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNovo.Location = new System.Drawing.Point(985, 6);
+            this.BtnNovo.FlatAppearance.BorderSize = 0;
+            this.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BtnNovo.Location = new System.Drawing.Point(985, 6);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAlterar.Location = new System.Drawing.Point(1097, 6);
+            this.BtnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnAlterar.FlatAppearance.BorderSize = 0;
+            this.BtnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BtnAlterar.Location = new System.Drawing.Point(1097, 6);
             // 
             // btnDeletar
             // 
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDeletar.Location = new System.Drawing.Point(1209, 6);
+            this.BtnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnDeletar.FlatAppearance.BorderSize = 0;
+            this.BtnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnDeletar.Location = new System.Drawing.Point(1209, 6);
             // 
             // pnlmargin
             // 

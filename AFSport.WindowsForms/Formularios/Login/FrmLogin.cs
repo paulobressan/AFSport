@@ -59,5 +59,16 @@ namespace AFSport.WindowsForms.Formularios.Login
                 Cursor = Cursors.Default;
             }
         }
+
+        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                BtnEntrar.PerformClick();
+        }
+
+        private void FrmLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
