@@ -120,7 +120,7 @@ namespace AFSport.WindowsForms.Formularios.Categorias
             {
                 using (CategoriaRepository repository = new CategoriaRepository())
                 {
-                    repository.Remover(categoria);
+                    await repository.Remover(categoria);
                     MessageBox.Show($"A Categoria {categoria.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await CarregarGrid();
                 }

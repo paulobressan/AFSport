@@ -10,22 +10,21 @@ namespace AFSport.Service.Model
     {
         public Caixa()
         {
-            this.IsAtivo = true;        
+
         }
 
-        public Caixa(decimal valorInicial, Usuario usuario)
+        public Caixa(decimal valorInicial, int idUsuario)
         {
             this.ValorInicial = valorInicial;
-            this.Usuario = usuario;
+            this.IdUsuario = idUsuario;
             this.Data = DateTime.Now;
-            this.IsAtivo = true;
         }
 
-        public int Id { get; set; }
+        public int IdCaixa { get; set; }
         public decimal ValorInicial { get; private set; }
         public DateTime Data { get; set; }
+        public int IdUsuario { get; set; }
         public Usuario Usuario { get; set; }
-        public bool IsAtivo { get; set; }
 
         public void SetValorInicial(decimal valor)
         {

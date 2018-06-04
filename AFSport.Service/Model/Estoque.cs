@@ -34,7 +34,7 @@ namespace AFSport.Service.Model
 
         public void Decrementa(int quantidade)
         {
-            this.Quantidade += quantidade;
+            this.Quantidade -= quantidade;
         }
     }
 }

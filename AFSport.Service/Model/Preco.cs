@@ -13,19 +13,20 @@ namespace AFSport.Service.Model
             this.IsAtivo = true;
         }
 
-        public Preco(DateTime dataInicio, DateTime dataFim, decimal valor, Produto produto)
+        public Preco(DateTime dataInicio, DateTime dataFim, decimal valor, int idProduto)
         {
             this.DataInicio = DataInicio;
             this.DataFinal = dataFim;
             this.Valor = valor;
-            this.Produto = produto;
+            this.IdProduto = idProduto;
             this.IsAtivo = true;
         }
 
-        public int Id { get; set; }
+        public int IdPreco { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }
         public decimal Valor { get; private set; }
+        public int IdProduto { get; set; }
         public Produto Produto { get; set; }
         public bool IsAtivo { get; set; }
 

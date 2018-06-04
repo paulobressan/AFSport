@@ -75,7 +75,7 @@ namespace AFSport.WindowsForms.Formularios.Estoques
         {
             using (EstoqueRepository repository = new EstoqueRepository())
             {
-                repository.Remover(estoque);
+                await repository.Remover(estoque);
                 MessageBox.Show($"O Estoque do Produto {estoque.Produto} foi removido com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await CarregarGrid();
             }

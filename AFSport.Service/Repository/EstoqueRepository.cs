@@ -12,16 +12,15 @@ namespace AFSport.Service.Repository
 {
     public class EstoqueRepository : BaseRepository, ICRUD<Estoque>
     {
-        public void Remover(Estoque obj)
+        public async Task Remover(Estoque obj)
         {
-            _context.Query<Estoque>(@"delete from estoque where idEstoque = @idEstoque", obj);
+            await _context.QueryAsync<Estoque>(@"delete from estoque where idEstoque = @idEstoque", obj);
         }
 
         public async Task<Estoque> Salvar(Estoque obj)
         {
-            if (obj.IdEstoque == 0)
-            {
-                var result = await _context.QueryAsync<Estoque, Produto, Usuario, Estoque>(@"insert into estoque(idProduto, idUsuario, quantidade) values (@idProduto, @idUsuario, @quantidade);
+            var result = obj.IdEstoque == 0
+                ? await _context.QueryAsync<Estoque, Produto, Usuario, Estoque>(@"insert into estoque(idProduto, idUsuario, quantidade) values (@idProduto, @idUsuario, @quantidade);
                     select e.idEstoque, e.quantidade, p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo, u.idUsuario, u.nome, u.email, u.login, u.senha, u.isAtivo from estoque as e
                     inner join produto p on e.idProduto = p.idProduto
                     inner join usuario u on e.idUsuario = u.idUsuario
@@ -30,12 +29,8 @@ namespace AFSport.Service.Repository
                         estoque.Produto = produto;
                         estoque.Usuario = usuario;
                         return estoque;
-                    }, obj, splitOn: "idProduto, idUsuario");
-                return result.Single();
-            }
-            else
-            {
-                var result = await _context.QueryAsync<Estoque, Produto, Usuario, Estoque>(@"update estoque set quantidade = @quantidade where idEstoque = @idEstoque;
+                    }, obj, splitOn: "idProduto, idUsuario")
+                : await _context.QueryAsync<Estoque, Produto, Usuario, Estoque>(@"update estoque set quantidade = @quantidade where idEstoque = @idEstoque;
                     select e.idEstoque, e.quantidade, p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo, u.idUsuario, u.nome, u.email, u.login, u.senha, u.isAtivo from estoque as e
                     inner join produto p on e.idProduto = p.idProduto
                     inner join usuario u on e.idUsuario = u.idUsuario
@@ -45,8 +40,7 @@ namespace AFSport.Service.Repository
                         estoque.Usuario = usuario;
                         return estoque;
                     }, obj, splitOn: "idProduto, idUsuario");
-                return result.Single();
-            }
+            return result.Single();
         }
 
         public async Task<Estoque> SelecionarId(int id)

@@ -81,9 +81,7 @@ namespace AFSport.WindowsForms.Formularios.Clientes
         private async Task<List<Cliente>> SelecionarTodosClientes()
         {
             using (ClienteRepository repository = new ClienteRepository())
-            {
                 return await repository.SelecionarTodos(true);
-            }
         }
 
         private void GridPesq_SelectionChanged(object sender, EventArgs e)

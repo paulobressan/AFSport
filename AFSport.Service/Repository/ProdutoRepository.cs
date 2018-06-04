@@ -14,31 +14,26 @@ namespace AFSport.Service.Repository
     {
         public async Task<Produto> Salvar(Produto obj)
         {
-            if(obj.IdProduto == 0)
-            {
-                var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"insert into produto(idCategoria, nome, descricao, valorCompra, valorVenda, isAtivo) values (@idCategoria, @nome, @descricao, @valorCompra, @valorVenda, @isAtivo);
-                    select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
-                    inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = (select last_insert_id() as id);", 
-                    (produto, categoria) =>
-                    {
-                        produto.Categoria = categoria;
-                        return produto;
-                    }, obj, splitOn: "idCategoria");
-                return result.Single();
-            }
-            else
-            {
-                var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"update produto set idCategoria = @idCategoria,  nome = @nome, descricao = @descricao, valorCompra = @valorCompra, valorVenda = @valorVenda, isAtivo = @isAtivo 
-                    where idProduto = @idProduto;
-                    select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
-                    inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = @idProduto;",
-                    (produto, categoria) =>
-                    {
-                        produto.Categoria = categoria;
-                        return produto;
-                    }, obj, splitOn: "idCategoria");
-                return result.Single();
-            }
+                var result = obj.IdProduto == 0
+                    ? await _context.QueryAsync<Produto, Categoria, Produto>(@"insert into produto(idCategoria, nome, descricao, valorCompra, valorVenda, isAtivo) values (@idCategoria, @nome, @descricao, @valorCompra, @valorVenda, @isAtivo);
+                        select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                        inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = (select last_insert_id() as id);", 
+                        (produto, categoria) =>
+                        {
+                            produto.Categoria = categoria;
+                            return produto;
+                        }, obj, splitOn: "idCategoria")
+                    : await _context.QueryAsync<Produto, Categoria, Produto>(@"update produto set idCategoria = @idCategoria,  nome = @nome, descricao = @descricao, valorCompra = @valorCompra, valorVenda = @valorVenda, isAtivo = @isAtivo 
+                        where idProduto = @idProduto;
+                        select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                        inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = @idProduto;",
+                        (produto, categoria) =>
+                        {
+                            produto.Categoria = categoria;
+                            return produto;
+                        }, obj, splitOn: "idCategoria");
+            return result.Single();
+
         }
 
         public async Task<Produto> SelecionarId(int id)
@@ -50,6 +45,19 @@ namespace AFSport.Service.Repository
                 return produto;
             }, new { idProduto = id }, splitOn: "idCategoria");
             return result.Single();
+        }
+
+        public async Task<List<Produto>> SelecionarPorNomeId(string valor)
+        {
+            var result = await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
+                inner join categoria c on p.idCategoria = c.idCategoria 
+                where c.isAtivo = true 
+                and (p.idProduto = @valor or p.nome like concat('%', @valor, '%'));", (produto, categoria) =>
+            {
+                produto.Categoria = categoria;
+                return produto;
+            }, new { valor }, splitOn: "idCategoria");
+            return result.ToList();
         }
 
         public async Task<List<Produto>> SelecionarTodos(bool selecionarTodos)
@@ -108,7 +116,7 @@ namespace AFSport.Service.Repository
             return result.ToList();
         }
 
-        public async void Remover(Produto obj)
+        public async Task Remover(Produto obj)
         {
             await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto");
         }

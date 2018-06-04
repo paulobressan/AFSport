@@ -2,12 +2,17 @@
 using AFSport.Service.Model;
 using AFSport.Service.Repository;
 using AFSport.WindowsForms.Formularios.Base;
+using AFSport.WindowsForms.Formularios.Caixas;
 using AFSport.WindowsForms.Formularios.Categorias;
 using AFSport.WindowsForms.Formularios.Cidades;
 using AFSport.WindowsForms.Formularios.Clientes;
 using AFSport.WindowsForms.Formularios.Estados;
 using AFSport.WindowsForms.Formularios.Estoques;
 using AFSport.WindowsForms.Formularios.Login;
+using AFSport.WindowsForms.Formularios.Movimentacoes;
+using AFSport.WindowsForms.Formularios.Operacoes;
+using AFSport.WindowsForms.Formularios.Pedidos;
+using AFSport.WindowsForms.Formularios.Precos;
 using AFSport.WindowsForms.Formularios.Produtos;
 using AFSport.WindowsForms.Formularios.Usuarios;
 using System;
@@ -214,6 +219,76 @@ namespace AFSport.WindowsForms.Formularios.Menu
                 using (FrmModal frmModal = new FrmModal(frm))
                     frmModal.ShowDialog();
             }
+        }
+
+        private void BtnIconOperacao_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmOperacoes());
+        }
+
+        private void BtnOperacoes_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmOperacoes());
+        }
+
+        private void BtnIconPedidos_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPedidos(usuario));
+        }
+
+        private void BtnPedidos_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPedidos(usuario));
+        }
+
+        private void BtnIconMovimentacao_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmMovimentacoes(usuario));
+        }
+
+        private void BtnMovimentacoes_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmMovimentacoes(usuario));
+        }
+
+        private void BtnIconCaixa_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmCaixa(usuario));
+        }
+
+        private void BtnCaixa_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmCaixa(usuario));
+        }
+
+        private void BtnIconPrecos_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPrecos());
+        }
+
+        private void BtnPrecos_Click(object sender, EventArgs e)
+        {
+            RenderForm(new FrmPrecos());
+        }
+
+        private void BtnIconAjuda_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/paulobressan/AFSport");
+        }
+
+        private void BtnAjuda_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/paulobressan/AFSport");
+        }
+
+        private void BtnIconRelatorios_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Em Construção.");
+        }
+
+        private void BtnRelatorios_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Em Construção.");
         }
     }
 }

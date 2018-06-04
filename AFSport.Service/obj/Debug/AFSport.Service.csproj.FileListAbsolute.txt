@@ -1,0 +1,13 @@
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+D:\Source\AFSport\AFSport.Service\bin\Debug\Dapper.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\MySql.Data.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\Dapper.xml
+D:\Source\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.xml
+D:\Source\AFSport\AFSport.Service\bin\Debug\MySql.Data.xml
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb

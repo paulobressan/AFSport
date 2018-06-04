@@ -89,7 +89,7 @@ namespace AFSport.WindowsForms.Formularios.Estados
             {
                 using (EstadoRepository repository = new EstadoRepository())
                 {
-                    repository.Remover(estado);
+                    await repository.Remover(estado);
                     MessageBox.Show($"O estado {estado.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await CarregarGrid();
                 }
