@@ -1,4 +1,5 @@
 Trabalho Acadêmico - Projeto e Desenvolvimento de um Sistema para Gerenciamento de uma Loja de Artigos Esportivos.
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Desenvolvido por: 
 
@@ -12,15 +13,17 @@ Rafael Antonio Lopes Alves
 
 Sidney de Souza Júnior
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 Instalação do Software AFSport.
 
 1 -  Acessar a Pasta AFSport.
 
 2 -  Acessar a pasta Fonts e instalar as fontes que são utilizadas pelo software:
 
-2.2	- Instalar a fonte Font Awesome 5 Brands-Regular-400.
+2.1	- Instalar a fonte Font Awesome 5 Brands-Regular-400.
 
-2.3	- Instalar a fonte Font Awesome 5 Free-Regular-400.
+2.2	- Instalar a fonte Font Awesome 5 Free-Regular-400.
 
 2.3	- Instalar a fonte Font Awesome 5 Free-Solid-900.
 
@@ -43,10 +46,13 @@ Usuário padrão: admin
 
 Senha padrão: admin
 
-*** REQUISITOS PARA A INSTALAÇÃO DO SOFTWARE:
+----------------------------------------------------------------------------------------------------------------------------------------
+
+REQUISITOS PARA A INSTALAÇÃO DO SOFTWARE:
 WINDOWS 10 COMO SISTEMA OPERACIONAL.
 MYSQL WORKBENCH COMO SGBD.
 
+----------------------------------------------------------------------------------------------------------------------------------------
 UTILIZAÇÃO DO SOFTWARE
 
 DEPENDÊNCIAS
