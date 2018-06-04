@@ -66,8 +66,6 @@ create table preco(
     foreign key(idProduto) references produto(idProduto)
 );
 
-select now();
-
 create table estoque(
 	  idEstoque int unsigned auto_increment primary key,
     idProduto int unsigned not null,
@@ -142,17 +140,17 @@ create table participantes(
   Telefone varchar(20)
 );
 
+create table perguntas(
+  idPergunta int unsigned auto_increment primary key ,
+  descricao varchar(500),
+  sequencia int
+);
+
 create table tiposRespostas(
   idTipoResposta int unsigned auto_increment primary key,
   idPergunta int unsigned,
   descricao varchar(50),
   foreign key (idPergunta) references perguntas(idPergunta)
-);
-
-create table perguntas(
-  idPergunta int unsigned auto_increment primary key ,
-  descricao varchar(500),
-  sequencia int
 );
 
 create table respostas (
