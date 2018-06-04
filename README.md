@@ -1,10 +1,11 @@
-Trabalho acadêmico - AFSport 
+Trabalho Acadêmico - Projeto e Desenvolvimento de um Sistema para Gerenciamento de uma Loja de Artigos Esportivos;
+
 Desenvolvido por: 
-Carlos Eduardo de Oliveira
-Marcus Vinicius Nunes
-Paulo Sérgio Bressan Júnior
-Rafael Antonio Lopes Alves
-Sidney de Souza Júnior
+Carlos Eduardo de Oliveira;
+Marcus Vinicius Nunes;
+Paulo Sérgio Bressan Júnior;
+Rafael Antonio Lopes Alves;
+Sidney de Souza Júnior;
 
 Instalação do Software AFSport.
 
