@@ -96,7 +96,7 @@ namespace AFSport.WindowsForms.Formularios.Cidades
             {
                 using (CidadeRepository repository = new CidadeRepository())
                 {
-                    repository.Remover(cidade);
+                    await repository.Remover(cidade);
                     MessageBox.Show($"A cidade {cidade.Nome} foi removida com sucesso", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await CarregarGrid();
                 }

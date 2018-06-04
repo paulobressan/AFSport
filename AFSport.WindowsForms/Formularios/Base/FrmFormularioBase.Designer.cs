@@ -237,6 +237,7 @@
         }
 
         #endregion
+
         protected System.Windows.Forms.Button BtnCancelar;
         protected System.Windows.Forms.Button BtnSalvar;
         protected System.Windows.Forms.Panel pnlBtns;

@@ -32,8 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>AfSportIco.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,6 +66,24 @@
     </Compile>
     <Compile Include="Formularios\Base\FrmModal.Designer.cs">
       <DependentUpon>FrmModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmAberturaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmAberturaCaixa.Designer.cs">
+      <DependentUpon>FrmAberturaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmCaixa.Designer.cs">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmFormCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Caixas\FrmFormCaixa.Designer.cs">
+      <DependentUpon>FrmFormCaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Categorias\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -146,6 +163,54 @@
     <Compile Include="Formularios\Menu\FrmPainelInicial.Designer.cs">
       <DependentUpon>FrmPainelInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Movimentacoes\FrmFormMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Movimentacoes\FrmFormMovimentacao.Designer.cs">
+      <DependentUpon>FrmFormMovimentacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Movimentacoes\FrmMovimentacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Movimentacoes\FrmMovimentacoes.Designer.cs">
+      <DependentUpon>FrmMovimentacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Operacoes\FrmFormOperacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Operacoes\FrmFormOperacao.Designer.cs">
+      <DependentUpon>FrmFormOperacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Operacoes\FrmOperacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Operacoes\FrmOperacoes.Designer.cs">
+      <DependentUpon>FrmOperacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmFinalizadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmFinalizadora.Designer.cs">
+      <DependentUpon>FrmFinalizadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmFormPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmFormPedido.Designer.cs">
+      <DependentUpon>FrmFormPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmSelecaoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Pedidos\FrmSelecaoCliente.Designer.cs">
+      <DependentUpon>FrmSelecaoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Precos\FrmFormPrecos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +258,15 @@
     <EmbeddedResource Include="Formularios\Base\FrmModal.resx">
       <DependentUpon>FrmModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caixas\FrmAberturaCaixa.resx">
+      <DependentUpon>FrmAberturaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caixas\FrmCaixa.resx">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Caixas\FrmFormCaixa.resx">
+      <DependentUpon>FrmFormCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Categorias\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +305,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu\FrmPainelInicial.resx">
       <DependentUpon>FrmPainelInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Movimentacoes\FrmFormMovimentacao.resx">
+      <DependentUpon>FrmFormMovimentacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Movimentacoes\FrmMovimentacoes.resx">
+      <DependentUpon>FrmMovimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Operacoes\FrmFormOperacao.resx">
+      <DependentUpon>FrmFormOperacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Operacoes\FrmOperacoes.resx">
+      <DependentUpon>FrmOperacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Pedidos\FrmFinalizadora.resx">
+      <DependentUpon>FrmFinalizadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Pedidos\FrmFormPedido.resx">
+      <DependentUpon>FrmFormPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Pedidos\FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Pedidos\FrmSelecaoCliente.resx">
+      <DependentUpon>FrmSelecaoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Precos\FrmFormPrecos.resx">
       <DependentUpon>FrmFormPrecos.cs</DependentUpon>

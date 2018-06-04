@@ -10,20 +10,21 @@ namespace AFSport.Service.Model
     {
         public ItemPedido()
         {
-            this.IsAtivo = true;
+
         }
 
-        public ItemPedido(int quantidade, Produto produto, Pedido pedido)
+        public ItemPedido(int quantidade, int idProduto, int idPedido)
         {
             this.Quantidade = quantidade;
-            this.Produto = produto;
-            this.Pedidio = pedido;
-            this.IsAtivo = true;
+            this.IdProduto = idProduto;
+            this.IdPedido = idPedido;
         }
 
-        public int Id { get; set; }
+        public int IdItemPedido { get; set; }
         public int Quantidade { get; set; }
+        public int IdProduto { get; set; }
         public Produto Produto { get; set; }
+        public int IdPedido { get; set; }
         public Pedido Pedidio { get; set; }
         public bool IsAtivo { get; set; }
     }

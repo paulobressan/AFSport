@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseRepository.cs" />
+    <Compile Include="Model\Pedido_Status.cs" />
+    <Compile Include="Repository\CaixaRepository.cs" />
     <Compile Include="Repository\CategoriaRepository.cs" />
     <Compile Include="Repository\CidadeRepository.cs" />
     <Compile Include="Repository\ClienteRepository.cs" />

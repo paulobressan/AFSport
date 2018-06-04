@@ -36,6 +36,8 @@ create table usuario(
     isAtivo bool not null
 );
 
+insert into usuario(nome, login, senha, isAtivo) values ('Administrador', 'admin', 'admin', 1);
+
 create table categoria(
 	idCategoria int unsigned auto_increment primary key,
 	nome varchar(50) not null,
@@ -58,10 +60,13 @@ create table preco(
 	  idPreco int unsigned auto_increment primary key,
     idProduto int unsigned not null,
     dataInicio date not null,
-    dataFim date not null,
+    dataFinal date not null,
     valor decimal(12,2) not null,
+    isAtivo bool,
     foreign key(idProduto) references produto(idProduto)
 );
+
+select now();
 
 create table estoque(
 	  idEstoque int unsigned auto_increment primary key,
@@ -72,21 +77,32 @@ create table estoque(
     foreign key (idUsuario) references usuario(idUsuario)
 );
 
+create table pedido_status(
+  idStatus int unsigned auto_increment primary key ,
+  status varchar(50) not null
+);
+
+insert into pedido_status(status) values ('finalizado');
+insert into pedido_status(status) values ('cancelado');
+
 create table pedido(
 	idPedido int unsigned auto_increment primary key,
-    idUsuario int unsigned not null,
-    idCliente int unsigned,
-    data date not null,
-    status varchar(20) not null,
-    foreign key(idUsuario) references usuario(idUsuario),
-	foreign key(idCliente) references cliente(idCliente)
+  idUsuario int unsigned not null,
+  idCliente int unsigned,
+  idStatus int unsigned,
+  data datetime not null,
+  foreign key(idUsuario) references usuario(idUsuario),
+	foreign key(idCliente) references cliente(idCliente),
+  foreign key(idStatus) references pedido_status(idStatus)
 );
 
 create table itemPedido(
 	idItemPedido int unsigned auto_increment primary key,
     idPedido int unsigned not null,
+    idProduto int unsigned not null,
     quantidade int not null,
-    foreign key(idPedido) references pedido(idPedido)
+    foreign key(idPedido) references pedido(idPedido),
+    foreign key (idProduto) references  produto(idProduto)
 );
 
 create table operacao(
@@ -96,10 +112,13 @@ create table operacao(
     isAtivo bool
 );
 
+insert into operacao(nome, descricao, isAtivo)  values ('Entrada Pedido', 'Movimentação gerada por pedido.', 1);
+insert into operacao(nome, descricao, isAtivo)  values ('Estorno Pedido', 'Movimentação gerada por estorno de pedido.', 1);
+
 create table caixa(
 	idCaixa int unsigned auto_increment primary key,
     idUsuario int unsigned not null,
-    data date not null,
+    data datetime not null,
     valorInicial decimal(12,2) not null,
     foreign key(idUsuario) references usuario(idUsuario)
 );
@@ -107,9 +126,11 @@ create table caixa(
 create table movimentacao(
 	idMovimentacao int unsigned auto_increment primary key,
     idUsuario int unsigned not null,
+    idOperacao int unsigned,
     valor decimal(12,2) not null,
-    data date not null,
-    foreign key(idUsuario) references usuario(idUsuario)
+    data datetime not null,
+    foreign key(idUsuario) references usuario(idUsuario),
+    foreign key (idOperacao) references operacao(idOperacao)
 );
 
 create database questionario;
@@ -144,38 +165,3 @@ create table respostas (
   foreign key (idTipoResposta) references tiposRespostas(idTipoResposta),
   foreign key (idPergunta) references perguntas(idPergunta)
 );
-
-insert into tiposRespostas(descricao, idPergunta) values ("Muito Intuitiva",1), ("Moderamente Intuitiva",1), ( "Pouco Intuitiva",1), ("Sim",2), ("Não",2);
-insert into perguntas(descricao, sequencia) values ("Como você qualifica a experiência de utilização do sistema?",1), ("Mudaria algo no software? Se sim, o que?",2), ("Em poucas palavras defina o sistema AFSport.", 3);
-
-insert into perguntas(descricao, sequencia) values("Teste", 4);
-insert into tiposRespostas(descricao, idPergunta) values ("teste1", 4), ("teste2", 4);
-
-
-
-
-
-
-
-
-
-
-
-
-select idPergunta, descricao, sequencia from perguntas where sequencia = @sequencia;
-
-update participantes set nome = @nome, Telefone = @Telefone where idParticipante = @idParticipante;
-insert into participantes( nome, Telefone) values (@nome, @Telefone);
-select idParticipante, nome, Telefone from participantes where idParticipante = (select last_insert_id() as id);
-
-select idTipoResposta, idPergunta, descricao from tiposRespostas where idPergunta = @idPergunta;
-
-update respostas set idParticipante = @dParticipante, idTipoResposta = @idTipoResposta, idPergunta = @idPergunta, observacao = @observacao where idRespota = @idResposta;
-insert into respostas(idParticipante, idTipoResposta, idPergunta, observacao) values (@dParticipante, @idTipoResposta, @idPergunta, @observacao);
-select idRespota, idPergunta, idTipoResposta, idParticipante, observacao from respostas where idRespota = (select last_insert_id() as id);
-
-select idParticipante, nome, Telefone from participantes ;
-select * from respostas;
-select * from tiposRespostas;
-
-select idParticipante, nome, Telefone from participantes order by idParticipante;

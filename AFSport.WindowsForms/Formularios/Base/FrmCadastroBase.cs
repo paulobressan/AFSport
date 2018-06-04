@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFSport.Service.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -8,7 +9,6 @@ namespace AFSport.WindowsForms.Formularios.Base
 {
     public partial class FrmCadastroBase : Form
     {
-
         public FrmCadastroBase()
         {
             InitializeComponent();

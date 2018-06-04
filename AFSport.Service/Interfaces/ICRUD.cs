@@ -11,6 +11,6 @@ namespace AFSport.Service.Interfaces
         Task<List<T>> SelecionarTodos(bool selecionarTodos);
         Task<T> SelecionarId(int id);
         Task<T> Salvar(T obj);
-        void Remover(T obj);
+        Task Remover(T obj);
     }
 }

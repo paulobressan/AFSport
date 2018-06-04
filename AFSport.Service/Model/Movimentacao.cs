@@ -13,19 +13,21 @@ namespace AFSport.Service.Model
             this.IsAtivo = true;
         }
 
-        public Movimentacao(decimal valor, Pedido pedido, Operacao operacao)
+        public Movimentacao(decimal valor, int idUsuario, int idOperacao)
         {
             this.Valor = valor;
-            this.Pedido = pedido;
-            this.Operacao = operacao;
+            this.IdUsuario = idUsuario;
+            this.IdOperacao = idOperacao;
             this.Data = DateTime.Now;
             this.IsAtivo = true;
         }
 
-        public int Id { get; set; }
+        public int IdMovimentacao { get; set; }
         public decimal Valor { get; set; }
         public DateTime Data { get; set; }
-        public Pedido Pedido { get; set; }
+        public int IdUsuario { get; set; }
+        public Usuario Usuario { get; set; }
+        public int IdOperacao { get; set; }
         public Operacao Operacao { get; set; }
         public bool IsAtivo { get; set; }
     }

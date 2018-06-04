@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.pnlQuestionario = new System.Windows.Forms.Panel();
+            this.BtnQuestionario = new System.Windows.Forms.Button();
+            this.BtnIconQuestionario = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnAjuda = new System.Windows.Forms.Button();
             this.BtnIconAjuda = new System.Windows.Forms.Button();
@@ -88,10 +91,8 @@
             this.TmrHora = new System.Windows.Forms.Timer(this.components);
             this.PnlRenderForm = new System.Windows.Forms.Panel();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlQuestionario = new System.Windows.Forms.Panel();
-            this.BtnQuestionario = new System.Windows.Forms.Button();
-            this.BtnIconQuestionario = new System.Windows.Forms.Button();
             this.pnlSideBar.SuspendLayout();
+            this.pnlQuestionario.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.PnlAjuda.SuspendLayout();
@@ -110,7 +111,6 @@
             this.pnlBtnSideOpen.SuspendLayout();
             this.pnlBarSuperior.SuspendLayout();
             this.pnlBarInferior.SuspendLayout();
-            this.pnlQuestionario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideBar
@@ -140,6 +140,53 @@
             this.pnlSideBar.Size = new System.Drawing.Size(55, 749);
             this.pnlSideBar.TabIndex = 0;
             // 
+            // pnlQuestionario
+            // 
+            this.pnlQuestionario.Controls.Add(this.BtnQuestionario);
+            this.pnlQuestionario.Controls.Add(this.BtnIconQuestionario);
+            this.pnlQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlQuestionario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlQuestionario.Location = new System.Drawing.Point(5, 645);
+            this.pnlQuestionario.Name = "pnlQuestionario";
+            this.pnlQuestionario.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlQuestionario.Size = new System.Drawing.Size(45, 40);
+            this.pnlQuestionario.TabIndex = 16;
+            // 
+            // BtnQuestionario
+            // 
+            this.BtnQuestionario.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnQuestionario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnQuestionario.FlatAppearance.BorderSize = 0;
+            this.BtnQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnQuestionario.ForeColor = System.Drawing.Color.White;
+            this.BtnQuestionario.Location = new System.Drawing.Point(39, 5);
+            this.BtnQuestionario.Name = "BtnQuestionario";
+            this.BtnQuestionario.Size = new System.Drawing.Size(1, 30);
+            this.BtnQuestionario.TabIndex = 2;
+            this.BtnQuestionario.Text = "Questionario";
+            this.BtnQuestionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnQuestionario.UseVisualStyleBackColor = false;
+            this.BtnQuestionario.Click += new System.EventHandler(this.BtnQuestionario_Click);
+            // 
+            // BtnIconQuestionario
+            // 
+            this.BtnIconQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnIconQuestionario.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIconQuestionario.FlatAppearance.BorderSize = 0;
+            this.BtnIconQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnIconQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIconQuestionario.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIconQuestionario.ForeColor = System.Drawing.Color.White;
+            this.BtnIconQuestionario.Location = new System.Drawing.Point(5, 5);
+            this.BtnIconQuestionario.Name = "BtnIconQuestionario";
+            this.BtnIconQuestionario.Size = new System.Drawing.Size(34, 30);
+            this.BtnIconQuestionario.TabIndex = 1;
+            this.BtnIconQuestionario.Text = "";
+            this.ToolTip.SetToolTip(this.BtnIconQuestionario, "Questionario");
+            this.BtnIconQuestionario.UseVisualStyleBackColor = true;
+            this.BtnIconQuestionario.Click += new System.EventHandler(this.BtnIconQuestionario_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.BtnAjuda);
@@ -167,6 +214,7 @@
             this.BtnAjuda.Text = "Ajuda";
             this.BtnAjuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAjuda.UseVisualStyleBackColor = false;
+            this.BtnAjuda.Click += new System.EventHandler(this.BtnAjuda_Click);
             // 
             // BtnIconAjuda
             // 
@@ -184,6 +232,7 @@
             this.BtnIconAjuda.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconAjuda, "Ajuda");
             this.BtnIconAjuda.UseVisualStyleBackColor = true;
+            this.BtnIconAjuda.Click += new System.EventHandler(this.BtnIconAjuda_Click);
             // 
             // panel1
             // 
@@ -228,7 +277,7 @@
             this.BtnIconUsuarios.Size = new System.Drawing.Size(34, 30);
             this.BtnIconUsuarios.TabIndex = 1;
             this.BtnIconUsuarios.Text = "";
-            this.ToolTip.SetToolTip(this.BtnIconUsuarios, "Ajuda");
+            this.ToolTip.SetToolTip(this.BtnIconUsuarios, "Usuários");
             this.BtnIconUsuarios.UseVisualStyleBackColor = true;
             this.BtnIconUsuarios.Click += new System.EventHandler(this.BtnIconUsuarios_Click);
             // 
@@ -353,6 +402,7 @@
             this.BtnRelatorios.Text = "Relatórios";
             this.BtnRelatorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnRelatorios.UseVisualStyleBackColor = false;
+            this.BtnRelatorios.Click += new System.EventHandler(this.BtnRelatorios_Click);
             // 
             // BtnIconRelatorios
             // 
@@ -370,6 +420,7 @@
             this.BtnIconRelatorios.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconRelatorios, "Relatórios");
             this.BtnIconRelatorios.UseVisualStyleBackColor = true;
+            this.BtnIconRelatorios.Click += new System.EventHandler(this.BtnIconRelatorios_Click);
             // 
             // PnlMovimentacao
             // 
@@ -398,6 +449,7 @@
             this.BtnMovimentacoes.Text = "Movimentações";
             this.BtnMovimentacoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnMovimentacoes.UseVisualStyleBackColor = false;
+            this.BtnMovimentacoes.Click += new System.EventHandler(this.BtnMovimentacoes_Click);
             // 
             // BtnIconMovimentacao
             // 
@@ -415,6 +467,7 @@
             this.BtnIconMovimentacao.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconMovimentacao, "Movimentações");
             this.BtnIconMovimentacao.UseVisualStyleBackColor = true;
+            this.BtnIconMovimentacao.Click += new System.EventHandler(this.BtnIconMovimentacao_Click);
             // 
             // PnlOperacao
             // 
@@ -443,6 +496,7 @@
             this.BtnOperacoes.Text = "Operações";
             this.BtnOperacoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnOperacoes.UseVisualStyleBackColor = false;
+            this.BtnOperacoes.Click += new System.EventHandler(this.BtnOperacoes_Click);
             // 
             // BtnIconOperacao
             // 
@@ -460,6 +514,7 @@
             this.BtnIconOperacao.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconOperacao, "Operações");
             this.BtnIconOperacao.UseVisualStyleBackColor = true;
+            this.BtnIconOperacao.Click += new System.EventHandler(this.BtnIconOperacao_Click);
             // 
             // PnlCaixa
             // 
@@ -488,6 +543,7 @@
             this.BtnCaixa.Text = "Caixa";
             this.BtnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCaixa.UseVisualStyleBackColor = false;
+            this.BtnCaixa.Click += new System.EventHandler(this.BtnCaixa_Click);
             // 
             // BtnIconCaixa
             // 
@@ -505,6 +561,7 @@
             this.BtnIconCaixa.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconCaixa, "Caixa");
             this.BtnIconCaixa.UseVisualStyleBackColor = true;
+            this.BtnIconCaixa.Click += new System.EventHandler(this.BtnIconCaixa_Click);
             // 
             // PnlEstoque
             // 
@@ -580,6 +637,7 @@
             this.BtnPrecos.Text = "Preços";
             this.BtnPrecos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPrecos.UseVisualStyleBackColor = false;
+            this.BtnPrecos.Click += new System.EventHandler(this.BtnPrecos_Click);
             // 
             // BtnIconPrecos
             // 
@@ -597,6 +655,7 @@
             this.BtnIconPrecos.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconPrecos, "Preços");
             this.BtnIconPrecos.UseVisualStyleBackColor = true;
+            this.BtnIconPrecos.Click += new System.EventHandler(this.BtnIconPrecos_Click);
             // 
             // PnlProdutos
             // 
@@ -766,6 +825,7 @@
             this.BtnPedidos.Text = "Pedidos";
             this.BtnPedidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPedidos.UseVisualStyleBackColor = false;
+            this.BtnPedidos.Click += new System.EventHandler(this.BtnPedidos_Click);
             // 
             // BtnIconPedidos
             // 
@@ -783,6 +843,7 @@
             this.BtnIconPedidos.Text = "";
             this.ToolTip.SetToolTip(this.BtnIconPedidos, "Pedidos");
             this.BtnIconPedidos.UseVisualStyleBackColor = true;
+            this.BtnIconPedidos.Click += new System.EventHandler(this.BtnIconPedidos_Click);
             // 
             // PnlInicio
             // 
@@ -983,53 +1044,6 @@
             this.PnlRenderForm.Size = new System.Drawing.Size(945, 671);
             this.PnlRenderForm.TabIndex = 3;
             // 
-            // pnlQuestionario
-            // 
-            this.pnlQuestionario.Controls.Add(this.BtnQuestionario);
-            this.pnlQuestionario.Controls.Add(this.BtnIconQuestionario);
-            this.pnlQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlQuestionario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlQuestionario.Location = new System.Drawing.Point(5, 645);
-            this.pnlQuestionario.Name = "pnlQuestionario";
-            this.pnlQuestionario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlQuestionario.Size = new System.Drawing.Size(45, 40);
-            this.pnlQuestionario.TabIndex = 16;
-            // 
-            // BtnQuestionario
-            // 
-            this.BtnQuestionario.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnQuestionario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnQuestionario.FlatAppearance.BorderSize = 0;
-            this.BtnQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnQuestionario.ForeColor = System.Drawing.Color.White;
-            this.BtnQuestionario.Location = new System.Drawing.Point(39, 5);
-            this.BtnQuestionario.Name = "BtnQuestionario";
-            this.BtnQuestionario.Size = new System.Drawing.Size(1, 30);
-            this.BtnQuestionario.TabIndex = 2;
-            this.BtnQuestionario.Text = "Questionario";
-            this.BtnQuestionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnQuestionario.UseVisualStyleBackColor = false;
-            this.BtnQuestionario.Click += new System.EventHandler(this.BtnQuestionario_Click);
-            // 
-            // BtnIconQuestionario
-            // 
-            this.BtnIconQuestionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnIconQuestionario.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIconQuestionario.FlatAppearance.BorderSize = 0;
-            this.BtnIconQuestionario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnIconQuestionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIconQuestionario.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIconQuestionario.ForeColor = System.Drawing.Color.White;
-            this.BtnIconQuestionario.Location = new System.Drawing.Point(5, 5);
-            this.BtnIconQuestionario.Name = "BtnIconQuestionario";
-            this.BtnIconQuestionario.Size = new System.Drawing.Size(34, 30);
-            this.BtnIconQuestionario.TabIndex = 1;
-            this.BtnIconQuestionario.Text = "";
-            this.ToolTip.SetToolTip(this.BtnIconQuestionario, "Questionario");
-            this.BtnIconQuestionario.UseVisualStyleBackColor = true;
-            this.BtnIconQuestionario.Click += new System.EventHandler(this.BtnIconQuestionario_Click);
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1050,6 +1064,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.pnlSideBar.ResumeLayout(false);
+            this.pnlQuestionario.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.PnlAjuda.ResumeLayout(false);
@@ -1070,7 +1085,6 @@
             this.pnlBarSuperior.PerformLayout();
             this.pnlBarInferior.ResumeLayout(false);
             this.pnlBarInferior.PerformLayout();
-            this.pnlQuestionario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
