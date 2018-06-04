@@ -14,7 +14,10 @@ Rafael Antonio Lopes Alves
 Sidney de Souza Júnior
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+Objetivos:
 
+Desenvolver um software para controle e gerenciamento de uma loja de artigos esportivos, possibilitando o cadastro de clientes e produtos, fluxo de caixa, pedidos e movimentações emissão de relatórios e controle de acesso por usuário e senha.
+----------------------------------------------------------------------------------------------------------------------------------------
 Instalação do Software AFSport.
 
 1 -  Acessar a Pasta AFSport.
@@ -35,7 +38,7 @@ password=*SENHA*
 
 Exemplo: password=admin
 
-Onde está escrito *SENHA* deverá ser substituído pela senha do banco de dados (os asteriscos também devem ser removidos).
+Onde está escrito *SENHA* deverá ser substituído pela senha do banco de dados.
 Após estes passos, o software estará pronto para ser utilizado.
 
 5	- Executar o software pelo executável AFSport.WindowsForms.
