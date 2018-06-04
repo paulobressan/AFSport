@@ -2,7 +2,7 @@ Trabalho Acadêmico - Projeto e Desenvolvimento de um Sistema para Gerenciamento
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 Desenvolvido por: 
-
+----------------------------------------------------------------------------------------------------------------------------------------
 Carlos Eduardo de Oliveira
 
 Marcus Vinicius Nunes
@@ -14,12 +14,13 @@ Rafael Antonio Lopes Alves
 Sidney de Souza Júnior
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-Objetivos:
-
-Desenvolver um software para controle e gerenciamento de uma loja de artigos esportivos, possibilitando o cadastro de clientes e produtos, fluxo de caixa, pedidos e movimentações emissão de relatórios e controle de acesso por usuário e senha.
+OBJETIVO DO PROJETO
 ----------------------------------------------------------------------------------------------------------------------------------------
-Instalação do Software AFSport.
+Desenvolver um software para controle e gerenciamento de uma loja de artigos esportivos, possibilitando o cadastro de clientes, produtos, fluxo de caixa, pedidos, movimentações e emissão de relatórios e controle de acesso por usuário e senha. 
 
+----------------------------------------------------------------------------------------------------------------------------------------
+INSTALAÇÃO DO SOFTWARE
+----------------------------------------------------------------------------------------------------------------------------------------
 1 -  Acessar a Pasta AFSport.
 
 2 -  Acessar a pasta Fonts e instalar as fontes que são utilizadas pelo software:
@@ -52,14 +53,14 @@ Senha padrão: admin
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 REQUISITOS PARA A INSTALAÇÃO DO SOFTWARE:
-
+----------------------------------------------------------------------------------------------------------------------------------------
 WINDOWS 10 COMO SISTEMA OPERACIONAL.
 
 MYSQL WORKBENCH COMO SGBD.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 UTILIZAÇÃO DO SOFTWARE
-
+----------------------------------------------------------------------------------------------------------------------------------------
 DEPENDÊNCIAS
 
 Algumas categorias possuem dependências relacionadas umas as outras, ou seja, algumas dependem de outras para existir através de um relacionamento hierárquico, como por exemplo: para que um produto possa ser cadastrado, ele deve pertencer a uma categoria, e uma categoria não pode ser excluída se um produto pertencer a esta mesma, porém o sistema permite a inativação de uma categoria, fazendo assim com que os produtos pertencentes a esta categoria, também sejam inativados.
