@@ -131,7 +131,7 @@
             this.lblSair.ForeColor = System.Drawing.Color.Red;
             this.lblSair.Location = new System.Drawing.Point(547, 9);
             this.lblSair.Name = "lblSair";
-            this.lblSair.Size = new System.Drawing.Size(50, 34);
+            this.lblSair.Size = new System.Drawing.Size(40, 28);
             this.lblSair.TabIndex = 2;
             this.lblSair.Text = "";
             this.ToolTip.SetToolTip(this.lblSair, "Sair");
@@ -145,7 +145,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTitulo.Location = new System.Drawing.Point(54, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(107, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(92, 32);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Titulo";
             // 
@@ -157,7 +157,7 @@
             this.lblIcone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblIcone.Location = new System.Drawing.Point(11, 11);
             this.lblIcone.Name = "lblIcone";
-            this.lblIcone.Size = new System.Drawing.Size(47, 35);
+            this.lblIcone.Size = new System.Drawing.Size(37, 28);
             this.lblIcone.TabIndex = 0;
             this.lblIcone.Text = "";
             // 
@@ -203,13 +203,13 @@
             this.LblId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LblId.Location = new System.Drawing.Point(10, 10);
             this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(80, 69);
+            this.LblId.Size = new System.Drawing.Size(64, 57);
             this.LblId.TabIndex = 0;
             this.LblId.Text = "ID";
             // 
             // FrmFormularioBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 632);

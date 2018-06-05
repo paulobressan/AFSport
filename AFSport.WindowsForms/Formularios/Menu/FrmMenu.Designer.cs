@@ -943,9 +943,9 @@
             this.LblLogoft.Dock = System.Windows.Forms.DockStyle.Right;
             this.LblLogoft.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLogoft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LblLogoft.Location = new System.Drawing.Point(806, 5);
+            this.LblLogoft.Location = new System.Drawing.Point(834, 5);
             this.LblLogoft.Name = "LblLogoft";
-            this.LblLogoft.Size = new System.Drawing.Size(66, 46);
+            this.LblLogoft.Size = new System.Drawing.Size(52, 36);
             this.LblLogoft.TabIndex = 5;
             this.LblLogoft.Text = "";
             this.ToolTip.SetToolTip(this.LblLogoft, "Sair");
@@ -959,7 +959,7 @@
             this.LblTituloEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LblTituloEmpresa.Location = new System.Drawing.Point(5, 5);
             this.LblTituloEmpresa.Name = "LblTituloEmpresa";
-            this.LblTituloEmpresa.Size = new System.Drawing.Size(167, 44);
+            this.LblTituloEmpresa.Size = new System.Drawing.Size(128, 34);
             this.LblTituloEmpresa.TabIndex = 4;
             this.LblTituloEmpresa.Text = "AFSport";
             // 
@@ -971,9 +971,9 @@
             this.LblSair.Dock = System.Windows.Forms.DockStyle.Right;
             this.LblSair.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblSair.ForeColor = System.Drawing.Color.Red;
-            this.LblSair.Location = new System.Drawing.Point(872, 5);
+            this.LblSair.Location = new System.Drawing.Point(886, 5);
             this.LblSair.Name = "LblSair";
-            this.LblSair.Size = new System.Drawing.Size(66, 46);
+            this.LblSair.Size = new System.Drawing.Size(52, 36);
             this.LblSair.TabIndex = 3;
             this.LblSair.Text = "";
             this.ToolTip.SetToolTip(this.LblSair, "Fechar");
@@ -998,9 +998,9 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUsuario.Location = new System.Drawing.Point(35, 5);
+            this.lblUsuario.Location = new System.Drawing.Point(29, 5);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(48, 23);
+            this.lblUsuario.Size = new System.Drawing.Size(39, 18);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Nulo";
             // 
@@ -1013,7 +1013,7 @@
             this.LblIcoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LblIcoLogin.Location = new System.Drawing.Point(5, 5);
             this.LblIcoLogin.Name = "LblIcoLogin";
-            this.LblIcoLogin.Size = new System.Drawing.Size(30, 21);
+            this.LblIcoLogin.Size = new System.Drawing.Size(24, 17);
             this.LblIcoLogin.TabIndex = 1;
             this.LblIcoLogin.Text = "";
             this.LblIcoLogin.Click += new System.EventHandler(this.LblIcoLogin_Click);
@@ -1024,9 +1024,9 @@
             this.lblHora.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblHora.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblHora.Location = new System.Drawing.Point(866, 5);
+            this.lblHora.Location = new System.Drawing.Point(877, 5);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(72, 29);
+            this.lblHora.Size = new System.Drawing.Size(61, 22);
             this.lblHora.TabIndex = 0;
             this.lblHora.Text = "00:00";
             // 
@@ -1046,7 +1046,7 @@
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 749);
             this.Controls.Add(this.PnlRenderForm);

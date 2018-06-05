@@ -85,20 +85,6 @@ namespace AFSport.Service.Repository
             return result.ToList();
         }
 
-        public async Task<List<ItemPedido>> SelecionarTodosPorData(DateTime data)
-        {
-            var result = await _context.QueryAsync<ItemPedido, Pedido, Produto, ItemPedido>(@"select i.idItemPedido, i.quantidade, p.idPedido, p2.idProduto, p2.nome, p2.descricao, p2.valorCompra, p2.valorVenda, p2.isAtivo from itempedido as i
-                inner join pedido p on i.idPedido = p.idPedido
-                inner join produto p2 on i.idProduto = p2.idProduto
-                where DATE_FORMAT(p.data, '%d/%m/%Y') = DATE_FORMAT(@data, '%d/%m/%Y') ;", (itemPedido, pedido, produto) =>
-            {
-                itemPedido.Pedidio = pedido;
-                itemPedido.Produto = produto;
-                return itemPedido;
-            }, new { data }, splitOn: "idPedido, idProduto");
-            return result.ToList();
-        }
-
         public async Task<int> TotalRegistros()
         {
             var result = await _context.QueryAsync<int>(@"select count(*) from categoria;", null);

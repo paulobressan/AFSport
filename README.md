@@ -33,19 +33,16 @@ INSTALAÇÃO DO SOFTWARE
 
 3 - Na pasta raiz, executar o arquivo PimSql_final. O script de criação do banco será carregado no MySql Workbench. Selecionar todas as linhas e executar. O banco estará criado e pronto apara utilização.
 
-4 - Clicar com o botão direito no arquivo AFSport.WindowsForms.exe e selecionar abrir com bloco de notas e inserir o usuário a senha do banco nos seguintes locais: (linhas 8 e 9).
+4 - Clicar com o botão direito no arquivo AFSport.WindowsForms.exe e selecionar abrir com bloco de notas e inserir a senha do banco nos seguintes locais: (linhas 8 e 9).
 
-user id=root
+password=*SENHA* 
 
-password=SENHA
+Exemplo: password=admin
 
-Exemplo: user id=user | password=12345
-
-Onde está escrito root deverá ser substituído pelo usuário do banco de dados.
-Onde está escrito SENHA deverá ser substituído pela senha do banco de dados.
+Onde está escrito *SENHA* deverá ser substituído pela senha do banco de dados.
 Após estes passos, o software estará pronto para ser utilizado.
 
-5	- Executar o software pelo executável AFSport.WindowsForms
+5	- Executar o software pelo executável AFSport.WindowsForms.
 
 6	- Informar usuário e senha padrão:
 

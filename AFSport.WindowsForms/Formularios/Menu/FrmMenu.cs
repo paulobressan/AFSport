@@ -14,7 +14,6 @@ using AFSport.WindowsForms.Formularios.Operacoes;
 using AFSport.WindowsForms.Formularios.Pedidos;
 using AFSport.WindowsForms.Formularios.Precos;
 using AFSport.WindowsForms.Formularios.Produtos;
-using AFSport.WindowsForms.Formularios.Relatorios;
 using AFSport.WindowsForms.Formularios.Usuarios;
 using System;
 using System.Collections.Generic;
@@ -284,12 +283,12 @@ namespace AFSport.WindowsForms.Formularios.Menu
 
         private void BtnIconRelatorios_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmRelatorios());
+            MessageBox.Show("Em Construção.");
         }
 
         private void BtnRelatorios_Click(object sender, EventArgs e)
         {
-            RenderForm(new FrmRelatorios());
+            MessageBox.Show("Em Construção.");
         }
     }
 }

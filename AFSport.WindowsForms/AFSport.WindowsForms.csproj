@@ -235,24 +235,6 @@
     <Compile Include="Formularios\Produtos\FrmProdutos.Designer.cs">
       <DependentUpon>FrmProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorioCaixa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorioCaixa.Designer.cs">
-      <DependentUpon>FrmRelatorioCaixa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorioMovimentacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorioMovimentacao.Designer.cs">
-      <DependentUpon>FrmRelatorioMovimentacao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Relatorios\FrmRelatorios.Designer.cs">
-      <DependentUpon>FrmRelatorios.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Usuarios\FrmFormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,15 +341,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Produtos\FrmProdutos.resx">
       <DependentUpon>FrmProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Relatorios\FrmRelatorioCaixa.resx">
-      <DependentUpon>FrmRelatorioCaixa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Relatorios\FrmRelatorioMovimentacao.resx">
-      <DependentUpon>FrmRelatorioMovimentacao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Relatorios\FrmRelatorios.resx">
-      <DependentUpon>FrmRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\FrmFormUsuario.resx">
       <DependentUpon>FrmFormUsuario.cs</DependentUpon>
