@@ -97,57 +97,81 @@
             // 
             this.BtnCancelar.FlatAppearance.BorderSize = 0;
             this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnCancelar.Location = new System.Drawing.Point(781, 6);
+            this.BtnCancelar.Location = new System.Drawing.Point(1005, 7);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCancelar.Size = new System.Drawing.Size(112, 90);
             // 
             // BtnSalvar
             // 
             this.BtnSalvar.FlatAppearance.BorderSize = 0;
             this.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.BtnSalvar.Location = new System.Drawing.Point(669, 6);
+            this.BtnSalvar.Location = new System.Drawing.Point(893, 7);
+            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSalvar.Size = new System.Drawing.Size(112, 90);
             // 
             // pnlBtns
             // 
-            this.pnlBtns.Location = new System.Drawing.Point(0, 646);
-            this.pnlBtns.Size = new System.Drawing.Size(900, 89);
+            this.pnlBtns.Location = new System.Drawing.Point(0, 776);
+            this.pnlBtns.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlBtns.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.pnlBtns.Size = new System.Drawing.Size(1125, 106);
             // 
             // pblHead
             // 
-            this.pblHead.Size = new System.Drawing.Size(900, 50);
+            this.pblHead.Location = new System.Drawing.Point(0, 12);
+            this.pblHead.Margin = new System.Windows.Forms.Padding(4);
+            this.pblHead.Size = new System.Drawing.Size(1125, 60);
             // 
             // lblSair
             // 
-            this.lblSair.Location = new System.Drawing.Point(847, 11);
+            this.lblSair.Location = new System.Drawing.Point(1059, 13);
+            this.lblSair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Size = new System.Drawing.Size(274, 32);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(338, 40);
             this.lblTitulo.Text = "Cadastro de Pedido";
             // 
             // lblIcone
             // 
-            this.lblIcone.Size = new System.Drawing.Size(44, 28);
+            this.lblIcone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIcone.Size = new System.Drawing.Size(55, 35);
             this.lblIcone.Text = "";
             // 
             // pnlbar
             // 
-            this.pnlbar.Size = new System.Drawing.Size(900, 10);
+            this.pnlbar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlbar.Size = new System.Drawing.Size(1125, 12);
             // 
             // pnlbar2
             // 
-            this.pnlbar2.Size = new System.Drawing.Size(900, 10);
+            this.pnlbar2.Location = new System.Drawing.Point(0, 72);
+            this.pnlbar2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlbar2.Size = new System.Drawing.Size(1125, 12);
             // 
             // pblMain
             // 
             this.pblMain.Controls.Add(this.pnlSelecoes);
             this.pblMain.Controls.Add(this.pnlItens);
-            this.pblMain.Size = new System.Drawing.Size(900, 576);
+            this.pblMain.Location = new System.Drawing.Point(0, 84);
+            this.pblMain.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pblMain.Padding = new System.Windows.Forms.Padding(9, 10, 9, 10);
+            this.pblMain.Size = new System.Drawing.Size(1125, 692);
             this.pblMain.Controls.SetChildIndex(this.pnlId, 0);
             this.pblMain.Controls.SetChildIndex(this.pnlItens, 0);
             this.pblMain.Controls.SetChildIndex(this.pnlSelecoes, 0);
             // 
             // pnlId
             // 
-            this.pnlId.Size = new System.Drawing.Size(884, 78);
+            this.pnlId.Location = new System.Drawing.Point(9, 10);
+            this.pnlId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlId.Padding = new System.Windows.Forms.Padding(12);
+            this.pnlId.Size = new System.Drawing.Size(1105, 94);
+            // 
+            // LblId
+            // 
+            this.LblId.Location = new System.Drawing.Point(12, 12);
             // 
             // pnlItens
             // 
@@ -156,19 +180,21 @@
             this.pnlItens.Controls.Add(this.GridItens);
             this.pnlItens.Controls.Add(this.pnlTituloItens);
             this.pnlItens.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlItens.Location = new System.Drawing.Point(7, 86);
+            this.pnlItens.Location = new System.Drawing.Point(9, 104);
+            this.pnlItens.Margin = new System.Windows.Forms.Padding(4);
             this.pnlItens.Name = "pnlItens";
-            this.pnlItens.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlItens.Size = new System.Drawing.Size(400, 480);
+            this.pnlItens.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlItens.Size = new System.Drawing.Size(500, 576);
             this.pnlItens.TabIndex = 1;
             // 
             // pnlValorTotal
             // 
             this.pnlValorTotal.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlValorTotal.Controls.Add(this.lblPreco);
-            this.pnlValorTotal.Location = new System.Drawing.Point(5, 431);
+            this.pnlValorTotal.Location = new System.Drawing.Point(6, 517);
+            this.pnlValorTotal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlValorTotal.Name = "pnlValorTotal";
-            this.pnlValorTotal.Size = new System.Drawing.Size(390, 44);
+            this.pnlValorTotal.Size = new System.Drawing.Size(488, 53);
             this.pnlValorTotal.TabIndex = 3;
             // 
             // lblPreco
@@ -177,9 +203,10 @@
             this.lblPreco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPreco.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreco.ForeColor = System.Drawing.Color.White;
-            this.lblPreco.Location = new System.Drawing.Point(159, 6);
+            this.lblPreco.Location = new System.Drawing.Point(199, 7);
+            this.lblPreco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(68, 32);
+            this.lblPreco.Size = new System.Drawing.Size(83, 40);
             this.lblPreco.TabIndex = 0;
             this.lblPreco.Text = "0,00";
             // 
@@ -188,10 +215,11 @@
             this.pnlOperacoesItens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlOperacoesItens.Controls.Add(this.BtnRemoverItem);
             this.pnlOperacoesItens.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOperacoesItens.Location = new System.Drawing.Point(5, 376);
+            this.pnlOperacoesItens.Location = new System.Drawing.Point(6, 451);
+            this.pnlOperacoesItens.Margin = new System.Windows.Forms.Padding(4);
             this.pnlOperacoesItens.Name = "pnlOperacoesItens";
-            this.pnlOperacoesItens.Padding = new System.Windows.Forms.Padding(8);
-            this.pnlOperacoesItens.Size = new System.Drawing.Size(390, 50);
+            this.pnlOperacoesItens.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlOperacoesItens.Size = new System.Drawing.Size(488, 60);
             this.pnlOperacoesItens.TabIndex = 2;
             // 
             // BtnRemoverItem
@@ -203,9 +231,10 @@
             this.BtnRemoverItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRemoverItem.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRemoverItem.ForeColor = System.Drawing.Color.Red;
-            this.BtnRemoverItem.Location = new System.Drawing.Point(332, 8);
+            this.BtnRemoverItem.Location = new System.Drawing.Point(416, 10);
+            this.BtnRemoverItem.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRemoverItem.Name = "BtnRemoverItem";
-            this.BtnRemoverItem.Size = new System.Drawing.Size(48, 32);
+            this.BtnRemoverItem.Size = new System.Drawing.Size(60, 38);
             this.BtnRemoverItem.TabIndex = 0;
             this.BtnRemoverItem.Text = "";
             this.BtnRemoverItem.UseVisualStyleBackColor = true;
@@ -226,13 +255,14 @@
             this.quantidade,
             this.itemPedido});
             this.GridItens.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GridItens.Location = new System.Drawing.Point(5, 48);
+            this.GridItens.Location = new System.Drawing.Point(6, 57);
+            this.GridItens.Margin = new System.Windows.Forms.Padding(4);
             this.GridItens.MultiSelect = false;
             this.GridItens.Name = "GridItens";
             this.GridItens.ReadOnly = true;
             this.GridItens.RowHeadersVisible = false;
             this.GridItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridItens.Size = new System.Drawing.Size(390, 328);
+            this.GridItens.Size = new System.Drawing.Size(488, 394);
             this.GridItens.TabIndex = 1;
             this.GridItens.SelectionChanged += new System.EventHandler(this.GridItens_SelectionChanged);
             // 
@@ -274,10 +304,11 @@
             this.pnlTituloItens.Controls.Add(this.lblTituloItens);
             this.pnlTituloItens.Controls.Add(this.lblIcoTituloItens);
             this.pnlTituloItens.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTituloItens.Location = new System.Drawing.Point(5, 5);
+            this.pnlTituloItens.Location = new System.Drawing.Point(6, 6);
+            this.pnlTituloItens.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTituloItens.Name = "pnlTituloItens";
-            this.pnlTituloItens.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlTituloItens.Size = new System.Drawing.Size(390, 43);
+            this.pnlTituloItens.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlTituloItens.Size = new System.Drawing.Size(488, 51);
             this.pnlTituloItens.TabIndex = 0;
             // 
             // lblTituloItens
@@ -286,9 +317,10 @@
             this.lblTituloItens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTituloItens.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloItens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTituloItens.Location = new System.Drawing.Point(57, 9);
+            this.lblTituloItens.Location = new System.Drawing.Point(71, 11);
+            this.lblTituloItens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTituloItens.Name = "lblTituloItens";
-            this.lblTituloItens.Size = new System.Drawing.Size(234, 24);
+            this.lblTituloItens.Size = new System.Drawing.Size(308, 32);
             this.lblTituloItens.TabIndex = 1;
             this.lblTituloItens.Text = "Produtos Adicionados";
             // 
@@ -299,9 +331,10 @@
             this.lblIcoTituloItens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIcoTituloItens.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIcoTituloItens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIcoTituloItens.Location = new System.Drawing.Point(5, 5);
+            this.lblIcoTituloItens.Location = new System.Drawing.Point(6, 6);
+            this.lblIcoTituloItens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIcoTituloItens.Name = "lblIcoTituloItens";
-            this.lblIcoTituloItens.Size = new System.Drawing.Size(46, 33);
+            this.lblIcoTituloItens.Size = new System.Drawing.Size(57, 41);
             this.lblIcoTituloItens.TabIndex = 0;
             this.lblIcoTituloItens.Text = "";
             // 
@@ -310,9 +343,10 @@
             this.pnlSelecoes.Controls.Add(this.pnlSelecaoProdutos);
             this.pnlSelecoes.Controls.Add(this.pnlCliente);
             this.pnlSelecoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSelecoes.Location = new System.Drawing.Point(407, 86);
+            this.pnlSelecoes.Location = new System.Drawing.Point(509, 104);
+            this.pnlSelecoes.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSelecoes.Name = "pnlSelecoes";
-            this.pnlSelecoes.Size = new System.Drawing.Size(484, 480);
+            this.pnlSelecoes.Size = new System.Drawing.Size(605, 576);
             this.pnlSelecoes.TabIndex = 2;
             // 
             // pnlSelecaoProdutos
@@ -321,10 +355,11 @@
             this.pnlSelecaoProdutos.Controls.Add(this.pnlProdutoPesquisa);
             this.pnlSelecaoProdutos.Controls.Add(this.pnlProdutoTitulo);
             this.pnlSelecaoProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSelecaoProdutos.Location = new System.Drawing.Point(0, 119);
+            this.pnlSelecaoProdutos.Location = new System.Drawing.Point(0, 143);
+            this.pnlSelecaoProdutos.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSelecaoProdutos.Name = "pnlSelecaoProdutos";
-            this.pnlSelecaoProdutos.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlSelecaoProdutos.Size = new System.Drawing.Size(484, 361);
+            this.pnlSelecaoProdutos.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlSelecaoProdutos.Size = new System.Drawing.Size(605, 433);
             this.pnlSelecaoProdutos.TabIndex = 1;
             // 
             // pnlProdutosSelecao
@@ -333,10 +368,11 @@
             this.pnlProdutosSelecao.Controls.Add(this.pnlProdutosOperacoes);
             this.pnlProdutosSelecao.Controls.Add(this.GridProdutos);
             this.pnlProdutosSelecao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProdutosSelecao.Location = new System.Drawing.Point(5, 91);
+            this.pnlProdutosSelecao.Location = new System.Drawing.Point(6, 108);
+            this.pnlProdutosSelecao.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdutosSelecao.Name = "pnlProdutosSelecao";
-            this.pnlProdutosSelecao.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlProdutosSelecao.Size = new System.Drawing.Size(474, 265);
+            this.pnlProdutosSelecao.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlProdutosSelecao.Size = new System.Drawing.Size(593, 319);
             this.pnlProdutosSelecao.TabIndex = 3;
             // 
             // pnlProdutosOperacoes
@@ -344,20 +380,22 @@
             this.pnlProdutosOperacoes.Controls.Add(this.txtQuantidade);
             this.pnlProdutosOperacoes.Controls.Add(this.BtnAdicionar);
             this.pnlProdutosOperacoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlProdutosOperacoes.Location = new System.Drawing.Point(5, 207);
+            this.pnlProdutosOperacoes.Location = new System.Drawing.Point(6, 248);
+            this.pnlProdutosOperacoes.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdutosOperacoes.Name = "pnlProdutosOperacoes";
-            this.pnlProdutosOperacoes.Padding = new System.Windows.Forms.Padding(8);
-            this.pnlProdutosOperacoes.Size = new System.Drawing.Size(462, 50);
+            this.pnlProdutosOperacoes.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlProdutosOperacoes.Size = new System.Drawing.Size(579, 60);
             this.pnlProdutosOperacoes.TabIndex = 6;
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtQuantidade.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantidade.Location = new System.Drawing.Point(8, 8);
+            this.txtQuantidade.Location = new System.Drawing.Point(10, 10);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantidade.MaxLength = 3;
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(45, 32);
+            this.txtQuantidade.Size = new System.Drawing.Size(55, 38);
             this.txtQuantidade.TabIndex = 2;
             this.txtQuantidade.Text = "1";
             this.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -371,9 +409,10 @@
             this.BtnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdicionar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdicionar.ForeColor = System.Drawing.Color.Green;
-            this.BtnAdicionar.Location = new System.Drawing.Point(406, 8);
+            this.BtnAdicionar.Location = new System.Drawing.Point(509, 10);
+            this.BtnAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAdicionar.Name = "BtnAdicionar";
-            this.BtnAdicionar.Size = new System.Drawing.Size(48, 34);
+            this.BtnAdicionar.Size = new System.Drawing.Size(60, 40);
             this.BtnAdicionar.TabIndex = 0;
             this.BtnAdicionar.Text = "";
             this.ToolTipTexto.SetToolTip(this.BtnAdicionar, "F3 - Adicionar Produto.");
@@ -400,14 +439,14 @@
             this.isAtivo,
             this.idCategoria});
             this.GridProdutos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GridProdutos.Location = new System.Drawing.Point(5, 5);
-            this.GridProdutos.Margin = new System.Windows.Forms.Padding(4);
+            this.GridProdutos.Location = new System.Drawing.Point(6, 6);
+            this.GridProdutos.Margin = new System.Windows.Forms.Padding(5);
             this.GridProdutos.MultiSelect = false;
             this.GridProdutos.Name = "GridProdutos";
             this.GridProdutos.ReadOnly = true;
             this.GridProdutos.RowHeadersVisible = false;
             this.GridProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridProdutos.Size = new System.Drawing.Size(462, 202);
+            this.GridProdutos.Size = new System.Drawing.Size(579, 242);
             this.GridProdutos.TabIndex = 5;
             this.GridProdutos.SelectionChanged += new System.EventHandler(this.GridProdutos_SelectionChanged);
             // 
@@ -482,10 +521,11 @@
             this.pnlProdutoPesquisa.Controls.Add(this.BtnProdutoPesquisar);
             this.pnlProdutoPesquisa.Controls.Add(this.TxtProdutoPesquisa);
             this.pnlProdutoPesquisa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlProdutoPesquisa.Location = new System.Drawing.Point(5, 48);
+            this.pnlProdutoPesquisa.Location = new System.Drawing.Point(6, 57);
+            this.pnlProdutoPesquisa.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdutoPesquisa.Name = "pnlProdutoPesquisa";
-            this.pnlProdutoPesquisa.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlProdutoPesquisa.Size = new System.Drawing.Size(474, 43);
+            this.pnlProdutoPesquisa.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlProdutoPesquisa.Size = new System.Drawing.Size(593, 51);
             this.pnlProdutoPesquisa.TabIndex = 2;
             // 
             // BtnProdutoPesquisar
@@ -497,9 +537,10 @@
             this.BtnProdutoPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProdutoPesquisar.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProdutoPesquisar.ForeColor = System.Drawing.Color.Blue;
-            this.BtnProdutoPesquisar.Location = new System.Drawing.Point(423, 5);
+            this.BtnProdutoPesquisar.Location = new System.Drawing.Point(528, 6);
+            this.BtnProdutoPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnProdutoPesquisar.Name = "BtnProdutoPesquisar";
-            this.BtnProdutoPesquisar.Size = new System.Drawing.Size(44, 31);
+            this.BtnProdutoPesquisar.Size = new System.Drawing.Size(57, 37);
             this.BtnProdutoPesquisar.TabIndex = 2;
             this.BtnProdutoPesquisar.Text = "";
             this.ToolTipTexto.SetToolTip(this.BtnProdutoPesquisar, "Buscar produtos.");
@@ -510,9 +551,10 @@
             // 
             this.TxtProdutoPesquisa.Dock = System.Windows.Forms.DockStyle.Left;
             this.TxtProdutoPesquisa.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtProdutoPesquisa.Location = new System.Drawing.Point(5, 5);
+            this.TxtProdutoPesquisa.Location = new System.Drawing.Point(6, 6);
+            this.TxtProdutoPesquisa.Margin = new System.Windows.Forms.Padding(4);
             this.TxtProdutoPesquisa.Name = "TxtProdutoPesquisa";
-            this.TxtProdutoPesquisa.Size = new System.Drawing.Size(418, 32);
+            this.TxtProdutoPesquisa.Size = new System.Drawing.Size(522, 38);
             this.TxtProdutoPesquisa.TabIndex = 0;
             this.TxtProdutoPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtProdutoPesquisa_KeyDown);
             // 
@@ -522,10 +564,11 @@
             this.pnlProdutoTitulo.Controls.Add(this.lblProdutoTitulo);
             this.pnlProdutoTitulo.Controls.Add(this.lblIconProdutoTitulo);
             this.pnlProdutoTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlProdutoTitulo.Location = new System.Drawing.Point(5, 5);
+            this.pnlProdutoTitulo.Location = new System.Drawing.Point(6, 6);
+            this.pnlProdutoTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlProdutoTitulo.Name = "pnlProdutoTitulo";
-            this.pnlProdutoTitulo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlProdutoTitulo.Size = new System.Drawing.Size(474, 43);
+            this.pnlProdutoTitulo.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlProdutoTitulo.Size = new System.Drawing.Size(593, 51);
             this.pnlProdutoTitulo.TabIndex = 1;
             // 
             // lblProdutoTitulo
@@ -534,9 +577,10 @@
             this.lblProdutoTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProdutoTitulo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdutoTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblProdutoTitulo.Location = new System.Drawing.Point(66, 10);
+            this.lblProdutoTitulo.Location = new System.Drawing.Point(82, 12);
+            this.lblProdutoTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProdutoTitulo.Name = "lblProdutoTitulo";
-            this.lblProdutoTitulo.Size = new System.Drawing.Size(220, 24);
+            this.lblProdutoTitulo.Size = new System.Drawing.Size(287, 32);
             this.lblProdutoTitulo.TabIndex = 3;
             this.lblProdutoTitulo.Text = "Seleção de Produtos";
             // 
@@ -547,9 +591,10 @@
             this.lblIconProdutoTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIconProdutoTitulo.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIconProdutoTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIconProdutoTitulo.Location = new System.Drawing.Point(5, 5);
+            this.lblIconProdutoTitulo.Location = new System.Drawing.Point(6, 6);
+            this.lblIconProdutoTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIconProdutoTitulo.Name = "lblIconProdutoTitulo";
-            this.lblIconProdutoTitulo.Size = new System.Drawing.Size(43, 33);
+            this.lblIconProdutoTitulo.Size = new System.Drawing.Size(53, 41);
             this.lblIconProdutoTitulo.TabIndex = 2;
             this.lblIconProdutoTitulo.Text = "";
             // 
@@ -564,44 +609,49 @@
             this.pnlCliente.Controls.Add(this.pnlClienteTitulo);
             this.pnlCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCliente.Location = new System.Drawing.Point(0, 0);
+            this.pnlCliente.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCliente.Name = "pnlCliente";
-            this.pnlCliente.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlCliente.Size = new System.Drawing.Size(484, 119);
+            this.pnlCliente.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlCliente.Size = new System.Drawing.Size(605, 143);
             this.pnlCliente.TabIndex = 0;
             // 
             // lblClienteEnderecoTexto
             // 
             this.lblClienteEnderecoTexto.AutoSize = true;
-            this.lblClienteEnderecoTexto.Location = new System.Drawing.Point(187, 84);
+            this.lblClienteEnderecoTexto.Location = new System.Drawing.Point(234, 101);
+            this.lblClienteEnderecoTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClienteEnderecoTexto.Name = "lblClienteEnderecoTexto";
-            this.lblClienteEnderecoTexto.Size = new System.Drawing.Size(13, 20);
+            this.lblClienteEnderecoTexto.Size = new System.Drawing.Size(15, 24);
             this.lblClienteEnderecoTexto.TabIndex = 5;
             this.lblClienteEnderecoTexto.Text = "-";
             // 
             // lblClienteEndereco
             // 
             this.lblClienteEndereco.AutoSize = true;
-            this.lblClienteEndereco.Location = new System.Drawing.Point(105, 84);
+            this.lblClienteEndereco.Location = new System.Drawing.Point(131, 101);
+            this.lblClienteEndereco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClienteEndereco.Name = "lblClienteEndereco";
-            this.lblClienteEndereco.Size = new System.Drawing.Size(76, 20);
+            this.lblClienteEndereco.Size = new System.Drawing.Size(89, 24);
             this.lblClienteEndereco.TabIndex = 4;
             this.lblClienteEndereco.Text = "Endereço :";
             // 
             // lblClienteNomeTexto
             // 
             this.lblClienteNomeTexto.AutoSize = true;
-            this.lblClienteNomeTexto.Location = new System.Drawing.Point(187, 64);
+            this.lblClienteNomeTexto.Location = new System.Drawing.Point(234, 77);
+            this.lblClienteNomeTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClienteNomeTexto.Name = "lblClienteNomeTexto";
-            this.lblClienteNomeTexto.Size = new System.Drawing.Size(13, 20);
+            this.lblClienteNomeTexto.Size = new System.Drawing.Size(15, 24);
             this.lblClienteNomeTexto.TabIndex = 3;
             this.lblClienteNomeTexto.Text = "-";
             // 
             // lblClienteNome
             // 
             this.lblClienteNome.AutoSize = true;
-            this.lblClienteNome.Location = new System.Drawing.Point(128, 64);
+            this.lblClienteNome.Location = new System.Drawing.Point(160, 77);
+            this.lblClienteNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClienteNome.Name = "lblClienteNome";
-            this.lblClienteNome.Size = new System.Drawing.Size(53, 20);
+            this.lblClienteNome.Size = new System.Drawing.Size(65, 24);
             this.lblClienteNome.TabIndex = 2;
             this.lblClienteNome.Text = "Nome :";
             // 
@@ -614,9 +664,10 @@
             this.BtnSelecaoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSelecaoCliente.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSelecaoCliente.ForeColor = System.Drawing.Color.Blue;
-            this.BtnSelecaoCliente.Location = new System.Drawing.Point(5, 54);
+            this.BtnSelecaoCliente.Location = new System.Drawing.Point(6, 65);
+            this.BtnSelecaoCliente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSelecaoCliente.Name = "BtnSelecaoCliente";
-            this.BtnSelecaoCliente.Size = new System.Drawing.Size(94, 59);
+            this.BtnSelecaoCliente.Size = new System.Drawing.Size(118, 71);
             this.BtnSelecaoCliente.TabIndex = 1;
             this.BtnSelecaoCliente.Text = "";
             this.ToolTipTexto.SetToolTip(this.BtnSelecaoCliente, "Selecionar ou cadastrar Clientes.");
@@ -629,10 +680,11 @@
             this.pnlClienteTitulo.Controls.Add(this.lblClienteTitulo);
             this.pnlClienteTitulo.Controls.Add(this.lblIconClienteTitulo);
             this.pnlClienteTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlClienteTitulo.Location = new System.Drawing.Point(5, 5);
+            this.pnlClienteTitulo.Location = new System.Drawing.Point(6, 6);
+            this.pnlClienteTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlClienteTitulo.Name = "pnlClienteTitulo";
-            this.pnlClienteTitulo.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlClienteTitulo.Size = new System.Drawing.Size(474, 43);
+            this.pnlClienteTitulo.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlClienteTitulo.Size = new System.Drawing.Size(593, 51);
             this.pnlClienteTitulo.TabIndex = 0;
             // 
             // lblClienteTitulo
@@ -641,9 +693,10 @@
             this.lblClienteTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblClienteTitulo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClienteTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblClienteTitulo.Location = new System.Drawing.Point(66, 9);
+            this.lblClienteTitulo.Location = new System.Drawing.Point(82, 11);
+            this.lblClienteTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClienteTitulo.Name = "lblClienteTitulo";
-            this.lblClienteTitulo.Size = new System.Drawing.Size(196, 24);
+            this.lblClienteTitulo.Size = new System.Drawing.Size(258, 32);
             this.lblClienteTitulo.TabIndex = 3;
             this.lblClienteTitulo.Text = "Seleção de Cliente";
             // 
@@ -654,17 +707,19 @@
             this.lblIconClienteTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIconClienteTitulo.Font = new System.Drawing.Font("Font Awesome 5 Free Solid", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIconClienteTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblIconClienteTitulo.Location = new System.Drawing.Point(5, 5);
+            this.lblIconClienteTitulo.Location = new System.Drawing.Point(6, 6);
+            this.lblIconClienteTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIconClienteTitulo.Name = "lblIconClienteTitulo";
-            this.lblIconClienteTitulo.Size = new System.Drawing.Size(55, 33);
+            this.lblIconClienteTitulo.Size = new System.Drawing.Size(68, 41);
             this.lblIconClienteTitulo.TabIndex = 2;
             this.lblIconClienteTitulo.Text = "";
             // 
             // FrmFormPedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 735);
+            this.ClientSize = new System.Drawing.Size(1125, 882);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmFormPedido";
             this.Text = "FrmFormPedido";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmFormPedido_KeyDown);
