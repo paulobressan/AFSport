@@ -1,0 +1,62 @@
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe.config
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.pdb
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\Dapper.dll
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.dll
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.dll
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\Dapper.xml
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.xml
+D:\Source\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.xml
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csprojResolveAssemblyReference.cache
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.Base.FrmQuestionarioBase.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmAgradecimento.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmParticipante.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmPerguntas.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmSorteio.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Properties.Resources.resources
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.GenerateResource.Cache
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.CoreCompileInputs.cache
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.exe
+D:\Source\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe.config
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\Dapper.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\Dapper.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csprojResolveAssemblyReference.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.Base.FrmQuestionarioBase.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmAgradecimento.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmParticipante.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmPerguntas.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmSorteio.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Properties.Resources.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.GenerateResource.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.CoreCompileInputs.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.CopyComplete
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.exe
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe.config
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.exe
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\AFSport.Questionario.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\Dapper.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\Dapper.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\Google.Protobuf.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\bin\Debug\MySql.Data.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.Base.FrmQuestionarioBase.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmAgradecimento.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmParticipante.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmPerguntas.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Formularios.FrmSorteio.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.Properties.Resources.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.GenerateResource.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.csproj.CopyComplete
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.exe
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Questionario\obj\Debug\AFSport.Questionario.pdb

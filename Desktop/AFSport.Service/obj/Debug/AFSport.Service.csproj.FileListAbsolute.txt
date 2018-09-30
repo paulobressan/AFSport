@@ -1,0 +1,41 @@
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+D:\Source\AFSport\AFSport.Service\bin\Debug\Dapper.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\MySql.Data.dll
+D:\Source\AFSport\AFSport.Service\bin\Debug\Dapper.xml
+D:\Source\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.xml
+D:\Source\AFSport\AFSport.Service\bin\Debug\MySql.Data.xml
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+D:\Source\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\Dapper.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\MySql.Data.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\Dapper.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\bin\Debug\MySql.Data.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\Dapper.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\MySql.Data.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\Dapper.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\Google.Protobuf.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\bin\Debug\MySql.Data.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb

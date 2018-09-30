@@ -1,0 +1,170 @@
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe.config
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.pdb
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.dll
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.dll
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.dll
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.pdb
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe.config
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.pdb
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll.config
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.xml
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.xml
+D:\Source\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.xml
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csprojResolveAssemblyReference.cache
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmCadastroBase.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmFormularioBase.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmModal.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmAberturaCaixa.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmCaixa.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmFormCaixa.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmCategorias.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmFormCategoria.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmCidades.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmFormCidade.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmClientes.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmFormClientes.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmEstados.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmFormEstado.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmEstoque.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmFormEstoque.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Login.FrmLogin.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmMenu.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmPainelInicial.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmFormMovimentacao.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmMovimentacoes.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmFormOperacao.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmOperacoes.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFinalizadora.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFormPedido.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmPedidos.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmSelecaoCliente.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmFormPrecos.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmPrecos.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmFormProdutos.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmProdutos.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmFormUsuario.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmUsuarios.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Properties.Resources.resources
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.GenerateResource.Cache
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CoreCompileInputs.cache
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.exe
+D:\Source\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe.config
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.dll
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe.config
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.pdb
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll.config
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.xml
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csprojResolveAssemblyReference.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmCadastroBase.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmFormularioBase.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmModal.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmAberturaCaixa.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmCaixa.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmFormCaixa.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmCategorias.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmFormCategoria.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmCidades.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmFormCidade.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmClientes.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmFormClientes.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmEstados.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmFormEstado.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmEstoque.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmFormEstoque.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Login.FrmLogin.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmMenu.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmPainelInicial.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmFormMovimentacao.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmMovimentacoes.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmFormOperacao.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmOperacoes.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFinalizadora.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFormPedido.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmPedidos.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmSelecaoCliente.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmFormPrecos.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmPrecos.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmFormProdutos.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmProdutos.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorioCaixa.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorioMovimentacao.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorios.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmFormUsuario.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmUsuarios.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Properties.Resources.resources
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.GenerateResource.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CopyComplete
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.exe
+C:\Users\vinicius\Documents\GitHub\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe.config
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.exe
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.WindowsForms.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.dll
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Questionario.exe.config
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.pdb
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\AFSport.Service.dll.config
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\MySql.Data.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\Dapper.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\bin\Debug\Google.Protobuf.xml
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmCadastroBase.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmFormularioBase.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Base.FrmModal.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmAberturaCaixa.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmCaixa.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Caixas.FrmFormCaixa.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmCategorias.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Categorias.FrmFormCategoria.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmCidades.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Cidades.FrmFormCidade.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmClientes.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Clientes.FrmFormClientes.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmEstados.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estados.FrmFormEstado.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmEstoque.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Estoques.FrmFormEstoque.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Login.FrmLogin.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmMenu.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Menu.FrmPainelInicial.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmFormMovimentacao.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Movimentacoes.FrmMovimentacoes.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmFormOperacao.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Operacoes.FrmOperacoes.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFinalizadora.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmFormPedido.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmPedidos.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Pedidos.FrmSelecaoCliente.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmFormPrecos.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Precos.FrmPrecos.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmFormProdutos.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Produtos.FrmProdutos.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorioCaixa.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorioMovimentacao.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Relatorios.FrmRelatorios.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmFormUsuario.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Formularios.Usuarios.FrmUsuarios.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.Properties.Resources.resources
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.GenerateResource.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.csproj.CopyComplete
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.exe
+C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.WindowsForms\obj\Debug\AFSport.WindowsForms.pdb
