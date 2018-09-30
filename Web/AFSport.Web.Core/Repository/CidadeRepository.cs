@@ -14,8 +14,7 @@ namespace AFSport.Web.Core.Repository
     public class CidadeRepository : BaseRepository, ICidadeRepository
     {
         public CidadeRepository(IConfiguration configuration) : base(configuration)
-        {
-        }
+        { }
 
         public async Task Remover(Cidade cidade)
         {
@@ -49,50 +48,62 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<Cidade> SelecionarId(int id)
         {
-            var result = await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+            return (await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado
                 where c.idCidade = @idCidade;", (cidade, estado) =>
                 {
                     cidade.Estado = estado;
                     return cidade;
-                }, new { idCidade = id }, splitOn: "idEstado");
-            return result.SingleOrDefault();
+                }, new { idCidade = id }, splitOn: "idEstado"))
+                 .SingleOrDefault();
         }
 
         public async Task<List<Cidade>> SelecionarTodosPorEstado(int idEstado)
         {
-            var result = await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+            return (await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado 
                 where c.idEstado = @idEstado;", (cidade, estado) =>
                 {
                     cidade.Estado = estado;
                     return cidade;
-                }, new { idEstado }, splitOn: "idEstado");
-            return result.ToList();
+                }, new { idEstado }, splitOn: "idEstado"))
+                 .ToList();
         }
 
-        public async Task<List<Cidade>> SelecionarTodos(bool selecionarTodos)
+        public async Task<IEnumerable<Cidade>> SelecionarTodos()
         {
-            var result = selecionarTodos
-                ? await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+            return await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado where e.isAtivo = true;", (cidade, estado) =>
                 {
                     cidade.Estado = estado;
                     return cidade;
-                }, null, splitOn: "idEstado")
-                : await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+                }, null, splitOn: "idEstado");
+        }
+
+        public async Task<IEnumerable<Cidade>> SelecionarTodosAtivos()
+        {
+            return await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado where c.isAtivo = true and e.isAtivo = true;", (cidade, estado) =>
                 {
                     cidade.Estado = estado;
                     return cidade;
                 }, null, splitOn: "idEstado");
-            return result.ToList();
+        }
+
+        public async Task<IEnumerable<Cidade>> SelecionarTodosInativos()
+        {
+            return await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+                inner join estado as e on c.idEstado = e.idEstado where c.isAtivo = false and e.isAtivo = true;", (cidade, estado) =>
+                {
+                    cidade.Estado = estado;
+                    return cidade;
+                }, null, splitOn: "idEstado");
         }
 
         public async Task<int> TotalRegistros()
         {
-            var result = await _context.QueryAsync<int>(@"select count(*) from cidade where isAtivo = true;", null);
-            return result.Single();
+            return (await _context.QueryAsync<int>(@"select count(*) from cidade where isAtivo = true;", null))
+                .Single();
         }
     }
 }

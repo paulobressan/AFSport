@@ -8,12 +8,13 @@ namespace AFSport.Web.Core.Interface.Repository
 {
     public interface IClienteRepository
     {
-        Task<List<Cliente>> SelecionarTodos(bool selecionarTodos);
+        Task<IEnumerable    <Cliente>> SelecionarTodos();
         Task<Cliente> SelecionarId(int id);
-        Task<Cliente> Salvar(Cliente obj);
-        Task Remover(Cliente obj);
-        Task<List<Cliente>> SelecionarPorCidade(int idCidade);
-        Task<List<Cliente>> SelecionarPesquisaNomeId(string valor);
+        Task<Cliente> Inserir(Cliente cliente);
+        Task<Cliente> Alterar(Cliente cliente);
+        Task Remover(Cliente cliente);
+        Task<IEnumerable    <Cliente>> SelecionarPorCidade(int idCidade);
+        Task<IEnumerable    <Cliente>> SelecionarPesquisaNomeId(string valor);
         Task<int> TotalRegistros();
     }
 }

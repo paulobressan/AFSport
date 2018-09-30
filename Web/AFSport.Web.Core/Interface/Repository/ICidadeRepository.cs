@@ -12,17 +12,17 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar todas cidades
         /// </summary>
         /// <returns></returns>
-        Task<List<Cidade>> SelecionarTodos();
+        Task<IEnumerable<Cidade>> SelecionarTodos();
         /// <summary>
         /// Selecionar cidades ativas
         /// </summary>
         /// <returns></returns>
-        Task<List<Cidade>> SelecionarTodosAtivo();
+        Task<IEnumerable<Cidade>> SelecionarTodosAtivos();
         /// <summary>
         /// Selecionar cidades inativas
         /// </summary>
         /// <returns></returns>
-        Task<List<Cidade>> SelecionarTodosInativo();
+        Task<IEnumerable<Cidade>> SelecionarTodosInativos();
         /// <summary>
         /// Selecionar cidade por id
         /// </summary>

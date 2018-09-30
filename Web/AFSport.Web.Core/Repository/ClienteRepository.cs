@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 
 namespace AFSport.Web.Core.Repository
 {
     public class ClienteRepository : BaseRepository, IClienteRepository
     {
+        public ClienteRepository(IConfiguration configuration) : base(configuration)
+        { }
+
         public async Task Remover(Cliente obj)
         {
             await _context.QueryAsync<Cliente>(@"delete from cliente where idCliente = @idCliente", obj);
