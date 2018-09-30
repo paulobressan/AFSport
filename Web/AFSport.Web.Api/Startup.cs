@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AFSport.Web.Core.Infra;
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Repository;
@@ -31,13 +30,21 @@ namespace AFSport.Web.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            #region Dependencias
+            #region Services
+            services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IProdutoService, ProdutoService>();
+            #endregion
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            #endregion
             services.AddAutoMapper();
-            services.Configure<Token>(Configuration.GetSection("Token"));
 
             #region Autenticação JWT
             services.AddAuthentication(options =>
             {
-                options.DefaultAuthenticateScheme = "JwrBearer";
+                options.DefaultAuthenticateScheme = "JwtBearer";
                 options.DefaultChallengeScheme = "JwtBearer";
             }).AddJwtBearer("JwtBearer", options =>
             {
@@ -47,18 +54,13 @@ namespace AFSport.Web.Api
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(Configuration.GetSection("Token").GetValue<Token>("SecurityKey").SecurityKey)),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("alura-webapi-authentication-valid")),
                     ClockSkew = TimeSpan.FromMinutes(30),
-                    ValidIssuer = "AFSport",
-                    ValidAudience = "Service And Mobile AFSport"
+                    ValidIssuer = "AFSport.Web.Api",
+                    ValidAudience = "Service-Mobile"
                 };
             });
             #endregion
-            #region Dependencias
-            services.AddTransient<IAuthService, AuthService>();
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
-            #endregion
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

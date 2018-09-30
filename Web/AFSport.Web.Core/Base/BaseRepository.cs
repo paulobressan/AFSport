@@ -10,10 +10,6 @@ namespace AFSport.Web.Core.Base
     {
         protected readonly IConfiguration _configuration;
         protected IDbConnection _context { get; set; }
-        public BaseRepository()
-        {
-            
-        }
         public BaseRepository(IConfiguration configuration)
         {
             _configuration = configuration;

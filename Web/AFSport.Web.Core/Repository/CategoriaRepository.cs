@@ -2,6 +2,7 @@
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Model;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace AFSport.Web.Core.Repository
 {
     public class CategoriaRepository : BaseRepository, ICategoriaRepository
     {
-        public CategoriaRepository()
+        public CategoriaRepository(IConfiguration configuration) : base(configuration)
         {
         }
 
@@ -22,34 +23,46 @@ namespace AFSport.Web.Core.Repository
                 where idCategoria = @idCategoria", obj);
         }
 
-        public async Task<Categoria> Salvar(Categoria obj)
+        public async Task<Categoria> Inserir(Categoria obj)
         {
-            var result = obj.IdCategoria == 0
-                ? await _context.QueryAsync<Categoria>(@"insert into categoria(nome,descricao,isAtivo) 
-                    values (@nome,@descricao,@isAtivo);
-                    select idCategoria, nome, descricao, isAtivo from categoria
-                    where idCategoria = (select last_insert_id() as idCategoria);", obj)
-                : await _context.QueryAsync<Categoria>(@"update categoria set nome = @nome, descricao = @descricao, isAtivo = @isAtivo 
-                    where idCategoria = @idCategoria;
-                    select idCategoria, nome, descricao, isAtivo from categoria
-                    where idCategoria = @IdCategoria", obj);
-            return result.Single();
+            return (await _context.QueryAsync<Categoria>(@"insert into categoria(nome,descricao,isAtivo) 
+                values (@nome,@descricao,@isAtivo);
+                select idCategoria, nome, descricao, isAtivo from categoria
+                where idCategoria = (select last_insert_id() as idCategoria);", obj))
+                .Single();
+        }
+
+        public async Task<Categoria> Alterar(Categoria obj)
+        {
+            return (await _context.QueryAsync<Categoria>(@"update categoria set nome = @nome, descricao = @descricao, isAtivo = @isAtivo 
+                where idCategoria = @idCategoria;
+                select idCategoria, nome, descricao, isAtivo from categoria
+                where idCategoria = @IdCategoria", obj))
+                .Single();
         }
 
         public async Task<Categoria> SelecionarId(int id)
         {
-            var result = await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
-                where idCategoria = @idCategoria;", new { idCategoria = id });
-            return result.SingleOrDefault();
+            return (await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
+                where idCategoria = @idCategoria;", new { idCategoria = id }))
+                .SingleOrDefault();
         }
 
-        public async Task<List<Categoria>> SelecionarTodos(bool selecionarTodos)
+        public async Task<IEnumerable<Categoria>> SelecionarTodos()
         {
-            var result = selecionarTodos
-                ? await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria;", null)
-                : await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
+            return await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria;", null);
+        }
+
+        public async Task<IEnumerable<Categoria>> SelecionarTodosAtivo()
+        {
+            return await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
                 where isAtivo = true;", null);
-            return result.ToList();
+        }
+
+        public async Task<IEnumerable<Categoria>> SelecionarTodosInativo()
+        {
+            return await _context.QueryAsync<Categoria>(@"select idCategoria, nome, descricao, isAtivo from categoria 
+                where isAtivo = false;", null);
         }
 
         public async Task<int> TotalRegistros()

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AFSport.Web.Core.Infra;
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
@@ -17,13 +16,13 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly IOptions<Token> _optionsToken;
+        private readonly IConfiguration _configuration;
         #endregion
 
-        public AuthService(IUsuarioRepository usuarioRepository, IOptions<Token> options)
+        public AuthService(IUsuarioRepository usuarioRepository, IConfiguration configuration)
         {
             _usuarioRepository = usuarioRepository;
-            _optionsToken = options;
+            _configuration = configuration;
         }
 
         public async Task<string> Auth(Usuario usuario)
@@ -36,15 +35,19 @@ namespace AFSport.Web.Core.Service
         {
             return await Task.Factory.StartNew(() =>
             {
-                var direitos = new[]{
-                new Claim(JwtRegisteredClaimNames.Sub, usuario.Nome),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-                var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_optionsToken.Value.SecurityKey));
+                var direitos = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, usuario.Nome),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                };
+
+                var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("alura-webapi-authentication-valid"));
+
                 var credenciais = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
+
                 var token = new JwtSecurityToken(
-                    issuer: "AFSport",
-                    audience: "Service and Mobile",
+                    issuer: "AFSport.Web.Api",
+                    audience: "Service-Mobile",
                     claims: direitos,
                     signingCredentials: credenciais,
                     expires: DateTime.Now.AddMinutes(30)

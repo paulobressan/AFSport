@@ -14,8 +14,8 @@ namespace AFSport.Web.Api.Mapper
             #endregion
 
             #region Produto
-            CreateMap<Produto, ProdutoDTO>();
-            CreateMap<ProdutoDTO, Produto>();
+            CreateMap<Produto, ProdutoListaDTO>();
+            CreateMap<ProdutoSalvarDTO, Produto>();
             #endregion
         }
     }

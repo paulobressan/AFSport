@@ -38,13 +38,13 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        Task<Produto> Alterar(Produto obj);
+        Task<Produto> Alterar(int id, Produto obj);
         /// <summary>
-        /// Remover produto
+        /// Remover Produto
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        Task Remover(Produto obj);
+        Task Remover(int id);
         /// <summary>
         /// Filtrar produto por nome ou Id
         /// </summary>

@@ -1,28 +1,26 @@
-﻿using AFSport.Web.Core.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using AFSport.Web.Core.Model;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
-    public interface ICategoriaRepository
+    public interface ICategoriaService
     {
         /// <summary>
         /// Selecionar todas categorias
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Categoria>> SelecionarTodos();
+        Task<List<Categoria>> SelecionarTodos();
         /// <summary>
         /// Selecionar todas categorias ativas
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Categoria>> SelecionarTodosAtivo();
+        Task<List<Categoria>> SelecionarTodosAtivo();
         /// <summary>
         /// Selecionar todas categorias Inativas
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Categoria>> SelecionarTodosInativo();
+        Task<List<Categoria>> SelecionarTodosInativo();
         /// <summary>
         /// Selecionar categoria por id
         /// </summary>
@@ -32,21 +30,21 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Inserir nova categoria
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="categoria"></param>
         /// <returns></returns>
-        Task<Categoria> Inserir(Categoria obj);
+        Task<Categoria> Inserir(Categoria categoria);
         /// <summary>
         /// Alterar categoria
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="categoria"></param>
         /// <returns></returns>
-        Task<Categoria> Alterar(Categoria obj);
+        Task<Categoria> Alterar(int id, Categoria categoria);
         /// <summary>
         /// Remover categoria
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        Task Remover(Categoria obj);
+        Task Remover(int id);
         /// <summary>
         /// Selecionar total de categoria
         /// </summary>

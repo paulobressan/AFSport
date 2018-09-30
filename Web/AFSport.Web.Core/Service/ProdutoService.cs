@@ -18,44 +18,71 @@ namespace AFSport.Web.Core.Service
         {
             _produtoRepository = produtoRepository;
         }
-        public Task<Produto> Alterar(Produto obj)
+
+        #region Selecionar
+        public async Task<Produto> SelecionarId(int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _produtoRepository.SelecionarId(id) ??
+                    throw new KeyNotFoundException("Produto não encontrado");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Produto> Inserir(Produto obj)
+        public async Task<List<Produto>> SelecionarPorNomeId(string valor)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarPorNomeId(valor))
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task Remover(Produto obj)
+        public async Task<List<Produto>> SelecionarProdutosComEstoque()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarProdutosComEstoque())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Produto> SelecionarId(int id)
+        public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarProdutosPorCategoria(idCategoria))
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<List<Produto>> SelecionarPorNomeId(string valor)
+        public async Task<List<Produto>> SelecionarProdutosSemEstoque()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<List<Produto>> SelecionarProdutosComEstoque()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<List<Produto>> SelecionarProdutosSemEstoque()
-        {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarProdutosSemEstoque())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<List<Produto>> SelecionarTodos()
@@ -71,19 +98,84 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public Task<List<Produto>> SelecionarTodosAtivos()
+        public async Task<List<Produto>> SelecionarTodosAtivos()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarTodosAtivos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<List<Produto>> SelecionarTodosInativos()
+        public async Task<List<Produto>> SelecionarTodosInativos()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.SelecionarTodosInativos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<int> TotalRegistros()
+        public async Task<int> TotalRegistros()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _produtoRepository.TotalRegistros());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+        #endregion
+        #region Editar
+        public async Task<Produto> Alterar(int id, Produto obj)
+        {
+            try
+            {
+                await SelecionarId(id);
+                return await _produtoRepository.Alterar(obj);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+        #region Novo
+        public async Task<Produto> Inserir(Produto obj)
+        {
+            try
+            {
+                return await _produtoRepository.Inserir(obj);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+        #region Remover
+        public async Task Remover(int id)
+        {
+            try
+            {
+                var produto = await SelecionarId(id);
+                await _produtoRepository.Remover(produto);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
 }

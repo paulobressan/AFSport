@@ -2,6 +2,7 @@
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Model;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,34 +13,39 @@ namespace AFSport.Web.Core.Repository
 {
     public class CidadeRepository : BaseRepository, ICidadeRepository
     {
-        public CidadeRepository()
+        public CidadeRepository(IConfiguration configuration) : base(configuration)
         {
         }
 
-        public async Task Remover(Cidade obj)
+        public async Task Remover(Cidade cidade)
         {
-            await _context.QueryAsync<Cidade>(@"delete from cidade where idCidade = @idCidade", obj);
+            await _context.QueryAsync<Cidade>(@"delete from cidade where idCidade = @idCidade", cidade);
         }
 
-        public async Task<Cidade> Salvar(Cidade obj)
+        public async Task<Cidade> Inserir(Cidade cidade)
         {
-            var result = obj.IdCidade == 0
-            ? await _context.QueryAsync<Cidade, Estado, Cidade>(@"insert into cidade(idEstado, nome, isAtivo) values(@idEstado, @nome, @isAtivo);
+            return (await _context.QueryAsync<Cidade, Estado, Cidade>(@"insert into cidade(idEstado, nome, isAtivo) values(@idEstado, @nome, @isAtivo);
                     select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
-                    inner join estado as e on c.idEstado = e.idEstado where idCidade = (select  last_insert_id() as id);", (cidade, estado) =>
+                    inner join estado as e on c.idEstado = e.idEstado where idCidade = (select  last_insert_id() as id);", (cidadep, estado) =>
                 {
-                    cidade.Estado = estado;
-                    return cidade;
-                }, obj, splitOn: "idEstado")
-            : await _context.QueryAsync<Cidade, Estado, Cidade>(@"update cidade set idEstado = @idEstado, nome = @nome, isAtivo = @isAtivo where idCidade = @idCidade;
-                    select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
-                    inner join estado as e on c.idEstado = e.idEstado where idCidade = @idCidade;", (cidade, estado) =>
-                {
-                    cidade.Estado = estado;
-                    return cidade;
-                }, obj, splitOn: "idEstado");
-            return result.Single();
+                    cidadep.Estado = estado;
+                    return cidadep;
+                }, cidade, splitOn: "idEstado"))
+                .Single();
         }
+
+        public async Task<Cidade> Alterar(Cidade cidade)
+        {
+            return (await _context.QueryAsync<Cidade, Estado, Cidade>(@"update cidade set idEstado = @idEstado, nome = @nome, isAtivo = @isAtivo where idCidade = @idCidade;
+                    select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
+                    inner join estado as e on c.idEstado = e.idEstado where idCidade = @idCidade;", (cidadep, estado) =>
+                {
+                    cidadep.Estado = estado;
+                    return cidadep;
+                }, cidade, splitOn: "idEstado"))
+            .Single();
+        }
+
 
         public async Task<Cidade> SelecionarId(int id)
         {

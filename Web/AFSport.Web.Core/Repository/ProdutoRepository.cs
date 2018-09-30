@@ -19,7 +19,7 @@ namespace AFSport.Web.Core.Repository
         public async Task<Produto> SelecionarId(int id)
         {
             return (await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
-                inner join categoria c on p.idCategoria = c.idCategoria where c.idCategoria = true and c.idProduto = @idProduto;", (produto, categoria) =>
+                inner join categoria c on p.idCategoria = c.idCategoria where c.idCategoria = true and p.idProduto = @idProduto;", (produto, categoria) =>
                 {
                     produto.Categoria = categoria;
                     return produto;
