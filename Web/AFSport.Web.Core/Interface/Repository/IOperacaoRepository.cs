@@ -8,9 +8,44 @@ namespace AFSport.Web.Core.Interface.Repository
 {
     public interface IOperacaoRepository
     {
-        Task<List<Operacao>> SelecionarTodos(bool selecionarTodos);
+        /// <summary>
+        /// Selecionar todas operações
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Operacao>> SelecionarTodos();
+        /// <summary>
+        /// Selecionar todas operações ativas
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Operacao>> SelecionarTodosAtivos();
+        /// <summary>
+        /// Selecionar todas operações inativas
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Operacao>> SelecionarTodosInativos();
+        /// <summary>
+        /// Selecionar operação por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task<Operacao> SelecionarId(int id);
-        Task<Operacao> Salvar(Operacao obj);
-        Task Remover(Operacao obj);
+        /// <summary>
+        /// Inserir nova operação
+        /// </summary>
+        /// <param name="operacao"></param>
+        /// <returns></returns>
+        Task<Operacao> Inserir(Operacao operacao);
+        /// <summary>
+        /// Alterar operação
+        /// </summary>
+        /// <param name="operacao"></param>
+        /// <returns></returns>
+        Task<Operacao> Alterar(Operacao operacao);
+        /// <summary>
+        /// Remover operação
+        /// </summary>
+        /// <param name="operacao"></param>
+        /// <returns></returns>
+        Task Remover(Operacao operacao);
     }
 }

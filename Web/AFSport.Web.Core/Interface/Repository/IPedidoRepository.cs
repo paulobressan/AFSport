@@ -8,11 +8,44 @@ namespace AFSport.Web.Core.Interface.Repository
 {
     public interface IPedidoRepository
     {
-        Task<List<Pedido>> SelecionarTodos(bool selecionarTodos);
+        /// <summary>
+        /// Selecionar todos pedidos
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Pedido>> SelecionarTodos();
+        /// <summary>
+        /// Selecionar pedido por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task<Pedido> SelecionarId(int id);
-        Task<Pedido> Salvar(Pedido obj);
-        Task Remover(Pedido obj);
-        Task<List<Pedido>> SelecionarTodosDiario();
+        /// <summary>
+        /// Inserir novo pedido
+        /// </summary>
+        /// <param name="pedido"></param>
+        /// <returns></returns>
+        Task<Pedido> Inserir(Pedido pedido);
+        /// <summary>
+        /// Alterar pedido
+        /// </summary>
+        /// <param name="pedido"></param>
+        /// <returns></returns>
+        Task<Pedido> Alterar(Pedido pedido);
+        /// <summary>
+        /// Remover pedido
+        /// </summary>
+        /// <param name="pedido"></param>
+        /// <returns></returns>
+        Task Remover(Pedido pedido);
+        /// <summary>
+        /// Selecionar todos pedidos do dia
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Pedido>> SelecionarTodosDiario();
+        /// <summary>
+        /// Selecionar total de registro de pedidos
+        /// </summary>
+        /// <returns></returns>
         Task<int> TotalRegistros();
     }
 }

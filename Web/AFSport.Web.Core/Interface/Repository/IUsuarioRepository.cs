@@ -8,10 +8,45 @@ namespace AFSport.Web.Core.Interface.Repository
 {
     public interface IUsuarioRepository
     {
-        Task<List<Usuario>> SelecionarTodos(bool selecionarTodos);
+        /// <summary>
+        /// Selecionar todos usuários
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Usuario>> SelecionarTodos();
+        /// <summary>
+        /// Selecionar todos usuários ativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Usuario>> SelecionarTodosAtivos();
+        /// <summary>
+        /// Selecionar todos usuários inativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Usuario>> SelecionarTodosInativos();
+        /// <summary>
+        /// Selecionar usuário por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task<Usuario> SelecionarId(int id);
-        Task<Usuario> Salvar(Usuario obj);
-        Task Remover(Usuario obj);
+        /// <summary>
+        /// Inserir novo usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        Task<Usuario> Inserir(Usuario usuario);
+        /// <summary>
+        /// Alterar usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        Task<Usuario> Alterar(Usuario usuario);
+        /// <summary>
+        /// Verificar auticidade do usuário
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         Task<Usuario> AutenticarUsuario(string login, string senha);
     }
 }

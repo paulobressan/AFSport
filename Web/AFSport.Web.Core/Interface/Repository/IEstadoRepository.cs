@@ -8,10 +8,49 @@ namespace AFSport.Web.Core.Interface.Repository
 {
     public interface IEstadoRepository
     {
-        Task<List<Estado>> SelecionarTodos(bool selecionarTodos);
+        /// <summary>
+        /// Selecionar todos estados
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Estado>> SelecionarTodos();
+        /// <summary>
+        /// Selecionar todos estados ativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Estado>> SelecionarTodosAtivos();
+        /// <summary>
+        /// Selecionar todos estados inativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<Estado>> SelecionarTodosInativos();
+        /// <summary>
+        /// Selecionar estado por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task<Estado> SelecionarId(int id);
-        Task<Estado> Salvar(Estado obj);
-        Task Remover(Estado obj);
+        /// <summary>
+        /// Inserir um novo estado
+        /// </summary>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        Task<Estado> Inserir(Estado estado);
+        /// <summary>
+        /// Alterar estado
+        /// </summary>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        Task<Estado> Alterar(Estado estado);
+        /// <summary>
+        /// Remover estado
+        /// </summary>
+        /// <param name="estado"></param>
+        /// <returns></returns>
+        Task Remover(Estado estado);
+        /// <summary>
+        /// Selecionar total de estados registrado
+        /// </summary>
+        /// <returns></returns>
         Task<int> TotalRegistros();
     }
 }

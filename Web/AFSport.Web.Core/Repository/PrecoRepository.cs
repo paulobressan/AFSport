@@ -2,6 +2,7 @@
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Model;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace AFSport.Web.Core.Repository
 {
     public class PrecoRepository : BaseRepository, IPrecoRepository
     {
-        public PrecoRepository()
+        public PrecoRepository(IConfiguration configuration) : base(configuration)
         {
         }
 
@@ -31,7 +32,7 @@ namespace AFSport.Web.Core.Repository
                     {
                         preco.Produto = produto;
                         return preco;
-                    },obj, splitOn: "idProduto")
+                    }, obj, splitOn: "idProduto")
                 : await _context.QueryAsync<Preco, Produto, Preco>(@"update preco set idProduto = @idProduto, dataInicio = @dataInicio, dataFinal = @dataFinal, valor = @valor, isAtivo = @isAtivo
                     where idPreco = @idPreco;
                     select p.idPreco, p.valor, p.dataInicio, p.dataFinal, p.isAtivo, p2.idProduto, p2.nome, p2.descricao, p2.valorVenda, p2.valorCompra, p2.isAtivo from preco p
