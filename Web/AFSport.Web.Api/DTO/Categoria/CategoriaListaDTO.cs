@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Api.DTO.Categoria
 {
-    public class CategoriaDTO
+    public class CategoriaListaDTO
     {
         public int IdCategoria { get; set; }
         public string Nome { get; set; }

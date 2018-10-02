@@ -1,0 +1,24 @@
+<div>
+    <h2 class="text-center">Categorias</h2>
+    <hr>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categoria of categorias">
+                <td>{{categoria.idCategoria}}</td>
+                <td>{{categoria.nome}}</td>
+                <td>{{categoria.descricao}}</td>
+                <td>{{categoria.isAtivo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

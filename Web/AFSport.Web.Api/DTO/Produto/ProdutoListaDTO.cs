@@ -14,7 +14,7 @@ namespace AFSport.Web.Api.DTO.Produto
 
         public decimal ValorVenda { get; set; }
 
-        public CategoriaDTO Categoria { get; set; }
+        public CategoriaListaDTO Categoria { get; set; }
 
         public bool IsAtivo { get; set; }
     }
