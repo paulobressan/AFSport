@@ -1,9 +1,0 @@
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\bin\Debug\netstandard2.0\AFSport.Web.Core.deps.json
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\bin\Debug\netstandard2.0\AFSport.Web.Core.dll
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\bin\Debug\netstandard2.0\AFSport.Web.Core.pdb
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.csprojAssemblyReference.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.csproj.CoreCompileInputs.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.AssemblyInfoInputs.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.AssemblyInfo.cs
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.dll
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Core\obj\Debug\netstandard2.0\AFSport.Web.Core.pdb

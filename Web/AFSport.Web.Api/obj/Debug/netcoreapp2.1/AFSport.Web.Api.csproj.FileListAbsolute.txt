@@ -15,3 +15,20 @@ C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcor
 C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csproj.CopyComplete
 C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.dll
 C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.pdb
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.deps.json
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.runtimeconfig.json
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.runtimeconfig.dev.json
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.dll
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.pdb
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Core.dll
+D:\Source\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Core.pdb
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csprojAssemblyReference.cache
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csproj.CoreCompileInputs.cache
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorAssemblyInfo.cache
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorAssemblyInfo.cs
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.AssemblyInfoInputs.cache
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.AssemblyInfo.cs
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorTargetAssemblyInfo.cache
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csproj.CopyComplete
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.dll
+D:\Source\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.pdb
