@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { TokenService } from './token/token.service';
-
-
+import { AuthService } from './auth/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -12,13 +12,15 @@ import { TokenService } from './token/token.service';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        HttpClientModule
     ],
     exports: [
         HeaderComponent
     ],
     providers:[
-        TokenService
+        TokenService,
+        AuthService
     ]
 })
 export class CoreModule { }

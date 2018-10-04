@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="(user$ | async)">
   <af-header></af-header>
 </header>
 <main class="container pt-3 pb-3">
