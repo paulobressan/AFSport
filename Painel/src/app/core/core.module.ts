@@ -4,7 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { TokenService } from './token/token.service';
 import { AuthService } from './auth/auth.service';
+
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from './interceptors/request.interceptor';
 
 @NgModule({
     declarations: [
@@ -18,9 +23,15 @@ import { HttpClientModule } from '@angular/common/http';
     exports: [
         HeaderComponent
     ],
-    providers:[
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: RequestInterceptor,
+            multi: true
+        },
         TokenService,
-        AuthService
+        AuthGuard,
+        LoginGuard
     ]
 })
 export class CoreModule { }

@@ -1,11 +1,11 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { tap } from 'rxjs/operators';
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { tap } from 'rxjs/operators';
 
 import { UserService } from "../user/user.service";
 import { User } from "../user/user";
+import { environment } from "../../../environments/environment";
 
-const URI = "http://localhost:4000/api";
 
 @Injectable()
 export class AuthService {
@@ -15,12 +15,9 @@ export class AuthService {
     ) { }
 
     autenticate(user: User) {
-        var headers = new HttpHeaders();
-        headers.set("content-type", "application/json");
-        return this.http.post(`${URI}/auth`, user, { headers })
+        return this.http.post(environment.auth, user, {responseType: 'text'})
             .pipe(tap(token => {
-                this.userService.setToken(token.toString());
-                console.log(token);
-            }))
+                this.userService.setToken(token);
+            }));
     }
 }

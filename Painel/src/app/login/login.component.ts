@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { User } from "../core/user/user";
 import { AuthService } from "../core/auth/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
     templateUrl: './login.component.html',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private authService: AuthService
+        private authService: AuthService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
 
     autenticar() {
         const user: User = this.loginForm.getRawValue();
-        this.authService.autenticate(user).subscribe(() => { });
+        this.authService.autenticate(user).subscribe(() => {
+            this.router.navigate(['']);
+        });
     }
 }

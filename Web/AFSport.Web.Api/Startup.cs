@@ -35,9 +35,13 @@ namespace AFSport.Web.Api
             #region Services
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IProdutoService, ProdutoService>();
+            services.AddTransient<ICategoriaService, CategoriaService>();
             #endregion
+            #region Repositorios
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            #endregion
             #endregion
             services.AddAutoMapper();
 
@@ -61,6 +65,19 @@ namespace AFSport.Web.Api
                 };
             });
             #endregion
+
+            #region CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("politica",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
+                    });
+            });
+            #endregion
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -73,7 +90,7 @@ namespace AFSport.Web.Api
             {
                 app.UseHsts();
             }
-
+            app.UseCors("politica");
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();

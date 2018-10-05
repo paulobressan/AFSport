@@ -1,4 +1,4 @@
-<header *ngIf="(user$ | async)">
+<header *ngIf="isLogged()">
   <af-header></af-header>
 </header>
 <main class="container pt-3 pb-3">

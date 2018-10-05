@@ -10,12 +10,11 @@ import { OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  user$: Observable<User>;
+export class AppComponent {
   constructor(private userService: UserService) {
   }
 
-  ngOnInit(): void {
-    this.user$ = this.userService.getUser();
+  isLogged(){
+    return this.userService.isLogged();
   }
 }

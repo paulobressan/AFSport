@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login.component";
 import { MensagemModule } from "../shared/components/mensagem/mensagem.module";
 import { AuthService } from "../core/auth/auth.service";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
     declarations: [LoginComponent],
@@ -12,7 +13,8 @@ import { AuthService } from "../core/auth/auth.service";
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MensagemModule
+        MensagemModule,
+        RouterModule
     ],
     exports: [LoginComponent],
     providers: [AuthService]
