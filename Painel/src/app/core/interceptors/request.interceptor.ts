@@ -4,10 +4,14 @@ import { Observable } from "rxjs";
 
 import { TokenService } from "../token/token.service";
 import { HttpHeaders } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-    constructor(private tokenService: TokenService) { }
+    constructor(
+        private tokenService: TokenService,
+        private router: Router
+    ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent
         | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
@@ -20,7 +24,6 @@ export class RequestInterceptor implements HttpInterceptor {
                 }
             })
         }
-
         return next.handle(req);
     }
 }

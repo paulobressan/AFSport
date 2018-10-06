@@ -70,5 +70,11 @@ namespace AFSport.Web.Core.Repository
             var result = await _context.QueryAsync<int>(@"select count(*) from categoria;", null);
             return result.Single();
         }
+
+        public async Task AtivarInativar(int idCategoria, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update categoria set isAtivo = @isAtivo 
+                where idCategoria = @idCategoria;", new { idCategoria, isAtivo });
+        }
     }
 }

@@ -9,15 +9,22 @@
                 <th>Código</th>
                 <th>Nome</th>
                 <th>Descrição</th>
-                <th>Situação</th>
+                <th class="text-right">Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let categoria of categorias">
+            <tr *ngFor="let categoria of categorias" attr.title="Alterar {{categoria.nome}}" style="cursor: pointer;" (click)="alterar(categoria)">
                 <td>{{categoria.idCategoria}}</td>
                 <td>{{categoria.nome}}</td>
                 <td>{{categoria.descricao}}</td>
-                <td>{{categoria.isAtivo}}</td>
+                <td class="text-right">
+                    <div class="form-check-inline">
+                        <div class="p-1">
+                            <af-is-ativo [isAtivo]="categoria.isAtivo" (onIsAtivo)="AtivarInativar($event, categoria)"></af-is-ativo>
+                            <span class="pl-2" attr.title="Remover {{categoria.nome}}" (click)="remover(categoria)"><i class="fa fa-trash"></i></span>
+                        </div>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>

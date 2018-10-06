@@ -46,6 +46,13 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task Remover(int id);
         /// <summary>
+        /// Ativar ou inativar categoria
+        /// </summary>
+        /// <param name="idCategoria"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idCategoria, bool isAtivo);
+        /// <summary>
         /// Selecionar total de categoria
         /// </summary>
         /// <returns></returns>

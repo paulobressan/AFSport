@@ -1,9 +1,7 @@
-<div class="text-center">
-    <h2>Cadastro de Categoria</h2>
+<div>
+    <h2>Categoria</h2>
     <hr>
-</div>
-<div class="container">
-    <form [formGroup]="categoriaForm" (submit)="inserir()">
+    <form [formGroup]="categoriaForm" (submit)="salvar()">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -18,7 +16,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <textarea name="descricao" id="descricao" cols="30" rows="3" class="form-control"></textarea>
+                    <textarea formControlName="descricao" name="descricao" id="descricao" cols="30" rows="3" class="form-control"></textarea>
                     <af-mensagem texto="Tamanho maximo de 255 caracteres" *ngIf="categoriaForm.get('descricao').errors?.maxlength"></af-mensagem>
                 </div>
             </div>
@@ -32,6 +30,7 @@
             </div>
         </div>
         <div class="pt-3">
+            <a [routerLink]="['/categoria']" class="btn btn-danger">Voltar</a>
             <button [disabled]="categoriaForm.invalid" type="submit" class="btn btn-success">Enviar</button>
         </div>
     </form>

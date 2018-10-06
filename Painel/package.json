@@ -26,6 +26,7 @@
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
     "rxjs": "^6.0.0",
+    "sweetalert": "^2.1.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

@@ -12,10 +12,12 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly ICategoriaRepository _categoriaRepository;
+        private readonly IProdutoRepository _produtoRepository;
         #endregion
-        public CategoriaService(ICategoriaRepository categoriaRepository)
+        public CategoriaService(ICategoriaRepository categoriaRepository, IProdutoRepository produtoRepository)
         {
             _categoriaRepository = categoriaRepository;
+            _produtoRepository = produtoRepository;
         }
 
         public async Task<Categoria> Alterar(int id, Categoria categoria)
@@ -24,6 +26,19 @@ namespace AFSport.Web.Core.Service
             {
                 await SelecionarId(id);
                 return await _categoriaRepository.Alterar(categoria);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task AtivarInativar(int idCategoria, bool isAtivo)
+        {
+            try
+            {
+                var categoria = await SelecionarId(idCategoria);
+                await _categoriaRepository.AtivarInativar(idCategoria, isAtivo);
             }
             catch (Exception ex)
             {
@@ -43,11 +58,14 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task Remover(int id)
+        public async Task Remover(int idCategoria)
         {
             try
             {
-                var categoria = await SelecionarId(id);
+                var categoria = await SelecionarId(idCategoria);
+                if ((await _produtoRepository.SelecionarProdutosPorCategoria(idCategoria)).Any())
+                    throw new ArgumentException("Categoria não pode ser removida por conter dependencias");
+
                 await _categoriaRepository.Remover(categoria);
             }
             catch (Exception ex)

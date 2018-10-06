@@ -28,11 +28,40 @@ namespace AFSport.Web.Api.Controllers
             return Ok(_mapper.Map<List<CategoriaListaDTO>>(await _categoriaService.SelecionarTodos()));
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.SelecionarId(id)));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CategoriaSalvarDTO categoria)
         {
-            return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Inserir(_mapper.Map<Categoria>(categoria))));
+            if (ModelState.IsValid)
+                return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Inserir(_mapper.Map<Categoria>(categoria))));
+            return BadRequest("Campos inválidos");
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] CategoriaSalvarDTO categoria)
+        {
+            if (ModelState.IsValid)
+                return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Alterar(id, _mapper.Map<Categoria>(categoria))));
+            return BadRequest("Campos inválidos");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _categoriaService.Remover(id);
+            return Ok();
+        }
+
+        [HttpPut("ativar-inativar/{id}")]
+        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] bool isAtivo)
+        {
+            await _categoriaService.AtivarInativar(id, isAtivo);
+            return Ok();
+        }
     }
 }
