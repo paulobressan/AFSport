@@ -10,17 +10,17 @@ namespace AFSport.Web.Core.Interface.Service
         /// Seleciona todos os produtos ativos
         /// </summary>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarTodosAtivos();
+        Task<IList<Produto>> SelecionarTodosAtivos();
         /// <summary>
         /// Seleciona todos os produtos inativos
         /// </summary>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarTodosInativos();
+        Task<IList<Produto>> SelecionarTodosInativos();
         /// <summary>
         /// Seleciona todos os produtos
         /// </summary>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarTodos();
+        Task<IList<Produto>> SelecionarTodos();
         /// <summary>
         /// Seleciona produto por id
         /// </summary>
@@ -50,23 +50,23 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <param name="valor"></param>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarPorNomeId(string valor);
+        Task<IList<Produto>> SelecionarPorNomeId(string valor);
         /// <summary>
         /// Selecionar todos produto que contem estoque
         /// </summary>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarProdutosComEstoque();
+        Task<IList<Produto>> SelecionarProdutosComEstoque();
         /// <summary>
         /// Selecionar todos produto que não contem estoque
         /// </summary>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarProdutosSemEstoque();
+        Task<IList<Produto>> SelecionarProdutosSemEstoque();
         /// <summary>
         /// Selecionar produto pela categoria
         /// </summary>
         /// <param name="idCategoria"></param>
         /// <returns></returns>
-        Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria);
+        Task<IList<Produto>> SelecionarProdutosPorCategoria(int idCategoria);
         /// <summary>
         /// Ativar ou inativar produto
         /// </summary>

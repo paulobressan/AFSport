@@ -63,7 +63,7 @@ namespace AFSport.Web.Core.Service
             try
             {
                 var categoria = await SelecionarId(idCategoria);
-                if ((await _produtoRepository.SelecionarProdutosPorCategoria(idCategoria)).Any())
+                if ((await _produtoRepository.SelecionarTodosProdutosPorCategoria(idCategoria)).Any())
                     throw new ArgumentException("Categoria não pode ser removida por conter dependencias");
 
                 await _categoriaRepository.Remover(categoria);
@@ -87,7 +87,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Categoria>> SelecionarTodos()
+        public async Task<IList<Categoria>> SelecionarTodos()
         {
             try
             {
@@ -100,7 +100,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Categoria>> SelecionarTodosAtivo()
+        public async Task<IList<Categoria>> SelecionarTodosAtivo()
         {
             try
             {
@@ -113,7 +113,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Categoria>> SelecionarTodosInativo()
+        public async Task<IList<Categoria>> SelecionarTodosInativo()
         {
             try
             {

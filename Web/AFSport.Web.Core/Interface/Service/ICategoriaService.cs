@@ -10,17 +10,17 @@ namespace AFSport.Web.Core.Interface.Service
         /// Selecionar todas categorias
         /// </summary>
         /// <returns></returns>
-        Task<List<Categoria>> SelecionarTodos();
+        Task<IList<Categoria>> SelecionarTodos();
         /// <summary>
         /// Selecionar todas categorias ativas
         /// </summary>
         /// <returns></returns>
-        Task<List<Categoria>> SelecionarTodosAtivo();
+        Task<IList<Categoria>> SelecionarTodosAtivo();
         /// <summary>
         /// Selecionar todas categorias Inativas
         /// </summary>
         /// <returns></returns>
-        Task<List<Categoria>> SelecionarTodosInativo();
+        Task<IList<Categoria>> SelecionarTodosInativo();
         /// <summary>
         /// Selecionar categoria por id
         /// </summary>

@@ -47,7 +47,7 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
                             this.listar();
                             swal("Enviado com sucesso", `Produto ${produto.nome} removida com sucesso!`, "success");
                         }, err => {
-                            swal("Problemas ao enviar", err.error, "success");
+                            swal("Problemas ao enviar", err.error.msg, "error");
                         });
                 }
             });

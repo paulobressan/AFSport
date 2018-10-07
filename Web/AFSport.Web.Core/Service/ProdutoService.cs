@@ -33,7 +33,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarPorNomeId(string valor)
+        public async Task<IList<Produto>> SelecionarPorNomeId(string valor)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarProdutosComEstoque()
+        public async Task<IList<Produto>> SelecionarProdutosComEstoque()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
+        public async Task<IList<Produto>> SelecionarProdutosPorCategoria(int idCategoria)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarProdutosSemEstoque()
+        public async Task<IList<Produto>> SelecionarProdutosSemEstoque()
         {
             try
             {
@@ -85,7 +85,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarTodos()
+        public async Task<IList<Produto>> SelecionarTodos()
         {
             try
             {
@@ -98,7 +98,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarTodosAtivos()
+        public async Task<IList<Produto>> SelecionarTodosAtivos()
         {
             try
             {
@@ -111,7 +111,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<List<Produto>> SelecionarTodosInativos()
+        public async Task<IList<Produto>> SelecionarTodosInativos()
         {
             try
             {

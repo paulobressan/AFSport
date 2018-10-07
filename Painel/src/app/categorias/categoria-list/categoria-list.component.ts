@@ -46,7 +46,7 @@ export class CategoriaListComponent implements BaseListComponent<Categoria>, OnI
                             this.listar();
                             swal("Enviado com sucesso", `Categoria ${categoria.nome} removida com sucesso!`, "success");
                         }, err => {
-                            swal("Problemas ao enviar", err.error, "success");
+                            swal("Problemas ao enviar", err.error.msg, "error");
                         });
                 }
             });

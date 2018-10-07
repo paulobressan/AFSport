@@ -12,4 +12,8 @@ export class CategoriaService extends BaseService<Categoria> {
     constructor(private httpClient: HttpClient) {
         super(httpClient, environment.categoria);
     }
+
+    listarAtivos() : Observable<Categoria[]> {
+        return this.http.get<Categoria[]>(`${environment.categoria}/ativas`);
+    }
 }

@@ -21,7 +21,7 @@ namespace AFSport.Web.Api.Controllers
         {
             _categoriaService = categoriaService;
         }
-
+        #region Get
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -34,6 +34,14 @@ namespace AFSport.Web.Api.Controllers
             return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.SelecionarId(id)));
         }
 
+        [HttpGet("ativas")]
+        public async Task<IActionResult> GetAtivas()
+        {
+            return Ok(_mapper.Map<List<CategoriaListaDTO>>(await _categoriaService.SelecionarTodosAtivo()));
+        }
+        #endregion
+
+        #region Post
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CategoriaSalvarDTO categoria)
         {
@@ -41,7 +49,9 @@ namespace AFSport.Web.Api.Controllers
                 return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Inserir(_mapper.Map<Categoria>(categoria))));
             return BadRequest("Campos inválidos");
         }
+        #endregion
 
+        #region Put
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] CategoriaSalvarDTO categoria)
         {
@@ -49,19 +59,20 @@ namespace AFSport.Web.Api.Controllers
                 return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Alterar(id, _mapper.Map<Categoria>(categoria))));
             return BadRequest("Campos inválidos");
         }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _categoriaService.Remover(id);
-            return Ok();
-        }
-
         [HttpPut("ativar-inativar/{id}")]
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] CategoriaSalvarDTO categoria)
         {
             await _categoriaService.AtivarInativar(id, categoria.IsAtivo);
             return Ok();
         }
+        #endregion  
+        #region Delete
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _categoriaService.Remover(id);
+            return Ok();
+        }
+        #endregion
     }
 }

@@ -51,7 +51,7 @@ export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnIni
                 swal("Enviada com sucesso!", "Categoria cadastrada com sucesso", "success");
                 this.router.navigate(['/categoria']);
             }, err => {
-                swal("Problemas para enviar!", err.error, "error");
+                swal("Problemas para enviar!", err.error.msg, "error");
             });
     }
 
@@ -61,7 +61,7 @@ export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnIni
                 swal("Enviada com sucesso!", "Categoria alterada com sucesso", "success");
                 this.router.navigate(['/categoria']);
             }, err => {
-                swal("Problemas para enviar!", err.error, "error");
+                swal("Problemas para enviar!", err.error.msg, "error");
             });
     }
 }

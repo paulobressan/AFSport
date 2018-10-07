@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AFSport.Web.Api.infra;
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Repository;
@@ -93,6 +94,7 @@ namespace AFSport.Web.Api
             app.UseCors("politica");
             app.UseAuthentication();
             app.UseHttpsRedirection();
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             app.UseMvc();
         }
     }
