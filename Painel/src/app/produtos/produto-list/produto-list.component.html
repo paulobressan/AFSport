@@ -1,0 +1,42 @@
+<div>
+        <h2 class="text-center">Produtos</h2>
+        <hr>
+    </div>
+    <div>
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Valor Compra</th>
+                    <th>Valor Venda</th>
+                    <th class="text-right">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produto of produtos">
+                    <td>{{produto.idProduto}}</td>
+                    <td>{{produto.nome}}</td>
+                    <td>{{produto.categoria.nome}}</td>
+                    <td>{{produto.descricao}}</td>
+                    <td class="text-right">R$ {{produto.valorCompra}}</td>
+                    <td class="text-right">R$ {{produto.valorVenda}}</td>
+                    <td class="text-right">
+                        <div class="form-check-inline">
+                            <div class="p-1">
+                                <af-is-ativo [isAtivo]="produto.isAtivo" (onIsAtivo)="ativarInativar($event, produto)"></af-is-ativo>
+                                <span class="pl-2" attr.title="Alterar {{produto.nome}}" style="cursor: pointer; font-size: 14pt"
+                                    (click)="alterar(produto)">
+                                    <i class="fa fas fa-edit"></i>
+                                </span>
+                                <span class="pl-2" attr.title="Remover {{produto.nome}}" (click)="remover(produto)"
+                                    style="cursor: pointer; font-size: 14pt"><i class="fa fa-trash"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

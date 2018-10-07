@@ -13,15 +13,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let categoria of categorias" attr.title="Alterar {{categoria.nome}}" style="cursor: pointer;" (click)="alterar(categoria)">
+            <tr *ngFor="let categoria of categorias">
                 <td>{{categoria.idCategoria}}</td>
                 <td>{{categoria.nome}}</td>
                 <td>{{categoria.descricao}}</td>
                 <td class="text-right">
                     <div class="form-check-inline">
                         <div class="p-1">
-                            <af-is-ativo [isAtivo]="categoria.isAtivo" (onIsAtivo)="AtivarInativar($event, categoria)"></af-is-ativo>
-                            <span class="pl-2" attr.title="Remover {{categoria.nome}}" (click)="remover(categoria)"><i class="fa fa-trash"></i></span>
+                            <af-is-ativo [isAtivo]="categoria.isAtivo" (onIsAtivo)="ativarInativar($event, categoria)"></af-is-ativo>
+                            <span class="pl-2" attr.title="Alterar {{categoria.nome}}" style="cursor: pointer; font-size: 14pt"
+                                (click)="alterar(categoria)">
+                                <i class="fa fas fa-edit"></i>
+                            </span>
+                            <span class="pl-2" attr.title="Remover {{categoria.nome}}" (click)="remover(categoria)"
+                                style="cursor: pointer; font-size: 14pt"><i class="fa fa-trash"></i></span>
                         </div>
                     </div>
                 </td>

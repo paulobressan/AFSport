@@ -4,12 +4,13 @@ import swal from 'sweetalert';
 import { Categoria } from '../categoria/categoria';
 import { CategoriaService } from '../categoria/categoria.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseListComponent } from '../../core/base/base-list.component';
 
 @Component({
     selector: 'af-categoria-list',
     templateUrl: './categoria-list.component.html'
 })
-export class CategoriaListComponent implements OnInit {
+export class CategoriaListComponent implements BaseListComponent<Categoria>, OnInit {
     categorias: Categoria[];
 
     constructor(
@@ -22,8 +23,13 @@ export class CategoriaListComponent implements OnInit {
         this.categorias = this.activatedRouter.snapshot.data.categorias;
     }
 
-    AtivarInativar(isAtivo: boolean, categoria: Categoria) {
-        this.router.navigate(['categoria', 'alterar-categoria', categoria.idCategoria]);
+    ativarInativar(isAtivo: boolean, categoria: Categoria) {
+        categoria.isAtivo = isAtivo;
+        this.categoriaService.ativarInativar(categoria.idCategoria, categoria)
+            .subscribe(() => {
+                this.listar();
+                swal("Enviado com sucesso", `Categoria ${categoria.nome} foi ${isAtivo ? 'ativada' : 'inativada'} com sucesso!`, "success");
+            });
     }
 
     remover(categoria: Categoria) {
@@ -37,7 +43,7 @@ export class CategoriaListComponent implements OnInit {
                 if (result) {
                     this.categoriaService.remover(categoria.idCategoria)
                         .subscribe(() => {
-                            this.selecionarCategorias();
+                            this.listar();
                             swal("Enviado com sucesso", `Categoria ${categoria.nome} removida com sucesso!`, "success");
                         }, err => {
                             swal("Problemas ao enviar", err.error, "success");
@@ -46,8 +52,8 @@ export class CategoriaListComponent implements OnInit {
             });
     }
 
-    selecionarCategorias() {
-        this.categoriaService.listarCategorias()
+    listar() {
+        this.categoriaService.listar()
             .subscribe(categorias => this.categorias = categorias);
     }
 

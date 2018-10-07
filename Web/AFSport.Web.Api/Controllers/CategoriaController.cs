@@ -58,9 +58,9 @@ namespace AFSport.Web.Api.Controllers
         }
 
         [HttpPut("ativar-inativar/{id}")]
-        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] bool isAtivo)
+        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] CategoriaSalvarDTO categoria)
         {
-            await _categoriaService.AtivarInativar(id, isAtivo);
+            await _categoriaService.AtivarInativar(id, categoria.IsAtivo);
             return Ok();
         }
     }

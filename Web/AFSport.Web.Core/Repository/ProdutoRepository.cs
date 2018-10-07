@@ -133,11 +133,17 @@ namespace AFSport.Web.Core.Repository
         public async Task<IEnumerable<Produto>> SelecionarTodos()
         {
             return await _context.QueryAsync<Produto, Categoria, Produto>(@"select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
-                inner join categoria c on p.idCategoria = c.idCategoria where c.isAtivo = true", (produto, categoria) =>
+                inner join categoria as c on p.idCategoria = c.idCategoria where c.isAtivo = true", (produto, categoria) =>
                 {
                     produto.Categoria = categoria;
                     return produto;
                 }, null, splitOn: "idCategoria");
+        }
+
+         public async Task AtivarInativar(int idProduto, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update produto set isAtivo = @isAtivo 
+                where idProduto = @idProduto;", new { idProduto, isAtivo });
         }
     }
 }

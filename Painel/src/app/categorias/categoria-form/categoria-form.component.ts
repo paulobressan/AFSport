@@ -5,11 +5,13 @@ import swal from 'sweetalert';
 import { CategoriaService } from "../categoria/categoria.service";
 import { Categoria } from "../categoria/categoria";
 import { Router, ActivatedRoute } from "@angular/router";
+import { BaseFormComponent } from "../../core/base/base-form.component";
+import { Produto } from "../../produtos/produto/produto";
 
 @Component({
     templateUrl: './categoria-form.component.html'
 })
-export class CategoriaFormComponent implements OnInit {
+export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnInit {
     categoriaForm: FormGroup;
     @Input() categoria: Categoria;
 
@@ -43,7 +45,7 @@ export class CategoriaFormComponent implements OnInit {
             this.inserir(categoria);
     }
 
-    inserir(categoria) {
+    inserir(categoria: Categoria) {
         this.categoriaService.inserir(categoria)
             .subscribe(categoria => {
                 swal("Enviada com sucesso!", "Categoria cadastrada com sucesso", "success");
@@ -53,8 +55,8 @@ export class CategoriaFormComponent implements OnInit {
             });
     }
 
-    alterar(categoria) {
-        this.categoriaService.alterar(categoria)
+    alterar(categoria: Categoria) {
+        this.categoriaService.alterar(categoria.idCategoria, categoria)
             .subscribe(categoria => {
                 swal("Enviada com sucesso!", "Categoria alterada com sucesso", "success");
                 this.router.navigate(['/categoria']);

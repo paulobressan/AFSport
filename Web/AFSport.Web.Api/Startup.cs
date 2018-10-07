@@ -59,7 +59,7 @@ namespace AFSport.Web.Api
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("alura-webapi-authentication-valid")),
-                    ClockSkew = TimeSpan.FromMinutes(30),
+                    ClockSkew = TimeSpan.FromHours(24),
                     ValidIssuer = "AFSport.Web.Api",
                     ValidAudience = "Service-Mobile"
                 };

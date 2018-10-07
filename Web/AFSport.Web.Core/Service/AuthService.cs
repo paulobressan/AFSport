@@ -50,7 +50,7 @@ namespace AFSport.Web.Core.Service
                     audience: "Service-Mobile",
                     claims: direitos,
                     signingCredentials: credenciais,
-                    expires: DateTime.Now.AddMinutes(30)
+                    expires: DateTime.Now.AddHours(24)
                 );
 
                 return new JwtSecurityTokenHandler().WriteToken(token);

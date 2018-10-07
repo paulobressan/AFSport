@@ -68,6 +68,13 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task<List<Produto>> SelecionarProdutosPorCategoria(int idCategoria);
         /// <summary>
+        /// Ativar ou inativar produto
+        /// </summary>
+        /// <param name="idProduto"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idProduto, bool isAtivo);
+        /// <summary>
         /// Selecionar total de produtos 
         /// </summary>
         /// <returns></returns>

@@ -87,6 +87,13 @@ namespace AFSport.Api.Controllers
                 return Ok(_mapper.Map<ProdutoListaDTO>(await _produtoService.Alterar(id, _mapper.Map<Produto>(produto))));
             return BadRequest("Formato inválido");
         }
+
+        [HttpPut("ativar-inativar/{id}")]
+        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] ProdutoSalvarDTO produto)
+        {
+            await _produtoService.AtivarInativar(id, produto.IsAtivo);
+            return Ok();
+        }
         #endregion
 
         #region Delete

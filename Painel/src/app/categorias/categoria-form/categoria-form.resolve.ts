@@ -14,6 +14,6 @@ export class CategoriaFormResolve implements Resolve<Observable<Categoria>> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Categoria> | Observable<Observable<Categoria>> | Promise<Observable<Categoria>> {
         const id = route.params.id;
         if (id)
-            return this.categoriaService.selecionarCategoriaPorId(id);
+            return this.categoriaService.listarPorId(id);
     }
 }

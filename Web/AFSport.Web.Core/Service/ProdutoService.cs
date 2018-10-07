@@ -149,6 +149,19 @@ namespace AFSport.Web.Core.Service
                 throw ex;
             }
         }
+
+        public async Task AtivarInativar(int idProduto, bool isAtivo)
+        {
+            try
+            {
+                var categoria = await SelecionarId(idProduto);
+                await _produtoRepository.AtivarInativar(idProduto, isAtivo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
         #region Novo
         public async Task<Produto> Inserir(Produto obj)

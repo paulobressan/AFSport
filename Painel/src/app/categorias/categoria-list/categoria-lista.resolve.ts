@@ -12,6 +12,6 @@ export class CategoriaListResolver implements Resolve<Observable<Categoria[]>>{
     constructor(private categoriaService: CategoriaService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Categoria[]> | Observable<Observable<Categoria[]>> | Promise<Observable<Categoria[]>> {
-        return this.categoriaService.listarCategorias();
+        return this.categoriaService.listar();
     }
 }
