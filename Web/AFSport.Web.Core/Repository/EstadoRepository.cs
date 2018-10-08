@@ -39,7 +39,7 @@ namespace AFSport.Web.Core.Repository
         public async Task<Estado> SelecionarId(int id)
         {
             return (await _context.QueryAsync<Estado>(@"select idEstado, nome, sigla, isAtivo from estado 
-                where idEstado = @idEstado;", new { idCategoria = id }))
+                where idEstado = @idEstado;", new { idEstado = id }))
                 .SingleOrDefault();
         }
 
@@ -60,6 +60,12 @@ namespace AFSport.Web.Core.Repository
             return (await _context.QueryAsync<Estado>(@"select idEstado, nome, sigla, isAtivo 
                 from estado where isAtivo = false;", null))
                 .ToList();
+        }
+
+         public async Task AtivarInativar(int idEstado, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update Estado set isAtivo = @isAtivo 
+                where idEstado = @idEstado;", new { idEstado, isAtivo });
         }
 
         public async Task<int> TotalRegistros()

@@ -23,7 +23,8 @@ const routes: Routes = [
     },
     {
         path: 'estado',
-        loadChildren: './estados/estados.module#EstadosModule'
+        loadChildren: './estados/estados.module#EstadosModule',
+        canActivate: [AuthGuard]
     },
     {
         path: 'login',

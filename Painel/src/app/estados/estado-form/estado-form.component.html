@@ -1,0 +1,37 @@
+<div>
+    <h2>Estado</h2>
+    <hr>
+    <form [formGroup]="estadoForm" (submit)="salvar()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input formControlName="nome" type="text" name="nome" id="nome" class="form-control">
+                    <af-mensagem texto="Nome obrigatório" *ngIf="estadoForm.get('nome').errors?.required"></af-mensagem>
+                    <af-mensagem texto="Tamanho maximo de 50 caracteres" *ngIf="estadoForm.get('nome').errors?.maxlength"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label for="sigla">Sigla</label>
+                    <input type="text" maxlength="2" formControlName="sigla" name="sigla" id="sigla" class="form-control"/>
+                    <af-mensagem texto="Tamanho maximo de 2 caracteres" *ngIf="estadoForm.get('sigla').errors?.maxlength"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-check form-check-inline">
+                    <input formControlName="isAtivo" class="form-check-input" type="checkbox" id="isAtivo" value="option1">
+                    <label class="form-check-label" for="isAtivo">Situação</label>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3">
+            <a [routerLink]="['/estado']" class="mr-2 btn btn-danger">Voltar</a>
+            <button [disabled]="estadoForm.invalid" type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</div>

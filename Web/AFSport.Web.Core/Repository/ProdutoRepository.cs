@@ -85,7 +85,7 @@ namespace AFSport.Web.Core.Repository
 
         public async Task Remover(Produto obj)
         {
-            await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto");
+            await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto", obj);
         }
 
         public async Task<int> TotalRegistros()

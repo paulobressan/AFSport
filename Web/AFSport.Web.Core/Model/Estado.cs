@@ -4,7 +4,7 @@
     {
         public Estado()
         {
-            this.IsAtivo = true;
+           
         }
 
         public Estado(string nome, string sigla)

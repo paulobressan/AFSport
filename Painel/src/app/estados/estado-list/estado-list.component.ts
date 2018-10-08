@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BaseListComponent } from '../../core/base/base-list.component';
-import { Estado } from '../estado/estado';
-import { EstadoService } from '../estado/estado.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import swal from 'sweetalert';
+
+import { Estado } from '../estado/estado';
+import { BaseListComponent } from '../../core/base/base-list.component';
+import { EstadoService } from '../estado/estado.service';
 
 @Component({
     templateUrl: './estado-list.component.html'
