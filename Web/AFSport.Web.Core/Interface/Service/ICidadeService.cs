@@ -36,10 +36,10 @@ namespace AFSport.Web.Core.Interface.Service
         /// <summary>
         /// Alterar cidade
         /// </summary>
-        /// <param name="idCategoria"></param>
+        /// <param name="idCidade"></param>
         /// <param name="cidade"></param>
         /// <returns></returns>
-        Task<Cidade> Alterar(int idCategoria, Cidade cidade);
+        Task<Cidade> Alterar(int idCidade, Cidade cidade);
         /// <summary>
         /// Remover cidade
         /// </summary>

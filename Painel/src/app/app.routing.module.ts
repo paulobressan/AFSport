@@ -22,6 +22,10 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'estado',
+        loadChildren: './estados/estados.module#EstadosModule'
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

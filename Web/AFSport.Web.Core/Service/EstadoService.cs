@@ -19,15 +19,31 @@ namespace AFSport.Web.Core.Service
         {
             this._estadoRepository = estadoRepository;
         }
-
-        public Task<Estado> Alterar(int idEstado, Estado estado)
+        #endregion
+    
+        public async Task<Estado> Alterar(int idEstado, Estado estado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await SelecionarId(idEstado);
+                return await _estadoRepository.Alterar(estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Estado> Inserir(Estado estado)
+        public async Task<Estado> Inserir(Estado estado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _estadoRepository.Inserir(estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task Remover(int idEstado)
@@ -106,7 +122,5 @@ namespace AFSport.Web.Core.Service
                 throw ex;
             }
         }
-        #endregion
-
     }
 }

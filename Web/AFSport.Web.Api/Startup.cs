@@ -37,11 +37,16 @@ namespace AFSport.Web.Api
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IProdutoService, ProdutoService>();
             services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<IEstadoService, EstadoService>();
+            services.AddTransient<ICidadeService, CidadeService>();
             #endregion
             #region Repositorios
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<IEstadoRepository, EstadoRepository>();
+            services.AddTransient<ICidadeRepository, CidadeRepository>();
+            services.AddTransient<IClienteRepository, ClienteRepository>();
             #endregion
             #endregion
             services.AddAutoMapper();

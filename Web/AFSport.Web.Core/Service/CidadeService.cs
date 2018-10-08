@@ -20,24 +20,56 @@ namespace AFSport.Web.Core.Service
             this._cidadeRepository = cidadeRepository;
         }
         #endregion
-        public Task<Cidade> Alterar(int idCategoria, Cidade cidade)
+        public async Task<Cidade> Alterar(int idCidade, Cidade cidade)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                await SelecionarId(idCidade);
+                return await _cidadeRepository.Alterar(cidade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Cidade> Inserir(Cidade cidade)
+        public async Task<Cidade> Inserir(Cidade cidade)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _cidadeRepository.Inserir(cidade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task Remover(int idCidade)
+        public async Task Remover(int idCidade)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var cidade = await SelecionarId(idCidade);
+                //DEPENDENCIA CLIENTES
+                await _cidadeRepository.Remover(cidade);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Cidade> SelecionarId(int id)
+        public async Task<Cidade> SelecionarId(int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _cidadeRepository.SelecionarId(id) ??
+                    throw new KeyNotFoundException("Cidade não encontrada");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<IList<Cidade>> SelecionarTodos()
@@ -53,19 +85,42 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public Task<IList<Cidade>> SelecionarTodosAtivos()
+        public async Task<IList<Cidade>> SelecionarTodosAtivos()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _cidadeRepository.SelecionarTodos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<IList<Cidade>> SelecionarTodosInativos()
+        public async Task<IList<Cidade>> SelecionarTodosInativos()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _cidadeRepository.SelecionarTodos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<int> TotalRegistros()
+        public async Task<int> TotalRegistros()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _cidadeRepository.TotalRegistros();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

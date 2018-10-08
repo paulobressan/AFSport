@@ -1,27 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseListComponent } from '../../core/base/base-list.component';
 import { Estado } from '../estado/estado';
+import { EstadoService } from '../estado/estado.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-    templateUrl: './estado-list.component.html',
-    styleUrls: ['./estado-list.component.scss']
+    templateUrl: './estado-list.component.html'
 })
 export class EstadoListComponent implements BaseListComponent<Estado>, OnInit {
-    
-    constructor() { }
+    estados: Estado[];
 
-    ngOnInit(): void { }
+    constructor(
+        private estadoService: EstadoService,
+        private activatedRouter: ActivatedRoute,
+        private router: Router
+    ) { }
 
-    ativarInativar(isAtivo: boolean, obj: Estado) {
-        throw new Error("Method not implemented.");
+    ngOnInit(): void {
+        this.estados = this.activatedRouter.snapshot.data.estados;
     }
-    remover(obj: Estado) {
-        throw new Error("Method not implemented.");
+
+    ativarInativar(isAtivo: boolean, estado: Estado) {
+        estado.isAtivo = isAtivo;
+        this.estadoService.ativarInativar(estado.idEstado, estado)
+            .subscribe(() => {
+                this.listar();
+                swal("Enviado com sucesso", `Estado ${estado.nome} foi ${isAtivo ? 'ativado' : 'inativado'} com sucesso!`, "success");
+            });
     }
+
+    remover(estado: Estado) {
+        swal({
+            title: "Atenção",
+            text: `Confirma a remoção da estado ${estado.nome}?`,
+            icon: "warning",
+            dangerMode: true,
+        })
+            .then(result => {
+                if (result) {
+                    this.estadoService.remover(estado.idEstado)
+                        .subscribe(() => {
+                            this.listar();
+                            swal("Enviado com sucesso", `estado ${estado.nome} removido com sucesso!`, "success");
+                        }, err => {
+                            swal("Problemas ao enviar", err.error.msg, "error");
+                        });
+                }
+            });
+    }
+
     listar() {
-        throw new Error("Method not implemented.");
+        this.estadoService.listar()
+            .subscribe(estados => this.estados = estados);
     }
-    alterar(obj: Estado) {
-        throw new Error("Method not implemented.");
+
+    alterar(estado: Estado) {
+        this.router.navigate(['estado', 'alterar-estado', estado.idEstado]);
     }
 }
