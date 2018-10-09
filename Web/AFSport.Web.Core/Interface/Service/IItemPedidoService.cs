@@ -24,19 +24,20 @@ namespace AFSport.Web.Core.Interface.Service
         /// Alterar item pedido
         /// </summary>
         /// <param name="itemPedido"></param>
+        /// <param name="idItemPedido"></param>
         /// <returns></returns>
-        Task<ItemPedido> Alterar(ItemPedido itemPedido);
+        Task<ItemPedido> Alterar(int idItemPedido, ItemPedido itemPedido);
         /// <summary>
         /// Remover item pedido
         /// </summary>
-        /// <param name="itemPedido"></param>
+        /// <param name="idItemPedido"></param>
         /// <returns></returns>
-        Task Remover(ItemPedido itemPedido);
+        Task Remover(int idItemPedido);
         /// <summary>
         /// Selecionar item pedido por id do pedido
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="idPedido"></param>
         /// <returns></returns>
-        Task<IList<ItemPedido>> SelecionarPorPedido(int id);
+        Task<IList<ItemPedido>> SelecionarPorPedido(int idPedido);
     }
 }

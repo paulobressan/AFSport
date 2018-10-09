@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface IOperacaoService
+    public interface IOperacaoRepository
     {
         /// <summary>
         /// Selecionar todas operações

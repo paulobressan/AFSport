@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface IMovimentacaoService
+    public interface IMovimentacaoRepository
     {
         /// <summary>
         /// Selecionar todas movimentação
@@ -31,12 +31,6 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <param name="movimentacao"></param>
         /// <returns></returns>
         Task<Movimentacao> Alterar(Movimentacao movimentacao);
-        /// <summary>
-        /// Remover movimentação
-        /// </summary>
-        /// <param name="movimentacao"></param>
-        /// <returns></returns>
-        Task Remover(Movimentacao movimentacao);
         /// <summary>
         /// Selecionar movimentação do dia
         /// </summary>

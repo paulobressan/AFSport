@@ -11,16 +11,10 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class MovimentacaoRepository : BaseRepository, IMovimentacaoService
+    public class MovimentacaoRepository : BaseRepository, IMovimentacaoRepository
     {
         public MovimentacaoRepository(IConfiguration configuration) : base(configuration)
         {
-        }
-
-        public async Task Remover(Movimentacao movimentacao)
-        {
-            await _context.QueryAsync<Movimentacao>(@"delete from movimentacao 
-                where idMovimentacao = @idMovimentacao", movimentacao);
         }
 
         public async Task<Movimentacao> Inserir(Movimentacao movimentacao)

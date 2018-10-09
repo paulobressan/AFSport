@@ -29,8 +29,9 @@ namespace AFSport.Web.Core.Interface.Service
         /// Alterar movimentação
         /// </summary>
         /// <param name="movimentacao"></param>
+        /// <param name="idMovimentacao"></param>
         /// <returns></returns>
-        Task<Movimentacao> Alterar(Movimentacao movimentacao);
+        Task<Movimentacao> Alterar(int idMovimentacao, Movimentacao movimentacao);
         /// <summary>
         /// Selecionar movimentação do dia
         /// </summary>

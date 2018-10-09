@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class EstoqueRepository : BaseRepository, IEstoqueService
+    public class EstoqueRepository : BaseRepository, IEstoqueRepository
     {
         public EstoqueRepository(IConfiguration configuration) : base(configuration)
         {

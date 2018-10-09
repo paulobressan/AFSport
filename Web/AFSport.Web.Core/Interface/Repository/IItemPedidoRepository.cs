@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface IItemPedidoService
+    public interface IItemPedidoRepository
     {
         /// <summary>
         /// Selecionar item pedido por id

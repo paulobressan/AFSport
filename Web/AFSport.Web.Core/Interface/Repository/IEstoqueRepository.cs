@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface IEstoqueService
+    public interface IEstoqueRepository
     {
         /// <summary>
         /// Selecionar todos estoques

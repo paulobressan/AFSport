@@ -39,8 +39,9 @@ namespace AFSport.Web.Core.Interface.Service
         /// Alterar operação
         /// </summary>
         /// <param name="operacao"></param>
+        /// <param name="idOperacao"></param>
         /// <returns></returns>
-        Task<Operacao> Alterar(Operacao operacao);
+        Task<Operacao> Alterar(int idOperacao ,Operacao operacao);
         /// <summary>
         /// Remover operação
         /// </summary>

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class ItemPedidoRepository : BaseRepository, IItemPedidoService
+    public class ItemPedidoRepository : BaseRepository, IItemPedidoRepository
     {
         public ItemPedidoRepository(IConfiguration configuration) : base(configuration)
         {

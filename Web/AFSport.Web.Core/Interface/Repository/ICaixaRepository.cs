@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface ICaixaService
+    public interface ICaixaRepository
     {
         /// <summary>
         /// Selecionar todos os caixar abertos

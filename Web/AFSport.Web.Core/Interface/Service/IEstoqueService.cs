@@ -29,14 +29,20 @@ namespace AFSport.Web.Core.Interface.Service
         /// Alterar estoque
         /// </summary>
         /// <param name="estoque"></param>
+        /// <param name="idEstoque"></param>
         /// <returns></returns>
-        Task<Estoque> Alterar(Estoque estoque);
+        Task<Estoque> Alterar(int idEstoque, Estoque estoque);
         /// <summary>
         /// Remover estoque
         /// </summary>
-        /// <param name="estoque"></param>
+        /// <param name="idEstoque"></param>
         /// <returns></returns>
-        Task Remover(Estoque estoque);
+        Task Remover(int idEstoque);
+        /// <summary>
+        /// Selecionar estoque por produto
+        /// </summary>
+        /// <param name="idProduto"></param>
+        /// <returns></returns>
         Task<Estoque> SelecionarEstoquePorProduto(int idProduto);
     }
 }
