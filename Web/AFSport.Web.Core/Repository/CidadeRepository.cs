@@ -100,6 +100,12 @@ namespace AFSport.Web.Core.Repository
                 }, null, splitOn: "idEstado");
         }
 
+        public async Task AtivarInativar(int idCidade, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update cidade set isAtivo = @isAtivo 
+                where idCidade = @idCidade;", new { idCidade, isAtivo });
+        }
+
         public async Task<int> TotalRegistros()
         {
             return (await _context.QueryAsync<int>(@"select count(*) from cidade where isAtivo = true;", null))

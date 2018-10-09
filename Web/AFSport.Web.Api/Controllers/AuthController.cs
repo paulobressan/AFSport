@@ -20,7 +20,7 @@ namespace AFSport.Api.Controllers
         #region Construtor
         public AuthController(IAuthService authService, IMapper mapper)
             : base(mapper)
-        {
+        {   
             _authService = authService;
         }
         #endregion

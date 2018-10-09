@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class OperacaoRepository : BaseRepository, IOperacaoRepository
+    public class OperacaoRepository : BaseRepository, IOperacaoService
     {
         public OperacaoRepository(IConfiguration configuration) : base(configuration)
         {

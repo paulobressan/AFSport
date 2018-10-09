@@ -4,7 +4,7 @@
     {
         public Cidade()
         {
-            this.IsAtivo = true;
+            
         }
 
         public Cidade(string nome, int idEstado)

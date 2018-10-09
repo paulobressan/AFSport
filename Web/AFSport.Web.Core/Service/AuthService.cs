@@ -41,7 +41,7 @@ namespace AFSport.Web.Core.Service
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 };
 
-                var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("alura-webapi-authentication-valid"));
+                var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("Token:SecurityKey").ToString()));
 
                 var credenciais = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
 

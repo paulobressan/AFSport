@@ -47,6 +47,13 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <param name="cidade"></param>
         /// <returns></returns>
         Task Remover(Cidade cidade);
+         /// <summary>
+        /// Ativar ou inativar cidade
+        /// </summary>
+        /// <param name="idCidade"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idCidade, bool isAtivo);
         /// <summary>
         /// Selecionar total de cidades registrada
         /// </summary>

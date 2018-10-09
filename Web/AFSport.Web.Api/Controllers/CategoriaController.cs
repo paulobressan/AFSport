@@ -47,7 +47,7 @@ namespace AFSport.Web.Api.Controllers
         {
             if (ModelState.IsValid)
                 return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Inserir(_mapper.Map<Categoria>(categoria))));
-            return BadRequest("Campos inválidos");
+            return BadRequest();
         }
         #endregion
 
@@ -57,7 +57,7 @@ namespace AFSport.Web.Api.Controllers
         {
             if (ModelState.IsValid)
                 return Ok(_mapper.Map<CategoriaListaDTO>(await _categoriaService.Alterar(id, _mapper.Map<Categoria>(categoria))));
-            return BadRequest("Campos inválidos");
+            return BadRequest();
         }
         [HttpPut("ativar-inativar/{id}")]
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] CategoriaSalvarDTO categoria)

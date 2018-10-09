@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface IPedidoService
     {
@@ -12,7 +12,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar todos pedidos
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Pedido>> SelecionarTodos();
+        Task<IList<Pedido>> SelecionarTodos();
         /// <summary>
         /// Selecionar pedido por id
         /// </summary>
@@ -34,14 +34,14 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover pedido
         /// </summary>
-        /// <param name="pedido"></param>
+        /// <param name="idPedido"></param>
         /// <returns></returns>
-        Task Remover(Pedido pedido);
+        Task Remover(int idPedido);
         /// <summary>
         /// Selecionar todos pedidos do dia
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Pedido>> SelecionarTodosDiario();
+        Task<IList<Pedido>> SelecionarTodosDiario();
         /// <summary>
         /// Selecionar total de registro de pedidos
         /// </summary>

@@ -38,7 +38,7 @@ namespace AFSport.Web.Core.Service
             try
             {
                 var categoria = await SelecionarId(idCategoria);
-                await _categoriaRepository.AtivarInativar(idCategoria, isAtivo);
+                await _categoriaRepository.AtivarInativar(categoria.IdCategoria, isAtivo);
             }
             catch (Exception ex)
             {

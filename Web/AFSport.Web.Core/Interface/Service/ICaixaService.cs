@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface ICaixaService
     {
         /// <summary>
-        /// Selecionar todos os caixar abertos
+        /// Selecionar todos os caixa abertos
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Caixa>> SelecionarTodos();
+        Task<IList<Caixa>> SelecionarTodos();
         /// <summary>
         /// Selecionar caixa por id
         /// </summary>

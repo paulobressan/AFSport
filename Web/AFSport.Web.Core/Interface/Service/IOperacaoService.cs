@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface IOperacaoService
     {
@@ -12,17 +12,17 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar todas operações
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Operacao>> SelecionarTodos();
+        Task<IList<Operacao>> SelecionarTodos();
         /// <summary>
         /// Selecionar todas operações ativas
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Operacao>> SelecionarTodosAtivos();
+        Task<IList<Operacao>> SelecionarTodosAtivos();
         /// <summary>
         /// Selecionar todas operações inativas
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Operacao>> SelecionarTodosInativos();
+        Task<IList<Operacao>> SelecionarTodosInativos();
         /// <summary>
         /// Selecionar operação por id
         /// </summary>
@@ -44,8 +44,8 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover operação
         /// </summary>
-        /// <param name="operacao"></param>
+        /// <param name="idOperacao"></param>
         /// <returns></returns>
-        Task Remover(Operacao operacao);
+        Task Remover(int idOperacao);
     }
 }

@@ -46,7 +46,7 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task Remover(int idEstado);
         /// <summary>
-        /// Ativar ou inativar categoria
+        /// Ativar ou inativar estado
         /// </summary>
         /// <param name="idEstado"></param>
         /// <param name="isAtivo"></param>

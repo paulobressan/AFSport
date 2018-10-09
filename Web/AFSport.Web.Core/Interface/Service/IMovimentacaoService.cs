@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface IMovimentacaoService
     {
@@ -12,7 +12,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar todas movimentação
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Movimentacao>> SelecionarTodos();
+        Task<IList<Movimentacao>> SelecionarTodos();
         /// <summary>
         /// Selecionar movimentação por id
         /// </summary>
@@ -32,17 +32,11 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<Movimentacao> Alterar(Movimentacao movimentacao);
         /// <summary>
-        /// Remover movimentação
-        /// </summary>
-        /// <param name="movimentacao"></param>
-        /// <returns></returns>
-        Task Remover(Movimentacao movimentacao);
-        /// <summary>
         /// Selecionar movimentação do dia
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        Task<IEnumerable<Movimentacao>> SelecionarMovimentacaoPorDia(DateTime data);
+        Task<IList<Movimentacao>> SelecionarMovimentacaoPorDia(DateTime data);
         /// <summary>
         /// Selecionar total de movimentação
         /// </summary>

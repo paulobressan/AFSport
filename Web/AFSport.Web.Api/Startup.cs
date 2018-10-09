@@ -39,6 +39,7 @@ namespace AFSport.Web.Api
             services.AddTransient<ICategoriaService, CategoriaService>();
             services.AddTransient<IEstadoService, EstadoService>();
             services.AddTransient<ICidadeService, CidadeService>();
+            services.AddTransient<IClienteService, ClienteService>();
             #endregion
             #region Repositorios
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
@@ -64,7 +65,7 @@ namespace AFSport.Web.Api
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("alura-webapi-authentication-valid")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(Configuration.GetSection("Token:SecurityKey").ToString())),
                     ClockSkew = TimeSpan.FromHours(24),
                     ValidIssuer = "AFSport.Web.Api",
                     ValidAudience = "Service-Mobile"

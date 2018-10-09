@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class MovimentacaoRepository : BaseRepository, IMovimentacaoRepository
+    public class MovimentacaoRepository : BaseRepository, IMovimentacaoService
     {
         public MovimentacaoRepository(IConfiguration configuration) : base(configuration)
         {

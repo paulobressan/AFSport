@@ -40,7 +40,7 @@ namespace AFSport.Web.Api.infra
             var result = JsonConvert.SerializeObject(
                 code != HttpStatusCode.InternalServerError 
                 ? new { msg = exception.Message }
-                : new {msg = "Problemas interno no servidor. Contate o suporte."});
+                : new {msg = "Problemas interno no servidor. Contate o suporte suporte@afsport.com.br."});
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
             return context.Response.WriteAsync(result);

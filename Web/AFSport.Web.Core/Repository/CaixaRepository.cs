@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class CaixaRepository : BaseRepository, ICaixaRepository
+    public class CaixaRepository : BaseRepository, ICaixaService
     {
         public CaixaRepository(IConfiguration configuration) : base(configuration)
         {

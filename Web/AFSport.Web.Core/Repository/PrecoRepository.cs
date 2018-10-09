@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Repository
 {
-    public class PrecoRepository : BaseRepository, IPrecoRepository
+    public class PrecoRepository : BaseRepository, IPrecoService
     {
         public PrecoRepository(IConfiguration configuration) : base(configuration)
         {

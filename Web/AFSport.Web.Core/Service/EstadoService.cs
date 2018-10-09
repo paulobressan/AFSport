@@ -115,8 +115,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var categoria = await SelecionarId(idEstado);
-                await _estadoRepository.AtivarInativar(idEstado, isAtivo);
+                var estado = await SelecionarId(idEstado);
+                await _estadoRepository.AtivarInativar(estado.IdEstado, isAtivo);
             }
             catch (Exception ex)
             {

@@ -111,6 +111,19 @@ namespace AFSport.Web.Core.Service
             }
         }
 
+        public async Task AtivarInativar(int idCidade, bool isAtivo)
+        {
+            try
+            {
+                var cidade = await SelecionarId(idCidade);
+                await _cidadeRepository.AtivarInativar(idCidade, isAtivo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<int> TotalRegistros()
         {
             try

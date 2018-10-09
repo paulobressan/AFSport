@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AFSport.Web.Api.DTO.Estado;
+using AFSport.Web.Api.DTO.Cidade;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
 using AutoMapper;
@@ -12,58 +12,58 @@ namespace AFSport.Web.Api.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class EstadoController : BaseController
+    public class CidadeController : BaseController
     {
         #region Objetos
-        private readonly IEstadoService _estadoService;
+        private readonly ICidadeService _cidadeService;
         #endregion
-        public EstadoController(IMapper mapper, IEstadoService estadoService) : base(mapper)
+        public CidadeController(IMapper mapper, ICidadeService cidadeService) : base(mapper)
         {
-            this._estadoService = estadoService;
+            this._cidadeService = cidadeService;
         }
 
         #region Get
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(_mapper.Map<List<EstadoListaDTO>>(await _estadoService.SelecionarTodos()));
+            return Ok(_mapper.Map<List<CidadeListaDTO>>(await _cidadeService.SelecionarTodos()));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(_mapper.Map<EstadoListaDTO>(await _estadoService.SelecionarId(id)));
+            return Ok(_mapper.Map<CidadeListaDTO>(await _cidadeService.SelecionarId(id)));
         }
 
         [HttpGet("ativas")]
         public async Task<IActionResult> GetAtivas()
         {
-            return Ok(_mapper.Map<List<EstadoListaDTO>>(await _estadoService.SelecionarTodosAtivos()));
+            return Ok(_mapper.Map<List<CidadeListaDTO>>(await _cidadeService.SelecionarTodosAtivos()));
         }
         #endregion
 
         #region Post
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] EstadoSalvarDTO estado)
+        public async Task<IActionResult> Post([FromBody] CidadeSalvarDTO cidade)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<EstadoListaDTO>(await _estadoService.Inserir(_mapper.Map<Estado>(estado))));
+                return Ok(_mapper.Map<CidadeListaDTO>(await _cidadeService.Inserir(_mapper.Map<Cidade>(cidade))));
             return BadRequest();
         }
         #endregion
 
         #region Put
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] EstadoSalvarDTO estado)
+        public async Task<IActionResult> Put(int id, [FromBody] CidadeSalvarDTO cidade)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<EstadoListaDTO>(await _estadoService.Alterar(id, _mapper.Map<Estado>(estado))));
+                return Ok(_mapper.Map<CidadeListaDTO>(await _cidadeService.Alterar(id, _mapper.Map<Cidade>(cidade))));
             return BadRequest();
         }
         [HttpPut("ativar-inativar/{id}")]
-        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] EstadoSalvarDTO estado)
+        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] CidadeSalvarDTO cidade)
         {
-            await _estadoService.AtivarInativar(id, estado.IsAtivo);
+            await _cidadeService.AtivarInativar(id, cidade.IsAtivo);
             return Ok();
         }
         #endregion  
@@ -71,7 +71,7 @@ namespace AFSport.Web.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _estadoService.Remover(id);
+            await _cidadeService.Remover(id);
             return Ok();
         }
         #endregion

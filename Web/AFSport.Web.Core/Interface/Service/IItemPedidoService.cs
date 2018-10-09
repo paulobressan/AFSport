@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface IItemPedidoService
     {
@@ -37,6 +37,6 @@ namespace AFSport.Web.Core.Interface.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<IEnumerable<ItemPedido>> SelecionarPorPedido(int id);
+        Task<IList<ItemPedido>> SelecionarPorPedido(int id);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AFSport.Web.Core.Interface.Repository
 {
-    public interface IPrecoRepository
+    public interface IPrecoService
     {
         Task<List<Preco>> SelecionarTodos(bool selecionarTodos);
         Task<Preco> SelecionarId(int id);

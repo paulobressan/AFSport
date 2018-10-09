@@ -1,3 +1,4 @@
+using System;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@ namespace AFSport.Web.Api.Controllers
     public class BaseController : ControllerBase
     {
         #region Objetos
-            protected readonly IMapper _mapper ;
+        protected readonly IMapper _mapper;
         #endregion
         public BaseController(IMapper mapper)
         {

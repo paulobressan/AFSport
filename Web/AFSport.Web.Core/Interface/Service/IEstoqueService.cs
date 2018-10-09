@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AFSport.Web.Core.Interface.Repository
+namespace AFSport.Web.Core.Interface.Service
 {
     public interface IEstoqueService
     {
@@ -12,7 +12,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar todos estoques
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Estoque>> SelecionarTodos();
+        Task<IList<Estoque>> SelecionarTodos();
         /// <summary>
         /// Selecionar estoque por id
         /// </summary>
