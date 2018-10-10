@@ -36,10 +36,18 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task<Usuario> Inserir(Usuario usuario);
         /// <summary>
+        /// Ativar ou inativar usuário
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idUsuario, bool isAtivo);
+        /// <summary>
         /// Alterar usuário
         /// </summary>
+        /// <param name="idUsuario"></param>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        Task<Usuario> Alterar(Usuario usuario);
+        Task<Usuario> Alterar(int idUsuario, Usuario usuario);
     }
 }

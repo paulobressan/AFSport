@@ -1,4 +1,5 @@
 ﻿using AFSport.Web.Core.Base;
+using AFSport.Web.Core.Enum;
 using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Model;
 using Dapper;
@@ -105,9 +106,23 @@ namespace AFSport.Web.Core.Repository
                 }, null, splitOn: "idCliente, idUsuario, idStatus");
         }
 
+
+
         public async Task<int> TotalRegistros()
         {
             return (await _context.QueryAsync<int>(@"select count(*) from pedido;", null))
+                .Single();
+        }
+
+        public async Task<Pedido> AlterarStatusPedido(int idPedido, PedidoStatus status)
+        {
+            return (await _context.QueryAsync(@"update pedido 
+                set status = @status where idPedido = @idPedido;
+                select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+                inner join cliente c on p.idCliente = c.idCliente
+                inner join usuario u on p.idUsuario = u.idUsuario
+                inner join pedido_status ps on p.idStatus = ps.idStatus
+                where p.idPedido = @idPedido;", new { idPedido, status }))
                 .Single();
         }
     }

@@ -17,9 +17,9 @@ namespace AFSport.Web.Core.Repository
         {
         }
 
-        public async Task Remover(Estado estado)
+        public async Task Remover(int idEstado)
         {
-            await _context.QueryAsync<Estado>("delete from estado where idEstado = @idEstado", estado);
+            await _context.QueryAsync<Estado>("delete from estado where idEstado = @idEstado", new { idEstado });
         }
 
         public async Task<Estado> Inserir(Estado estado)

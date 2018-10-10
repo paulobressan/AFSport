@@ -20,7 +20,7 @@ namespace AFSport.Web.Core.Service
             this._operacaoRepository = operacaoRepository;
         }
         #endregion
-    
+
         public async Task<Operacao> Alterar(int idOperacao, Operacao operacao)
         {
             try
@@ -111,17 +111,17 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        // public async Task AtivarInativar(int idOperacao, bool isAtivo)
-        // {
-        //     try
-        //     {
-        //         var Operacao = await SelecionarId(idOperacao);
-        //         await _operacaoRepository.AtivarInativar(Operacao.IdOperacao, isAtivo);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         throw ex;
-        //     }
-        // }
+        public async Task AtivarInativar(int idOperacao, bool isAtivo)
+        {
+            try
+            {
+                var Operacao = await SelecionarId(idOperacao);
+                await _operacaoRepository.AtivarInativar(Operacao.IdOperacao, isAtivo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

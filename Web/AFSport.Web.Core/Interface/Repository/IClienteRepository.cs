@@ -12,7 +12,6 @@ namespace AFSport.Web.Core.Interface.Repository
         Task<Cliente> SelecionarId(int id);
         Task<Cliente> Inserir(Cliente cliente);
         Task<Cliente> Alterar(Cliente cliente);
-        Task Remover(Cliente cliente);
         Task<IEnumerable<Cliente>> SelecionarPorCidade(int idCidade);
         Task<IEnumerable<Cliente>> SelecionarPesquisaNomeId(string valor);
         Task<int> TotalRegistros();

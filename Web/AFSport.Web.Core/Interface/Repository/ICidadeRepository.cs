@@ -24,6 +24,12 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<IEnumerable<Cidade>> SelecionarTodosInativos();
         /// <summary>
+        /// Selecionar cidade por estado
+        /// </summary>
+        /// <param name="idEstado"></param>
+        /// <returns></returns>
+        Task<List<Cidade>> SelecionarPorEstado(int idEstado)
+        /// <summary>
         /// Selecionar cidade por id
         /// </summary>
         /// <param name="id"></param>
@@ -44,9 +50,9 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover cidade
         /// </summary>
-        /// <param name="cidade"></param>
+        /// <param name="idCidade"></param>
         /// <returns></returns>
-        Task Remover(Cidade cidade);
+        Task Remover(int idCidade);
          /// <summary>
         /// Ativar ou inativar cidade
         /// </summary>

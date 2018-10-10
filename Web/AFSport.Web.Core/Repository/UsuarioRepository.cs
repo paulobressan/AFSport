@@ -56,6 +56,12 @@ namespace AFSport.Web.Core.Repository
                 from usuario where isAtivo = false;", null);
         }
 
+        public async Task AtivarInativar(int idUsuario, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update usuario set isAtivo = @isAtivo 
+                where idUsuario = @idUsuario;", new { idUsuario, isAtivo });
+        }
+
         public async Task<Usuario> AutenticarUsuario(string login, string senha)
         {
             return (await _context.QueryAsync<Usuario>(@"select idUsuario, nome, email, login, senha from usuario 

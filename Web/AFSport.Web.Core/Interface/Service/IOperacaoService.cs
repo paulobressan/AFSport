@@ -41,7 +41,14 @@ namespace AFSport.Web.Core.Interface.Service
         /// <param name="operacao"></param>
         /// <param name="idOperacao"></param>
         /// <returns></returns>
-        Task<Operacao> Alterar(int idOperacao ,Operacao operacao);
+        Task<Operacao> Alterar(int idOperacao, Operacao operacao);
+        /// <summary>
+        /// Ativar ou inativar operação
+        /// </summary>
+        /// <param name="idOperacao"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idOperacao, bool isAtivo);
         /// <summary>
         /// Remover operação
         /// </summary>

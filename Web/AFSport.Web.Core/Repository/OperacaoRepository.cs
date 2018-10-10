@@ -56,6 +56,12 @@ namespace AFSport.Web.Core.Repository
                 from operacao where isAtivo = true;", null);
         }
 
+        public async Task AtivarInativar(int idOperacao, Boolean isAtivo)
+        {
+            await _context.QueryAsync(@"update operacao set isAtivo = @isAtivo 
+                where idOperacao = @idOperacao;", new { idOperacao, isAtivo });
+        }
+
         public async Task<IEnumerable<Operacao>> SelecionarTodosInativos()
         {
             return await _context.QueryAsync<Operacao>(@"select idOperacao, nome, descricao,isAtivo 

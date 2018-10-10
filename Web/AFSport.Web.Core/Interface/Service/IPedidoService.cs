@@ -1,4 +1,5 @@
-﻿using AFSport.Web.Core.Model;
+﻿using AFSport.Web.Core.Enum;
+using AFSport.Web.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,9 +29,10 @@ namespace AFSport.Web.Core.Interface.Service
         /// <summary>
         /// Alterar pedido
         /// </summary>
+        /// <param name="idPedido"></param>
         /// <param name="pedido"></param>
         /// <returns></returns>
-        Task<Pedido> Alterar(Pedido pedido);
+        Task<Pedido> Alterar(int idPedido, Pedido pedido);
         /// <summary>
         /// Remover pedido
         /// </summary>
@@ -42,6 +44,13 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <returns></returns>
         Task<IList<Pedido>> SelecionarTodosDiario();
+        /// <summary>
+        /// Cancelar pedido
+        /// </summary>
+        /// <param name="idPedido"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        Task<Pedido> CancelarPedido(int idPedido, PedidoStatus status);
         /// <summary>
         /// Selecionar total de registro de pedidos
         /// </summary>

@@ -12,20 +12,22 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IEstadoRepository _estadoRepository;
+        private readonly ICidadeRepository _cidadeRepository;
         #endregion
 
         #region Construtor
-        public EstadoService(IEstadoRepository estadoRepository)
+        public EstadoService(IEstadoRepository estadoRepository, ICidadeRepository cidadeRepository)
         {
             this._estadoRepository = estadoRepository;
+            this._cidadeRepository = cidadeRepository;
         }
         #endregion
-    
+
         public async Task<Estado> Alterar(int idEstado, Estado estado)
         {
             try
             {
-                await SelecionarId(idEstado);
+                await ValidarEstadoExistente(idEstado);
                 return await _estadoRepository.Alterar(estado);
             }
             catch (Exception ex)
@@ -50,8 +52,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var estado = await SelecionarId(idEstado);
-                await _estadoRepository.Remover(estado);
+                await ValidarEstadoExistente(idEstado);
+                await ValidarDependenciasDeEstado(idEstado);
+                await _estadoRepository.Remover(idEstado);
             }
             catch (Exception ex)
             {
@@ -115,8 +118,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var estado = await SelecionarId(idEstado);
-                await _estadoRepository.AtivarInativar(estado.IdEstado, isAtivo);
+                await ValidarEstadoExistente(idEstado);
+                await _estadoRepository.AtivarInativar(idEstado, isAtivo);
             }
             catch (Exception ex)
             {
@@ -134,6 +137,18 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        public async Task ValidarEstadoExistente(int idEstado)
+        {
+            if (await _estadoRepository.SelecionarId(idEstado) == null)
+                throw new KeyNotFoundException("Estado não encontrada");
+        }
+
+        private async Task ValidarDependenciasDeEstado(int idEstado)
+        {
+            if ((await _cidadeRepository.SelecionarPorEstado(idEstado)).Any())
+                throw new ArgumentException("Estado não pode ser removido por conter dependencias");
         }
     }
 }

@@ -42,6 +42,13 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<Usuario> Alterar(Usuario usuario);
         /// <summary>
+        /// Ativar ou inativar usuário
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idUsuario, bool isAtivo);
+        /// <summary>
         /// Verificar auticidade do usuário
         /// </summary>
         /// <param name="login"></param>

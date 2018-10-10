@@ -53,6 +53,12 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task AtivarInativar(int idEstado, bool isAtivo);
         /// <summary>
+        /// Validar se o estado existe
+        /// </summary>
+        /// <param name="idEstado"></param>
+        /// <returns></returns>
+        Task ValidarEstadoExistente(int idEstado);
+        /// <summary>
         /// Selecionar total de estados registrado
         /// </summary>
         /// <returns></returns>

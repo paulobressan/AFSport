@@ -12,12 +12,19 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IMovimentacaoRepository _movimentacaoRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IOperacaoRepository _operacaoRepository;
         #endregion
 
         #region Construtor
-        public MovimentacaoService(IMovimentacaoRepository movimentacaoRepository)
+        public MovimentacaoService(
+            IMovimentacaoRepository movimentacaoRepository,
+            IUsuarioRepository usuarioRepository,
+            IOperacaoRepository operacaoRepository)
         {
             this._movimentacaoRepository = movimentacaoRepository;
+            this._usuarioRepository = usuarioRepository;
+            this._operacaoRepository = operacaoRepository;
         }
         #endregion
 
@@ -38,6 +45,10 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
+                if (await _operacaoRepository.SelecionarId(movimentacao.IdOperacao) == null)
+                    throw new KeyNotFoundException("Operação não encontrada");
+                if (await _usuarioRepository.SelecionarId(movimentacao.IdUsuario) == null)
+                    throw new KeyNotFoundException("Usuário não encontrado");
                 return await _movimentacaoRepository.Inserir(movimentacao);
             }
             catch (Exception ex)

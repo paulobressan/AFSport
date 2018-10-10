@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using AFSport.Web.Core.Enum;
+using AFSport.Web.Core.Interface.Repository;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
 
@@ -7,39 +11,119 @@ namespace AFSport.Web.Core.Service
 {
     public class PedidoService : IPedidoService
     {
-        public Task<Pedido> Alterar(Pedido pedido)
+        #region Objetos
+        private readonly IPedidoRepository _pedidoRepository;
+        #endregion
+
+        #region Construtor
+        public PedidoService(IPedidoRepository pedidoRepository)
         {
-            throw new System.NotImplementedException();
+            this._pedidoRepository = pedidoRepository;
+        }
+        #endregion
+
+        public async Task<Pedido> Alterar(int idPedido, Pedido Pedido)
+        {
+            try
+            {
+                await SelecionarId(idPedido);
+                return await _pedidoRepository.Alterar(Pedido);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Pedido> Inserir(Pedido pedido)
+        public async Task<Pedido> CancelarPedido(int idPedido, PedidoStatus status)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var pedido = await _pedidoRepository.SelecionarId(idPedido) ??
+                    throw new KeyNotFoundException("Pedido não encontrado");
+
+                return await _pedidoRepository.AlterarStatusPedido(pedido.IdPedido, status);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task Remover(int idPedido)
+        public async Task<Pedido> Inserir(Pedido Pedido)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _pedidoRepository.Inserir(Pedido);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<Pedido> SelecionarId(int id)
+        public async Task Remover(int idPedido)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var Pedido = await SelecionarId(idPedido);
+                await _pedidoRepository.Remover(Pedido);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<IList<Pedido>> SelecionarTodos()
+        public async Task<Pedido> SelecionarId(int id)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return await _pedidoRepository.SelecionarId(id) ??
+                    throw new KeyNotFoundException("Pedido não encontrado");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<IList<Pedido>> SelecionarTodosDiario()
+        public async Task<IList<Pedido>> SelecionarTodos()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _pedidoRepository.SelecionarTodos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<int> TotalRegistros()
+        public async Task<IList<Pedido>> SelecionarTodosDiario()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return (await _pedidoRepository.SelecionarTodosDiario())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<int> TotalRegistros()
+        {
+            try
+            {
+                return await _pedidoRepository.TotalRegistros();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

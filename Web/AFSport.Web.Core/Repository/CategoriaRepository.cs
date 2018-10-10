@@ -17,10 +17,10 @@ namespace AFSport.Web.Core.Repository
         {
         }
 
-        public async Task Remover(Categoria obj)
+        public async Task Remover(int idCategoria)
         {
             await _context.QueryAsync<Categoria>(@"delete from categoria 
-                where idCategoria = @idCategoria", obj);
+                where idCategoria = @idCategoria", new { idCategoria });
         }
 
         public async Task<Categoria> Inserir(Categoria obj)

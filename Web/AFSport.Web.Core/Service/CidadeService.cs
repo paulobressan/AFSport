@@ -12,19 +12,24 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly ICidadeRepository _cidadeRepository;
+        private readonly IClienteRepository _clienteRepository;
+        private readonly IEstadoService _estadoService;
         #endregion
 
         #region Construtor
-        public CidadeService(ICidadeRepository cidadeRepository)
+        public CidadeService(ICidadeRepository cidadeRepository, IClienteRepository clienteRepository, IEstadoService estadoService)
         {
             this._cidadeRepository = cidadeRepository;
+            this._clienteRepository = clienteRepository;
+            this._estadoService = estadoService;
         }
         #endregion
         public async Task<Cidade> Alterar(int idCidade, Cidade cidade)
         {
             try
             {
-                await SelecionarId(idCidade);
+                await ValidarCidadeExistente(idCidade);
+                await _estadoService.ValidarEstadoExistente(cidade.IdEstado);
                 return await _cidadeRepository.Alterar(cidade);
             }
             catch (Exception ex)
@@ -37,6 +42,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
+                await _estadoService.ValidarEstadoExistente(cidade.IdEstado);
                 return await _cidadeRepository.Inserir(cidade);
             }
             catch (Exception ex)
@@ -49,9 +55,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var cidade = await SelecionarId(idCidade);
-                //DEPENDENCIA CLIENTES
-                await _cidadeRepository.Remover(cidade);
+                await ValidarCidadeExistente(idCidade);
+                await ValidarDependenciasDeCidade(idCidade);
+                await _cidadeRepository.Remover(idCidade);
             }
             catch (Exception ex)
             {
@@ -115,7 +121,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var cidade = await SelecionarId(idCidade);
+                await ValidarCidadeExistente(idCidade);
                 await _cidadeRepository.AtivarInativar(idCidade, isAtivo);
             }
             catch (Exception ex)
@@ -134,6 +140,18 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        public async Task ValidarCidadeExistente(int idCidade)
+        {
+            if (await _cidadeRepository.SelecionarId(idCidade) == null)
+                throw new KeyNotFoundException("Cidade não encontrada");
+        }
+
+        public async Task ValidarDependenciasDeCidade(int idCidade)
+        {
+            if ((await _clienteRepository.SelecionarPorCidade(idCidade)).Any())
+                throw new ArgumentException("Cidade não pode ser removida por conter dependencias");
         }
     }
 }

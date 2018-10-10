@@ -37,8 +37,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var categoria = await SelecionarId(idCategoria);
-                await _categoriaRepository.AtivarInativar(categoria.IdCategoria, isAtivo);
+                if (await _categoriaRepository.SelecionarId(idCategoria) == null)
+                    throw new KeyNotFoundException("Categoria não encontrada");
+                await _categoriaRepository.AtivarInativar(idCategoria, isAtivo);
             }
             catch (Exception ex)
             {
@@ -62,11 +63,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var categoria = await SelecionarId(idCategoria);
-                if ((await _produtoRepository.SelecionarTodosProdutosPorCategoria(idCategoria)).Any())
-                    throw new ArgumentException("Categoria não pode ser removida por conter dependencias");
-
-                await _categoriaRepository.Remover(categoria);
+                await ValidarCategoriaExistente(idCategoria);
+                await ValidarDependenciasDeCategoria(idCategoria);
+                await _categoriaRepository.Remover(idCategoria);
             }
             catch (Exception ex)
             {
@@ -136,6 +135,18 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarCategoriaExistente(int idCategoria)
+        {
+            if (await _categoriaRepository.SelecionarId(idCategoria) == null)
+                throw new KeyNotFoundException("Categoria não encontrada");
+        }
+
+        private async Task ValidarDependenciasDeCategoria(int idCategoria)
+        {
+            if ((await _produtoRepository.SelecionarTodosProdutosPorCategoria(idCategoria)).Any())
+                throw new ArgumentException("Categoria não pode ser removida por conter dependencias");
         }
     }
 }

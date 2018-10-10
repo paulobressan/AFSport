@@ -1,4 +1,5 @@
-﻿using AFSport.Web.Core.Model;
+﻿using AFSport.Web.Core.Enum;
+using AFSport.Web.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,6 +43,13 @@ namespace AFSport.Web.Core.Interface.Repository
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<Pedido>> SelecionarTodosDiario();
+        /// <summary>
+        /// Cancelar pedido
+        /// </summary>
+        /// <param name="idPedido"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        Task<Pedido> AlterarStatusPedido(int idPedido, PedidoStatus status);
         /// <summary>
         /// Selecionar total de registro de pedidos
         /// </summary>

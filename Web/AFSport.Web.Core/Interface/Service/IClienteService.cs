@@ -33,12 +33,6 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task<Cliente> Alterar(int idCliente, Cliente cliente);
         /// <summary>
-        /// Remover cliente
-        /// </summary>
-        /// <param name="idCliente"></param>
-        /// <returns></returns>
-        Task Remover(int idCliente);
-        /// <summary>
         /// Selecionar cliente por cidade
         /// </summary>
         /// <param name="idCidade"></param>

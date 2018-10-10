@@ -22,7 +22,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                await SelecionarId(id);
+                await ValidarClienteExistente(id);
                 return await _clienteRepository.Alterar(cliente);
             }
             catch (Exception ex)
@@ -31,43 +31,11 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public Task<Cliente> Alterar(Cliente cliente)
-        {
-            throw new NotImplementedException();
-        }
-
-        // public async Task AtivarInativar(int idCliente, bool isAtivo)
-        // {
-        //     try
-        //     {
-        //         var cliente = await SelecionarId(idCliente);
-        //         await _clienteRepository.AtivarInativar(cliente.IdCliente, isAtivo);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         throw ex;
-        //     }
-        // }
-
         public async Task<Cliente> Inserir(Cliente Cliente)
         {
             try
             {
                 return await _clienteRepository.Inserir(Cliente);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public async Task Remover(int idCliente)
-        {
-            try
-            {
-                var cliente = await SelecionarId(idCliente);
-
-                await _clienteRepository.Remover(cliente);
             }
             catch (Exception ex)
             {
@@ -137,6 +105,12 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarClienteExistente(int idCliente)
+        {
+            if (await _clienteRepository.SelecionarId(idCliente) == null)
+                throw new KeyNotFoundException("Cliente não encontrada");
         }
     }
 }

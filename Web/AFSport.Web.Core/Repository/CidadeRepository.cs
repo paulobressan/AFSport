@@ -16,9 +16,9 @@ namespace AFSport.Web.Core.Repository
         public CidadeRepository(IConfiguration configuration) : base(configuration)
         { }
 
-        public async Task Remover(Cidade cidade)
+        public async Task Remover(int idCidade)
         {
-            await _context.QueryAsync<Cidade>(@"delete from cidade where idCidade = @idCidade", cidade);
+            await _context.QueryAsync<Cidade>(@"delete from cidade where idCidade = @idCidade", new { idCidade });
         }
 
         public async Task<Cidade> Inserir(Cidade cidade)
@@ -58,7 +58,7 @@ namespace AFSport.Web.Core.Repository
                  .SingleOrDefault();
         }
 
-        public async Task<List<Cidade>> SelecionarTodosPorEstado(int idEstado)
+        public async Task<List<Cidade>> SelecionarPorEstado(int idEstado)
         {
             return (await _context.QueryAsync<Cidade, Estado, Cidade>(@"select c.idCidade, c.nome, c.isAtivo, e.idEstado, e.nome, e.sigla from cidade as c 
                 inner join estado as e on c.idEstado = e.idEstado 

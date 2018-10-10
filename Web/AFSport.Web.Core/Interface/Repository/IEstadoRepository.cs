@@ -44,9 +44,9 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover estado
         /// </summary>
-        /// <param name="estado"></param>
+        /// <param name="idEstado"></param>
         /// <returns></returns>
-        Task Remover(Estado estado);
+        Task Remover(int idEstado);
         /// <summary>
         /// Ativar ou inativar categoria
         /// </summary>

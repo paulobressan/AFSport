@@ -44,9 +44,9 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover categoria
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="idCategoria"></param>
         /// <returns></returns>
-        Task Remover(Categoria obj);
+        Task Remover(int idCategoria);
         /// <summary>
         /// Ativar ou inativar categoria
         /// </summary>

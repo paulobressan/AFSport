@@ -7359,27 +7359,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paulo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Paulo Bressan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Source\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Paulo Bressan\\source\\repos\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj",
       "projectName": "AFSport.Web.Core",
-      "projectPath": "d:\\Source\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj",
-      "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-      "outputPath": "d:\\Source\\AFSport\\Web\\AFSport.Web.Core\\obj\\",
+      "projectPath": "C:\\Users\\Paulo Bressan\\source\\repos\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj",
+      "packagesPath": "C:\\Users\\Paulo Bressan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Paulo Bressan\\source\\repos\\AFSport\\Web\\AFSport.Web.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Paulo Bressan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
