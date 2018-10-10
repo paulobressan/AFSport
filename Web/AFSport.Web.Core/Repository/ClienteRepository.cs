@@ -16,11 +16,6 @@ namespace AFSport.Web.Core.Repository
         public ClienteRepository(IConfiguration configuration) : base(configuration)
         { }
 
-        public async Task Remover(Cliente obj)
-        {
-            await _context.QueryAsync<Cliente>(@"delete from cliente where idCliente = @idCliente", obj);
-        }
-
         public async Task<Cliente> Inserir(Cliente obj)
         {
             return (await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(

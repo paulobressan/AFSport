@@ -107,7 +107,7 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        private async Task ValidarClienteExistente(int idCliente)
+        public async Task ValidarClienteExistente(int idCliente)
         {
             if (await _clienteRepository.SelecionarId(idCliente) == null)
                 throw new KeyNotFoundException("Cliente não encontrada");

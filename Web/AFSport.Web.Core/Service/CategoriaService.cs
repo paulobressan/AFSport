@@ -137,13 +137,13 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        private async Task ValidarCategoriaExistente(int idCategoria)
+        public async Task ValidarCategoriaExistente(int idCategoria)
         {
             if (await _categoriaRepository.SelecionarId(idCategoria) == null)
                 throw new KeyNotFoundException("Categoria não encontrada");
         }
 
-        private async Task ValidarDependenciasDeCategoria(int idCategoria)
+        public async Task ValidarDependenciasDeCategoria(int idCategoria)
         {
             if ((await _produtoRepository.SelecionarTodosProdutosPorCategoria(idCategoria)).Any())
                 throw new ArgumentException("Categoria não pode ser removida por conter dependencias");
