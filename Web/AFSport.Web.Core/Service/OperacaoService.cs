@@ -12,12 +12,16 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IOperacaoRepository _operacaoRepository;
+        private readonly IMovimentacaoRepository _movimentacaoRepository;
         #endregion
 
         #region Construtor
-        public OperacaoService(IOperacaoRepository operacaoRepository)
+        public OperacaoService(
+            IOperacaoRepository operacaoRepository,
+            IMovimentacaoRepository movimentacaoRepository)
         {
             this._operacaoRepository = operacaoRepository;
+            this._movimentacaoRepository = movimentacaoRepository;
         }
         #endregion
 
@@ -25,7 +29,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                await SelecionarId(idOperacao);
+                await ValidarOperacaoExistente(idOperacao);
                 return await _operacaoRepository.Alterar(operacao);
             }
             catch (Exception ex)
@@ -50,8 +54,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var operacao = await SelecionarId(idOperacao);
-                await _operacaoRepository.Remover(operacao);
+                await ValidarOperacaoExistente(idOperacao);
+                await _operacaoRepository.Remover(idOperacao);
             }
             catch (Exception ex)
             {
@@ -122,6 +126,18 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarOperacaoExistente(int IdOperacao)
+        {
+            if (await _operacaoRepository.SelecionarId(IdOperacao) == null)
+                throw new KeyNotFoundException("Operação não encontrada");
+        }
+
+        private async Task ValidarDependenciaDeOperacaoExistente(int IdOperacao)
+        {
+            if (await _movimentacaoRepository(IdOperacao) == null)
+                throw new KeyNotFoundException("Operação não encontrada");
         }
     }
 }

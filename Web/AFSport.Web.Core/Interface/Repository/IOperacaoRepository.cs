@@ -51,8 +51,8 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover operação
         /// </summary>
-        /// <param name="operacao"></param>
+        /// <param name="idOperacao"></param>
         /// <returns></returns>
-        Task Remover(Operacao operacao);
+        Task Remover(int idOperacao);
     }
 }

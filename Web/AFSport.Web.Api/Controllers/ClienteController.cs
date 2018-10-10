@@ -55,14 +55,6 @@ namespace AFSport.Web.Api.Controllers
                 return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.Alterar(id, _mapper.Map<Cliente>(cliente))));
             return BadRequest();
         }
-        #endregion  
-        #region Delete
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _clienteService.Remover(id);
-            return Ok();
-        }
         #endregion
     }
 }

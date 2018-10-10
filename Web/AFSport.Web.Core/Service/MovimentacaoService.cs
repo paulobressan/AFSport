@@ -32,7 +32,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                await SelecionarId(idMovimentacao);
+                await ValidarMovimentacaoExistente(idMovimentacao);
+                await ValidarOperacaoExistente(movimentacao.IdOperacao);
+                await ValidarUsuarioExistente(movimentacao.IdUsuario);
                 return await _movimentacaoRepository.Alterar(movimentacao);
             }
             catch (Exception ex)
@@ -45,10 +47,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                if (await _operacaoRepository.SelecionarId(movimentacao.IdOperacao) == null)
-                    throw new KeyNotFoundException("Operação não encontrada");
-                if (await _usuarioRepository.SelecionarId(movimentacao.IdUsuario) == null)
-                    throw new KeyNotFoundException("Usuário não encontrado");
+                await ValidarOperacaoExistente(movimentacao.IdOperacao);
+                await ValidarUsuarioExistente(movimentacao.IdUsuario);
                 return await _movimentacaoRepository.Inserir(movimentacao);
             }
             catch (Exception ex)
@@ -107,6 +107,24 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarMovimentacaoExistente(int idMovimentacao)
+        {
+            if (await _movimentacaoRepository.SelecionarId(idMovimentacao) == null)
+                throw new KeyNotFoundException("Movimentação não encontrado");
+        }
+
+        private async Task ValidarUsuarioExistente(int idUsuario)
+        {
+            if (await _usuarioRepository.SelecionarId(idUsuario) == null)
+                throw new KeyNotFoundException("Usuário não encontrado");
+        }
+
+        private async Task ValidarOperacaoExistente(int IdOperacao)
+        {
+            if (await _operacaoRepository.SelecionarId(IdOperacao) == null)
+                throw new KeyNotFoundException("Operação não encontrada");
         }
     }
 }

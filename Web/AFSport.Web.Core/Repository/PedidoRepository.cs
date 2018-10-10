@@ -18,95 +18,86 @@ namespace AFSport.Web.Core.Repository
         {
         }
 
-        public async Task Remover(Pedido pedido)
+        public async Task Remover(int idPedido)
         {
-            await _context.QueryAsync<Pedido>(@"delete from categoria 
-                where idCategoria = @idCategoria", pedido);
+            await _context.QueryAsync<Pedido>(@"delete from pedido 
+                where idPedido = @idPedido", new { idPedido });
         }
 
         public async Task<Pedido> Inserir(Pedido pedido)
         {
-            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido_Status, Pedido>(@"insert into pedido(idUsuario, idCliente, idStatus, data) values (@idUsuario, @idCliente, @idStatus, @data);
-                select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"insert into pedido(idUsuario, idCliente, idStatus, data) values (@idUsuario, @idCliente, @idStatus, @data);
+                select p.idPedido, p.status, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo,  from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus
-                where p.idPedido = (select last_insert_id() as id)", (pedidop, cliente, usuario, pedido_status) =>
+                where p.idPedido = (select last_insert_id() as id)", (pedidop, cliente, usuario) =>
                 {
-                    pedidop.PedidoStatus = pedido_status;
                     pedidop.Cliente = cliente;
                     pedidop.Usuario = usuario;
                     return pedidop;
-                }, pedido, splitOn: "idCliente, idUsuario, idStatus"))
+                }, pedido, splitOn: "idCliente, idUsuario"))
                 .Single();
         }
 
         public async Task<Pedido> Alterar(Pedido pedido)
         {
-            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido_Status, Pedido>(@"update pedido set idUsuario = @idUsuario, idCliente = @idCliente, idStatus = @idStatus, data = @data where idPedido = @idPedido;
-                select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"update pedido set idUsuario = @idUsuario, idCliente = @idCliente, idStatus = @idStatus, data = @data where idPedido = @idPedido;
+                select p.idPedido, p.status, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo,  from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus
-                where p.idPedido = @idPedido;", (pedidop, cliente, usuario, pedido_status) =>
+                where p.idPedido = @idPedido;", (pedidop, cliente, usuario) =>
                 {
-                    pedidop.PedidoStatus = pedido_status;
                     pedidop.Cliente = cliente;
                     pedidop.Usuario = usuario;
                     return pedidop;
-                }, pedido, splitOn: "idCliente, idUsuario, idStatus"))
+                }, pedido, splitOn: "idCliente, idUsuario"))
                 .Single();
         }
 
         public async Task<Pedido> SelecionarId(int id)
         {
-            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido_Status, Pedido>(@"select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus 
+                inner join pedido_status ps on p.idStatus =  
                 where p.idPedido = @idPedido
-                order by p.data desc;", (pedido, cliente, usuario, pedido_status) =>
+                order by p.data desc;", (pedido, cliente, usuario) =>
                 {
-                    pedido.PedidoStatus = pedido_status;
                     pedido.Cliente = cliente;
                     pedido.Usuario = usuario;
                     return pedido;
-                }, new { idPedido = id }, splitOn: "idCliente, idUsuario, idStatus"))
+                }, new { idPedido = id }, splitOn: "idCliente, idUsuario"))
                 .SingleOrDefault();
         }
 
         public async Task<IEnumerable<Pedido>> SelecionarTodos()
         {
-            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido_Status, Pedido>(@"select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data,c.idCliente, p.status, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus 
-                order by p.data desc;", (pedido, cliente, usuario, pedido_status) =>
+                inner join pedido_status ps on p.idStatus =  
+                order by p.data desc;", (pedido, cliente, usuario) =>
                 {
-                    pedido.PedidoStatus = pedido_status;
                     pedido.Cliente = cliente;
                     pedido.Usuario = usuario;
                     return pedido;
-                }, null, splitOn: "idCliente, idUsuario, idStatus");
+                }, null, splitOn: "idCliente, idUsuario");
         }
 
         public async Task<IEnumerable<Pedido>> SelecionarTodosDiario()
         {
-            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido_Status, Pedido>(@"select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus 
+                inner join pedido_status ps on p.idStatus =  
                 where DATE_FORMAT(p.data, '%d/%m/%Y') = DATE_FORMAT(NOW(), '%d/%m/%Y')
-                order by p.data desc;", (pedido, cliente, usuario, pedido_status) =>
+                order by p.data desc;", (pedido, cliente, usuario) =>
                 {
-                    pedido.PedidoStatus = pedido_status;
                     pedido.Cliente = cliente;
                     pedido.Usuario = usuario;
                     return pedido;
-                }, null, splitOn: "idCliente, idUsuario, idStatus");
+                }, null, splitOn: "idCliente, idUsuario");
         }
-
-
 
         public async Task<int> TotalRegistros()
         {
@@ -118,10 +109,9 @@ namespace AFSport.Web.Core.Repository
         {
             return (await _context.QueryAsync(@"update pedido 
                 set status = @status where idPedido = @idPedido;
-                select p.idPedido, p.data,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, ps.idStatus, ps.status from pedido as p
+                select p.idPedido, p.data, p.status ,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo,  from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus = ps.idStatus
                 where p.idPedido = @idPedido;", new { idPedido, status }))
                 .Single();
         }

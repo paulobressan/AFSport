@@ -13,13 +13,18 @@ namespace AFSport.Web.Core.Service
         #region Objetos
         private readonly IEstoqueRepository _estoqueRepository;
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
         #endregion
 
         #region Construtor
-        public EstoqueService(IEstoqueRepository estoqueRepository, IProdutoRepository produtoRepository)
+        public EstoqueService(
+            IEstoqueRepository estoqueRepository,
+            IProdutoRepository produtoRepository,
+            IUsuarioRepository usuarioRepository)
         {
             this._estoqueRepository = estoqueRepository;
             this._produtoRepository = produtoRepository;
+            this._usuarioRepository = usuarioRepository;
         }
         #endregion
 
@@ -28,6 +33,8 @@ namespace AFSport.Web.Core.Service
             try
             {
                 await SelecionarId(idEstoque);
+                await ValidarProdutoExistente(estoque.IdProduto);
+                await ValidarUsuarioExistente(estoque.IdUsuario);
                 return await _estoqueRepository.Alterar(estoque);
             }
             catch (Exception ex)
@@ -40,6 +47,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
+                await ValidarProdutoExistente(estoque.IdProduto);
+                await ValidarUsuarioExistente(estoque.IdUsuario);
                 return await _estoqueRepository.Inserir(estoque);
             }
             catch (Exception ex)
@@ -65,10 +74,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var produto = await _produtoRepository.SelecionarId(idProduto) ??
-                    throw new KeyNotFoundException("Produto não encontrado");
-
-                return await _estoqueRepository.SelecionarEstoquePorProduto(produto.IdProduto) ??
+                await ValidarProdutoExistente(idProduto);
+                return await _estoqueRepository.SelecionarEstoquePorProduto(idProduto) ??
                     throw new KeyNotFoundException("Produto não contem estoque");
             }
             catch (Exception ex)
@@ -101,6 +108,23 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+        private async Task ValidarEstoqueExistente(int idEstoque)
+        {
+            if (await _estoqueRepository.SelecionarId(idEstoque) == null)
+                throw new KeyNotFoundException("Estoque não encontrado");
+        }
+
+        private async Task ValidarProdutoExistente(int idProduto)
+        {
+            if (await _produtoRepository.SelecionarId(idProduto) == null)
+                throw new KeyNotFoundException("Produto não encontrado");
+        }
+
+        private async Task ValidarUsuarioExistente(int idUsuario)
+        {
+            if (await _usuarioRepository.SelecionarId(idUsuario) == null)
+                throw new KeyNotFoundException("Usuário não encontrado");
         }
     }
 }

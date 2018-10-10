@@ -110,5 +110,11 @@ namespace AFSport.Web.Core.Service
                 throw ex;
             }
         }
+
+        private async Task ValidarUsuarioExistente(int idUsuario)
+        {
+            if (await _usuarioRepository.SelecionarId(idUsuario) == null)
+                throw new KeyNotFoundException("Usuário não encontrado");
+        }
     }
 }

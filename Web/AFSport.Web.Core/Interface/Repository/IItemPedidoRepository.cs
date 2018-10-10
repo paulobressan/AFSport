@@ -29,9 +29,9 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover item pedido
         /// </summary>
-        /// <param name="itemPedido"></param>
+        /// <param name="idItemPedido"></param>
         /// <returns></returns>
-        Task Remover(ItemPedido itemPedido);
+        Task Remover(int idItemPedido);
         /// <summary>
         /// Selecionar item pedido por id do pedido
         /// </summary>

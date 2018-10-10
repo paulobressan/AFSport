@@ -12,11 +12,15 @@ namespace AFSport.Web.Core.Service
     {
         #region Obejtos
         private readonly IProdutoRepository _produtoRepository;
+        private readonly ICategoriaRepository _categoriaRepository;
         #endregion
 
-        public ProdutoService(IProdutoRepository produtoRepository)
+        public ProdutoService(
+            IProdutoRepository produtoRepository,
+            ICategoriaRepository categoriaRepository)
         {
-            _produtoRepository = produtoRepository;
+            this._produtoRepository = produtoRepository;
+            this._categoriaRepository = categoriaRepository;
         }
 
         #region Selecionar
@@ -137,12 +141,13 @@ namespace AFSport.Web.Core.Service
         }
         #endregion
         #region Editar
-        public async Task<Produto> Alterar(int id, Produto obj)
+        public async Task<Produto> Alterar(int idProduto, Produto produto)
         {
             try
             {
-                await SelecionarId(id);
-                return await _produtoRepository.Alterar(obj);
+                await ValidarProdutoExistente(idProduto);
+                await ValidarCategoriaExistente(produto.IdCategoria);
+                return await _produtoRepository.Alterar(produto);
             }
             catch (Exception ex)
             {
@@ -154,7 +159,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var categoria = await SelecionarId(idProduto);
+                await ValidarProdutoExistente(idProduto);
                 await _produtoRepository.AtivarInativar(idProduto, isAtivo);
             }
             catch (Exception ex)
@@ -164,11 +169,12 @@ namespace AFSport.Web.Core.Service
         }
         #endregion
         #region Novo
-        public async Task<Produto> Inserir(Produto obj)
+        public async Task<Produto> Inserir(Produto produto)
         {
             try
             {
-                return await _produtoRepository.Inserir(obj);
+                await ValidarCategoriaExistente(produto.IdCategoria);
+                return await _produtoRepository.Inserir(produto);
             }
             catch (Exception ex)
             {
@@ -177,12 +183,12 @@ namespace AFSport.Web.Core.Service
         }
         #endregion
         #region Remover
-        public async Task Remover(int id)
+        public async Task Remover(int idProduto)
         {
             try
             {
-                var produto = await SelecionarId(id);
-                await _produtoRepository.Remover(produto);
+                await ValidarProdutoExistente(idProduto);
+                await _produtoRepository.Remover(idProduto);
             }
             catch (Exception ex)
             {
@@ -190,5 +196,17 @@ namespace AFSport.Web.Core.Service
             }
         }
         #endregion
+
+        private async Task ValidarProdutoExistente(int idProduto)
+        {
+            if (await _produtoRepository.SelecionarId(idProduto) == null)
+                throw new KeyNotFoundException("Produto não encontrado");
+        }
+
+        private async Task ValidarCategoriaExistente(int idCategoria)
+        {
+            if (await _categoriaRepository.SelecionarId(idCategoria) == null)
+                throw new KeyNotFoundException("Categoria não encontrada");
+        }
     }
 }

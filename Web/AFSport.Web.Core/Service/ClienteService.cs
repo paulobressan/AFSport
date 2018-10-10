@@ -12,10 +12,12 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IClienteRepository _clienteRepository;
+        private readonly ICidadeRepository _cidadeRepository;
         #endregion
-        public ClienteService(IClienteRepository clienteRepository)
+        public ClienteService(IClienteRepository clienteRepository, ICidadeRepository cidadeRepository)
         {
             _clienteRepository = clienteRepository;
+            _cidadeRepository = cidadeRepository;
         }
 
         public async Task<Cliente> Alterar(int id, Cliente cliente)
@@ -23,6 +25,7 @@ namespace AFSport.Web.Core.Service
             try
             {
                 await ValidarClienteExistente(id);
+                await ValidarCidadeExistente(cliente.IdCidade);
                 return await _clienteRepository.Alterar(cliente);
             }
             catch (Exception ex)
@@ -31,11 +34,12 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<Cliente> Inserir(Cliente Cliente)
+        public async Task<Cliente> Inserir(Cliente cliente)
         {
             try
             {
-                return await _clienteRepository.Inserir(Cliente);
+                await ValidarCidadeExistente(cliente.IdCidade);
+                return await _clienteRepository.Inserir(cliente);
             }
             catch (Exception ex)
             {
@@ -107,10 +111,16 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task ValidarClienteExistente(int idCliente)
+        private async Task ValidarClienteExistente(int idCliente)
         {
             if (await _clienteRepository.SelecionarId(idCliente) == null)
                 throw new KeyNotFoundException("Cliente não encontrada");
+        }
+
+        private async Task ValidarCidadeExistente(int idCidade)
+        {
+            if (await _cidadeRepository.SelecionarId(idCidade) == null)
+                throw new KeyNotFoundException("Cidade não encontrada");
         }
     }
 }

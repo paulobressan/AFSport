@@ -35,9 +35,9 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Remover pedido
         /// </summary>
-        /// <param name="pedido"></param>
+        /// <param name="idPedido"></param>
         /// <returns></returns>
-        Task Remover(Pedido pedido);
+        Task Remover(int idPedido);
         /// <summary>
         /// Selecionar todos pedidos do dia
         /// </summary>

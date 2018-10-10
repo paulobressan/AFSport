@@ -28,7 +28,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// </summary>
         /// <param name="idEstado"></param>
         /// <returns></returns>
-        Task<List<Cidade>> SelecionarPorEstado(int idEstado)
+        Task<List<Cidade>> SelecionarPorEstado(int idEstado);
         /// <summary>
         /// Selecionar cidade por id
         /// </summary>
@@ -40,7 +40,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// </summary>
         /// <param name="cidade"></param>
         /// <returns></returns>
-        Task<Cidade> Inserir(Cidade cidade);        
+        Task<Cidade> Inserir(Cidade cidade);
         /// <summary>
         /// Alterar cidade
         /// </summary>
@@ -53,7 +53,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <param name="idCidade"></param>
         /// <returns></returns>
         Task Remover(int idCidade);
-         /// <summary>
+        /// <summary>
         /// Ativar ou inativar cidade
         /// </summary>
         /// <param name="idCidade"></param>

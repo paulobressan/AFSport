@@ -32,21 +32,21 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <summary>
         /// Adicionar novo produto
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="produto"></param>
         /// <returns></returns>
-        Task<Produto> Inserir(Produto obj);
+        Task<Produto> Inserir(Produto produto);
         /// <summary>
         /// Alterar produto
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="produto"></param>
         /// <returns></returns>
-        Task<Produto> Alterar(Produto obj);
+        Task<Produto> Alterar(Produto produto);
         /// <summary>
         /// Remover produto
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="idProduto"></param>
         /// <returns></returns>
-        Task Remover(Produto obj);
+        Task Remover(int idProduto);
         /// <summary>
         /// Filtrar produto por nome ou Id
         /// </summary>

@@ -83,9 +83,10 @@ namespace AFSport.Web.Core.Repository
                 }, new { idCategoria }, splitOn: "idCategoria");
         }
 
-        public async Task Remover(Produto obj)
+        public async Task Remover(int idProduto)
         {
-            await _context.QueryAsync<Produto>(@"delete from produto where idProduto = @idProduto", obj);
+            await _context.QueryAsync<Produto>(@"delete from produto 
+                where idProduto = @idProduto", new { idProduto });
         }
 
         public async Task<int> TotalRegistros()
@@ -94,29 +95,30 @@ namespace AFSport.Web.Core.Repository
                 .Single();
         }
 
-        public async Task<Produto> Inserir(Produto obj)
+        public async Task<Produto> Inserir(Produto produto)
         {
             return (await _context.QueryAsync<Produto, Categoria, Produto>(@"insert into produto(idCategoria, nome, descricao, valorCompra, valorVenda, isAtivo) values (@idCategoria, @nome, @descricao, @valorCompra, @valorVenda, @isAtivo);
                 select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
                 inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = (select last_insert_id() as id);",
-                (produto, categoria) =>
+                (produtop, categoria) =>
                 {
-                    produto.Categoria = categoria;
-                    return produto;
-                }, obj, splitOn: "idCategoria"))
+                    produtop.Categoria = categoria;
+                    return produtop;
+                }, produto, splitOn: "idCategoria"))
                 .Single();
         }
 
-        public async Task<Produto> Alterar(Produto obj)
+        public async Task<Produto> Alterar(Produto produto)
         {
             return (await _context.QueryAsync<Produto, Categoria, Produto>(@"update produto set idCategoria = @idCategoria,  nome = @nome, descricao = @descricao, valorCompra = @valorCompra, valorVenda = @valorVenda, isAtivo = @isAtivo 
                 where idProduto = @idProduto;
                 select p.idProduto, p.nome, p.descricao, p.valorCompra, p.valorVenda, p.isAtivo,c.idCategoria, c.nome, c.descricao, c.isAtivo from produto as p
-                inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = @idProduto;", (produto, categoria) =>
+                inner join categoria c on p.idCategoria = c.idCategoria where p.idProduto = @idProduto;", 
+                (produtop, categoria) =>
                 {
-                    produto.Categoria = categoria;
-                    return produto;
-                }, obj, splitOn: "idCategoria"))
+                    produtop.Categoria = categoria;
+                    return produtop;
+                }, produto, splitOn: "idCategoria"))
                 .Single();
         }
 
@@ -150,7 +152,7 @@ namespace AFSport.Web.Core.Repository
                 }, null, splitOn: "idCategoria");
         }
 
-         public async Task AtivarInativar(int idProduto, Boolean isAtivo)
+        public async Task AtivarInativar(int idProduto, Boolean isAtivo)
         {
             await _context.QueryAsync(@"update produto set isAtivo = @isAtivo 
                 where idProduto = @idProduto;", new { idProduto, isAtivo });

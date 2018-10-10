@@ -13,13 +13,18 @@ namespace AFSport.Web.Core.Service
         #region Objetos
         private readonly IItemPedidoRepository _itemPedidoRepository;
         private readonly IPedidoRepository _pedidoRepository;
+        private readonly IProdutoRepository _produtoRepository;
         #endregion
 
         #region Construtor
-        public ItemPedidoService(IItemPedidoRepository itemPedidoRepository, IPedidoRepository pedidoRepository)
+        public ItemPedidoService(
+            IItemPedidoRepository itemPedidoRepository,
+            IPedidoRepository pedidoRepository,
+            IProdutoRepository produtoRepository)
         {
             this._itemPedidoRepository = itemPedidoRepository;
             this._pedidoRepository = pedidoRepository;
+            this._produtoRepository = produtoRepository;
         }
         #endregion
 
@@ -27,7 +32,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                await SelecionarId(idItemPedido);
+                await ValidarItemProdutoExistente(idItemPedido);
+                await ValidarPedidoExistente(itemPedido.IdPedido);
+                await ValidarProdutoExistente(itemPedido.IdProduto);
                 return await _itemPedidoRepository.Alterar(itemPedido);
             }
             catch (Exception ex)
@@ -40,6 +47,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
+                await ValidarPedidoExistente(itemPedido.IdPedido);
+                await ValidarProdutoExistente(itemPedido.IdProduto);
                 return await _itemPedidoRepository.Inserir(itemPedido);
             }
             catch (Exception ex)
@@ -52,8 +61,8 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var itemPedido = await SelecionarId(idItemPedido);
-                await _itemPedidoRepository.Remover(itemPedido);
+                await ValidarItemProdutoExistente(idItemPedido);
+                await _itemPedidoRepository.Remover(idItemPedido);
             }
             catch (Exception ex)
             {
@@ -66,7 +75,7 @@ namespace AFSport.Web.Core.Service
             try
             {
                 return await _itemPedidoRepository.SelecionarId(id) ??
-                    throw new KeyNotFoundException("ItemPedido não encontrado");
+                    throw new KeyNotFoundException("Item do pedido não encontrado");
             }
             catch (Exception ex)
             {
@@ -78,16 +87,32 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var pedido = await _pedidoRepository.SelecionarId(idPedido) ??
-                    throw new KeyNotFoundException("Pedido não encontrado para esse item");
-
-                return (await _itemPedidoRepository.SelecionarPorPedido(pedido.IdPedido))
+                await ValidarPedidoExistente(idPedido);
+                return (await _itemPedidoRepository.SelecionarPorPedido(idPedido))
                     .ToList();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarItemProdutoExistente(int idItemProduto)
+        {
+            if (await _itemPedidoRepository.SelecionarId(idItemProduto) == null)
+                throw new KeyNotFoundException("Item do pedido não encontrado");
+        }
+
+        private async Task ValidarProdutoExistente(int idCidade)
+        {
+            if (await _produtoRepository.SelecionarId(idCidade) == null)
+                throw new KeyNotFoundException("Produto não encontrado");
+        }
+
+        private async Task ValidarPedidoExistente(int idPedido)
+        {
+            if (await _pedidoRepository.SelecionarId(idPedido) == null)
+                throw new KeyNotFoundException("Pedido não encontrado");
         }
     }
 }

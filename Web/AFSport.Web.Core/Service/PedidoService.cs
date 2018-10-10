@@ -13,21 +13,33 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly IPedidoRepository _pedidoRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IClienteRepository _clienteRepository;
+        private readonly IItemPedidoRepository _itemPedidoRepository;
         #endregion
 
         #region Construtor
-        public PedidoService(IPedidoRepository pedidoRepository)
+        public PedidoService(
+            IPedidoRepository pedidoRepository,
+            IUsuarioRepository usuarioRepository,
+            IClienteRepository clienteRepository,
+            IItemPedidoRepository itemPedidoRepository)
         {
             this._pedidoRepository = pedidoRepository;
+            this._usuarioRepository = usuarioRepository;
+            this._clienteRepository = clienteRepository;
+            this._itemPedidoRepository = itemPedidoRepository;
         }
         #endregion
 
-        public async Task<Pedido> Alterar(int idPedido, Pedido Pedido)
+        public async Task<Pedido> Alterar(int idPedido, Pedido pedido)
         {
             try
             {
-                await SelecionarId(idPedido);
-                return await _pedidoRepository.Alterar(Pedido);
+                await ValidarPedidoExistente(idPedido);
+                await ValidarClienteExistente(pedido.IdCliente);
+                await ValidarUsuarioExistente(pedido.IdUsuario);
+                return await _pedidoRepository.Alterar(pedido);
             }
             catch (Exception ex)
             {
@@ -35,14 +47,12 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<Pedido> CancelarPedido(int idPedido, PedidoStatus status)
+        public async Task<Pedido> CancelarPedido(int idPedido)
         {
             try
             {
-                var pedido = await _pedidoRepository.SelecionarId(idPedido) ??
-                    throw new KeyNotFoundException("Pedido não encontrado");
-
-                return await _pedidoRepository.AlterarStatusPedido(pedido.IdPedido, status);
+                await ValidarPedidoExistente(idPedido);
+                return await _pedidoRepository.AlterarStatusPedido(idPedido, PedidoStatus.Cancelado);
             }
             catch (Exception ex)
             {
@@ -50,11 +60,13 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<Pedido> Inserir(Pedido Pedido)
+        public async Task<Pedido> Inserir(Pedido pedido)
         {
             try
             {
-                return await _pedidoRepository.Inserir(Pedido);
+                await ValidarClienteExistente(pedido.IdCliente);
+                await ValidarUsuarioExistente(pedido.IdUsuario);
+                return await _pedidoRepository.Inserir(pedido);
             }
             catch (Exception ex)
             {
@@ -66,8 +78,9 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                var Pedido = await SelecionarId(idPedido);
-                await _pedidoRepository.Remover(Pedido);
+                await ValidarPedidoExistente(idPedido);
+                await ValidarDependenciaDePedidoExistente(idPedido);
+                await _pedidoRepository.Remover(idPedido);
             }
             catch (Exception ex)
             {
@@ -124,6 +137,30 @@ namespace AFSport.Web.Core.Service
             {
                 throw ex;
             }
+        }
+
+        private async Task ValidarPedidoExistente(int idPedido)
+        {
+            if (await _pedidoRepository.SelecionarId(idPedido) == null)
+                throw new KeyNotFoundException("Pedido não encontrada");
+        }
+
+        private async Task ValidarClienteExistente(int idCliente)
+        {
+            if (await _clienteRepository.SelecionarId(idCliente) == null)
+                throw new KeyNotFoundException("Cliente não encontrada");
+        }
+
+        private async Task ValidarUsuarioExistente(int idUsuario)
+        {
+            if (await _usuarioRepository.SelecionarId(idUsuario) == null)
+                throw new KeyNotFoundException("Usuário não encontrado");
+        }
+
+        private async Task ValidarDependenciaDePedidoExistente(int idPedido)
+        {
+            if (await _itemPedidoRepository.SelecionarPorPedido(idPedido) == null)
+                throw new KeyNotFoundException("Pedido contem dependencia");
         }
     }
 }
