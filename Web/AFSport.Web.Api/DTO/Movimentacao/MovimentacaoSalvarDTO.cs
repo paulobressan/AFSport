@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFSport.Web.Api.DTO.Movimentacao
 {
-    public class MovimentacaoFormDTO
+    public class MovimentacaoSalvarDTO
     {
         [Required(ErrorMessage = "Id da movimentação obrigatório.")]
         public int IdMovimentacao { get; set; }

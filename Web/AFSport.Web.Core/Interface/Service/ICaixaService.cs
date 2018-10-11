@@ -28,15 +28,10 @@ namespace AFSport.Web.Core.Interface.Service
         /// <summary>
         /// Alterar caixa
         /// </summary>
+        /// <param name="idCaixa"></param>
         /// <param name="caixa"></param>
         /// <returns></returns>
-        Task<Caixa> Alterar(Caixa caixa);
-        /// <summary>
-        /// Remover Caixa
-        /// </summary>
-        /// <param name="caixa"></param>
-        /// <returns></returns>
-        Task Remover(Caixa caixa);
+        Task<Caixa> Alterar(int idCaixa, Caixa caixa);
         /// <summary>
         /// Selecionar caixa por data
         /// </summary>
@@ -47,7 +42,7 @@ namespace AFSport.Web.Core.Interface.Service
         /// Selecionar caixa da data atual
         /// </summary>
         /// <returns></returns>
-        Task<Caixa> SelecionarPorDataAtual(DateTime data);
+        Task<Caixa> SelecionarPorDataAtual();
         /// <summary>
         /// Selecionar total de caixa registrado
         /// </summary>

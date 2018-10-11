@@ -38,6 +38,12 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<IEnumerable<Movimentacao>> SelecionarMovimentacaoPorDia(DateTime data);
         /// <summary>
+        /// Selecionar movimentações por operação
+        /// </summary>
+        /// <param name="idOperacao"></param>
+        /// <returns></returns>
+        Task<IEnumerable<Movimentacao>> SelecionarMovimentacaoPorOperacao(int idOperacao);
+        /// <summary>
         /// Selecionar total de movimentação
         /// </summary>
         /// <returns></returns>

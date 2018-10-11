@@ -40,6 +40,12 @@ namespace AFSport.Web.Api
             services.AddTransient<IEstadoService, EstadoService>();
             services.AddTransient<ICidadeService, CidadeService>();
             services.AddTransient<IClienteService, ClienteService>();
+            services.AddTransient<IPedidoService, PedidoService>();
+            services.AddTransient<IOperacaoService, OperacaoService>();
+            services.AddTransient<IMovimentacaoService, MovimentacaoService>();
+            services.AddTransient<IItemPedidoService, ItemPedidoService>();
+            services.AddTransient<IEstoqueService, EstoqueService>();
+            services.AddTransient<ICaixaService, CaixaService>();
             #endregion
             #region Repositorios
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
@@ -48,6 +54,12 @@ namespace AFSport.Web.Api
             services.AddTransient<IEstadoRepository, EstadoRepository>();
             services.AddTransient<ICidadeRepository, CidadeRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IPedidoRepository, PedidoRepository>();
+            services.AddTransient<IOperacaoRepository, OperacaoRepository>();
+            services.AddTransient<IMovimentacaoRepository, MovimentacaoRepository>();
+            services.AddTransient<IItemPedidoRepository, ItemPedidoRepository>();
+            services.AddTransient<IEstoqueRepository, EstoqueRepository>();
+            services.AddTransient<ICaixaRepository, CaixaRepository>();
             #endregion
             #endregion
             services.AddAutoMapper();

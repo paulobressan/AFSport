@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFSport.Web.Api.DTO.Pedido
 {
-    public class PedidoFormDTO
+    public class PedidoSalvarDTO
     {
         [Required(ErrorMessage = "Id obrigatótio")]
         public int IdPedido { get; set; }

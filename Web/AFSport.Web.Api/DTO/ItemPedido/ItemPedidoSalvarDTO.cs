@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFSport.Web.Api.DTO.ItemPedido
 {
-    public class ItemPedidoFormDTO
+    public class ItemPedidoSalvarDTO
     {
         [Required(ErrorMessage = "Id do item do pedido obrigatório.")]
         public int IdItemPedido { get; set; }

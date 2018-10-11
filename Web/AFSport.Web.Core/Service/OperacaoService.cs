@@ -136,7 +136,7 @@ namespace AFSport.Web.Core.Service
 
         private async Task ValidarDependenciaDeOperacaoExistente(int IdOperacao)
         {
-            if (await _movimentacaoRepository(IdOperacao) == null)
+            if (await _movimentacaoRepository.SelecionarMovimentacaoPorOperacao(IdOperacao) == null)
                 throw new KeyNotFoundException("Operação não encontrada");
         }
     }

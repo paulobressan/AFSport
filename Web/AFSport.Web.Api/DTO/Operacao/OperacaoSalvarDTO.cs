@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFSport.Web.Api.DTO.Operacao
 {
-    public class OperacaoFormDTO
+    public class OperacaoSalvarDTO
     {
         [Required(ErrorMessage = "Id obrigatório.")]
         public int IdOperacao { get; set; }

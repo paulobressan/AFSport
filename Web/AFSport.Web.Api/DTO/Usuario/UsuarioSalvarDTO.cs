@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFSport.Web.Api.DTO.Usuario
 {
-    public class UsuarioFormDTO
+    public class UsuarioSalvarDTO
     {
         [Required(ErrorMessage = "Id obrigatório")]
         public int IdUsuario { get; set; }

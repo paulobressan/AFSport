@@ -88,6 +88,19 @@ namespace AFSport.Web.Core.Repository
                 }, new { data }, splitOn: "IdUsuario, IdOperacao");
         }
 
+        public async Task<IEnumerable<Movimentacao>> SelecionarMovimentacaoPorOperacao(int idOperacao)
+        {
+            return await _context.QueryAsync<Movimentacao, Usuario, Operacao, Movimentacao>(@"select idMovimentacao, m.data, m.valor, u.idUsuario, u.nome, u.email, u.login, u.isAtivo, o.idOperacao, o.nome, o.descricao, o.isAtivo from movimentacao m
+                inner join usuario u on m.idUsuario = u.idUsuario
+                inner join operacao o on m.idOperacao = o.idOperacao
+                where o.idOperacao = @idOperacao", (movimentacao, usuario, operacao) =>
+                {
+                    movimentacao.Usuario = usuario;
+                    movimentacao.Operacao = operacao;
+                    return movimentacao;
+                }, new { idOperacao }, splitOn: "IdUsuario, IdOperacao");
+        }
+
         public async Task<int> TotalRegistros()
         {
             return (await _context.QueryAsync<int>(@"select count(*) from movimentacao;", null))
