@@ -1,10 +1,8 @@
 <div>
-    <h2 class="text-center">Categorias</h2>
-    <hr>
-</div>
-<div>
-    <a class="btn btn-outline-success pull-right mt-4 mb-4" [routerLink]="['/categoria/nova-categoria']"><i class="fa fas fa-plus"></i><span
-            class="pl-1">Nova Categoria</span></a>
+    <a class="btn btn-outline-success pull-right mb-4" [routerLink]="['/categoria/nova-categoria']">
+        <i class="fa fas fa-plus"></i>
+        <span class="pl-1">Nova Categoria</span>
+    </a>
 </div>
 <div>
     <table class="table table-hover">
@@ -24,12 +22,12 @@
                 <td class="text-right">
                     <div class="form-check-inline">
                         <div class="p-1">
-                            <af-is-ativo [isAtivo]="categoria.isAtivo" (onIsAtivo)="ativarInativar($event, categoria)"></af-is-ativo>
-                            <span class="pl-2" attr.title="Alterar {{categoria.nome}}" style="cursor: pointer; font-size: 14pt"
+                            <af-is-ativo class="btn-isAtivo" [isAtivo]="categoria.isAtivo" (onIsAtivo)="ativarInativar($event, categoria)"></af-is-ativo>
+                            <span class="pl-2 btn-editar" attr.title="Alterar {{categoria.nome}}" style="cursor: pointer; font-size: 14pt"
                                 (click)="alterar(categoria)">
                                 <i class="fa fas fa-edit"></i>
                             </span>
-                            <span class="pl-2" attr.title="Remover {{categoria.nome}}" (click)="remover(categoria)"
+                            <span class="pl-2 btn-remover" attr.title="Remover {{categoria.nome}}" (click)="remover(categoria)"
                                 style="cursor: pointer; font-size: 14pt"><i class="fa fa-trash"></i></span>
                         </div>
                     </div>

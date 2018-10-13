@@ -1,4 +1,113 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" *ngIf="isLogged()">
+            <div class="sidebar-header">
+                <h3>AFSport</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Módulo Administrativo</p>
+                <li>
+                    <a href="#">
+                        <i class="fa fas fa-columns"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/categoria']">
+                        <i class="fa far fa-list-alt"></i>
+                         Categorias
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/produto']">
+                            <i class="fa fas fa-cubes"></i>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/estado']">
+                            <i class="fa fas fa-compass"></i>
+                        Estados
+                    </a>
+                </li>
+                <!-- <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> -->
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isLogged()">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fa fa fas fa-bars"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a *ngIf="(user$ | async) as user" class="nav-link" href="#">
+                                    <i class="fa fas fa-user"></i>
+                                    {{user.login}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <ng-content></ng-content>
+           </div>
+    </div>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">AFSport</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -55,4 +164,4 @@
             <span>{{user.nome}}</span>
         </div>
     </div>
-</nav>
+</nav> -->

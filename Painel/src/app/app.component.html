@@ -1,6 +1,7 @@
-<header *ngIf="isLogged()">
-  <af-header></af-header>
+<header>
+  <af-header>
+      <main class="container">
+          <router-outlet></router-outlet>
+        </main>
+  </af-header>
 </header>
-<main class="container pt-3 pb-3">
-  <router-outlet></router-outlet>
-</main>

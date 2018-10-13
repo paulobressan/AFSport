@@ -14,7 +14,11 @@ export class UserService {
     ) { }
 
     getUser(): Observable<User> {
-        return this.userSubject.asObservable()
+        let user = this.userSubject.asObservable()
+        if(user)
+            return user;
+        this.decodeTokenAndNotify();
+        return this.userSubject.asObservable();
     }
 
     setToken(token: string): void {
