@@ -64,7 +64,7 @@ namespace AFSport.Web.Core.Repository
 
         public async Task AtivarInativar(int idEstado, Boolean isAtivo)
         {
-            await _context.QueryAsync(@"update Estado set isAtivo = @isAtivo 
+            await _context.QueryAsync(@"update estado set isAtivo = @isAtivo 
                 where idEstado = @idEstado;", new { idEstado, isAtivo });
         }
 
