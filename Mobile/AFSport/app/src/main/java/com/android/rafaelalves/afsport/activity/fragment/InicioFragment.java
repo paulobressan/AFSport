@@ -6,8 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.rafaelalves.afsport.R;
@@ -17,12 +15,7 @@ import com.android.rafaelalves.afsport.R;
  */
 public class InicioFragment extends Fragment {
 
-    private Button bt1;
-    private EditText tbx1;
-    private EditText tbx2;
-    private TextView txtView1;
-    private TextView txtView2;
-
+    private TextView textInicio;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -33,7 +26,11 @@ public class InicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+
+        textInicio = view.findViewById(R.id.textInicio);
+
+        return view;
     }
 
 }

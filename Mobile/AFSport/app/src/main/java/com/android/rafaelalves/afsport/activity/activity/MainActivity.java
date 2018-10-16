@@ -1,4 +1,4 @@
-package com.android.rafaelalves.afsport.activity;
+package com.android.rafaelalves.afsport.activity.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -99,44 +99,51 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_inicio) {
             InicioFragment inicioFragment = new InicioFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, inicioFragment);
+            //fragmentTransaction.add(R.id.frameConteudo,inicioFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_clientes) {
             ClientesFragment clientesFragment = new ClientesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, clientesFragment);
+            //fragmentTransaction.add(R.id.frameConteudo,clientesFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, clientesFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_produtos) {
             ProdutosFragment produtosFragment = new ProdutosFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, produtosFragment);
-            FragmentTransaction.commit();
+            //fragmentTransaction.add(R.id.frameConteudo,produtosFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, produtosFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_estoque) {
             EstoqueFragment estoqueFragment = new EstoqueFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, estoqueFragment);
-            FragmentTransaction.commit();
+            fragmentTransaction.add(R.id.frameConteudo,estoqueFragment);
+            //FragmentTransaction.replace(R.id.frameContainer, estoqueFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_caixa) {
             CaixaFragment caixaFragment = new CaixaFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, caixaFragment);
-            FragmentTransaction.commit();
+            fragmentTransaction.add(R.id.frameConteudo,caixaFragment);
+            //FragmentTransaction.replace(R.id.frameContainer, caixaFragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_movimentacoes) {
             MovimentacoesFragment movimentacoesFragment = new MovimentacoesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, movimentacoesFragment);
-            FragmentTransaction.commit();
+            fragmentTransaction.add(R.id.frameConteudo,movimentacoesFragment);
+            //FragmentTransaction.replace(R.id.frameContainer, movimentacoesFragment);
+            fragmentTransaction.commit();
 
         }else if (id == R.id.nav_sobre){
             SobreFragment sobreFragment = new SobreFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            FragmentTransaction.replace(R.id.frameContainer, sobreFragment);
-            sobreFragment.commit();
+            fragmentTransaction.add(R.id.frameConteudo,sobreFragment);
+            //FragmentTransaction.replace(R.id.frameContainer, sobreFragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
