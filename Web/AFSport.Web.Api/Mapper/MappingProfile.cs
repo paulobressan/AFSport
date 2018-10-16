@@ -41,7 +41,7 @@ namespace AFSport.Web.Api.Mapper
 
             #region Cidade
             CreateMap<Cidade, CidadeListaDTO>();
-            CreateMap<Cidade, CidadeSalvarDTO>();
+            CreateMap<CidadeSalvarDTO, Cidade>();
             #endregion
 
             #region Cliente
