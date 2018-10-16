@@ -49,5 +49,22 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <returns></returns>
         Task<int> TotalRegistros();
+        /// <summary>
+        /// Ativar ou inativar categoria
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <param name="isAtivo"></param>
+        /// <returns></returns>
+        Task AtivarInativar(int idCliente, bool isAtivo);
+        /// <summary>
+        /// Selecionar todos clientes ativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<Cliente>> SelecionarTodosAtivos();
+        /// <summary>
+        /// Selecionar todos clientes inativos
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<Cliente>> SelecionarTodosInativos();
     }
 }

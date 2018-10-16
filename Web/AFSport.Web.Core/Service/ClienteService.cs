@@ -111,6 +111,45 @@ namespace AFSport.Web.Core.Service
             }
         }
 
+        public async Task AtivarInativar(int idCliente, bool isAtivo)
+        {
+            try
+            {
+                await ValidarClienteExistente(idCliente);
+                await _clienteRepository.AtivarInativar(idCliente, isAtivo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IList<Cliente>> SelecionarTodosAtivos()
+        {
+            try
+            {
+                return (await _clienteRepository.SelecionarTodosAtivos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IList<Cliente>> SelecionarTodosInativos()
+        {
+            try
+            {
+                return (await _clienteRepository.SelecionarTodosInativos())
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private async Task ValidarClienteExistente(int idCliente)
         {
             if (await _clienteRepository.SelecionarId(idCliente) == null)

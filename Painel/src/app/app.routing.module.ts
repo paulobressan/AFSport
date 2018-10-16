@@ -32,6 +32,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'cliente',
+        loadChildren: './clientes/clientes.module#ClientesModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

@@ -1,10 +1,32 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ClienteListComponent } from './cliente-list/cliente-list.component';
+import { ClienteListResolve } from './cliente-list/cliente-list.resolve';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import { CidadeAtivasResolve } from '../cidades/cidade/cidade-ativas.resolve';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: ClienteListComponent,
+        resolve: {
+            clientes: ClienteListResolve
+        }
+    },
+    {
+        path: 'novo-cliente',
+        component: ClienteFormComponent,
+        resolve: {
+            cidades: CidadeAtivasResolve
+        }
+    }
+]
 
 @NgModule({
-    declarations: [],
-    imports: [ CommonModule ],
-    exports: [],
-    providers: [],
+    imports: [
+        RouterModule.forChild(routes)
+    ],
+    exports: [RouterModule]
 })
-export class FeatureModule {}
+export class ClientesRoutingModule { }

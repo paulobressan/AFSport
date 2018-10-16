@@ -10,4 +10,8 @@ export class CidadeService extends BaseService<Cidade> {
     constructor(private httpClient: HttpClient) {
         super(httpClient, environment.cidade);
     }
+
+    listarAtivas() {
+        return this.http.get<Cidade[]>(`${environment.cidade}/ativas`);
+    }
 }

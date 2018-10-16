@@ -28,5 +28,8 @@ namespace AFSport.Web.Api.DTO.Cliente
 
         [Required(ErrorMessage = "Cidade Obrigatória.")]
         public int IdCidade { get; set; }
+
+        [Required(ErrorMessage = "Situação Obrigatória.")]
+        public bool IsAtivo { get; set; }
     }
 }

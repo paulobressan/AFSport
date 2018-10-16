@@ -31,12 +31,12 @@ namespace AFSport.Web.Api.Mapper
 
             #region Categoria
             CreateMap<Categoria, CategoriaListaDTO>();
-            CreateMap<Categoria, CategoriaSalvarDTO>();
+            CreateMap<CategoriaSalvarDTO, Categoria>();
             #endregion
 
             #region Estado
             CreateMap<Estado, EstadoListaDTO>();
-            CreateMap<Estado, EstadoSalvarDTO>();
+            CreateMap<EstadoSalvarDTO, Estado>();
             #endregion
 
             #region Cidade
@@ -46,47 +46,42 @@ namespace AFSport.Web.Api.Mapper
 
             #region Cliente
             CreateMap<Cliente, ClienteListaDTO>();
-            CreateMap<Cliente, ClienteSalvarDTO>();
+            CreateMap<ClienteSalvarDTO, Cliente>();
             #endregion
 
             #region Usuario
             CreateMap<Usuario, UsuarioListaDTO>();
-            CreateMap<Usuario, UsuarioSalvarDTO>();
+            CreateMap<UsuarioSalvarDTO, Usuario>();
             #endregion
 
             #region Pedido
             CreateMap<Pedido, PedidoListaDTO>();
-            CreateMap<Pedido, PedidoSalvarDTO>();
-            #endregion
-
-            #region Pedido
-            CreateMap<Pedido, PedidoListaDTO>();
-            CreateMap<Pedido, PedidoSalvarDTO>();
+            CreateMap<PedidoSalvarDTO, Pedido>();
             #endregion
 
             #region Operacao
             CreateMap<Operacao, OperacaoListaDTO>();
-            CreateMap<Operacao, OperacaoSalvarDTO>();
+            CreateMap<OperacaoSalvarDTO, Operacao>();
             #endregion
 
             #region Movimentacao
             CreateMap<Movimentacao, MovimentacaoListaDTO>();
-            CreateMap<Movimentacao, MovimentacaoSalvarDTO>();
+            CreateMap<MovimentacaoSalvarDTO, Movimentacao>();
             #endregion
 
             #region ItemPedido
             CreateMap<ItemPedido, ItemPedidoListaDTO>();
-            CreateMap<ItemPedido, ItemPedidoSalvarDTO>();
+            CreateMap<ItemPedidoSalvarDTO, ItemPedido>();
             #endregion
 
             #region Estoque
             CreateMap<Estoque, EstoqueListaDTO>();
-            CreateMap<Estoque, EstoqueSalvarDTO>();
+            CreateMap<EstoqueSalvarDTO, Estoque>();
             #endregion
 
             #region Caixa
             CreateMap<Caixa, CaixaListaDTO>();
-            CreateMap<Caixa, CaixaSalvarDTO>();
+            CreateMap<CaixaSalvarDTO, Caixa>();
             #endregion
         }
     }

@@ -35,6 +35,12 @@ namespace AFSport.Web.Api.Controllers
         {
             return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.SelecionarId(id)));
         }
+
+        [HttpGet("ativas")]
+        public async Task<IActionResult> GetAtivas()
+        {
+            return Ok(_mapper.Map<List<ClienteListaDTO>>(await _clienteService.SelecionarTodosAtivos()));
+        }
         #endregion
 
         #region Post
@@ -54,6 +60,13 @@ namespace AFSport.Web.Api.Controllers
             if (ModelState.IsValid)
                 return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.Alterar(id, _mapper.Map<Cliente>(cliente))));
             return BadRequest();
+        }
+
+        [HttpPut("ativar-inativar/{id}")]
+        public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] ClienteSalvarDTO cliente)
+        {
+            await _clienteService.AtivarInativar(id, cliente.IsAtivo);
+            return Ok();
         }
         #endregion
     }

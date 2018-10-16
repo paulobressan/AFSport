@@ -11,6 +11,6 @@ namespace AFSport.Web.Api.DTO.Cliente
         public int Numero { get; set; }
         public string Bairro { get; set; }
         public CidadeListaDTO Cidade { get; set; }
-
+        public bool IsAtivo { get; set; }
     }
 }

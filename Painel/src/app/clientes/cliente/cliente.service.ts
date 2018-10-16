@@ -7,6 +7,6 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class ClienteService extends BaseService<Cliente> {
     constructor(private httpClient: HttpClient) {
-        super(httpClient, environment.auth);
+        super(httpClient, environment.cliente);
     }
 }

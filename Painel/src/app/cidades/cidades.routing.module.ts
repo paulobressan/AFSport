@@ -6,6 +6,7 @@ import { CidadeListComponent } from './cidade-list/cidade-list.component';
 import { CidadeListResolve } from './cidade-list/cidade-list.resolve';
 import { CidadeFormComponent } from './cidade-form/cidade-form.component';
 import { EstadoAtivosResolve } from '../estados/estado/estado-ativos.resolve';
+import { CidadeFormResolve } from './cidade-form/cidade-form.resolve';
 
 const routes: Routes = [
     {
@@ -27,7 +28,7 @@ const routes: Routes = [
         component: CidadeFormComponent,
         resolve: {
             estados: EstadoAtivosResolve,
-            cidade: CidadeListResolve
+            cidade: CidadeFormResolve
         }
     }
 ]

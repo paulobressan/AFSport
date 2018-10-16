@@ -24,6 +24,7 @@ create table cliente(
     bairro varchar(50) not null,
     numero int,
     email varchar(255),
+    isAtivo bool not null,
 	foreign key(idCidade) references cidade(idCidade)
 );
 
