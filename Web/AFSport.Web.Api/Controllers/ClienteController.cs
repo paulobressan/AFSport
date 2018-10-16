@@ -17,6 +17,7 @@ namespace AFSport.Web.Api.Controllers
         #region Objetos
         private readonly IClienteService _clienteService;
         #endregion
+
         public ClienteController(IMapper mapper, IClienteService clienteService) : base(mapper)
         {
             this._clienteService = clienteService;
@@ -34,7 +35,6 @@ namespace AFSport.Web.Api.Controllers
         {
             return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.SelecionarId(id)));
         }
-
         #endregion
 
         #region Post

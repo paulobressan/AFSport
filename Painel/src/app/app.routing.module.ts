@@ -27,6 +27,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'cidade',
+        loadChildren: './cidades/cidades.module#CidadesModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

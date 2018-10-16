@@ -14,9 +14,6 @@ export class UserService {
     ) { }
 
     getUser(): Observable<User> {
-        let user = this.userSubject.asObservable()
-        if(user)
-            return user;
         this.decodeTokenAndNotify();
         return this.userSubject.asObservable();
     }
