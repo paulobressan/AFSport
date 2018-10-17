@@ -8,6 +8,7 @@ import { ClienteListResolve } from './cliente-list/cliente-list.resolve';
 import { ClienteFormModule } from './cliente-form/cliente-form.module';
 import { CidadeService } from '../cidades/cidade/cidade.service';
 import { CidadeAtivasResolve } from '../cidades/cidade/cidade-ativas.resolve';
+import { ClienteFormResolve } from './cliente-form/cliente-form.resolve';
 
 @NgModule({
     imports: [
@@ -19,7 +20,7 @@ import { CidadeAtivasResolve } from '../cidades/cidade/cidade-ativas.resolve';
     providers: [
         ClienteService,
         ClienteListResolve,
-
+        ClienteFormResolve,
         CidadeAtivasResolve,
         CidadeService
     ]

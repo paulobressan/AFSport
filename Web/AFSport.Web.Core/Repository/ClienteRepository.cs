@@ -157,5 +157,11 @@ namespace AFSport.Web.Core.Repository
                 }, null, splitOn: "idCidade, IdEstado"))
                 .ToList();
         }
+
+        public async Task Remover(int idCliente)
+        {
+            await _context.QueryAsync<Cliente>(@"delete from cliente 
+                where idCliente = @idCliente;", new { idCliente });
+        }
     }
 }

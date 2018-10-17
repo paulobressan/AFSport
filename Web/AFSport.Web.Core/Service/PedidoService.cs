@@ -139,6 +139,20 @@ namespace AFSport.Web.Core.Service
             }
         }
 
+        public async Task<IList<Pedido>> SelecionarPorCliente(int idCliente)
+        {
+            try
+            {
+                await ValidarClienteExistente(idCliente);
+                return (await _pedidoRepository.SelecionarPorCliente(idCliente))
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private async Task ValidarPedidoExistente(int idPedido)
         {
             if (await _pedidoRepository.SelecionarId(idPedido) == null)

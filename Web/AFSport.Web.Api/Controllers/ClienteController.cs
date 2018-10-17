@@ -66,7 +66,16 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] ClienteSalvarDTO cliente)
         {
             await _clienteService.AtivarInativar(id, cliente.IsAtivo);
-            return Ok();
+            return NoContent();
+        }
+        #endregion
+
+        #region Delete
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _clienteService.Remover(id);
+            return NoContent();
         }
         #endregion
     }

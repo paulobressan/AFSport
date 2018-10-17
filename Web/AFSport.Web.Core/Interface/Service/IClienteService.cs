@@ -66,5 +66,11 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <returns></returns>
         Task<IList<Cliente>> SelecionarTodosInativos();
+        /// <summary>
+        /// Remover cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
+        Task Remover(int idCliente);
     }
 }

@@ -44,6 +44,12 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<IEnumerable<Pedido>> SelecionarTodosDiario();
         /// <summary>
+        /// Selecionar pedidos por cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
+        Task<IEnumerable<Pedido>> SelecionarPorCliente(int idCliente);
+        /// <summary>
         /// Cancelar pedido
         /// </summary>
         /// <param name="idPedido"></param>

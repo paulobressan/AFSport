@@ -32,20 +32,20 @@ D:/Source/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.pd
 /data/myProjects/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.csproj.CopyComplete
 /data/myProjects/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.dll
 /data/myProjects/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.pdb
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.deps.json
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.runtimeconfig.json
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.runtimeconfig.dev.json
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.dll
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Api.pdb
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Core.dll
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\bin\Debug\netcoreapp2.1\AFSport.Web.Core.pdb
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csprojAssemblyReference.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csproj.CoreCompileInputs.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorAssemblyInfo.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorAssemblyInfo.cs
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.AssemblyInfoInputs.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.AssemblyInfo.cs
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.RazorTargetAssemblyInfo.cache
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.csproj.CopyComplete
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.dll
-C:\Users\Paulo Bressan\source\repos\AFSport\Web\AFSport.Web.Api\obj\Debug\netcoreapp2.1\AFSport.Web.Api.pdb
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Api.deps.json
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Api.runtimeconfig.json
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Api.runtimeconfig.dev.json
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Api.dll
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Api.pdb
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Core.dll
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/bin/Debug/netcoreapp2.1/AFSport.Web.Core.pdb
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.csprojAssemblyReference.cache
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.csproj.CoreCompileInputs.cache
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.RazorAssemblyInfo.cache
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.RazorAssemblyInfo.cs
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.AssemblyInfoInputs.cache
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.AssemblyInfo.cs
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.RazorTargetAssemblyInfo.cache
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.csproj.CopyComplete
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.dll
+C:/Users/Paulo Bressan/source/repos/AFSport/Web/AFSport.Web.Api/obj/Debug/netcoreapp2.1/AFSport.Web.Api.pdb

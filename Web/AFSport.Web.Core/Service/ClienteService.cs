@@ -13,11 +13,16 @@ namespace AFSport.Web.Core.Service
         #region Objetos
         private readonly IClienteRepository _clienteRepository;
         private readonly ICidadeRepository _cidadeRepository;
+        private readonly IPedidoRepository _pedidoRepository;
         #endregion
-        public ClienteService(IClienteRepository clienteRepository, ICidadeRepository cidadeRepository)
+        public ClienteService(
+            IClienteRepository clienteRepository,
+            ICidadeRepository cidadeRepository,
+            IPedidoRepository pedidoRepository)
         {
             _clienteRepository = clienteRepository;
             _cidadeRepository = cidadeRepository;
+            _pedidoRepository = pedidoRepository;
         }
 
         public async Task<Cliente> Alterar(int id, Cliente cliente)
@@ -150,6 +155,20 @@ namespace AFSport.Web.Core.Service
             }
         }
 
+        public async Task Remover(int idCliente)
+        {
+            try
+            {
+                await ValidarClienteExistente(idCliente);
+                await ValidarDependenciaDeClienteExistent(idCliente);
+                await _clienteRepository.Remover(idCliente);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private async Task ValidarClienteExistente(int idCliente)
         {
             if (await _clienteRepository.SelecionarId(idCliente) == null)
@@ -160,6 +179,12 @@ namespace AFSport.Web.Core.Service
         {
             if (await _cidadeRepository.SelecionarId(idCidade) == null)
                 throw new KeyNotFoundException("Cidade não encontrada");
+        }
+
+        private async Task ValidarDependenciaDeClienteExistent(int idCliente)
+        {
+            if ((await _pedidoRepository.SelecionarPorCliente(idCliente)).Any())
+                throw new ArgumentException("Cliente não pode ser removido por conter dependencias");
         }
     }
 }

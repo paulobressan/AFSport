@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import swal from 'sweetalert';
 
 import { BaseListComponent } from '../../core/base/base-list.component';
 import { Cliente } from '../cliente/cliente';
@@ -22,6 +23,7 @@ export class ClienteListComponent implements BaseListComponent<Cliente>, OnInit 
     }
 
     ativarInativar(isAtivo: boolean, cliente: Cliente) {
+        cliente.isAtivo = isAtivo;
         this.clienteService.ativarInativar(cliente.idCliente, cliente)
             .subscribe(() => {
                 this.listar();
@@ -55,6 +57,6 @@ export class ClienteListComponent implements BaseListComponent<Cliente>, OnInit 
     }
 
     alterar(Cliente: Cliente) {
-        this.router.navigate(['Cliente', 'alterar-cliente', Cliente.idCliente]);
+        this.router.navigate(['cliente', 'alterar-cliente', Cliente.idCliente]);
     }
 }

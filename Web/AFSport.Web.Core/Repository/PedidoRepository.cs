@@ -56,10 +56,9 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<Pedido> SelecionarId(int id)
         {
-            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
+            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus =  
                 where p.idPedido = @idPedido
                 order by p.data desc;", (pedido, cliente, usuario) =>
                 {
@@ -72,10 +71,9 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<IEnumerable<Pedido>> SelecionarTodos()
         {
-            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data,c.idCliente, p.status, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data,c.idCliente, p.status, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus =  
                 order by p.data desc;", (pedido, cliente, usuario) =>
                 {
                     pedido.Cliente = cliente;
@@ -86,10 +84,9 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<IEnumerable<Pedido>> SelecionarTodosDiario()
         {
-            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo, from pedido as p
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                inner join pedido_status ps on p.idStatus =  
                 where DATE_FORMAT(p.data, '%d/%m/%Y') = DATE_FORMAT(NOW(), '%d/%m/%Y')
                 order by p.data desc;", (pedido, cliente, usuario) =>
                 {
@@ -109,11 +106,25 @@ namespace AFSport.Web.Core.Repository
         {
             return (await _context.QueryAsync(@"update pedido 
                 set status = @status where idPedido = @idPedido;
-                select p.idPedido, p.data, p.status ,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo,  from pedido as p
+                select p.idPedido, p.data, p.status ,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
                 where p.idPedido = @idPedido;", new { idPedido, status }))
                 .Single();
+        }
+
+        public async Task<IEnumerable<Pedido>> SelecionarPorCliente(int idCliente)
+        {
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data, p.status, c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
+                inner join cliente c on p.idCliente = c.idCliente
+                inner join usuario u on p.idUsuario = u.idUsuario
+                where c.idCliente = @idCliente order by p.data desc;",
+                (pedido, cliente, usuario) =>
+                {
+                    pedido.Cliente = cliente;
+                    pedido.Usuario = usuario;
+                    return pedido;
+                }, new { idCliente }, splitOn: "idCliente, idUsuario");
         }
     }
 }

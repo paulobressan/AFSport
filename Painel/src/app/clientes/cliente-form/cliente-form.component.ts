@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert';
 
 import { BaseFormComponent } from '../../core/base/base-form.component';
 import { Cliente } from '../cliente/cliente';
@@ -63,7 +64,7 @@ export class ClienteFormComponent implements BaseFormComponent<Cliente>, OnInit 
         this.clienteService.inserir(cliente)
             .subscribe(Cliente => {
                 swal("Enviada com sucesso!", "Cliente cadastrado com sucesso", "success");
-                this.router.navigate(['/Cliente']);
+                this.router.navigate(['/cliente']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");
             });
@@ -73,7 +74,7 @@ export class ClienteFormComponent implements BaseFormComponent<Cliente>, OnInit 
         this.clienteService.alterar(cliente.idCliente, cliente)
             .subscribe(Cliente => {
                 swal("Enviada com sucesso!", "Cliente alterado com sucesso", "success");
-                this.router.navigate(['/Cliente']);
+                this.router.navigate(['/cliente']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");
             });
