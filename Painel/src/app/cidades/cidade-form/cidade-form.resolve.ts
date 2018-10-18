@@ -11,7 +11,7 @@ export class CidadeFormResolve implements Resolve<Observable<Cidade>> {
         private cidadeService: CidadeService
     ) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Cidade> | any {
         let id = route.params.id;
         if (id)
             return this.cidadeService.listarPorId(id);

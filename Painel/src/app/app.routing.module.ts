@@ -37,6 +37,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'estoque',
+        loadChildren: './estoques/estoques.module#EstoquesModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

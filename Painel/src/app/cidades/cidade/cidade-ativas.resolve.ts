@@ -9,7 +9,7 @@ import { CidadeService } from './cidade.service';
 export class CidadeAtivasResolve implements Resolve<Observable<Cidade[]>> {
     constructor(private cidadeService: CidadeService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Cidade[]> | any {
         return this.cidadeService.listarAtivas();
     }
 }

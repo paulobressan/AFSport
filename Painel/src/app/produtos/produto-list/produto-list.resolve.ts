@@ -8,7 +8,7 @@ import { ProdutoService } from '../produto/produto.service';
 export class ProdutoListResolve implements Resolve<Observable<Produto[]>> {
     constructor(private produtoService: ProdutoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Produto[]> | any {
         return this.produtoService.listar();
     }
 }

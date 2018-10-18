@@ -9,7 +9,7 @@ import { ProdutoService } from '../produto/produto.service';
 export class ProdutoFormResolve implements Resolve<Observable<Produto>> {
     constructor(private produtoService: ProdutoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Produto> | any {
         const id = route.params.id;
         if (id)
             return this.produtoService.listarPorId(id);

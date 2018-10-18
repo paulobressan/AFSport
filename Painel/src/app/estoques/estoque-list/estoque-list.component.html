@@ -1,0 +1,40 @@
+<div>
+    <a class="btn btn-outline-success pull-right mb-4" [routerLink]="['/estoque/novo-estoque']">
+        <i class="fa fas fa-plus"></i>
+        <span class="pl-1">Novo Estoque</span>
+    </a>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Produto</th>
+                <th>Qtd.</th>
+                <th>Responsável</th>
+                <th class="text-right">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let estoque of estoques">
+                <td>{{estoque.idEstoque}}</td>
+                <td>{{estoque.produto.nome}}</td>
+                <td class="text-right">{{estoque.quantidade}}</td>
+                <td>{{estoque.usuario.nome}}</td>
+                <td class="text-right">
+                    <div class="form-check-inline">
+                        <div class="p-1">
+                            <af-is-ativo class="btn-isAtivo" [isAtivo]="estoque.isAtivo" (onIsAtivo)="ativarInativar($event, estoque)"></af-is-ativo>
+                            <span class="pl-2 btn-editar" attr.title="Alterar {{estoque.nome}}" style="cursor: pointer; font-size: 14pt"
+                                (click)="alterar(estoque)">
+                                <i class="fa fas fa-edit"></i>
+                            </span>
+                            <span class="pl-2 btn-remover" attr.title="Remover {{estoque.nome}}" (click)="remover(estoque)" style="cursor: pointer; font-size: 14pt"><i
+                                    class="fa fa-trash"></i></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

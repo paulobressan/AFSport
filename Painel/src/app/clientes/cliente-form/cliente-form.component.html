@@ -57,7 +57,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="email">Email *</label>
-                    <input formControlName="email" type="text" name="email" id="email" class="form-control">
+                    <input formControlName="email" type="email" name="email" id="email" class="form-control">
                     <af-mensagem texto="Tamanho maximo de 255 caracteres" *ngIf="clienteForm.get('email').errors?.maxlength"></af-mensagem>
                     <af-mensagem texto="Email Inválido" *ngIf="clienteForm.get('email').errors?.email"></af-mensagem>
                 </div>

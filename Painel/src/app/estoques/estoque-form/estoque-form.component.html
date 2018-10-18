@@ -1,0 +1,66 @@
+<div>
+    <h2>Estoque</h2>
+    <hr>
+    <form [formGroup]="estoqueForm" (submit)="salvar()">
+        <!-- <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input formControlName="nome" type="text" name="nome" id="nome" class="form-control">
+                    <af-mensagem texto="Nome obrigatório" *ngIf="estoqueForm.get('nome').errors?.required"></af-mensagem>
+                    <af-mensagem texto="Tamanho maximo de 100 caracteres" *ngIf="estoqueForm.get('nome').errors?.maxlength"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea formControlName="descricao" name="descricao" id="descricao" cols="30" rows="3" class="form-control"></textarea>
+                    <af-mensagem texto="Tamanho maximo de 255 caracteres" *ngIf="estoqueForm.get('descricao').errors?.maxlength"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="idCategoria">Categoria *</label>
+                    <select formControlName="idCategoria" id="idCategoria" class="form-control">
+                        <option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">
+                            {{categoria.nome}}
+                        </option>
+                    </select>
+                    <af-mensagem texto="Categoria obrigatória" *ngIf="estoqueForm.get('idCategoria').errors?.required"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="nome">Valor de Compra *</label>
+                    <input formControlName="valorCompra" type="number" id="valorCompra" class="form-control text-right" step="0.0">
+                    <af-mensagem texto="Valor de compra obrigatório" *ngIf="estoqueForm.get('valorCompra').errors?.required"></af-mensagem>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="nome">Valor de Venda *</label>
+                    <input formControlName="valorVenda" type="number" id="valorVenda" class="form-control text-right" step="0.0">
+                    <af-mensagem texto="Valor de venda obrigatório" *ngIf="estoqueForm.get('valorVenda').errors?.required"></af-mensagem>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-check form-check-inline">
+                    <input formControlName="isAtivo" class="form-check-input" type="checkbox" id="isAtivo" value="option1">
+                    <label class="form-check-label" for="isAtivo">Situação</label>
+                </div>
+            </div>
+        </div> -->
+        <div class="pt-3">
+            <a [routerLink]="['/estoque']" class="mr-2 btn btn-danger">Voltar</a>
+            <button [disabled]="estoqueForm.invalid" type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</div>

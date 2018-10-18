@@ -9,7 +9,7 @@ export class CategoriasAtivasResolve implements Resolve<Observable<Categoria[]>>
 
     constructor(private categoriaService: CategoriaService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Categoria[]> | any {
         return this.categoriaService.listarAtivos();
     }
 }

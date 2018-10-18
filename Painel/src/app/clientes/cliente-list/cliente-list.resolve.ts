@@ -6,10 +6,10 @@ import { Cliente } from '../cliente/cliente';
 import { ClienteService } from '../cliente/cliente.service';
 
 @Injectable()
-export class ClienteListResolve implements Resolve<Observable<Cliente>> {
+export class ClienteListResolve implements Resolve<Observable<Cliente[]>> {
     constructor(private clienteService: ClienteService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Cliente[]> | any {
         return this.clienteService.listar();
     }
 }

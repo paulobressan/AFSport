@@ -5,10 +5,10 @@ import { Estado } from '../estado/estado';
 import { EstadoService } from '../estado/estado.service';
 
 @Injectable()
-export class EstadoListResolve implements Resolve<Observable<Estado>> {
+export class EstadoListResolve implements Resolve<Observable<Estado[]>> {
     constructor(private estadoService: EstadoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Estado[]> | any {
         return this.estadoService.listar();
     }
 }

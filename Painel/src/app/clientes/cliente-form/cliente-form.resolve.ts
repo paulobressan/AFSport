@@ -8,7 +8,7 @@ import { ClienteService } from '../cliente/cliente.service';
 export class ClienteFormResolve implements Resolve<Observable<Cliente>> {
     constructor(private clienteService: ClienteService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Cliente> | any {
         let id = route.params.id;
         if (id)
             return this.clienteService.listarPorId(id);

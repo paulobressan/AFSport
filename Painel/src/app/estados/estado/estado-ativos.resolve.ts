@@ -9,7 +9,7 @@ import { EstadoService } from './estado.service';
 export class EstadoAtivosResolve implements Resolve<Observable<Estado>> {
     constructor(private estadoService: EstadoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Estado> |any {
         return this.estadoService.listarAtivos();
     }
 }

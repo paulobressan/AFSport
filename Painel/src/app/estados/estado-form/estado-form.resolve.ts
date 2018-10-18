@@ -8,7 +8,7 @@ import { EstadoService } from '../estado/estado.service';
 export class EstadoFormResolve implements Resolve<Observable<Estado>> {
     constructor(private estadoService: EstadoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Estado> | any {
         const id = route.params.id;
         if (id)
             return this.estadoService.listarPorId(id);

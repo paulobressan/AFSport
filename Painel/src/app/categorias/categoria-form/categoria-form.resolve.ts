@@ -11,7 +11,7 @@ import { Injectable } from "@angular/core";
 export class CategoriaFormResolve implements Resolve<Observable<Categoria>> {
     constructor(private categoriaService: CategoriaService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Categoria> | Observable<Observable<Categoria>> | Promise<Observable<Categoria>> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Categoria> | any {
         const id = route.params.id;
         if (id)
             return this.categoriaService.listarPorId(id);
