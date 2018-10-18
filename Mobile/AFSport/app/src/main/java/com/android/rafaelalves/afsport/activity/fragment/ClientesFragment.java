@@ -35,7 +35,7 @@ public class ClientesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        bt1 =
+
 
         return inflater.inflate(R.layout.fragment_clientes, container, false);
     }

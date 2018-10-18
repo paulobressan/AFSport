@@ -34,11 +34,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       /* InicioFragment inicioFragment = new InicioFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameContainer,inicioFragment);
-        fragmentTransaction.commit();
-        */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,50 +94,43 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_inicio) {
             InicioFragment inicioFragment = new InicioFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            //fragmentTransaction.add(R.id.frameConteudo,inicioFragment);
             fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_clientes) {
             ClientesFragment clientesFragment = new ClientesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            //fragmentTransaction.add(R.id.frameConteudo,clientesFragment);
             fragmentTransaction.replace(R.id.frameConteudo, clientesFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_produtos) {
             ProdutosFragment produtosFragment = new ProdutosFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            //fragmentTransaction.add(R.id.frameConteudo,produtosFragment);
             fragmentTransaction.replace(R.id.frameConteudo, produtosFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_estoque) {
             EstoqueFragment estoqueFragment = new EstoqueFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.frameConteudo,estoqueFragment);
-            //FragmentTransaction.replace(R.id.frameContainer, estoqueFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, estoqueFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_caixa) {
             CaixaFragment caixaFragment = new CaixaFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.frameConteudo,caixaFragment);
-            //FragmentTransaction.replace(R.id.frameContainer, caixaFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, caixaFragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_movimentacoes) {
             MovimentacoesFragment movimentacoesFragment = new MovimentacoesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.frameConteudo,movimentacoesFragment);
-            //FragmentTransaction.replace(R.id.frameContainer, movimentacoesFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, movimentacoesFragment);
             fragmentTransaction.commit();
 
         }else if (id == R.id.nav_sobre){
             SobreFragment sobreFragment = new SobreFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.frameConteudo,sobreFragment);
-            //FragmentTransaction.replace(R.id.frameContainer, sobreFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, sobreFragment);
             fragmentTransaction.commit();
         }
 

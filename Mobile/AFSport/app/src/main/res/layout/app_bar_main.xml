@@ -30,11 +30,4 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <FrameLayout
-        android:id="@+id/frameConteudo"
-        android:layout_width="352dp"
-        android:layout_height="475dp">
-
-    </FrameLayout>
-
 </android.support.design.widget.CoordinatorLayout>
