@@ -11,4 +11,8 @@ export class ProdutoService extends BaseService<Produto> {
     constructor(private httpClient: HttpClient) {
         super(httpClient, environment.produto);
     }
+
+    listarProdutoSemEstoque(): Observable<Produto[]> {
+        return this.http.get<Produto[]>(environment.produto);
+    }
 }

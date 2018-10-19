@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseFormComponent } from 'src/app/core/base/base-form.component';
 import { Estoque } from '../estoque/estoque';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Produto } from 'src/app/produtos/produto/produto';
 import { EstoqueService } from '../estoque/estoque.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -22,28 +22,18 @@ export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit 
     ) { }
 
     ngOnInit(): void {
-        // this.categorias = this.activatedRoute.snapshot.data.categorias;
+        this.produtos = this.activatedRoute.snapshot.data.produtos;
         this.estoque = this.activatedRoute.snapshot.data.estoque;
-        // this.estoqueForm = this.formBuilder.group({
-        //     idestoque: [this.estoque ? this.estoque.idEstoque : 0],
-        //     nome: [this.estoque ? this.estoque.nome : '', [
-        //         Validators.required,
-        //         Validators.maxLength(100)
-        //     ]],
-        //     descricao: [this.estoque ? this.estoque.descricao : '', [
-        //         Validators.maxLength(255)
-        //     ]],
-        //     idCategoria: [this.estoque ? this.estoque.categoria.idCategoria : 1, [
-        //         Validators.required
-        //     ]],
-        //     valorCompra: [this.estoque ? this.estoque.valorCompra : 0, [
-        //         Validators.required
-        //     ]],
-        //     valorVenda: [this.estoque ? this.estoque.valorVenda : 0, [
-        //         Validators.required
-        //     ]],
-        //     isAtivo: [true],
-        // });
+        this.estoqueForm = this.formBuilder.group({
+            idEstoque: [this.estoque ? this.estoque.idEstoque : 0],
+            quantidade: [this.estoque ? this.estoque.quantidade : 0, [
+                Validators.required
+            ]],
+            idProduto: [this.estoque && this.estoque.produto ? this.estoque.produto.idProduto : 1, [
+                Validators.required
+            ]],
+            isAtivo: [true],
+        });
     }
 
     salvar() {
@@ -57,7 +47,7 @@ export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit 
     inserir(estoque: Estoque) {
         this.estoqueService.inserir(estoque)
             .subscribe(estoque => {
-                swal("Enviada com sucesso!", "estoque cadastrado com sucesso", "success");
+                swal("Enviada com sucesso!", "Estoque cadastrado com sucesso", "success");
                 this.router.navigate(['/estoque']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");
@@ -67,7 +57,7 @@ export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit 
     alterar(estoque: Estoque) {
         this.estoqueService.alterar(estoque.idEstoque, estoque)
             .subscribe(estoque => {
-                swal("Enviada com sucesso!", "estoque alterado com sucesso", "success");
+                swal("Enviada com sucesso!", "Estoque alterado com sucesso", "success");
                 this.router.navigate(['/estoque']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");

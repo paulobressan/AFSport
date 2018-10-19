@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { EstoqueListResolve } from './estoque-list/estoque-list.resolve';
 import { EstoqueListComponent } from './estoque-list/estoque-list.component';
+import { EstoqueFormComponent } from './estoque-form/estoque-form.component';
+import { ProdutoSemEstoqueResolve } from '../produtos/produto/produto-sem-estoque.resolve';
 
 const routes: Routes = [
     {
@@ -10,6 +12,13 @@ const routes: Routes = [
         component: EstoqueListComponent,
         resolve: {
             estoques: EstoqueListResolve
+        }
+    },
+    {
+        path: 'novo-estoque',
+        component: EstoqueFormComponent,
+        resolve: {
+            produtos: ProdutoSemEstoqueResolve
         }
     }
 ]

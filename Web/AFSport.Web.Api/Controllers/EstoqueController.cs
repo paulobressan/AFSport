@@ -52,7 +52,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Post([FromBody] EstoqueSalvarDTO estoque)
         {
             if (ModelState.IsValid)
+            {
+                this.DecodeToken(HttpContext);
+                estoque.IdUsuario = userLogged.Id;
                 return Ok(_mapper.Map<EstoqueListaDTO>(await _estoqueService.Inserir(_mapper.Map<Estoque>(estoque))));
+            }
             return BadRequest();
         }
         #endregion

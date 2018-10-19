@@ -38,7 +38,8 @@ namespace AFSport.Web.Core.Service
                 var direitos = new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, usuario.Nome),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.NameId, usuario.IdUsuario.ToString())
                 };
 
                 var chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("Token:SecurityKey").ToString()));
