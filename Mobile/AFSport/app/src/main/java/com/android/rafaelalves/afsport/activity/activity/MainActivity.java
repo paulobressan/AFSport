@@ -51,6 +51,13 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Iniciar a home.
+        
+        InicioFragment inicioFragment = new InicioFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
+        fragmentTransaction.commit();
     }
 
     @Override
