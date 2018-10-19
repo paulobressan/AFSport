@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import swal from 'sweetalert';
 
 import { Produto } from '../produto/produto';
 import { ProdutoService } from '../produto/produto.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { BaseListComponent } from '../../core/base/base-list.component';
 
 @Component({
@@ -21,7 +21,7 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
 
     ngOnInit(): void {
         this.produtos = this.activatedRoute.snapshot.data.produtos;
-     }
+    }
 
     ativarInativar(isAtivo: boolean, produto: Produto) {
         produto.isAtivo = isAtivo;
@@ -60,5 +60,9 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
 
     alterar(produto: Produto) {
         this.router.navigate(['produto', 'alterar-produto', produto.idProduto]);
+    }
+
+    gerarEstoque() {
+
     }
 }

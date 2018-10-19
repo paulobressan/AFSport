@@ -9,4 +9,8 @@ export class EstoqueService extends BaseService<Estoque> {
   constructor(httpClient: HttpClient) {
     super(httpClient, environment.estoque);
   }
+
+  gerarEstoque(idProduto: number) {
+
+  }
 }
