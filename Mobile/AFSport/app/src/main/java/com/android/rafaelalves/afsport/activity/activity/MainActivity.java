@@ -1,5 +1,6 @@
 package com.android.rafaelalves.afsport.activity.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Iniciar a home.
-        
+
         InicioFragment inicioFragment = new InicioFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
@@ -135,10 +136,13 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         }else if (id == R.id.nav_sobre){
+            startActivity(new Intent(this,SobreActivity.class));
+            /*
             SobreFragment sobreFragment = new SobreFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameConteudo, sobreFragment);
             fragmentTransaction.commit();
+            */
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
