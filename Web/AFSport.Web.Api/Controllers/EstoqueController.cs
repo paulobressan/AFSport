@@ -66,7 +66,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] EstoqueSalvarDTO estoque)
         {
             if (ModelState.IsValid)
+            {
+                this.DecodeToken(HttpContext);
+                estoque.IdUsuario = userLogged.Id;
                 return Ok(_mapper.Map<EstoqueListaDTO>(await _estoqueService.Alterar(id, _mapper.Map<Estoque>(estoque))));
+            }
             return BadRequest();
         }
         #endregion  

@@ -42,6 +42,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'caixa',
+        loadChildren: './caixas/caixas.module#CaixasModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

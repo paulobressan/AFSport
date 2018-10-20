@@ -68,7 +68,7 @@ create table preco(
 );
 
 create table estoque(
-	  idEstoque int unsigned auto_increment primary key,
+	idEstoque int unsigned auto_increment primary key,
     idProduto int unsigned not null,
     idUsuario int unsigned not null,
     quantidade int not null,

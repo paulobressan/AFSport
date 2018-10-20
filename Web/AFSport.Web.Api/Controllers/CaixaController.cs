@@ -5,10 +5,14 @@ using AFSport.Web.Api.DTO.Caixa;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AFSport.Web.Api.Controllers
 {
+    [Authorize]
+    [ApiController]
+    [Route("api/[controller]")]
     public class CaixaController : BaseController
     {
         #region Objetos

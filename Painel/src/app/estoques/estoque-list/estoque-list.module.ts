@@ -8,8 +8,7 @@ import { IsAtivoModule } from 'src/app/shared/components/is-ativo/is-ativo.modul
     declarations: [EstoqueListComponent],
     imports: [
         CommonModule,
-        RouterModule,
-        IsAtivoModule
+        RouterModule
     ]
 })
 export class EstoqueListModule { }

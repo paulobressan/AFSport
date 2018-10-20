@@ -1,0 +1,19 @@
+<div>
+        <h2>Caixa</h2>
+        <hr>
+        <form [formGroup]="caixaForm" (submit)="salvar()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="valorInicial">Valor Inicial *</label>
+                        <input #valorInput formControlName="valorInicial" type="text" name="valorInicial" id="valorInicial" class="form-control">
+                        <af-mensagem texto="Valor Inícial obrigatório" *ngIf="caixaForm.get('valorInicial').errors?.required"></af-mensagem>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-3">
+                <a [routerLink]="['/caixa']" class="mr-2 btn btn-danger">Voltar</a>
+                <button [disabled]="caixaForm.invalid" type="submit" class="btn btn-success">Enviar</button>
+            </div>
+        </form>
+    </div>
