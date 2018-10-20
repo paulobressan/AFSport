@@ -26,12 +26,6 @@ namespace AFSport.Web.Core.Interface.Service
         /// <returns></returns>
         Task<Estoque> Inserir(Estoque estoque);
         /// <summary>
-        /// Gerar estoque pelo produto
-        /// </summary>
-        /// <param name="idProduto"></param>
-        /// <returns></returns>
-        Task<Estoque> InserirPorProduto(int idProduto);
-        /// <summary>
         /// Alterar estoque
         /// </summary>
         /// <param name="estoque"></param>

@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nome">Nome *</label>
-                    <input formControlName="nome" type="text" name="nome" id="nome" class="form-control">
+                    <input #nomeInput formControlName="nome" type="text" name="nome" id="nome" class="form-control">
                     <af-mensagem texto="Nome obrigatório" *ngIf="produtoForm.get('nome').errors?.required"></af-mensagem>
                     <af-mensagem texto="Tamanho maximo de 100 caracteres" *ngIf="produtoForm.get('nome').errors?.maxlength"></af-mensagem>
                 </div>

@@ -6,13 +6,15 @@ import { ProdutoListResolve } from "./produto-list/produto-list.resolve";
 import { ProdutoFormComponent } from "./produto-form/produto-form.component";
 import { CategoriasAtivasResolve } from "../categorias/categoria/categorias-ativas.resolve";
 import { ProdutoFormResolve } from "./produto-form/produto-form.resolve";
+import { ProdutoSemEstoqueResolve } from "./produto/produto-sem-estoque.resolve";
 
 const routes: Routes = [
     {
         path: '',
         component: ProdutoListComponent,
         resolve: {
-            produtos: ProdutoListResolve
+            produtos: ProdutoListResolve,
+            produtosSemEstoque:ProdutoSemEstoqueResolve
         }
     },
     {

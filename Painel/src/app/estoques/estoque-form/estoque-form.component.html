@@ -6,7 +6,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="quantidade">Quantidade *</label>
-                    <input formControlName="quantidade" type="number" name="quantidade" id="quantidade" class="form-control text-right">
+                    <input #quantidadeInput formControlName="quantidade" type="number" name="quantidade" id="quantidade" class="form-control text-right">
                     <af-mensagem texto="Quantidade obrigatória" *ngIf="estoqueForm.get('quantidade').errors?.required"></af-mensagem>
                 </div>
             </div>
@@ -15,12 +15,12 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="idProduto">Produto *</label>
-                    <select formControlName="idProduto" id="idProduto" class="form-control">
+                    <select [disabled]="isAlterar()" formControlName="idProduto" id="idProduto" class="form-control">
                         <option *ngFor="let produto of produtos" [value]="produto.idProduto">
                             {{produto.nome}}
                         </option>
                     </select>
-                    <af-mensagem texto="Produto obrigatória" *ngIf="estoqueForm.get('idProduto').errors?.required"></af-mensagem>
+                    <af-mensagem texto="Produto obrigatório" *ngIf="estoqueForm.get('idProduto').errors?.required"></af-mensagem>
                 </div>
             </div>
         </div>

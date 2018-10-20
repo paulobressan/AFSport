@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BaseFormComponent } from '../../core/base/base-form.component';
 import { Produto } from '../produto/produto';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProdutoService } from '../produto/produto.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Categoria } from '../../categorias/categoria/categoria';
+import { ValidateIdValidator } from '../../shared/components/validators/validate-id.validator';
 
 @Component({
     templateUrl: './produto-form.component.html'
 })
 export class ProdutoFormComponent implements BaseFormComponent<Produto>, OnInit {
+    @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     produtoForm: FormGroup;
     produto: Produto;
     categorias: Categoria[];
@@ -33,7 +35,7 @@ export class ProdutoFormComponent implements BaseFormComponent<Produto>, OnInit 
             descricao: [this.produto ? this.produto.descricao : '', [
                 Validators.maxLength(255)
             ]],
-            idCategoria: [this.produto ? this.produto.categoria.idCategoria : 1, [
+            idCategoria: [this.produto ? this.produto.categoria.idCategoria : null, [
                 Validators.required
             ]],
             valorCompra: [this.produto ? this.produto.valorCompra : 0, [
@@ -44,6 +46,7 @@ export class ProdutoFormComponent implements BaseFormComponent<Produto>, OnInit 
             ]],
             isAtivo: [true],
         });
+        this.nomeInput.nativeElement.focus();
     }
 
     salvar() {

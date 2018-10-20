@@ -8,6 +8,7 @@ import { ProdutoService } from '../produtos/produto/produto.service';
 import { ProdutoSemEstoqueResolve } from '../produtos/produto/produto-sem-estoque.resolve';
 import { EstoqueFormResolve } from './estoque-form/estoque-form.resolve';
 import { EstoqueFormModule } from './estoque-form/estoque-form.module';
+import { ProdutoComEstoqueResolve } from '../produtos/produto/produto-com-estoque.resolve';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { EstoqueFormModule } from './estoque-form/estoque-form.module';
         EstoqueListResolve,
         EstoqueFormResolve,
         ProdutoService,
-        ProdutoSemEstoqueResolve
+        ProdutoSemEstoqueResolve,
+        ProdutoComEstoqueResolve
     ]
 })
 export class EstoquesModule { }

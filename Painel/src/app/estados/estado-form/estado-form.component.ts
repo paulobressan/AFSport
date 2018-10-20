@@ -7,11 +7,14 @@ import { Validators } from '@angular/forms';
 
 import { Estado } from '../estado/estado';
 import { EstadoService } from '../estado/estado.service';
+import { ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
     templateUrl: './estado-form.component.html'
 })
 export class EstadoFormComponent implements OnInit {
+    @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     estadoForm: FormGroup;
     estado: Estado;
 
@@ -34,7 +37,8 @@ export class EstadoFormComponent implements OnInit {
                 Validators.maxLength(2)
             ]],
             isAtivo: [this.estado ? this.estado.isAtivo : true]
-        })
+        });
+        this.nomeInput.nativeElement.focus();
     }
 
     salvar() {

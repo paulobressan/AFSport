@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { BaseFormComponent } from 'src/app/core/base/base-form.component';
 import { Estoque } from '../estoque/estoque';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Produto } from 'src/app/produtos/produto/produto';
 import { EstoqueService } from '../estoque/estoque.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ValidateIdValidator } from '../../shared/components/validators/validate-id.validator';
 
 @Component({
     templateUrl: './estoque-form.component.html',
 })
 export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit {
+    @ViewChild('quantidadeInput') quantidadeInput: ElementRef<HTMLInputElement>;
     estoqueForm: FormGroup;
     estoque: Estoque;
     produtos: Produto[];
@@ -29,11 +32,12 @@ export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit 
             quantidade: [this.estoque ? this.estoque.quantidade : 0, [
                 Validators.required
             ]],
-            idProduto: [this.estoque && this.estoque.produto ? this.estoque.produto.idProduto : 1, [
+            idProduto: [this.estoque && this.estoque.produto ? this.estoque.produto.idProduto : null, [
                 Validators.required
             ]],
             isAtivo: [true],
         });
+        this.quantidadeInput.nativeElement.focus();
     }
 
     salvar() {
@@ -62,5 +66,10 @@ export class EstoqueFormComponent implements BaseFormComponent<Estoque>, OnInit 
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");
             });
+    }
+
+    isAlterar() {
+        var teste = this.activatedRoute.snapshot.params.id || false;
+        return teste;
     }
 }

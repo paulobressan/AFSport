@@ -7,11 +7,15 @@ import { BaseFormComponent } from '../../core/base/base-form.component';
 import { Cliente } from '../cliente/cliente';
 import { ClienteService } from '../cliente/cliente.service';
 import { Cidade } from 'src/app/cidades/cidade/cidade';
+import { ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
+import { ValidateIdValidator } from '../../shared/components/validators/validate-id.validator';
 
 @Component({
     templateUrl: './cliente-form.component.html'
 })
 export class ClienteFormComponent implements BaseFormComponent<Cliente>, OnInit {
+    @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     clienteForm: FormGroup;
     cliente: Cliente;
     cidades: Cidade[];
@@ -28,7 +32,7 @@ export class ClienteFormComponent implements BaseFormComponent<Cliente>, OnInit 
         this.cliente = this.activatedRoute.snapshot.data.cliente;
         this.clienteForm = this.formBuilder.group({
             idCliente: [this.cliente ? this.cliente.idCliente : 0],
-            idCidade: [this.cliente && this.cliente.cidade ? this.cliente.cidade.idCidade : 1, [
+            idCidade: [this.cliente && this.cliente.cidade ? this.cliente.cidade.idCidade : null, [
                 Validators.required
             ]],
             nome: [this.cliente ? this.cliente.nome : '', [
@@ -49,7 +53,8 @@ export class ClienteFormComponent implements BaseFormComponent<Cliente>, OnInit 
                 Validators.email
             ]],
             isAtivo: [this.cliente ? this.cliente.isAtivo : true]
-        })
+        });
+        this.nomeInput.nativeElement.focus();
     }
 
     salvar() {

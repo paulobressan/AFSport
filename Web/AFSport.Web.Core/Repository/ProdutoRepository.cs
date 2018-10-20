@@ -24,7 +24,7 @@ namespace AFSport.Web.Core.Repository
                     produto.Categoria = categoria;
                     return produto;
                 }, new { idProduto = id }, splitOn: "idCategoria"))
-             .Single();
+             .SingleOrDefault();
         }
 
         public async Task<IEnumerable<Produto>> SelecionarPorNomeId(string valor)

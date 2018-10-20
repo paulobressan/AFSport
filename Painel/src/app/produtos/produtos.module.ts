@@ -8,6 +8,7 @@ import { CategoriasAtivasResolve } from "../categorias/categoria/categorias-ativ
 import { ProdutoFormResolve } from "./produto-form/produto-form.resolve";
 import { ProdutoService } from "./produto/produto.service";
 import { CategoriaService } from "../categorias/categoria/categoria.service";
+import { ProdutoSemEstoqueResolve } from "./produto/produto-sem-estoque.resolve";
 
 @NgModule({
     imports:[
@@ -21,7 +22,8 @@ import { CategoriaService } from "../categorias/categoria/categoria.service";
         ProdutoListResolve,
         ProdutoService,
         CategoriaService,
-        CategoriasAtivasResolve
+        CategoriasAtivasResolve,
+        ProdutoSemEstoqueResolve
     ]
 })
 export class ProdutosModule{}

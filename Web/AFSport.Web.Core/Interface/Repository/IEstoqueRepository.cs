@@ -37,6 +37,11 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <param name="estoque"></param>
         /// <returns></returns>
         Task Remover(Estoque estoque);
+        /// <summary>
+        /// Selecionar estoque por produto
+        /// </summary>
+        /// <param name="idProduto"></param>
+        /// <returns></returns>
         Task<Estoque> SelecionarEstoquePorProduto(int idProduto);
     }
 }

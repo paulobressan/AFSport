@@ -57,11 +57,6 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public Task<Estoque> InserirPorProduto(int idProduto)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task Remover(int idEstoque)
         {
             try

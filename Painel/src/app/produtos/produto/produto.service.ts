@@ -13,6 +13,10 @@ export class ProdutoService extends BaseService<Produto> {
     }
 
     listarProdutoSemEstoque(): Observable<Produto[]> {
-        return this.http.get<Produto[]>(environment.produto);
+        return this.http.get<Produto[]>(`${environment.produto}/semEstoque`);
+    }
+
+    listarProdutoComEstoque(): Observable<Produto[]> {
+        return this.http.get<Produto[]>(`${environment.produto}/comEstoque`);
     }
 }

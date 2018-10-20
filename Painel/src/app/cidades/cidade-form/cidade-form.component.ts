@@ -10,11 +10,14 @@ import { Cidade } from '../cidade/cidade';
 import { BaseFormComponent } from '../../core/base/base-form.component';
 import { CidadeService } from '../cidade/cidade.service';
 import { Estado } from '../../estados/estado/estado';
+import { ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
     templateUrl: './cidade-form.component.html'
 })
 export class CidadeFormComponent implements BaseFormComponent<Cidade>, OnInit {
+    @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     cidadeForm: FormGroup;
     cidade: Cidade;
     estados: Estado[];
@@ -35,11 +38,12 @@ export class CidadeFormComponent implements BaseFormComponent<Cidade>, OnInit {
                 Validators.required,
                 Validators.maxLength(50)
             ]],
-            idEstado: [this.cidade ? this.cidade.estado.idEstado : 1, 
+            idEstado: [this.cidade ? this.cidade.estado.idEstado : null, 
                 Validators.required
             ],
             isAtivo: [this.cidade ? this.cidade.isAtivo : true]
-        })
+        });
+        this.nomeInput.nativeElement.focus();
     }
 
     salvar() {

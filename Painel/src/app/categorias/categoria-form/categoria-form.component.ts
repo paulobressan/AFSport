@@ -7,11 +7,14 @@ import { Categoria } from "../categoria/categoria";
 import { Router, ActivatedRoute } from "@angular/router";
 import { BaseFormComponent } from "../../core/base/base-form.component";
 import { Produto } from "../../produtos/produto/produto";
+import { ElementRef } from "@angular/core";
+import { ViewChild } from "@angular/core";
 
 @Component({
     templateUrl: './categoria-form.component.html'
 })
 export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnInit {
+    @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     categoriaForm: FormGroup;
     @Input() categoria: Categoria;
 
@@ -34,7 +37,8 @@ export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnIni
                 Validators.maxLength(255)
             ]],
             isAtivo: [this.categoria ? this.categoria.isAtivo : true]
-        })
+        });
+        this.nomeInput.nativeElement.focus();
     }
 
     salvar() {

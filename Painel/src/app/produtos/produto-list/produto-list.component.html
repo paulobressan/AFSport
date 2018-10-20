@@ -3,10 +3,7 @@
         <i class="fa fas fa-plus"></i>
         <span class="pl-1">Novo Produto</span>
     </a>
-    <button class="btn btn-outline-primary pull-right mb-4 mr-4">
-        <i class="fa fa-archive" aria-hidden="true"></i>
-        <span class="pl-1">Gerenciar Estoque</span>
-    </button>
+    <af-produto-gerar-estoque [produtos]="produtosSemEstoque"></af-produto-gerar-estoque>
 </div>
 <div>
     <table class="table table-hover">
@@ -46,3 +43,4 @@
         </tbody>
     </table>
 </div>
+<div>

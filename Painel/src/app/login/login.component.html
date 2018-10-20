@@ -9,7 +9,7 @@
             <form [formGroup]="loginForm" (submit)="autenticar()">
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input formControlName="login" type="email" class="form-control" id="login" placeholder="Entre com o seu login">
+                    <input #loginInput formControlName="login" type="email" class="form-control" id="login" placeholder="Entre com o seu login">
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>

@@ -12,6 +12,8 @@ import { BaseListComponent } from '../../core/base/base-list.component';
 })
 export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit {
     produtos: Produto[];
+    produtosSemEstoque: Produto[];
+    idProduto: number;
 
     constructor(
         private produtoService: ProdutoService,
@@ -21,6 +23,7 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
 
     ngOnInit(): void {
         this.produtos = this.activatedRoute.snapshot.data.produtos;
+        this.produtosSemEstoque = this.activatedRoute.snapshot.data.produtosSemEstoque;
     }
 
     ativarInativar(isAtivo: boolean, produto: Produto) {
@@ -60,9 +63,5 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
 
     alterar(produto: Produto) {
         this.router.navigate(['produto', 'alterar-produto', produto.idProduto]);
-    }
-
-    gerarEstoque() {
-
     }
 }
