@@ -16,7 +16,7 @@ import { ViewChild } from "@angular/core";
 export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnInit {
     @ViewChild('nomeInput') nomeInput: ElementRef<HTMLInputElement>;
     categoriaForm: FormGroup;
-    @Input() categoria: Categoria;
+    categoria: Categoria;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -31,7 +31,7 @@ export class CategoriaFormComponent implements BaseFormComponent<Produto>, OnIni
             idCategoria: [this.categoria ? this.categoria.idCategoria : 0],
             nome: [this.categoria ? this.categoria.nome : '', [
                 Validators.required,
-                Validators.maxLength(50)
+                Validators.maxLength(60)
             ]],
             descricao: [this.categoria ? this.categoria.descricao : '', [
                 Validators.maxLength(255)
