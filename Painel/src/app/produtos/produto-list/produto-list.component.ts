@@ -64,4 +64,8 @@ export class ProdutoListComponent implements BaseListComponent<Produto>, OnInit 
     alterar(produto: Produto) {
         this.router.navigate(['produto', 'alterar-produto', produto.idProduto]);
     }
+
+    isProdutosSemEstoque(){
+        return this.produtosSemEstoque.length > 0 || false;
+    }
 }

@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert';
+
 import { BaseFormComponent } from 'src/app/core/base/base-form.component';
 import { Caixa } from '../caixa/caixa';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CaixaService } from '../caixa/caixa.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     templateUrl: './caixa-form.component.html',
@@ -23,17 +25,18 @@ export class CaixaFormComponent implements BaseFormComponent<Caixa>, OnInit {
     ngOnInit(): void {
         this.caixa = this.activatedRoute.snapshot.data.caixa;
         this.caixaForm = this.formBuilder.group({
-            idcaixa: [this.caixa ? this.caixa.idCaixa : 0],
-            nome: [this.caixa ? this.caixa.valorInicial : 0, [
+            idCaixa: [this.caixa ? this.caixa.idCaixa : 0],
+            valorInicial: [this.caixa ? this.caixa.valorInicial : 0, [
                 Validators.required
             ]]
         });
         this.valorInput.nativeElement.focus();
+         
     }
 
     salvar() {
         var caixa: Caixa = this.caixaForm.getRawValue() as Caixa;
-        if (caixa.idCaixa)
+        if (caixa.idCaixa) 
             this.alterar(caixa);
         else
             this.inserir(caixa);
@@ -42,7 +45,7 @@ export class CaixaFormComponent implements BaseFormComponent<Caixa>, OnInit {
     inserir(caixa: Caixa) {
         this.caixaService.inserir(caixa)
             .subscribe(caixa => {
-                swal("Enviada com sucesso!", "caixa cadastrado com sucesso", "success");
+                swal("Enviada com sucesso!", "Caixa aberto com sucesso", "success");
                 this.router.navigate(['/caixa']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");
@@ -52,7 +55,7 @@ export class CaixaFormComponent implements BaseFormComponent<Caixa>, OnInit {
     alterar(caixa: Caixa) {
         this.caixaService.alterar(caixa.idCaixa, caixa)
             .subscribe(caixa => {
-                swal("Enviada com sucesso!", "caixa alterado com sucesso", "success");
+                swal("Enviada com sucesso!", "Caixa alterado com sucesso", "success");
                 this.router.navigate(['/caixa']);
             }, err => {
                 swal("Problemas para enviar!", err.error.msg, "error");

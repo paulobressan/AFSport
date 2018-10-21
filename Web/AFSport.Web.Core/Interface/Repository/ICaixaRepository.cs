@@ -47,7 +47,7 @@ namespace AFSport.Web.Core.Interface.Repository
         /// Selecionar caixa da data atual
         /// </summary>
         /// <returns></returns>
-        Task<Caixa> SelecionarPorDataAtual(DateTime data);
+        Task<Caixa> SelecionarPorDataAtual();
         /// <summary>
         /// Selecionar total de caixa registrado
         /// </summary>

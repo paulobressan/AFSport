@@ -3,14 +3,11 @@ import { HttpRequest, HttpInterceptor, HttpHandler, HttpSentEvent, HttpHeaderRes
 import { Observable } from "rxjs";
 
 import { TokenService } from "../token/token.service";
-import { HttpHeaders } from "@angular/common/http";
-import { Router } from "@angular/router";
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
     constructor(
-        private tokenService: TokenService,
-        private router: Router
+        private tokenService: TokenService
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent

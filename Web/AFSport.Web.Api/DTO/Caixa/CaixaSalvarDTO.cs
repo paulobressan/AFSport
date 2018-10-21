@@ -9,7 +9,7 @@ namespace AFSport.Web.Api.DTO.Caixa
         public int IdCaixa { get; set; }
 
         [Required(ErrorMessage = "Valor inicial obrigatório")]
-        public decimal ValorInicial { get; private set; }
+        public decimal ValorInicial { get; set; }
 
         [Required(ErrorMessage = "Id do usuário obrigatório")]
         public int IdUsuario { get; set; }

@@ -12,12 +12,10 @@ namespace AFSport.Web.Core.Service
     {
         #region Objetos
         private readonly ICaixaRepository _caixaRepository;
-        private readonly IClienteRepository _clienteRepository;
         #endregion
-        public CaixaService(ICaixaRepository caixaRepository, IClienteRepository clienteRepository)
+        public CaixaService(ICaixaRepository caixaRepository)
         {
             _caixaRepository = caixaRepository;
-            _clienteRepository = clienteRepository;
         }
 
         public async Task<Caixa> Alterar(int idCaixa, Caixa caixa)
@@ -25,7 +23,6 @@ namespace AFSport.Web.Core.Service
             try
             {
                 await ValidarCaixaExistente(idCaixa);
-                await ValidarClienteExistente(caixa.IdUsuario);
                 return await _caixaRepository.Alterar(caixa);
             }
             catch (Exception ex)
@@ -38,7 +35,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                await ValidarClienteExistente(caixa.IdUsuario);
+                await ValidarCaixaDiarioExistente();
                 caixa.Data = DateTime.Now;
                 return await _caixaRepository.Inserir(caixa);
             }
@@ -77,7 +74,7 @@ namespace AFSport.Web.Core.Service
         {
             try
             {
-                return await _caixaRepository.SelecionarPorDataAtual(DateTime.Now);
+                return await _caixaRepository.SelecionarPorDataAtual();
             }
             catch (Exception ex)
             {
@@ -115,10 +112,10 @@ namespace AFSport.Web.Core.Service
                 throw new KeyNotFoundException("Caixa não encontrada");
         }
 
-        private async Task ValidarClienteExistente(int idCliente)
+        public async Task ValidarCaixaDiarioExistente()
         {
-            if (await _clienteRepository.SelecionarId(idCliente) == null)
-                throw new KeyNotFoundException("Cliente não encontrada");
+            if (await _caixaRepository.SelecionarPorDataAtual() != null)
+                throw new KeyNotFoundException("Caixa diário já foi criado.");
         }
     }
 }

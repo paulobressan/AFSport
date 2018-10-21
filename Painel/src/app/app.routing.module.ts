@@ -47,6 +47,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'operacao',
+        loadChildren: './operacoes/operacoes.module#OperacoesModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

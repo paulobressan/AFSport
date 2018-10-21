@@ -62,7 +62,7 @@ namespace AFSport.Web.Core.Repository
             .SingleOrDefault();
         }
 
-        public async Task<Caixa> SelecionarPorDataAtual(DateTime data)
+        public async Task<Caixa> SelecionarPorDataAtual()
         {
             return (await _context.QueryAsync<Caixa, Usuario, Caixa>(@"select c.idCaixa, c.data, c.valorInicial, u.idUsuario, u.nome, u.login, u.email, u.isAtivo from caixa as c
                 inner join usuario u on c.idUsuario = u.idUsuario where DATE_FORMAT(data, '%d/%m/%Y') = DATE_FORMAT(NOW(), '%d/%m/%Y');", (caixa, usuario) =>

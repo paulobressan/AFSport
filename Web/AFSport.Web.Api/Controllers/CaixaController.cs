@@ -58,7 +58,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Post([FromBody] CaixaSalvarDTO caixa)
         {
             if (ModelState.IsValid)
+            {
+                DecodeToken(HttpContext);
+                caixa.IdUsuario = userLogged.Id;
                 return Ok(_mapper.Map<CaixaListaDTO>(await _caixaService.Inserir(_mapper.Map<Caixa>(caixa))));
+            }
             return BadRequest();
         }
         #endregion
@@ -68,7 +72,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] CaixaSalvarDTO caixa)
         {
             if (ModelState.IsValid)
+            {
+                DecodeToken(HttpContext);
+                caixa.IdUsuario = userLogged.Id;
                 return Ok(_mapper.Map<CaixaListaDTO>(await _caixaService.Alterar(id, _mapper.Map<Caixa>(caixa))));
+            }
             return BadRequest();
         }
         #endregion  

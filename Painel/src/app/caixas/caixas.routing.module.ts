@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { CaixaListComponent } from './caixa-list/caixa-list.component';
 import { CaixaListResolve } from './caixa-list/caixa-list.resolve';
+import { CaixaFormComponent } from './caixa-form/caixa-form.component';
+import { CaixaFormResolve } from './caixa-form/caixa-form.resolve';
 
 const routes: Routes = [
     {
@@ -10,6 +11,17 @@ const routes: Routes = [
         component: CaixaListComponent,
         resolve: {
             caixas: CaixaListResolve
+        }
+    },
+    {
+        path: 'novo-caixa',
+        component: CaixaFormComponent
+    },
+    {
+        path: 'alterar-caixa/:id',
+        component: CaixaFormComponent,
+        resolve: {
+            caixa: CaixaFormResolve
         }
     }
 ]

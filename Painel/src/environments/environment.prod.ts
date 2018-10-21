@@ -6,5 +6,6 @@ export const environment = {
   estado: 'http://localhost:4000/api/estado',
   cidade: 'http://localhost:4000/api/cidade',
   cliente: 'http://localhost:4000/api/cliente',
-  estoque: 'http://localhost:4000/api/estoque'
+  estoque: 'http://localhost:4000/api/estoque',
+  operacao: 'http://localhost:4000/api/operacao'
 };

@@ -3,7 +3,7 @@
         <i class="fa fas fa-plus"></i>
         <span class="pl-1">Novo Produto</span>
     </a>
-    <af-produto-gerar-estoque [produtos]="produtosSemEstoque"></af-produto-gerar-estoque>
+    <af-produto-gerar-estoque *ngIf="isProdutosSemEstoque()" [produtos]="produtosSemEstoque"></af-produto-gerar-estoque>
 </div>
 <div>
     <table class="table table-hover">
