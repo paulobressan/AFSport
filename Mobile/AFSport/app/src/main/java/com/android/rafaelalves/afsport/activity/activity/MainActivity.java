@@ -17,13 +17,11 @@ import android.view.MenuItem;
 
 
 import com.android.rafaelalves.afsport.R;
-import com.android.rafaelalves.afsport.activity.fragment.CaixaFragment;
 import com.android.rafaelalves.afsport.activity.fragment.ClientesFragment;
-import com.android.rafaelalves.afsport.activity.fragment.EstoqueFragment;
 import com.android.rafaelalves.afsport.activity.fragment.InicioFragment;
-import com.android.rafaelalves.afsport.activity.fragment.MovimentacoesFragment;
 import com.android.rafaelalves.afsport.activity.fragment.ProdutosFragment;
-import com.android.rafaelalves.afsport.activity.fragment.SobreFragment;
+import com.android.rafaelalves.afsport.activity.fragment.VendasFragment;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -117,32 +115,14 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.frameConteudo, produtosFragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_estoque) {
-            EstoqueFragment estoqueFragment = new EstoqueFragment();
+        } else if (id == R.id.nav_vendas) {
+            VendasFragment vendasFragment = new VendasFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, estoqueFragment);
+            fragmentTransaction.replace(R.id.frameConteudo, vendasFragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_caixa) {
-            CaixaFragment caixaFragment = new CaixaFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, caixaFragment);
-            fragmentTransaction.commit();
-
-        } else if (id == R.id.nav_movimentacoes) {
-            MovimentacoesFragment movimentacoesFragment = new MovimentacoesFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, movimentacoesFragment);
-            fragmentTransaction.commit();
-
-        }else if (id == R.id.nav_sobre){
+        } else if (id == R.id.nav_sobre){
             startActivity(new Intent(this,SobreActivity.class));
-            /*
-            SobreFragment sobreFragment = new SobreFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, sobreFragment);
-            fragmentTransaction.commit();
-            */
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -17,17 +17,9 @@
             android:icon="@drawable/ic_menu_produtos"
             android:title="Produtos" />
         <item
-            android:id="@+id/nav_estoque"
+            android:id="@+id/nav_vendas"
             android:icon="@drawable/ic_menu_estoque"
-            android:title="Estoque" />
-        <item
-            android:id="@+id/nav_caixa"
-            android:icon="@drawable/ic_menu_caixa"
-            android:title="Caixa" />
-        <item
-            android:id="@+id/nav_movimentacoes"
-            android:icon="@drawable/ic_menu_movimentacoes"
-            android:title="Movimentações" />
+            android:title="Vendas" />
         <item
             android:id="@+id/nav_sobre"
             android:icon="@drawable/ic_menu_sobre"
