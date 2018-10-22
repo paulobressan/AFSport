@@ -68,7 +68,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int idPedido, [FromBody] PedidoSalvarDTO pedido)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<PedidoListaDTO>(await _pedidoService.Alterar(idPedido, _mapper.Map<Pedido>(pedido))));
+                return Accepted(_mapper.Map<PedidoListaDTO>(await _pedidoService.Alterar(idPedido, _mapper.Map<Pedido>(pedido))));
             return BadRequest();
         }
 
@@ -76,7 +76,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> PostItemPedido(int idItemPedido, [FromBody] ItemPedidoSalvarDTO itemPedido)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Alterar(idItemPedido, _mapper.Map<ItemPedido>(itemPedido))));
+                return Accepted(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Alterar(idItemPedido, _mapper.Map<ItemPedido>(itemPedido))));
             return BadRequest();
         }
         #endregion

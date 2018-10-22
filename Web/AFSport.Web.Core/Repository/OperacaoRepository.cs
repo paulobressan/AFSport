@@ -32,16 +32,16 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<Operacao> Alterar(Operacao operacao)
         {
-            return (await _context.QueryAsync<Operacao>(@"update operacao set nome = @nome, descricao = @descricao, @isAtivo where idOperacao = @idOperacao;
+            return (await _context.QueryAsync<Operacao>(@"update operacao set nome = @nome, descricao = @descricao, isAtivo = @isAtivo where idOperacao = @idOperacao;
                 select idOperacao, nome, descricao,isAtivo from operacao 
                 where idOperacao = @idOperacao;", operacao))
                 .Single();
         }
 
-        public async Task<Operacao> SelecionarId(int id)
+        public async Task<Operacao> SelecionarId(int idOperacao)
         {
             return (await _context.QueryAsync<Operacao>(@"select idOperacao, nome, descricao,isAtivo from operacao
-                where idOperacao = @idOperacao;", null))
+                where idOperacao = @idOperacao;", new { idOperacao }))
                 .SingleOrDefault();
         }
 

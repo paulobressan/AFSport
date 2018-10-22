@@ -61,14 +61,14 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] OperacaoSalvarDTO operacao)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<OperacaoListaDTO>(await _operacaoService.Alterar(id, _mapper.Map<Operacao>(operacao))));
+                return Accepted(_mapper.Map<OperacaoListaDTO>(await _operacaoService.Alterar(id, _mapper.Map<Operacao>(operacao))));
             return BadRequest();
         }
         [HttpPut("ativar-inativar/{id}")]
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] OperacaoSalvarDTO operacao)
         {
             await _operacaoService.AtivarInativar(id, operacao.IsAtivo);
-            return Ok();
+            return Accepted();
         }
         #endregion  
         #region Delete
@@ -76,7 +76,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _operacaoService.Remover(id);
-            return Ok();
+            return NoContent();
         }
         #endregion
     }

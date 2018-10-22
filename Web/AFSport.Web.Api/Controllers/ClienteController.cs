@@ -58,7 +58,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] ClienteSalvarDTO cliente)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.Alterar(id, _mapper.Map<Cliente>(cliente))));
+                return Accepted(_mapper.Map<ClienteListaDTO>(await _clienteService.Alterar(id, _mapper.Map<Cliente>(cliente))));
             return BadRequest();
         }
 
@@ -66,7 +66,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] ClienteSalvarDTO cliente)
         {
             await _clienteService.AtivarInativar(id, cliente.IsAtivo);
-            return NoContent();
+            return Accepted();
         }
         #endregion
 

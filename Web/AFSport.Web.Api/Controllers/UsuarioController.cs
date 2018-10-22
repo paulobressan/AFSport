@@ -52,14 +52,14 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] UsuarioSalvarDTO usuario)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<UsuarioListaDTO>(await _usuarioService.Alterar(id, _mapper.Map<Usuario>(usuario))));
+                return Accepted(_mapper.Map<UsuarioListaDTO>(await _usuarioService.Alterar(id, _mapper.Map<Usuario>(usuario))));
             return BadRequest();
         }
         [HttpPut("ativar-inativar/{id}")]
         public async Task<IActionResult> PutAtivarInativar(int id, [FromBody] UsuarioSalvarDTO usuario)
         {
             await _usuarioService.AtivarInativar(id, usuario.IsAtivo);
-            return Ok();
+            return Accepted();
         }
         #endregion  
     }

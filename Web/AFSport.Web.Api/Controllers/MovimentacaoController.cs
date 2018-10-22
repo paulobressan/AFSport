@@ -51,7 +51,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put(int id, [FromBody] MovimentacaoSalvarDTO movimentacao)
         {
             if (ModelState.IsValid)
-                return Ok(_mapper.Map<MovimentacaoListaDTO>(await _movimentacaoService.Alterar(id, _mapper.Map<Movimentacao>(movimentacao))));
+                return Accepted(_mapper.Map<MovimentacaoListaDTO>(await _movimentacaoService.Alterar(id, _mapper.Map<Movimentacao>(movimentacao))));
             return BadRequest();
         }
         #endregion  

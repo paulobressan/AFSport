@@ -75,7 +75,7 @@ namespace AFSport.Web.Api.Controllers
             {
                 DecodeToken(HttpContext);
                 caixa.IdUsuario = userLogged.Id;
-                return Ok(_mapper.Map<CaixaListaDTO>(await _caixaService.Alterar(id, _mapper.Map<Caixa>(caixa))));
+                return Accepted(_mapper.Map<CaixaListaDTO>(await _caixaService.Alterar(id, _mapper.Map<Caixa>(caixa))));
             }
             return BadRequest();
         }

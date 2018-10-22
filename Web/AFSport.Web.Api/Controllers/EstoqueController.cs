@@ -69,7 +69,7 @@ namespace AFSport.Web.Api.Controllers
             {
                 this.DecodeToken(HttpContext);
                 estoque.IdUsuario = userLogged.Id;
-                return Ok(_mapper.Map<EstoqueListaDTO>(await _estoqueService.Alterar(id, _mapper.Map<Estoque>(estoque))));
+                return Accepted(_mapper.Map<EstoqueListaDTO>(await _estoqueService.Alterar(id, _mapper.Map<Estoque>(estoque))));
             }
             return BadRequest();
         }
@@ -80,7 +80,7 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _estoqueService.Remover(id);
-            return Ok();
+            return NoContent();
         }
         #endregion
     }

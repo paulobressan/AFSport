@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert';
+
 import { BaseFormComponent } from 'src/app/core/base/base-form.component';
 import { Operacao } from '../operacao/operacao';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { OperacaoService } from '../operacao/operacao.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     templateUrl: './operacao-form.component.html'
@@ -23,7 +25,7 @@ export class OperacaoFormComponent implements BaseFormComponent<Operacao>, OnIni
     ngOnInit(): void {
         this.operacao = this.activatedRoute.snapshot.data.operacao;
         this.operacaoForm = this.formBuilder.group({
-            idoperacao: [this.operacao ? this.operacao.idOperacao : 0],
+            idOperacao: [this.operacao ? this.operacao.idOperacao : 0],
             nome: [this.operacao ? this.operacao.nome : '', [
                 Validators.required,
                 Validators.maxLength(50)

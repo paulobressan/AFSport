@@ -23,21 +23,21 @@ namespace AFSport.Web.Core.Repository
                 where idCategoria = @idCategoria", new { idCategoria });
         }
 
-        public async Task<Categoria> Inserir(Categoria obj)
+        public async Task<Categoria> Inserir(Categoria categoria)
         {
             return (await _context.QueryAsync<Categoria>(@"insert into categoria(nome,descricao,isAtivo) 
                 values (@nome,@descricao,@isAtivo);
                 select idCategoria, nome, descricao, isAtivo from categoria
-                where idCategoria = (select last_insert_id() as idCategoria);", obj))
+                where idCategoria = (select last_insert_id() as idCategoria);", categoria))
                 .Single();
         }
 
-        public async Task<Categoria> Alterar(Categoria obj)
+        public async Task<Categoria> Alterar(Categoria categoria)
         {
             return (await _context.QueryAsync<Categoria>(@"update categoria set nome = @nome, descricao = @descricao, isAtivo = @isAtivo 
                 where idCategoria = @idCategoria;
                 select idCategoria, nome, descricao, isAtivo from categoria
-                where idCategoria = @IdCategoria", obj))
+                where idCategoria = @IdCategoria", categoria))
                 .Single();
         }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { BaseListComponent } from 'src/app/core/base/base-list.component';
 import { Operacao } from '../operacao/operacao';
-import { Router, ActivatedRoute } from '@angular/router';
 import { OperacaoService } from '../operacao/operacao.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class OperacaoListComponent implements BaseListComponent<Operacao>, OnIni
     ) { }
 
     ngOnInit(): void {
-        this.operacoes = this.activatedRouter.snapshot.data.operacaos;
+        this.operacoes = this.activatedRouter.snapshot.data.operacoes;
     }
 
     ativarInativar(isAtivo: boolean, operacao: Operacao) {
