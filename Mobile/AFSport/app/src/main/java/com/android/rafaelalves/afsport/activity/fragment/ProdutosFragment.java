@@ -17,12 +17,6 @@ import com.android.rafaelalves.afsport.R;
  */
 public class ProdutosFragment extends Fragment {
 
-    private Button bt1;
-    private EditText tbx1;
-    private EditText tbx2;
-    private TextView txtView1;
-    private TextView txtView2;
-
 
     public ProdutosFragment() {
         // Required empty public constructor

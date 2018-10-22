@@ -18,12 +18,6 @@ import com.android.rafaelalves.afsport.R;
  */
 public class ClientesFragment extends Fragment {
 
-    private Button bt1;
-    private EditText tbx1;
-    private EditText tbx2;
-    private TextView txtView1;
-    private TextView txtView2;
-
 
     public ClientesFragment() {
         // Required empty public constructor
