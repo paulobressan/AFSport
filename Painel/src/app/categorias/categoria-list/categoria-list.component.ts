@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BaseListComponent } from '../../core/base/base-list.component';
 
 @Component({
-    selector: 'af-categoria-list',
     templateUrl: './categoria-list.component.html'
 })
 export class CategoriaListComponent implements BaseListComponent<Categoria>, OnInit {

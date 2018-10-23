@@ -52,6 +52,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'movimentacao',
+        loadChildren: './movimentacoes/movimentacoes.module#MovimentacoesModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

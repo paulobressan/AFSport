@@ -6,7 +6,7 @@ namespace AFSport.Web.Core.Model
     {
         public Movimentacao()
         {
-            this.IsAtivo = true;
+
         }
 
         public Movimentacao(decimal valor, int idUsuario, int idOperacao)
@@ -15,7 +15,6 @@ namespace AFSport.Web.Core.Model
             this.IdUsuario = idUsuario;
             this.IdOperacao = idOperacao;
             this.Data = DateTime.Now;
-            this.IsAtivo = true;
         }
 
         public int IdMovimentacao { get; set; }
@@ -25,6 +24,5 @@ namespace AFSport.Web.Core.Model
         public Usuario Usuario { get; set; }
         public int IdOperacao { get; set; }
         public Operacao Operacao { get; set; }
-        public bool IsAtivo { get; set; }
     }
 }

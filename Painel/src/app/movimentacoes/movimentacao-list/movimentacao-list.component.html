@@ -1,0 +1,37 @@
+<div>
+    <a class="btn btn-outline-success pull-right mb-4" [routerLink]="['/movimentacao/nova-movimentacao']">
+        <i class="fa fas fa-plus"></i>
+        <span class="pl-1">Nova Movimentação</span>
+    </a>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Valor</th>
+                <th>Operação</th>
+                <th>Usuário</th>
+                <th class="text-right">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movimentacao of movimentacoes">
+                <td>{{movimentacao.idMovimentacao}}</td>
+                <td>R$ {{movimentacao.valor}}</td>
+                <td>{{movimentacao.operacao.nome}}</td>
+                <td>{{movimentacao.usuario.nome}}</td>
+                <td class="text-right">
+                    <div class="form-check-inline">
+                        <div class="p-1">
+                            <span class="pl-2 btn-editar" attr.title="Alterar {{movimentacao.nome}}" style="cursor: pointer; font-size: 14pt"
+                                (click)="alterar(movimentacao)">
+                                <i class="fa fas fa-edit"></i>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
