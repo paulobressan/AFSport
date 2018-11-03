@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.activity.SobreActivity"></activity>
+        <activity android:name=".activity.activity.SobreActivity" />
+        <activity android:name=".activity.activity.ClientesActivity" />
+        <activity android:name=".activity.activity.ProdutosActivity" />
+        <activity android:name=".activity.activity.CadastrarProdutoActivity" />
+        <activity android:name=".activity.activity.CadastrarClienteActivity"></activity>
     </application>
 
 </manifest>

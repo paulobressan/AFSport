@@ -17,9 +17,7 @@ import android.view.MenuItem;
 
 
 import com.android.rafaelalves.afsport.R;
-import com.android.rafaelalves.afsport.activity.fragment.ClientesFragment;
 import com.android.rafaelalves.afsport.activity.fragment.InicioFragment;
-import com.android.rafaelalves.afsport.activity.fragment.ProdutosFragment;
 import com.android.rafaelalves.afsport.activity.fragment.VendasFragment;
 
 
@@ -104,16 +102,22 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_clientes) {
+            startActivity(new Intent(this,ClientesActivity.class));
+            /*
             ClientesFragment clientesFragment = new ClientesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameConteudo, clientesFragment);
             fragmentTransaction.commit();
+            */
 
         } else if (id == R.id.nav_produtos) {
+            startActivity(new Intent(this,ProdutosActivity.class));
+           /*
             ProdutosFragment produtosFragment = new ProdutosFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameConteudo, produtosFragment);
             fragmentTransaction.commit();
+            */
 
         } else if (id == R.id.nav_vendas) {
             VendasFragment vendasFragment = new VendasFragment();
