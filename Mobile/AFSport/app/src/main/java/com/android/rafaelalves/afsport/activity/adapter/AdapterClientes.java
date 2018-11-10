@@ -33,9 +33,9 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
 
         Cliente cliente = listaClientes.get(position);
 
-        holder.nome.setText(cliente.getNomeCliente());
-        holder.codigo.setText(cliente.getCodigoCliente());
-        holder.email.setText(cliente.getEmailCliente());
+        holder.nome.setText(cliente.getNome());
+        holder.codigo.setText(cliente.getIdCliente());
+        holder.email.setText(cliente.getEmail());
 
 
     }
