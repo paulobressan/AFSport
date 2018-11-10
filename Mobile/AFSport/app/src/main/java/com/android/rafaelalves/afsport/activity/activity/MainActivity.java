@@ -18,7 +18,6 @@ import android.view.MenuItem;
 
 import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.fragment.InicioFragment;
-import com.android.rafaelalves.afsport.activity.fragment.VendasFragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -120,10 +119,13 @@ public class MainActivity extends AppCompatActivity
             */
 
         } else if (id == R.id.nav_vendas) {
+            startActivity(new Intent(this,VendasActivity.class));
+            /*
             VendasFragment vendasFragment = new VendasFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameConteudo, vendasFragment);
             fragmentTransaction.commit();
+            */
 
         } else if (id == R.id.nav_sobre){
             startActivity(new Intent(this,SobreActivity.class));
