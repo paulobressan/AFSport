@@ -69,7 +69,7 @@ public class ClientesActivity extends AppCompatActivity {
                                 Cliente cliente = listaClientes.get(position);
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Cliente Selecionado: " + cliente.getNomeCliente(),
+                                        "Cliente Selecionado: " + cliente.getNome(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
@@ -79,7 +79,7 @@ public class ClientesActivity extends AppCompatActivity {
                                 Cliente cliente = listaClientes.get(position);
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Cliente Selecionado: " + cliente.getNomeCliente(),
+                                        "Cliente Selecionado: " + cliente.getNome(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
@@ -119,19 +119,19 @@ public class ClientesActivity extends AppCompatActivity {
 
     public void listarClientes(){
 
-        Cliente cliente = new Cliente("0" ,"rafael","rafaellopes.01@hotmail.com");
+        Cliente cliente = new Cliente(0 ,"rafael","rafaellopes.01@hotmail.com");
         this.listaClientes.add(cliente);
 
-        cliente = new Cliente("1","paulo Viadooo","teste@hotmail.com");
+        cliente = new Cliente(1,"paulo Viadooo","teste@hotmail.com");
         this.listaClientes.add(cliente);
 
-        cliente = new Cliente("2","teste","teste@hotmail.com");
+        cliente = new Cliente(2,"teste","teste@hotmail.com");
         this.listaClientes.add(cliente);
 
-        cliente = new Cliente("3","jao","tffeste@hotmail.com");
+        cliente = new Cliente(3,"jao","tffeste@hotmail.com");
         this.listaClientes.add(cliente);
 
-        cliente = new Cliente("4","tiao","tffeste@hotmail.com");
+        /*cliente = new Cliente("4","tiao","tffeste@hotmail.com");
         this.listaClientes.add(cliente);
 
         cliente = new Cliente("5","Diego gay","tffeste@hotmail.com");
@@ -153,7 +153,7 @@ public class ClientesActivity extends AppCompatActivity {
         this.listaClientes.add(cliente);
 
         cliente = new Cliente("11","sdsdg","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
+        this.listaClientes.add(cliente);*/
 
     }
 
