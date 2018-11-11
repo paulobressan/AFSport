@@ -27,7 +27,8 @@
         <activity android:name=".activity.activity.CadastrarProdutoActivity" />
         <activity android:name=".activity.activity.CadastrarClienteActivity" />
         <activity android:name=".activity.activity.VendasActivity" />
-        <activity android:name=".activity.activity.LoginActivity"></activity>
+        <activity android:name=".activity.activity.LoginActivity" />
+        <activity android:name=".activity.activity.CaixaActivity"></activity>
     </application>
 
 </manifest>
