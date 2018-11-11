@@ -45,7 +45,7 @@
 
     <Button
         android:id="@+id/btnEnviar"
-        style="@style/btn_Entrar"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
