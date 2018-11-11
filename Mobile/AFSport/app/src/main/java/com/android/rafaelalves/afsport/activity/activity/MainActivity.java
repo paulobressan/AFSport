@@ -100,6 +100,8 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
             fragmentTransaction.commit();
 
+        } else if (id == R.id.nav_caixa){
+            startActivity(new Intent(this,CaixaActivity.class));
         } else if (id == R.id.nav_clientes) {
             startActivity(new Intent(this,ClientesActivity.class));
             /*

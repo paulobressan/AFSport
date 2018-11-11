@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_home_black"
             android:title="Inicio" />
         <item
+            android:id="@+id/nav_caixa"
+            android:icon="@drawable/ic_menu_caixa"
+            android:title="Caixa" />
+        <item
             android:id="@+id/nav_clientes"
             android:icon="@drawable/ic_menu_clientes"
             android:title="Clientes" />
