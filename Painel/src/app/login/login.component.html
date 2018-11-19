@@ -15,7 +15,10 @@
                     <label for="senha">Senha</label>
                     <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha">
                 </div>
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary pull-right">Entrar</button>
+                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary pull-right">
+                    Entrar
+                    <img #loadButton src="../../assets/img/load.svg" alt="Carregando" style="display: none" >
+                </button>
             </form>
         </div>
     </div>

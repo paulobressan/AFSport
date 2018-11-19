@@ -13,6 +13,7 @@ import { ElementRef } from "@angular/core";
 })
 export class LoginComponent implements OnInit {
     @ViewChild('loginInput') loginInput: ElementRef<HTMLInputElement>;
+    @ViewChild('loadButton') loadButton: ElementRef<HTMLImageElement>;
     loginForm: FormGroup;
 
     constructor(
@@ -30,9 +31,14 @@ export class LoginComponent implements OnInit {
     }
 
     autenticar() {
+        this.loadButton.nativeElement.style.display = 'inline-block';
         const user: User = this.loginForm.getRawValue();
-        this.authService.autenticate(user).subscribe(() => {
-            this.router.navigate(['']);
-        });
+        this.authService.autenticate(user)
+            .subscribe(() => {
+                this.router.navigate(['']);
+            }, err => {
+                this.loadButton.nativeElement.style.display = 'none';
+                swal("Problemas para enviar!", JSON.parse(err.error).msg, "error");
+            });
     }
 }
