@@ -1,44 +1,42 @@
 package com.android.rafaelalves.afsport.activity.web;
 
 
-import com.android.rafaelalves.afsport.R;
+import com.android.rafaelalves.afsport.activity.model.Auth;
+import com.android.rafaelalves.afsport.activity.model.Cliente;
+import com.android.rafaelalves.afsport.activity.model.Produto;
 
-import java.io.IOException;
-import java.io.PrintStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Scanner;
+import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WebClient {
-    private final String url;
 
-    public WebClient(String context) {
-        this.url = "https://1d624066.ngrok.io/api/" + context;
+    private final String url = "https://5c006f0d.ngrok.io/api/";
+    private Retrofit retrofit;
+
+    public Call<ResponseBody> getAuth(Auth auth) {
+        return getRetrofit().create(API.class).getAuth(auth);
     }
 
-    public String post(String json) {
-        try {
-            URL url = new URL(this.url);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("Content-type", "application/json");
-            connection.setRequestProperty("Accept", "application/json");
-
-            connection.setDoOutput(true);
-
-            PrintStream output = new PrintStream(connection.getOutputStream());
-            output.println(json);
-
-            connection.connect();
-
-            Scanner scanner = new Scanner(connection.getInputStream());
-            return scanner.next();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public Call<List<Cliente>> getAllClientes(String keyAuth){
+        String token = "Bearer " + keyAuth;
+        return getRetrofit().create(API.class).getAllClientes(token);
     }
 
+    public Call<List<Produto>> getAllProdutos(String keyAuth){
+        String token = "Bearer " + keyAuth;
+        return getRetrofit().create(API.class).getAllProdutos(token);
+    }
+
+    private Retrofit getRetrofit() {
+        if (retrofit == null)
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        return retrofit;
+    }
 }

@@ -17,7 +17,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
 
     private List<Cliente> listaClientes;
 
-    public AdapterClientes(List<Cliente> lista ) {
+    public AdapterClientes(List<Cliente> lista) {
         this.listaClientes = lista;
     }
 
@@ -36,8 +36,6 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
         holder.nome.setText(cliente.getNome());
         holder.codigo.setText(cliente.getIdCliente());
         holder.email.setText(cliente.getEmail());
-
-
     }
 
     @Override
@@ -46,7 +44,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
         return listaClientes.size();
     }
 
-    public class ViewHolderCliente extends RecyclerView.ViewHolder{
+    public class ViewHolderCliente extends RecyclerView.ViewHolder {
 
         TextView nome;
         TextView codigo;
