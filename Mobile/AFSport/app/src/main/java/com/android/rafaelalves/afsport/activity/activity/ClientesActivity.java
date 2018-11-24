@@ -1,6 +1,9 @@
 package com.android.rafaelalves.afsport.activity.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -17,11 +20,19 @@ import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.RecyclerItemClickListener;
 import com.android.rafaelalves.afsport.activity.adapter.AdapterClientes;
 import com.android.rafaelalves.afsport.activity.model.Cliente;
+import com.android.rafaelalves.afsport.activity.web.WebClient;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ClientesActivity extends AppCompatActivity {
+
+    private final WebClient webClient;
+    SharedPreferences preference;
 
     private RecyclerView recyclerView;
     private List<Cliente> listaClientes = new ArrayList<>();
@@ -32,30 +43,23 @@ public class ClientesActivity extends AppCompatActivity {
     private Button apagarCliente;
     private TextView txtClientes;
 
+    public ClientesActivity() {
+        this.webClient = new WebClient();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes);
 
-
+        preference = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         recyclerView = findViewById(R.id.recyclerClientes);
 
         //Listar Clientes
 
         this.listarClientes();
-
-        // Configuração Adapter
-
-        AdapterClientes adapterClientes = new AdapterClientes(listaClientes);
-
-        // Configuração do Recyclerview
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,LinearLayout.VERTICAL));
-        recyclerView.setAdapter(adapterClientes);
+        this.CarregarLista();
 
         //Evento de Click
 
@@ -89,7 +93,6 @@ public class ClientesActivity extends AppCompatActivity {
 
                             }
                         }
-
                 )
         );
 
@@ -103,59 +106,48 @@ public class ClientesActivity extends AppCompatActivity {
     }
 
     // Metodos dos Buttons
-    public void CadastrarCliente(View view){
-        startActivity(new Intent(this,CadastrarClienteActivity.class));
+    public void CadastrarCliente(View view) {
+        startActivity(new Intent(this, CadastrarClienteActivity.class));
     }
 
-    public void EditarCliente(View view){
-
-    }
-
-    public void DeletarCliente(View view){
+    public void EditarCliente(View view) {
 
     }
 
-
-
-    public void listarClientes(){
-
-        Cliente cliente = new Cliente(0 ,"rafael","rafaellopes.01@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente(1,"paulo Viadooo","teste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente(2,"teste","teste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente(3,"jao","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        /*cliente = new Cliente("4","tiao","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("5","Diego gay","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("6","Marcus Viado","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("7","afa","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("8","dgdagds","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("9","agddag","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("10","aggsd","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);
-
-        cliente = new Cliente("11","sdsdg","tffeste@hotmail.com");
-        this.listaClientes.add(cliente);*/
+    public void DeletarCliente(View view) {
 
     }
 
+    public void listarClientes() {
+        String key_auth = preference.getString("KEY_AUTH", "");
+        this.webClient.getAllClientes(key_auth).enqueue(new Callback<List<Cliente>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<Cliente>> call, @NonNull Response<List<Cliente>> response) {
+                listaClientes = response.body();
+            }
 
+            @Override
+            public void onFailure(@NonNull Call<List<Cliente>> call, @NonNull Throwable t) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        t.getMessage(),
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+        });
+    }
+
+    private void CarregarLista(){
+        // Configuração Adapter
+
+        AdapterClientes adapterClientes = new AdapterClientes(listaClientes);
+
+        // Configuração do Recyclerview
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+        recyclerView.setAdapter(adapterClientes);
+    }
 }
