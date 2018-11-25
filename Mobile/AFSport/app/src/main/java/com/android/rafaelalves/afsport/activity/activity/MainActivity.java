@@ -1,7 +1,9 @@
 package com.android.rafaelalves.afsport.activity.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
@@ -20,8 +22,8 @@ import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.fragment.InicioFragment;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        startActivity(new Intent(this, LoginActivity.class));
         // Iniciar a home.
 
         InicioFragment inicioFragment = new InicioFragment();
@@ -100,10 +105,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.frameConteudo, inicioFragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_caixa){
-            startActivity(new Intent(this,CaixaActivity.class));
+        } else if (id == R.id.nav_caixa) {
+            startActivity(new Intent(this, CaixaActivity.class));
         } else if (id == R.id.nav_clientes) {
-            startActivity(new Intent(this,ClientesActivity.class));
+            startActivity(new Intent(this, ClientesActivity.class));
             /*
             ClientesFragment clientesFragment = new ClientesFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -112,7 +117,7 @@ public class MainActivity extends AppCompatActivity
             */
 
         } else if (id == R.id.nav_produtos) {
-            startActivity(new Intent(this,ProdutosActivity.class));
+            startActivity(new Intent(this, ProdutosActivity.class));
            /*
             ProdutosFragment produtosFragment = new ProdutosFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -121,7 +126,7 @@ public class MainActivity extends AppCompatActivity
             */
 
         } else if (id == R.id.nav_vendas) {
-            startActivity(new Intent(this,VendasActivity.class));
+            startActivity(new Intent(this, VendasActivity.class));
             /*
             VendasFragment vendasFragment = new VendasFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -129,12 +134,18 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
             */
 
-        } else if (id == R.id.nav_sobre){
-            startActivity(new Intent(this,SobreActivity.class));
+        } else if (id == R.id.nav_sobre) {
+            startActivity(new Intent(this, SobreActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /*private void isAutenticado() {
+        String key = preference.getString("KEY_AUTH", null);
+        if (key != null)
+            startActivity(new Intent(this, LoginActivity.class));
+    }*/
 }
