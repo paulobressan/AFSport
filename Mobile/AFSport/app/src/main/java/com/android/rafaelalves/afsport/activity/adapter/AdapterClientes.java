@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.model.Cliente;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,8 +18,15 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
 
     private List<Cliente> listaClientes;
 
-    public AdapterClientes(List<Cliente> lista) {
-        this.listaClientes = lista;
+    public AdapterClientes()
+    {
+        this.listaClientes = new ArrayList<>();
+    }
+
+    public void setListaClientes(List<Cliente> listaClientes)
+    {
+        this.listaClientes = listaClientes;
+        this.notifyDataSetChanged();
     }
 
     @NonNull
@@ -34,7 +42,7 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
         Cliente cliente = listaClientes.get(position);
 
         holder.nome.setText(cliente.getNome());
-        holder.codigo.setText(cliente.getIdCliente());
+        holder.codigo.setText(String.valueOf(cliente.getIdCliente()));
         holder.email.setText(cliente.getEmail());
     }
 
@@ -56,6 +64,10 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
             codigo = itemView.findViewById(R.id.txtCodigoCliente);
             email = itemView.findViewById(R.id.txtEmailCliente);
         }
+    }
+
+    public Cliente getItemPosition(int position){
+        return listaClientes.get(position);
     }
 
 }

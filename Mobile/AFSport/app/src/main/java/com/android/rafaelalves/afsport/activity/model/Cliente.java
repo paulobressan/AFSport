@@ -1,6 +1,8 @@
 package com.android.rafaelalves.afsport.activity.model;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private int idCliente;
     private String nome;
     private String email;

@@ -44,7 +44,7 @@
             tools:layout_editor_absoluteY="13dp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -70,7 +70,7 @@
             android:text="Email" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,7 +93,7 @@
             android:text="Logradouro" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/txtLogradouro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -123,7 +123,7 @@
                 android:text="Numero" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/txtNumero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -148,7 +148,7 @@
                 android:text="Bairro" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/txtBairro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -168,25 +168,6 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/Estado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estado" />
-
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -198,15 +179,13 @@
                 android:layout_height="wrap_content"
                 android:text="Cidade" />
 
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Cidade"
-                android:inputType="textPersonName" />
         </LinearLayout>
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerCidades"
+        android:layout_width="393dp"
+        android:layout_height="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
