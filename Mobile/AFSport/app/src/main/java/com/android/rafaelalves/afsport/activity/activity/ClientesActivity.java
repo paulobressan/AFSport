@@ -2,10 +2,10 @@ package com.android.rafaelalves.afsport.activity.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,7 +22,6 @@ import com.android.rafaelalves.afsport.activity.adapter.AdapterClientes;
 import com.android.rafaelalves.afsport.activity.model.Cliente;
 import com.android.rafaelalves.afsport.activity.web.WebClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,15 +32,10 @@ public class ClientesActivity extends AppCompatActivity {
 
     private final WebClient webClient;
     SharedPreferences preference;
+    private AdapterClientes adapterClientes;
+    private Cliente clienteSelecionado;
 
     private RecyclerView recyclerView;
-    private List<Cliente> listaClientes = new ArrayList<>();
-
-
-    private Button addCliente;
-    private Button editarCliente;
-    private Button apagarCliente;
-    private TextView txtClientes;
 
     public ClientesActivity() {
         this.webClient = new WebClient();
@@ -56,12 +50,8 @@ public class ClientesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerClientes);
 
-        //Listar Clientes
-
         this.listarClientes();
         this.CarregarLista();
-
-        //Evento de Click
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
@@ -70,20 +60,20 @@ public class ClientesActivity extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                Cliente cliente = listaClientes.get(position);
+                                clienteSelecionado = adapterClientes.getItemPosition(position);
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Cliente Selecionado: " + cliente.getNome(),
+                                        "Cliente Selecionado: " + clienteSelecionado.getNome(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
 
                             @Override
                             public void onLongItemClick(View view, int position) {
-                                Cliente cliente = listaClientes.get(position);
+                                clienteSelecionado = adapterClientes.getItemPosition(position);
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Cliente Selecionado: " + cliente.getNome(),
+                                        "Cliente Selecionado: " + clienteSelecionado.getNome(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
@@ -96,18 +86,16 @@ public class ClientesActivity extends AppCompatActivity {
                 )
         );
 
-
-        // Buttons
-        addCliente = findViewById(R.id.btnAddCliente);
-        editarCliente = findViewById(R.id.btnEditarProduto);
-        apagarCliente = findViewById(R.id.btnApagarProduto);
-        txtClientes = findViewById(R.id.textViewCliente);
-
+        Button addCliente = findViewById(R.id.btnAddCliente);
+        Button editarCliente = findViewById(R.id.btnEditarProduto);
+        Button apagarCliente = findViewById(R.id.btnApagarProduto);
+        TextView txtClientes = findViewById(R.id.textViewCliente);
     }
 
-    // Metodos dos Buttons
     public void CadastrarCliente(View view) {
-        startActivity(new Intent(this, CadastrarClienteActivity.class));
+        Intent intent = new Intent(this, CadastrarClienteActivity.class);
+        intent.putExtra("cliente", clienteSelecionado);
+        startActivity(intent);
     }
 
     public void EditarCliente(View view) {
@@ -123,7 +111,7 @@ public class ClientesActivity extends AppCompatActivity {
         this.webClient.getAllClientes(key_auth).enqueue(new Callback<List<Cliente>>() {
             @Override
             public void onResponse(@NonNull Call<List<Cliente>> call, @NonNull Response<List<Cliente>> response) {
-                listaClientes = response.body();
+                adapterClientes.setListaClientes(response.body());
             }
 
             @Override
@@ -137,10 +125,10 @@ public class ClientesActivity extends AppCompatActivity {
         });
     }
 
-    private void CarregarLista(){
+    private void CarregarLista() {
         // Configuração Adapter
 
-        AdapterClientes adapterClientes = new AdapterClientes(listaClientes);
+        adapterClientes = new AdapterClientes();
 
         // Configuração do Recyclerview
 
