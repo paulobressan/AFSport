@@ -17,6 +17,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/ic_add_verde_24dp"
         android:onClick="CadastrarCliente"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/recyclerClientes"
         app:layout_constraintEnd_toStartOf="@+id/btnEditarCliente"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +32,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/ic_edit_orange_24dp"
         android:onClick="EditarCliente"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/recyclerClientes"
         app:layout_constraintEnd_toStartOf="@+id/btnApagarCliente"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +47,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/ic_delete_red_24dp"
         android:onClick="DeletarCliente"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/recyclerClientes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

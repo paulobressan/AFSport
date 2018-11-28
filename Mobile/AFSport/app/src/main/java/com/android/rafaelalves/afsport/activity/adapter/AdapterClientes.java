@@ -69,5 +69,4 @@ public class AdapterClientes extends RecyclerView.Adapter<AdapterClientes.ViewHo
     public Cliente getItemPosition(int position){
         return listaClientes.get(position);
     }
-
 }

@@ -2,6 +2,7 @@ package com.android.rafaelalves.afsport.activity.web;
 
 
 import com.android.rafaelalves.afsport.activity.model.Auth;
+import com.android.rafaelalves.afsport.activity.model.Caixa;
 import com.android.rafaelalves.afsport.activity.model.Cliente;
 import com.android.rafaelalves.afsport.activity.model.Produto;
 
@@ -29,6 +30,11 @@ public class WebClient {
     public Call<List<Produto>> getAllProdutos(String keyAuth){
         String token = "Bearer " + keyAuth;
         return getRetrofit().create(API.class).getAllProdutos(token);
+    }
+
+    public Call<List<Caixa>> getAllCaixas(String keyAuth){
+        String token = "Bearer " + keyAuth;
+        return getRetrofit().create(API.class).getAllCaixas(token);
     }
 
     private Retrofit getRetrofit() {

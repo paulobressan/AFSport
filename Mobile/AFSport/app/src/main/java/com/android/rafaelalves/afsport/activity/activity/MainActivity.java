@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         startActivity(new Intent(this, LoginActivity.class));
-        // Iniciar a home.
 
         InicioFragment inicioFragment = new InicioFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -73,19 +72,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -109,31 +102,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this, CaixaActivity.class));
         } else if (id == R.id.nav_clientes) {
             startActivity(new Intent(this, ClientesActivity.class));
-            /*
-            ClientesFragment clientesFragment = new ClientesFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, clientesFragment);
-            fragmentTransaction.commit();
-            */
-
         } else if (id == R.id.nav_produtos) {
             startActivity(new Intent(this, ProdutosActivity.class));
-           /*
-            ProdutosFragment produtosFragment = new ProdutosFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, produtosFragment);
-            fragmentTransaction.commit();
-            */
-
         } else if (id == R.id.nav_vendas) {
             startActivity(new Intent(this, VendasActivity.class));
-            /*
-            VendasFragment vendasFragment = new VendasFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameConteudo, vendasFragment);
-            fragmentTransaction.commit();
-            */
-
         } else if (id == R.id.nav_sobre) {
             startActivity(new Intent(this, SobreActivity.class));
         }
@@ -142,10 +114,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /*private void isAutenticado() {
-        String key = preference.getString("KEY_AUTH", null);
-        if (key != null)
-            startActivity(new Intent(this, LoginActivity.class));
-    }*/
 }

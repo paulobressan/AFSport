@@ -1,6 +1,7 @@
 package com.android.rafaelalves.afsport.activity.web;
 
 import com.android.rafaelalves.afsport.activity.model.Auth;
+import com.android.rafaelalves.afsport.activity.model.Caixa;
 import com.android.rafaelalves.afsport.activity.model.Cliente;
 import com.android.rafaelalves.afsport.activity.model.Produto;
 
@@ -28,4 +29,7 @@ public interface API {
     @GET("produto")
     Call<List<Produto>> getAllProdutos(@Header("Authorization") String auth);
 
+    @Headers("Content-Type: application/json")
+    @GET("caixa")
+    Call<List<Caixa>> getAllCaixas(@Header("Authorization") String auth);
 }
