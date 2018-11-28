@@ -1,52 +1,80 @@
 package com.android.rafaelalves.afsport.activity.model;
 
-public class Produto {
+import java.io.Serializable;
 
-    private String codigoProduto;
-    private String nomeProduto;
-    private  String descricaoProduto;
-    private String valorProduto;
+public class Produto implements Serializable {
 
-    public Produto(){
+    private int idProduto;
+    private String nome;
+    private String descricao;
+    private double valorCompra;
+    private double valorVenda;
+    private Categoria categoria;
+    private boolean isAtivo;
 
+    public Produto(int idProduto, String nome, String descricao, double valorCompra, double valorVenda, Categoria categoria, boolean isAtivo) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.valorCompra = valorCompra;
+        this.valorVenda = valorVenda;
+        this.categoria = categoria;
+        this.isAtivo = isAtivo;
     }
 
-    public Produto(String codigoProduto, String nomeProduto, String descricaoProduto, String valorProduto) {
-        this.codigoProduto = codigoProduto;
-        this.nomeProduto = nomeProduto;
-        this.descricaoProduto = descricaoProduto;
-        this.valorProduto = valorProduto;
+    public int getIdProduto() {
+        return idProduto;
     }
 
-    public String getCodigoProduto() {
-        return codigoProduto;
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
 
-    public void setCodigoProduto(String codigoProduto) {
-        this.codigoProduto = codigoProduto;
+    public String getNome() {
+        return nome;
     }
 
-    public String getNomeProduto() {
-        return nomeProduto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public String getDescricaoProduto() {
-        return descricaoProduto;
+    public void setDescricao(String nescricao) {
+        this.descricao = nescricao;
     }
 
-    public void setDescricaoProduto(String descricaoProduto) {
-        this.descricaoProduto = descricaoProduto;
+    public double getValorCompra() {
+        return valorCompra;
     }
 
-    public String getValorProduto() {
-        return valorProduto;
+    public void setValorCompra(double valorCompra) {
+        this.valorCompra = valorCompra;
     }
 
-    public void setValorProduto(String valorProduto) {
-        this.valorProduto = valorProduto;
+    public double getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public boolean isAtivo() {
+        return isAtivo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        isAtivo = ativo;
     }
 }

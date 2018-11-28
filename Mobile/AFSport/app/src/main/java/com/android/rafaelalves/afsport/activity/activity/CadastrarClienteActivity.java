@@ -52,27 +52,4 @@ public class CadastrarClienteActivity extends AppCompatActivity {
 
         webClient = new WebClient();
     }
-
-    private void listarCidades(){
-        String key_auth = preferences.getString("KEY_AUTH", "");
-        this.webClient.getAllClientes(key_auth).enqueue(new Callback<List<Cliente>>() {
-            @Override
-            public void onResponse(@NonNull Call<List<Cliente>> call, @NonNull Response<List<Cliente>> response) {
-                adapterClientes.setListaClientes(response.body());
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<List<Cliente>> call, @NonNull Throwable t) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        t.getMessage(),
-                        Toast.LENGTH_SHORT
-                ).show();
-            }
-        });
-    }
-
-    private void CarregarCidades(){
-        ArrayAdapter<Cidade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-    }
 }

@@ -28,8 +28,4 @@ public interface API {
     @GET("produto")
     Call<List<Produto>> getAllProdutos(@Header("Authorization") String auth);
 
-    @Headers("Content-Type: application/json")
-    @GET("cidade")
-    Call<List<Produto>> getAllCidades(@Header("Authorization") String auth);
-
 }

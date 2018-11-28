@@ -10,14 +10,20 @@ import android.widget.TextView;
 import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.model.Produto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterProdutos extends RecyclerView.Adapter<AdapterProdutos.ViewHolderProdutos> {
 
     private List<Produto> listaProdutos;
 
-    public AdapterProdutos(List<Produto>lista){
-        this.listaProdutos = lista;
+    public AdapterProdutos() {
+        this.listaProdutos = new ArrayList<>();
+    }
+
+    public void setListaProdutos(List<Produto> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+        this.notifyDataSetChanged();
     }
 
     @NonNull
@@ -31,10 +37,14 @@ public class AdapterProdutos extends RecyclerView.Adapter<AdapterProdutos.ViewHo
     public void onBindViewHolder(@NonNull ViewHolderProdutos holder, int position) {
         Produto produto = listaProdutos.get(position);
 
-        holder.codigoProduto.setText(produto.getCodigoProduto());
-        holder.nomeProduto.setText(produto.getNomeProduto());
-        holder.descricaoProduto.setText(produto.getDescricaoProduto());
-        holder.valorProduto.setText(produto.getValorProduto());
+        holder.codigoProduto.setText(String.valueOf(produto.getIdProduto()));
+        holder.nomeProduto.setText(produto.getNome());
+        holder.descricaoProduto.setText(produto.getDescricao());
+        holder.valorProduto.setText("R$: " + String.valueOf(produto.getValorVenda()));
+    }
+
+    public Produto getItemPosition(int position){
+        return listaProdutos.get(position);
     }
 
     @Override

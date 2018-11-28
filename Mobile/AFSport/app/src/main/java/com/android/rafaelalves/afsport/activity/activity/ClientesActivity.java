@@ -50,12 +50,8 @@ public class ClientesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerClientes);
 
-        //Listar Clientes
-
         this.listarClientes();
         this.CarregarLista();
-
-        //Evento de Click
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
@@ -90,16 +86,12 @@ public class ClientesActivity extends AppCompatActivity {
                 )
         );
 
-
-        // Buttons
         Button addCliente = findViewById(R.id.btnAddCliente);
         Button editarCliente = findViewById(R.id.btnEditarProduto);
         Button apagarCliente = findViewById(R.id.btnApagarProduto);
         TextView txtClientes = findViewById(R.id.textViewCliente);
-
     }
 
-    // Metodos dos Buttons
     public void CadastrarCliente(View view) {
         Intent intent = new Intent(this, CadastrarClienteActivity.class);
         intent.putExtra("cliente", clienteSelecionado);
