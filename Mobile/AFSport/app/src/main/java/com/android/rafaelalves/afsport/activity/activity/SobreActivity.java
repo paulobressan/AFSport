@@ -15,12 +15,12 @@ public class SobreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_sobre);
 
-        //String descricao = "";
+        String descricao = "O Software foi desenvolvido...";
 
         View sobre = new AboutPage(this)
                 .isRTL(false)
-                //.setImage(R.drawable.logo)
-                //.setDescription(descricao)
+                .setImage(R.drawable.logo_azul)
+                .setDescription(descricao)
                 .addGroup("Fale conosco")
                 .addEmail("suporte@afsport.com.br","Contate-nos")
                 .addWebsite("unip.br","Acesse Nosso Site")
