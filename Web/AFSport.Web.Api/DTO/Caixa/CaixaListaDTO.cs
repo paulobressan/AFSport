@@ -9,5 +9,12 @@ namespace AFSport.Web.Api.DTO.Caixa
         public decimal ValorInicial { get; private set; }
         public DateTime Data { get; set; }
         public UsuarioListaDTO Usuario { get; set; }
+        public string DataString
+        {
+            get
+            {
+                return Data.ToShortDateString();
+            }
+        }
     }
 }

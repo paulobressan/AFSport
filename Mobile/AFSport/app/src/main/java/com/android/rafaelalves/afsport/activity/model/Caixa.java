@@ -5,7 +5,7 @@ import java.util.Date;
 public class Caixa {
     private int idCaixa;
     private double valorInicial;
-    private Date data;
+    private String dataString;
     private Usuario usuario;
 
     public int getIdCaixa() {
@@ -24,12 +24,12 @@ public class Caixa {
         this.valorInicial = valorInicial;
     }
 
-    public Date getData() {
-        return data;
+    public String getDataString() {
+        return dataString;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDataString(String dataString) {
+        this.dataString = dataString;
     }
 
     public Usuario getUsuario() {

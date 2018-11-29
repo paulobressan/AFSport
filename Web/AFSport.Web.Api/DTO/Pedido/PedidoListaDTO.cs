@@ -11,6 +11,32 @@ namespace AFSport.Web.Api.DTO.Pedido
         public DateTime Data { get; set; }
         public ClienteListaDTO Cliente { get; set; }
         public UsuarioListaDTO Usuario { get; set; }
-        public PedidoStatus PedidoStatus { get; set; }
+        public PedidoStatus Status { get; set; }
+
+        public string DataString
+        {
+            get
+            {
+                return Data.ToShortDateString();
+            }
+        }
+
+        public string StatusString
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case PedidoStatus.Aberto:
+                        return "Aberto";
+                    case PedidoStatus.Cancelado:
+                        return "Cancelado";
+                    case PedidoStatus.Finalizado:
+                        return "Finalizado";
+                    default:
+                        return "Error";
+                }
+            }
+        }
     }
 }

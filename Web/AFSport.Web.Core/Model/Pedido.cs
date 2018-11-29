@@ -8,7 +8,7 @@ namespace AFSport.Web.Core.Model
     {
         public Pedido()
         {
-           
+
         }
 
         public int IdPedido { get; set; }

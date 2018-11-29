@@ -26,10 +26,10 @@ public class SobreActivity extends AppCompatActivity {
                 .addWebsite("unip.br","Acesse Nosso Site")
                 .addGroup("Acesse Nossas Redes Sociais")
                 .addGitHub("paulobressan/AFSport","GitHub")
-                .addFacebook("facebook","Facebook")
-                .addTwitter("twitter","Twitter")
-                .addInstagram("instagram","Instagram")
-                .addYoutube("youtube","Youtube")
+                //.addFacebook("facebook","Facebook")
+                //.addTwitter("twitter","Twitter")
+                //.addInstagram("instagram","Instagram")
+                //.addYoutube("youtube","Youtube")
                 //.addPlayStore("","")
                 .create();
         setContentView(sobre);

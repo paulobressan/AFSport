@@ -5,10 +5,14 @@ using AFSport.Web.Api.DTO.Pedido;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AFSport.Web.Api.Controllers
 {
+    [Authorize]
+    [ApiController]
+    [Route("api/[controller]")]
     public class PedidoController : BaseController
     {
         #region Objetos
@@ -30,13 +34,13 @@ namespace AFSport.Web.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(_mapper.Map<List<Pedido>>(await _pedidoService.SelecionarTodos()));
+            return Ok(_mapper.Map<List<PedidoListaDTO>>(await _pedidoService.SelecionarTodos()));
         }
 
         [HttpGet("{idPedido}")]
         public async Task<IActionResult> Get(int idPedido)
         {
-            return Ok(_mapper.Map<List<Pedido>>(await _pedidoService.SelecionarId(idPedido)));
+            return Ok(_mapper.Map<List<PedidoListaDTO>>(await _pedidoService.SelecionarId(idPedido)));
         }
 
         [HttpGet("itens-pedido/{idPedido}")]

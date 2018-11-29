@@ -71,7 +71,7 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<IEnumerable<Pedido>> SelecionarTodos()
         {
-            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data,c.idCliente, p.status, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
+            return await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"select p.idPedido, p.data,p.status,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
                 order by p.data desc;", (pedido, cliente, usuario) =>

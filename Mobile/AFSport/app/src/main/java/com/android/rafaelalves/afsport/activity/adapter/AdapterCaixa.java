@@ -30,7 +30,7 @@ public class AdapterCaixa extends RecyclerView.Adapter<AdapterCaixa.ViewHolderCa
     @NonNull
     @Override
     public ViewHolderCaixa onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemListaCaixa = LayoutInflater.from(parent.getContext()).inflate(R.layout.clientes_adapter, parent, false);
+        View itemListaCaixa = LayoutInflater.from(parent.getContext()).inflate(R.layout.caixa_adapter, parent, false);
         return new ViewHolderCaixa(itemListaCaixa);
     }
 
@@ -39,9 +39,9 @@ public class AdapterCaixa extends RecyclerView.Adapter<AdapterCaixa.ViewHolderCa
 
         Caixa caixa = listaCaixas.get(position);
 
-        holder.data.setText(caixa.getData().toString());
+        holder.data.setText(caixa.getDataString());
         holder.codigo.setText(String.valueOf(caixa.getIdCaixa()));
-        holder.valorInicial.setText(String.valueOf(caixa.getValorInicial()));
+        holder.valorInicial.setText("R$: " + String.valueOf(caixa.getValorInicial()));
         holder.usuario.setText(caixa.getUsuario().getNome());
     }
 
@@ -65,9 +65,11 @@ public class AdapterCaixa extends RecyclerView.Adapter<AdapterCaixa.ViewHolderCa
             valorInicial = itemView.findViewById(R.id.txtValorInicial);
             usuario = itemView.findViewById(R.id.txtUsuario);
         }
-    }
 
+    }
     public Caixa getItemPosition(int position){
         return listaCaixas.get(position);
     }
+
+
 }

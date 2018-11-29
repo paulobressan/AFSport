@@ -14,10 +14,8 @@ import android.widget.Toast;
 import com.android.rafaelalves.afsport.R;
 import com.android.rafaelalves.afsport.activity.adapter.AdapterCaixa;
 import com.android.rafaelalves.afsport.activity.model.Caixa;
-import com.android.rafaelalves.afsport.activity.model.Usuario;
 import com.android.rafaelalves.afsport.activity.web.WebClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -31,6 +29,7 @@ public class CaixaActivity extends AppCompatActivity {
     SharedPreferences preference;
     private AdapterCaixa adapterCaixas;
     private RecyclerView recyclerView;
+    private Caixa caixaSelecionado;
 
     public CaixaActivity() {
         this.webClient = new WebClient();
@@ -51,14 +50,7 @@ public class CaixaActivity extends AppCompatActivity {
 
     public void listarCaixas() {
         String key_auth = preference.getString("KEY_AUTH", "");
-        Caixa caixa = new Caixa();
-        caixa.setIdCaixa(1);
-        caixa.setUsuario(new Usuario());
-        caixa.setValorInicial(100);
-        List<Caixa> caixas  = new ArrayList<Caixa>();
-        caixas.add(caixa);
-        adapterCaixas.setListaCaixas(caixas);
-        /*this.webClient.getAllCaixas(key_auth).enqueue(new Callback<List<Caixa>>() {
+        this.webClient.getAllCaixas(key_auth).enqueue(new Callback<List<Caixa>>() {
             @Override
             public void onResponse(@NonNull Call<List<Caixa>> call, @NonNull Response<List<Caixa>> response) {
                 adapterCaixas.setListaCaixas(response.body());
@@ -72,7 +64,7 @@ public class CaixaActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT
                 ).show();
             }
-        });*/
+        });
     }
 
     private void CarregarLista() {
