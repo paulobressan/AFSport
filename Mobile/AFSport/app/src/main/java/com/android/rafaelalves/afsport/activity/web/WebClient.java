@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WebClient {
 
-    private final String url = "https://9e682c0a.ngrok.io/api/";
+    private final String url = "https://d29eeeab.ngrok.io/api/";
     private Retrofit retrofit;
 
     public Call<ResponseBody> getAuth(Auth auth) {

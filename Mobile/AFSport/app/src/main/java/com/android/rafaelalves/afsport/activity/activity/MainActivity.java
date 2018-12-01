@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, CadastrarPedidoActivity.class));
             }
         });
 
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this, ClientesActivity.class));
         } else if (id == R.id.nav_produtos) {
             startActivity(new Intent(this, ProdutosActivity.class));
-        } else if (id == R.id.nav_vendas) {
+        } else if (id == R.id.nav_pedidos) {
             startActivity(new Intent(this, VendasActivity.class));
         } else if (id == R.id.nav_sobre) {
             startActivity(new Intent(this, SobreActivity.class));

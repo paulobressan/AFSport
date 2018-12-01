@@ -6,6 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".activity.activity.VendasActivity">
 
+    <Button
+        android:id="@+id/btnAddPedido"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_add_verde_24dp"
+        android:onClick="CadastrarPedido"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerVendas"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditarPedido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEditarPedido"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_edit_orange_24dp"
+        android:onClick="EditarPedido"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerVendas"
+        app:layout_constraintEnd_toStartOf="@+id/btnApagarPedido"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnApagarPedido"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_delete_red_24dp"
+        android:onClick="DeletarPedido"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerVendas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/textViewVendas"
         android:layout_width="wrap_content"

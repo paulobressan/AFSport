@@ -1,5 +1,6 @@
 package com.android.rafaelalves.afsport.activity.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -71,5 +73,16 @@ public class VendasActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter(adapterPedido);
+    }
+    public void CadastrarPedido(View view) {
+        startActivity(new Intent(this, CadastrarPedidoActivity.class));
+    }
+
+    public void EditarPedido(View view) {
+
+    }
+
+    public void DeletarPedido(View view) {
+
     }
 }
