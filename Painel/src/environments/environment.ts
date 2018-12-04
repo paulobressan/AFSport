@@ -8,5 +8,6 @@ export const environment = {
   cliente: 'http://localhost:4000/api/cliente',
   estoque: 'http://localhost:4000/api/estoque',
   caixa: 'http://localhost:4000/api/caixa',
-  movimentacao: 'http://localhost:4000/api/movimentacao'
+  movimentacao: 'http://localhost:4000/api/movimentacao',
+  pedido: 'http://localhost:4000/api/pedido'
 };

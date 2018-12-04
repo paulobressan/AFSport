@@ -19,14 +19,14 @@ namespace AFSport.Web.Core.Interface.Service
         /// </summary>
         /// <param name="itemPedido"></param>
         /// <returns></returns>
-        Task<ItemPedido> Inserir(ItemPedido itemPedido);
+        Task<ItemPedido> Inserir(int idPedido, ItemPedido itemPedido);
         /// <summary>
         /// Alterar item pedido
         /// </summary>
         /// <param name="itemPedido"></param>
         /// <param name="idItemPedido"></param>
         /// <returns></returns>
-        Task<ItemPedido> Alterar(int idItemPedido, ItemPedido itemPedido);
+        Task<ItemPedido> Alterar(int idPedido, int idItemPedido, ItemPedido itemPedido);
         /// <summary>
         /// Remover item pedido
         /// </summary>

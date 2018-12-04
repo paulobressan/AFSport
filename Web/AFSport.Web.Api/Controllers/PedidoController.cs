@@ -30,6 +30,7 @@ namespace AFSport.Web.Api.Controllers
         }
         #endregion
 
+        #region Pedido
         #region Get
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -38,16 +39,11 @@ namespace AFSport.Web.Api.Controllers
         }
 
         [HttpGet("{idPedido}")]
-        public async Task<IActionResult> Get(int idPedido)
+        public async Task<IActionResult> Get([FromRoute]int idPedido)
         {
             return Ok(_mapper.Map<List<PedidoListaDTO>>(await _pedidoService.SelecionarId(idPedido)));
         }
 
-        [HttpGet("itens-pedido/{idPedido}")]
-        public async Task<IActionResult> GetItensPedido(int idPedido)
-        {
-            return Ok(_mapper.Map<List<Pedido>>(await _itemPedidoService.SelecionarPorPedido(idPedido)));
-        }
         #endregion
 
         #region Post
@@ -59,33 +55,40 @@ namespace AFSport.Web.Api.Controllers
             return BadRequest();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> PostItemPedido([FromBody] ItemPedidoSalvarDTO itemPedido)
-        {
-            if (ModelState.IsValid)
-                return Ok(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Inserir(_mapper.Map<ItemPedido>(itemPedido))));
-            return BadRequest();
-        }
         #endregion
         #region Put
         [HttpPut("{idPedido}")]
-        public async Task<IActionResult> Put(int idPedido, [FromBody] PedidoSalvarDTO pedido)
+        public async Task<IActionResult> Put([FromRoute]int idPedido, [FromBody] PedidoSalvarDTO pedido)
         {
             if (ModelState.IsValid)
                 return Accepted(_mapper.Map<PedidoListaDTO>(await _pedidoService.Alterar(idPedido, _mapper.Map<Pedido>(pedido))));
             return BadRequest();
         }
+        #endregion
+        #endregion
 
-        [HttpPut("item-pedido/{idItemPedido}")]
-        public async Task<IActionResult> PostItemPedido(int idItemPedido, [FromBody] ItemPedidoSalvarDTO itemPedido)
+        #region PedidoItem
+        [HttpGet("{idPedido}/itens-pedido")]
+        public async Task<IActionResult> GetItensPedido([FromRoute]int idPedido)
+        {
+            return Ok(_mapper.Map<List<Pedido>>(await _itemPedidoService.SelecionarPorPedido(idPedido)));
+        }
+
+        [HttpPut("{idPedido}/item-pedido/{idItemPedido}")]
+        public async Task<IActionResult> PutItemPedido([FromRoute] int idPedido, [FromRoute]int idItemPedido, [FromBody] ItemPedidoSalvarDTO itemPedido)
         {
             if (ModelState.IsValid)
-                return Accepted(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Alterar(idItemPedido, _mapper.Map<ItemPedido>(itemPedido))));
+                return Accepted(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Alterar(idPedido, idItemPedido, _mapper.Map<ItemPedido>(itemPedido))));
             return BadRequest();
         }
-        #endregion
-        #region Delete
 
+        [HttpPost("{idPedido}/itens-pedido")]
+        public async Task<IActionResult> PostItemPedido([FromRoute]int idPedido, [FromBody] ItemPedidoSalvarDTO itemPedido)
+        {
+            if (ModelState.IsValid)
+                return Ok(_mapper.Map<ItemPedidoListaDTO>(await _itemPedidoService.Inserir(idPedido, _mapper.Map<ItemPedido>(itemPedido))));
+            return BadRequest();
+        }
         #endregion
     }
 }

@@ -28,12 +28,13 @@ namespace AFSport.Web.Core.Service
         }
         #endregion
 
-        public async Task<ItemPedido> Alterar(int idItemPedido, ItemPedido itemPedido)
+        public async Task<ItemPedido> Alterar(int idPedido, int idItemPedido, ItemPedido itemPedido)
         {
             try
             {
                 await ValidarItemProdutoExistente(idItemPedido);
-                await ValidarPedidoExistente(itemPedido.IdPedido);
+                await ValidarPedidoExistente(idPedido);
+                itemPedido.IdPedido = idPedido;
                 await ValidarProdutoExistente(itemPedido.IdProduto);
                 return await _itemPedidoRepository.Alterar(itemPedido);
             }
@@ -43,11 +44,12 @@ namespace AFSport.Web.Core.Service
             }
         }
 
-        public async Task<ItemPedido> Inserir(ItemPedido itemPedido)
+        public async Task<ItemPedido> Inserir(int idPedido, ItemPedido itemPedido)
         {
             try
             {
-                await ValidarPedidoExistente(itemPedido.IdPedido);
+                await ValidarPedidoExistente(idPedido);
+                itemPedido.IdPedido = idPedido;
                 await ValidarProdutoExistente(itemPedido.IdProduto);
                 return await _itemPedidoRepository.Inserir(itemPedido);
             }

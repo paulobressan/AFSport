@@ -57,6 +57,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'pedido',
+        loadChildren: './pedidos/pedidos.module#PedidosModule',
+        canActivate: [AuthGuard]
+    },
+    {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginGuard]

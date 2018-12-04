@@ -40,7 +40,7 @@ namespace AFSport.Web.Api.Controllers
             return Ok(_mapper.Map<CaixaListaDTO>(await _caixaService.SelecionarId(id)));
         }
 
-        [HttpGet("data/{id}")]
+        [HttpGet("data/{dateTime}")]
         public async Task<IActionResult> GetPorData(DateTime dateTime)
         {
             return Ok(_mapper.Map<CaixaListaDTO>(await _caixaService.SelecionarPorData(dateTime)));
