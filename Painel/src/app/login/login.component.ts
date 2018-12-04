@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['']);
             }, err => {
                 this.loadButton.nativeElement.style.display = 'none';
-                swal("Problemas para enviar!", JSON.parse(err.error).msg, "error");
+                swal("Problemas para enviar!", err.error.msg ? JSON.parse(err.error).msg : 'Problema de conexão. Tente novamente mais tarde!', "error");
             });
     }
 }
