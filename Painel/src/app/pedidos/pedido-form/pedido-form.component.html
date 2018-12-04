@@ -1,0 +1,68 @@
+<div>
+    <h2>Pedido</h2>
+    <hr>
+    <form [formGroup]="pedidoForm" (submit)="salvar()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="idCliente">Cliente *</label>
+                    <select #clienteInput formControlName="idCliente" id="idCliente" class="form-control">
+                        <option *ngFor="let cliente of clientes" [value]="cliente.idCliente">
+                            {{cliente.idCliente}} - {{cliente.nome}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6>Itens do Pedido</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Valor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let produto of produtos">
+                            <td>{{produto.idProduto}}</td>
+                            <td>{{produto.nome}}</td>
+                            <td>R$:{{produto.valorVenda}}</td>
+                            <td>
+                                <span class="pl-2 btn-remover" attr.title="Remover {{produto.nome}}" (click)="remover(operacao)"
+                                    style="cursor: pointer; font-size: 14pt"><i class="fa fa-trash"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="idProduto">Código Produto *</label>
+                        <input id="idProduto" type="number" class="form-control text-right">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="quantidade">Qtd.</label>
+                        <input type="number" class="form-control text-right">
+                    </div>
+                    <div class="col-md-2">
+                       <button class="btn">
+                            <i class="fa fas fa-search-plus"></i>
+                       </button>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <a [routerLink]="['/pedido']" class="mr-2 btn btn-danger">Voltar</a>
+            <button [disabled]="pedidoForm.invalid" type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</div>

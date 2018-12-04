@@ -36,7 +36,7 @@ namespace AFSport.Web.Api.Controllers
             return Ok(_mapper.Map<ClienteListaDTO>(await _clienteService.SelecionarId(id)));
         }
 
-        [HttpGet("ativas")]
+        [HttpGet("ativos")]
         public async Task<IActionResult> GetAtivas()
         {
             return Ok(_mapper.Map<List<ClienteListaDTO>>(await _clienteService.SelecionarTodosAtivos()));

@@ -7,9 +7,15 @@
         <ul class="list-unstyled components">
             <p>Módulo Administrativo</p>
             <li>
-                <a href="#">
+                <a [routerLink]="['/']">
                     <i class="fa fas fa-columns"></i>
                     Dashboard
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/pedido']">
+                    <i class="fa fas fa-shopping-cart"></i>
+                    Pedidos
                 </a>
             </li>
             <li>

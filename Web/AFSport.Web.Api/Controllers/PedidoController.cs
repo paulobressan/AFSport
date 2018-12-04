@@ -51,7 +51,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Post([FromBody] PedidoSalvarDTO pedido)
         {
             if (ModelState.IsValid)
+            {
+                this.DecodeToken(HttpContext);
+                pedido.IdUsuario = userLogged.Id;
                 return Ok(_mapper.Map<PedidoListaDTO>(await _pedidoService.Inserir(_mapper.Map<Pedido>(pedido))));
+            }
             return BadRequest();
         }
 
@@ -61,7 +65,11 @@ namespace AFSport.Web.Api.Controllers
         public async Task<IActionResult> Put([FromRoute]int idPedido, [FromBody] PedidoSalvarDTO pedido)
         {
             if (ModelState.IsValid)
+            {
+                this.DecodeToken(HttpContext);
+                pedido.IdUsuario = userLogged.Id;
                 return Accepted(_mapper.Map<PedidoListaDTO>(await _pedidoService.Alterar(idPedido, _mapper.Map<Pedido>(pedido))));
+            }
             return BadRequest();
         }
         #endregion

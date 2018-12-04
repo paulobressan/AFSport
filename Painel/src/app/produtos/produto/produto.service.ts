@@ -19,4 +19,8 @@ export class ProdutoService extends BaseService<Produto> {
     listarProdutoComEstoque(): Observable<Produto[]> {
         return this.http.get<Produto[]>(`${environment.produto}/comEstoque`);
     }
+
+    listarAtivos(): Observable<Produto[]>{
+        return this.http.get<Produto[]>(`${environment.produto}/ativo`);
+    }
 }

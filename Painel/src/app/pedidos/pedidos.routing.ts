@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { PedidoListComponent } from './pedido-list/pedido-list.component';
 import { PedidoListResolve } from './pedido-list/pedido-list.revolve';
+import { PedidoFormComponent } from './pedido-form/pedido-form.component';
+import { PedidoFormResolve } from './pedido-form/pedido-form.resolve';
+import { ClientesAtivosResolve } from '../clientes/cliente/clientes-ativos.resolve';
 
 const routes: Routes = [
     {
@@ -12,6 +15,14 @@ const routes: Routes = [
             pedidos: PedidoListResolve
         }
     },
+    {
+        path: 'novo-pedido',
+        component: PedidoFormComponent,
+        resolve: {
+            pedido: PedidoFormResolve,
+            clientes: ClientesAtivosResolve
+        }
+    }
 ];
 
 @NgModule({
