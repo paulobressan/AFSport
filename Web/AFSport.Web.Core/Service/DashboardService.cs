@@ -2,30 +2,29 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AFSport.Web.Core.Interface.Repository;
+using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
 
 namespace AFSport.Web.Core.Service
 {
-    public class DashboardService
+    public class DashboardService : IDashboardService
     {
         #region Objetos
-        private readonly IMovimentacaoRepository _movimentacaoRepository;
+        private readonly IDashboardRepository _dashboardRepository;
         #endregion
 
         #region Construtor
-        public DashboardService(IMovimentacaoRepository movimentacaoRepository)
+        public DashboardService(IDashboardRepository dashboardRepository)
         {
-            this._movimentacaoRepository = movimentacaoRepository;
+            this._dashboardRepository = dashboardRepository;
         }
         #endregion
 
-        public async Task<List<Dashboard>> GraficoDeMovimentacaoMensal()
+        public async Task<IList<Dashboard>> GraficoMovimentacaoMensal()
         {
             try
             {
-                var dataInicial = Convert.ToDateTime($"01/{DateTime.Now.Month}/{DateTime.Now.Year}");
-                var movimentações await _movimentacaoRepository.SelecionarPorData(dataInicial, DateTime.Now) ??
-                    throw new KeyNotFoundException("Movimentacao não encontrada");
+                return (IList<Dashboard>)await _dashboardRepository.GraficoMovimentacaoMensal();
             }
             catch (Exception ex)
             {

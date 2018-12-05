@@ -3,6 +3,7 @@ using AFSport.Web.Api.DTO.Caixa;
 using AFSport.Web.Api.DTO.Categoria;
 using AFSport.Web.Api.DTO.Cidade;
 using AFSport.Web.Api.DTO.Cliente;
+using AFSport.Web.Api.DTO.Dashboard;
 using AFSport.Web.Api.DTO.Estado;
 using AFSport.Web.Api.DTO.Estoque;
 using AFSport.Web.Api.DTO.ItemPedido;
@@ -82,6 +83,12 @@ namespace AFSport.Web.Api.Mapper
             #region Caixa
             CreateMap<Caixa, CaixaListaDTO>();
             CreateMap<CaixaSalvarDTO, Caixa>();
+            #endregion
+
+            #region Dashboard
+            CreateMap<Dashboard, DashboardDTO>()
+                .ForMember(dto => dto.data, d => d.MapFrom(dash => dash.data.ToShortDateString()))
+                .ForMember(dto => dto.ValorFormat, d => d.MapFrom(dash => string.Format("{0:C}", dash.Valor)));
             #endregion
         }
     }
