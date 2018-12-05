@@ -56,21 +56,4 @@ public class Pedido {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-    /*public String getStatus() {
-        switch (status) {
-            case 0:
-                return "Cancelado";
-            case 1:
-                return "Aberto";
-            case 2:
-                return "Finalizado";
-            default:
-                return "Error";
-        }
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }*/
 }
