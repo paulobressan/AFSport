@@ -20,13 +20,6 @@ export class HomeComponent implements OnInit {
 
     columnChart = {
         chartType: 'ColumnChart',
-        dataTable: this.graficoMovimentacao,
-        options: {
-            title: "Density of Precious Metals, in g/cm^3",
-            width: 600,
-            height: 400,
-            bar: { groupWidth: "95%" },
-            legend: { position: "none" },
-        }
+        dataTable: this.graficoMovimentacao
     }
 }
