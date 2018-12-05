@@ -63,6 +63,16 @@ namespace AFSport.Web.Core.Repository
                 .SingleOrDefault();
         }
 
+        public async Task<IEnumerable<Dashboard>> SelecionarPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+            return await _context.QueryAsync<Dashboard>(@"select m.data, (select count(*) from movimentacao where data = m.data) as qtd
+from movimentacao m
+inner join usuario u on m.idUsuario = u.idUsuario
+inner join operacao o on m.idOperacao = o.idOperacao
+where m.data between @dataInicial and @dataFinal group by m.data;", new{dataInicial, dataFinal});
+
+        }
+
         public async Task<IEnumerable<Movimentacao>> SelecionarTodos()
         {
             return await _context.QueryAsync<Movimentacao, Usuario, Operacao, Movimentacao>(@"select idMovimentacao, m.data, m.valor, u.idUsuario, u.nome, u.email, u.login, u.isAtivo, o.idOperacao, o.nome, o.descricao, o.isAtivo from movimentacao m

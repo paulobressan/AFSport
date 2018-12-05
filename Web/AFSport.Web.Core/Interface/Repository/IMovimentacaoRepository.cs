@@ -20,6 +20,13 @@ namespace AFSport.Web.Core.Interface.Repository
         /// <returns></returns>
         Task<Movimentacao> SelecionarId(int id);
         /// <summary>
+        /// Selecionar movimentações por intervalo de data
+        /// </summary>
+        /// <param name="dataInicial"></param>
+        /// <param name="dataFinal"></param>
+        /// <returns></returns>
+       Task<IEnumerable<Dashboard>> SelecionarPorData(DateTime dataInicial, DateTime dataFinal);
+        /// <summary>
         /// Inserir nova movimentação
         /// </summary>
         /// <param name="movimentacao"></param>

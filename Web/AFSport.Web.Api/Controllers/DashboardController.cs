@@ -1,3 +1,8 @@
+using AFSport.Web.Core.Interface.Service;
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
 namespace AFSport.Web.Api.Controllers
 {
     [Authorize]
@@ -6,12 +11,16 @@ namespace AFSport.Web.Api.Controllers
     public class DashboardController: BaseController
     {
         #region Objetos
-        private readonly IClienteService _clienteService;
+        private readonly IMovimentacaoService _movimentacaoService;
         #endregion
 
-        public DashboardController(IMapper mapper, IClienteService clienteService) : base(mapper)
+        public DashboardController(IMapper mapper, IMovimentacaoService movimentacaoService) : base(mapper)
         {
-            this._clienteService = clienteService;
+            this._movimentacaoService = movimentacaoService;
         }
+
+        #region Get
+        
+        #endregion
     }
 }
