@@ -39,3 +39,17 @@ C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Se
 C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
 C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.dll
 C:\Users\Paulo Bressan\source\repos\AFSport\AFSport.Service\obj\Debug\AFSport.Service.pdb
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\obj\Debug\AFSport.Service.csprojAssemblyReference.cache
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\obj\Debug\AFSport.Service.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\AFSport.Service.dll.config
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\AFSport.Service.dll
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\AFSport.Service.pdb
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\Dapper.dll
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\Google.Protobuf.dll
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\MySql.Data.dll
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\Dapper.xml
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\Google.Protobuf.xml
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\bin\Debug\MySql.Data.xml
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\obj\Debug\AFSport.Service.csproj.CopyComplete
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\obj\Debug\AFSport.Service.dll
+C:\Users\user\source\repos\AFSport\Desktop\AFSport.Service\obj\Debug\AFSport.Service.pdb

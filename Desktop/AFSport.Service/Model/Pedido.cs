@@ -1,4 +1,5 @@
-﻿using AFSport.Service.Repository;
+﻿using AFSport.Service.Enum;
+using AFSport.Service.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,7 @@ namespace AFSport.Service.Model
         public Cliente Cliente { get; set; }
         public int IdUsuario { get; set; }
         public Usuario Usuario { get; set; }
-        public int IdStatus { get; set; }
-        public Pedido_Status PedidoStatus { get; set; }
+        public PedidoStatus Status { get; set; }
         public List<ItemPedido> ItensPedido { get; set; }
 
         public decimal CalcularPedido()

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GridPesq = new System.Windows.Forms.DataGridView();
+            this.ToolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PedidoStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.pnlNavBar.SuspendLayout();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPesq)).BeginInit();
@@ -125,7 +125,7 @@
             // 
             // PedidoStatus
             // 
-            this.PedidoStatus.DataPropertyName = "PedidoStatus";
+            this.PedidoStatus.DataPropertyName = "Status";
             this.PedidoStatus.HeaderText = "Status";
             this.PedidoStatus.Name = "PedidoStatus";
             this.PedidoStatus.ReadOnly = true;
@@ -149,10 +149,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridPesq;
+        private System.Windows.Forms.ToolTip ToolTipText;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn PedidoStatus;
-        private System.Windows.Forms.ToolTip ToolTipText;
     }
 }

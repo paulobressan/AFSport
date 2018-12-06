@@ -10,7 +10,7 @@ namespace AFSport.Service.Model
     {
         public Cliente() : base()
         {
-
+            IsAtivo = true;
         }
 
         public Cliente(string nome, string logradouro, string bairro, int numero, int idCidade) : base(nome)
@@ -19,6 +19,7 @@ namespace AFSport.Service.Model
             this.Bairro = bairro;
             this.Numero = numero;
             this.IdCidade = idCidade;
+            IsAtivo = true;
         }
 
         public int IdCliente { get; set; }
@@ -27,5 +28,6 @@ namespace AFSport.Service.Model
         public string Bairro { get; set; }
         public int IdCidade { get; set; }
         public Cidade Cidade { get; set; }
+        public bool IsAtivo { get; set; }
     }
 }

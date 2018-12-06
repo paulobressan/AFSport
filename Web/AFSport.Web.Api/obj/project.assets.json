@@ -4492,7 +4492,7 @@
       ]
     },
     "Dapper/1.50.5": {
-      "sha512": "AzAdZ9fEzUtav3Sbc5CMgz5O2oYkc5g1r+g1h/Vn+wqcInII+xtNEfyZryeW90Wq72bxjEBJhe18j+2SrGrc5A==",
+      "sha512": "1vPpX7WQmQCIb7rwlGOUoVs/yWZhVKvdhuG7WrJV+V+qsP8btnrrCqVWHENAlJxBAnUw5rhWfmuba9/Egei9MA==",
       "type": "package",
       "path": "dapper/1.50.5",
       "files": [
@@ -4509,7 +4509,7 @@
       ]
     },
     "Google.Protobuf/3.5.1": {
-      "sha512": "j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
+      "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
       "type": "package",
       "path": "google.protobuf/3.5.1",
       "files": [
@@ -11882,35 +11882,37 @@
     ]
   },
   "packageFolders": {
-    "/home/paulo/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/paulo/data/myprojects/AFSport/Web/AFSport.Web.Api/AFSport.Web.Api.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\AFSport\\Web\\AFSport.Web.Api\\AFSport.Web.Api.csproj",
       "projectName": "AFSport.Web.Api",
-      "projectPath": "/home/paulo/data/myprojects/AFSport/Web/AFSport.Web.Api/AFSport.Web.Api.csproj",
-      "packagesPath": "/home/paulo/.nuget/packages/",
-      "outputPath": "/home/paulo/data/myprojects/AFSport/Web/AFSport.Web.Api/obj/",
+      "projectPath": "C:\\Users\\user\\source\\repos\\AFSport\\Web\\AFSport.Web.Api\\AFSport.Web.Api.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\AFSport\\Web\\AFSport.Web.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/paulo/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "/home/paulo/data/myprojects/AFSport/Web/AFSport.Web.Core/AFSport.Web.Core.csproj": {
-              "projectPath": "/home/paulo/data/myprojects/AFSport/Web/AFSport.Web.Core/AFSport.Web.Core.csproj"
+            "C:\\Users\\user\\source\\repos\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\repos\\AFSport\\Web\\AFSport.Web.Core\\AFSport.Web.Core.csproj"
             }
           }
         }
