@@ -21,8 +21,8 @@ namespace AFSport.Service.Repository
         {
             var result = obj.IdCliente == 0
                 ? await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"insert into cliente(idCidade, nome, logradouro, bairro, numero, email) values (@idCidade, @nome, @logradouro, @bairro, @numero, @email);
-                    select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"insert into cliente(idCidade, nome, logradouro, bairro, numero, email, isAtivo) values (@idCidade, @nome, @logradouro, @bairro, @numero, @email, @isAtivo);
+                    select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado
@@ -33,8 +33,8 @@ namespace AFSport.Service.Repository
                         return cliente;
                     }, obj, splitOn: "idCidade, IdEstado")
                 : await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"update cliente set idCidade = @idCidade, nome = @nome, logradouro = @logradouro, bairro = @bairro, numero = @numero, email = @email where idCliente = @idCliente;
-                        select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"update cliente set idCidade = @idCidade, nome = @nome, logradouro = @logradouro, bairro = @bairro, numero = @numero, email = @email, isAtivo = @isAtivo where idCliente = @idCliente;
+                        select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                         from cliente as c
                         inner join cidade ci on c.idCidade = ci.idCidade
                         inner join estado e on ci.idEstado = e.idEstado
@@ -50,7 +50,7 @@ namespace AFSport.Service.Repository
         public async Task<Cliente> SelecionarId(int id)
         {
             var result = await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
@@ -66,7 +66,7 @@ namespace AFSport.Service.Repository
         public async Task<List<Cliente>> SelecionarTodos(bool selecionarTodos)
         {
             var result = await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
@@ -82,7 +82,7 @@ namespace AFSport.Service.Repository
         public async Task<List<Cliente>> SelecionarPorCidade(int idCidade)
         {
             var result = await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 
@@ -98,7 +98,7 @@ namespace AFSport.Service.Repository
         public async Task<List<Cliente>> SelecionarPesquisaNomeId(string valor)
         {
             var result = await _context.QueryAsync<Cliente, Cidade, Estado, Cliente>(
-                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
+                    @"select c.idCliente, c.nome, c.logradouro, c.bairro, c.numero, c.email, c.isAtivo, ci.idCidade, ci.nome, ci.isAtivo, e.idEstado, e.nome, e.sigla, e.isAtivo
                     from cliente as c
                     inner join cidade ci on c.idCidade = ci.idCidade
                     inner join estado e on ci.idEstado = e.idEstado 

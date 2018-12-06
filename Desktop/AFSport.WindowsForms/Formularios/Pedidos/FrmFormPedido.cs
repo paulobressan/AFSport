@@ -70,8 +70,8 @@ namespace AFSport.WindowsForms.Formularios.Pedidos
             pedido.Usuario = usuario;
             pedido.IdUsuario = usuario.IdUsuario;
             pedido.IdCliente = pedido.Cliente.IdCliente;
-            pedido.IdStatus = 1;//Status confirmado.
             pedido.Data = DateTime.Now;
+            pedido.Status = Service.Enum.PedidoStatus.Finalizado;
         }
 
         private async Task<bool> SalvarMovimentacao()

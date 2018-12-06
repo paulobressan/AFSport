@@ -124,7 +124,7 @@ namespace AFSport.WindowsForms.Formularios.Pedidos
         {
             using (PedidoRepository repository = new PedidoRepository())
             {
-                pedido.IdStatus = 2;
+                pedido.Status = Service.Enum.PedidoStatus.Cancelado;
                 pedido.IdUsuario = pedido.Usuario.IdUsuario;
                 pedido.IdCliente = pedido.Cliente.IdCliente;
                 await repository.Salvar(pedido);
