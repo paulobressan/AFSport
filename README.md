@@ -6,6 +6,8 @@ Desenvolvido por:
 ----------------------------------------------------------------------------------------------------------------------------------------
 Carlos Eduardo de Oliveira
 
+Diego de Faria Rodrigues
+
 Marcus Vinicius Nunes
 
 Paulo Sérgio Bressan Júnior
@@ -13,8 +15,6 @@ Paulo Sérgio Bressan Júnior
 Rafael Antonio Lopes Alves
 
 Sidney de Souza Júnior
-
-Diego de Faria Rodrigues
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 OBJETIVO DO PROJETO
