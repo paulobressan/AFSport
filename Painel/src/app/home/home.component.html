@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <h3>Entrada de Pedidos</h3>
             <hr>
-            <google-chart [data]="columnChart"></google-chart>
+            <google-chart *ngIf="hasColumns()" [data]="columnChart"></google-chart>
         </div>
     </div>
 </div>

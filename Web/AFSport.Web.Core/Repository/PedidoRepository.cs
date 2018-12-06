@@ -104,12 +104,17 @@ namespace AFSport.Web.Core.Repository
 
         public async Task<Pedido> AlterarStatusPedido(int idPedido, PedidoStatus status)
         {
-            return (await _context.QueryAsync(@"update pedido 
+            return (await _context.QueryAsync<Pedido, Cliente, Usuario, Pedido>(@"update pedido 
                 set status = @status where idPedido = @idPedido;
                 select p.idPedido, p.data, p.status ,c.idCliente, c.nome, c.email, c.logradouro, c.bairro, c.numero, u.idUsuario, u.nome, u.email, u.isAtivo from pedido as p
                 inner join cliente c on p.idCliente = c.idCliente
                 inner join usuario u on p.idUsuario = u.idUsuario
-                where p.idPedido = @idPedido;", new { idPedido, status }))
+                where p.idPedido = @idPedido;", (pedido, cliente, usuario) =>
+                {
+                    pedido.Cliente = cliente;
+                    pedido.Usuario = usuario;
+                    return pedido;
+                }, new { idPedido, status }, splitOn: "idCliente, idUsuario"))
                 .Single();
         }
 

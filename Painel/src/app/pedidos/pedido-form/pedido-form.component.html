@@ -18,17 +18,17 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Código</th>
                             <th>Nome</th>
                             <th>Valor</th>
+                            <th>Quantidade</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let produto of produtos">
-                            <td>{{produto.idProduto}}</td>
-                            <td>{{produto.nome}}</td>
-                            <td>R$:{{produto.valorVenda}}</td>
+                        <tr *ngFor="let pedidoItem of pedidoItens">
+                            <td>{{pedidoItem.produto.nome}}</td>
+                            <td>R$: {{pedidoItem.produto.valorVenda}}</td>
+                            <td>{{pedidoItem.quantidade}}</td>
                             <td>
                                 <span class="pl-2 btn-remover" attr.title="Remover {{produto.nome}}" (click)="remover(operacao)"
                                     style="cursor: pointer; font-size: 14pt"><i class="fa fa-trash"></i></span>
@@ -43,17 +43,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="idProduto">Código Produto *</label>
-                        <input id="idProduto" type="number" class="form-control text-right">
+                        <input #idProduto id="idProduto" type="number" class="form-control text-right">
                     </div>
                     <div class="col-md-4">
                         <label for="quantidade">Qtd.</label>
-                        <input type="number" class="form-control text-right">
+                        <input #quantidade type="number" min="1" class="form-control text-right">
                     </div>
                     <div class="col-md-2">
-                       <button class="btn">
+                       <button type="button" (click)="adicionarProduto()" class="btn">
                             <i class="fa fas fa-search-plus"></i>
                        </button>
-                        
                     </div>
                 </div>
 

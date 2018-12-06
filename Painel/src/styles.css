@@ -6,6 +6,11 @@
   color: red;
 }
 
+.btn-sucesso{
+  color: green;
+}
+
+
 .btn-isAtivo{
   color: gray;
 }

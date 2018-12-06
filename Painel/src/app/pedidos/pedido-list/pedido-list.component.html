@@ -17,18 +17,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let pedido of operacoes">
+            <tr *ngFor="let pedido of pedidos">
                 <td>{{pedido.idPedido}}</td>
                 <td>{{pedido.data}}</td>
                 <td>{{pedido.cliente.nome}}</td>
                 <td>{{pedido.usuario.nome}}</td>
-                <td>{{pedido.status}}</td>
+                <td>{{getStatus(pedido.status)}}</td>
                 <td class="text-right">
                     <div class="form-check-inline">
                         <div class="p-1">
-                            <span class="pl-2 btn-editar" attr.title="Alterar {{pedido.nome}}" style="cursor: pointer; font-size: 14pt"
-                                (click)="alterar(pedido)">
-                                <i class="fa fas fa-edit"></i>
+                            <span *ngIf="!isCancelado(pedido)" class="pl-2 btn-remover" attr.title="Cancelar pedido {{pedido.idPedido}}"
+                                style="cursor: pointer; font-size: 14pt" (click)="cancelar(pedido)">
+                                <i class="fa fas fa-times"></i>
+                            </span>
+                            <span *ngIf="!isCancelado(pedido) && !isFinalizado(pedido)" class="pl-2 btn-sucesso" attr.title="Finalizar pedido {{pedido.idPedido}}"
+                                style="cursor: pointer; font-size: 14pt" (click)="finalizar(pedido)">
+                                <i class="fa fas fa-check"></i>
                             </span>
                         </div>
                     </div>

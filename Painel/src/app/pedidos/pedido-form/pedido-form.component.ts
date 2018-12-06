@@ -7,12 +7,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/clientes/cliente/cliente';
 import { Produto } from 'src/app/produtos/produto/produto';
 import { PedidoItem } from '../pedido/pedido-item';
+import { ProdutoService } from 'src/app/produtos/produto/produto.service';
 
 @Component({
     templateUrl: './pedido-form.component.html'
 })
 export class PedidoFormComponent implements BaseFormComponent<Pedido>, OnInit {
     @ViewChild('clienteInput') clienteInput: ElementRef<HTMLInputElement>;
+    @ViewChild('idProduto') idProduto: ElementRef<HTMLInputElement>;
+    @ViewChild('quantidade') quantidade: ElementRef<HTMLInputElement>;
+
     pedidoForm: FormGroup;
     pedido: Pedido;
     pedidoItens: PedidoItem[] = [];
@@ -21,6 +25,7 @@ export class PedidoFormComponent implements BaseFormComponent<Pedido>, OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private pedidoService: PedidoService,
+        private produtoService: ProdutoService,
         private activatedRoute: ActivatedRoute,
         private router: Router
     ) { }
@@ -33,6 +38,7 @@ export class PedidoFormComponent implements BaseFormComponent<Pedido>, OnInit {
             idCliente: [this.pedido ? this.pedido.idCliente : 1, Validators.required]
         });
         this.clienteInput.nativeElement.focus();
+        this.quantidade.nativeElement.value = '1';
     }
 
     salvar() {
@@ -63,7 +69,19 @@ export class PedidoFormComponent implements BaseFormComponent<Pedido>, OnInit {
             });
     }
 
-    adicionarProduto(){
-        
+    adicionarProduto() {
+        let quantidade = parseInt(this.quantidade.nativeElement.value);
+        let idProduto = parseInt(this.idProduto.nativeElement.value);
+
+        this.produtoService.listarPorId(quantidade)
+            .subscribe(produto => {
+                this.pedidoItens.push(<PedidoItem>{
+                    isAtivo: true,
+                    idProduto,
+                    quantidade,
+                    produto,
+                });
+            }, err => swal("Problemas para enviar!", "Produto não encontrado", "error"))
+
     }
 }

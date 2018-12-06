@@ -54,9 +54,9 @@ namespace AFSport.Web.Core.Interface.Service
         /// Cancelar pedido
         /// </summary>
         /// <param name="idPedido"></param>
-        /// <param name="status"></param>
         /// <returns></returns>
         Task<Pedido> CancelarPedido(int idPedido);
+        Task<Pedido> FinalizarPedido(int idPedido, Movimentacao movimentacao);
         /// <summary>
         /// Selecionar total de registro de pedidos
         /// </summary>

@@ -1,0 +1,30 @@
+<div>
+    <h2>Finalizar Pedido</h2>
+    <hr>
+    <form [formGroup]="pedidoForm" (submit)="salvar()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="operacao">Operacao *</label>
+                    <select #idOperacao formControlName="idOperacao" id="idOperacao" class="form-control">
+                        <option *ngFor="let operacao of operacoes" [value]="operacao.idOperacao">
+                            {{operacao.nome}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="valor" for="valor">Valor à Pagar</label>
+                    <input formControlName="valor" class="form-control text-right" type="number" min="0" id="valor">
+                </div>
+            </div>
+        </div>
+        <div class="pt-3">
+            <a [routerLink]="['/pedido']" class="mr-2 btn btn-danger">Voltar</a>
+            <button [disabled]="pedidoForm.invalid" type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</div>

@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         this.dashboardService.getGraficoMovimentacaoMensal()
             .subscribe(dashboards => {
-                this.graficoMovimentacao.push(['Element', 'Movimentações', { role: 'style' }]);
+                this.graficoMovimentacao.push(['Element', 'Movimentações', { role: 'style' }, { role: 'annotation' }]);
                 for (let dashboard of dashboards) {
-                    this.graficoMovimentacao.push([dashboard.data, dashboard.valor, 'style']);
+                    this.graficoMovimentacao.push([dashboard.data, dashboard.valor, 'style', dashboard.valorFormat]);
                 }
             });
     }
@@ -21,5 +21,9 @@ export class HomeComponent implements OnInit {
     columnChart = {
         chartType: 'ColumnChart',
         dataTable: this.graficoMovimentacao
+    }
+
+    hasColumns(): boolean {
+        return this.graficoMovimentacao.length > 0;
     }
 }

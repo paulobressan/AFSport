@@ -6,6 +6,7 @@ import { BaseService } from "src/app/core/base/base.service";
 import { Pedido } from "./pedido";
 import { HttpClient } from "@angular/common/http";
 import { PedidoItem } from "./pedido-item";
+import { Movimentacao } from "src/app/movimentacoes/movimentacao/movimentacao";
 
 @Injectable()
 export class PedidoService extends BaseService<Pedido> {
@@ -23,5 +24,13 @@ export class PedidoService extends BaseService<Pedido> {
 
     alterarItemPedido(idPedido: number, idPedidoItem: number, pedidoItem: PedidoItem): Observable<PedidoItem> {
         return this.http.post<PedidoItem>(`${this.environment}/${idPedido}/itens-pedido/${idPedidoItem}`, pedidoItem);
+    }
+
+    cancelarPedido(idPedido: number): Observable<any> {
+        return this.http.patch(`${this.environment}/${idPedido}/cancelar`, null);
+    }
+
+    finalizarPedido(idPedido: number, movimentacao: Movimentacao): Observable<Pedido> {
+        return this.http.patch<Pedido>(`${this.environment}/${idPedido}/finalizar`, movimentacao);
     }
 }

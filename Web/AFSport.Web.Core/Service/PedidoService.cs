@@ -16,6 +16,7 @@ namespace AFSport.Web.Core.Service
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IClienteRepository _clienteRepository;
         private readonly IItemPedidoRepository _itemPedidoRepository;
+        private readonly IMovimentacaoRepository _movimentacaoRepository;
         #endregion
 
         #region Construtor
@@ -23,12 +24,14 @@ namespace AFSport.Web.Core.Service
             IPedidoRepository pedidoRepository,
             IUsuarioRepository usuarioRepository,
             IClienteRepository clienteRepository,
-            IItemPedidoRepository itemPedidoRepository)
+            IItemPedidoRepository itemPedidoRepository,
+            IMovimentacaoRepository movimentacaoRepository)
         {
             this._pedidoRepository = pedidoRepository;
             this._usuarioRepository = usuarioRepository;
             this._clienteRepository = clienteRepository;
             this._itemPedidoRepository = itemPedidoRepository;
+            this._movimentacaoRepository = movimentacaoRepository;
         }
         #endregion
 
@@ -53,6 +56,21 @@ namespace AFSport.Web.Core.Service
             {
                 await ValidarPedidoExistente(idPedido);
                 return await _pedidoRepository.AlterarStatusPedido(idPedido, PedidoStatus.Cancelado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Pedido> FinalizarPedido(int idPedido, Movimentacao movimentacao)
+        {
+            try
+            {
+                await ValidarPedidoExistente(idPedido);
+                movimentacao.Data = DateTime.Now;
+                await _movimentacaoRepository.Inserir(movimentacao);
+                return await _pedidoRepository.AlterarStatusPedido(idPedido, PedidoStatus.Finalizado);
             }
             catch (Exception ex)
             {

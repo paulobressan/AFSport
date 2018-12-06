@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AFSport.Web.Api.DTO.ItemPedido;
+using AFSport.Web.Api.DTO.Movimentacao;
 using AFSport.Web.Api.DTO.Pedido;
 using AFSport.Web.Core.Interface.Service;
 using AFSport.Web.Core.Model;
@@ -41,7 +42,7 @@ namespace AFSport.Web.Api.Controllers
         [HttpGet("{idPedido}")]
         public async Task<IActionResult> Get([FromRoute]int idPedido)
         {
-            return Ok(_mapper.Map<List<PedidoListaDTO>>(await _pedidoService.SelecionarId(idPedido)));
+            return Ok(_mapper.Map<PedidoListaDTO>(await _pedidoService.SelecionarId(idPedido)));
         }
 
         #endregion
@@ -69,6 +70,27 @@ namespace AFSport.Web.Api.Controllers
                 this.DecodeToken(HttpContext);
                 pedido.IdUsuario = userLogged.Id;
                 return Accepted(_mapper.Map<PedidoListaDTO>(await _pedidoService.Alterar(idPedido, _mapper.Map<Pedido>(pedido))));
+            }
+            return BadRequest();
+        }
+
+        #endregion
+        #region Patch
+        [HttpPatch("{idPedido}/cancelar")]
+        public async Task<IActionResult> Patch([FromRoute]int idPedido)
+        {
+            await _pedidoService.CancelarPedido(idPedido);
+            return NoContent();
+        }
+
+        [HttpPatch("{idPedido}/finalizar")]
+        public async Task<IActionResult> Patch([FromRoute]int idPedido, [FromBody] MovimentacaoSalvarDTO movimentacaoSalvarDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                this.DecodeToken(HttpContext);
+                movimentacaoSalvarDTO.IdUsuario = userLogged.Id;
+                return Accepted(_mapper.Map<PedidoListaDTO>(await _pedidoService.FinalizarPedido(idPedido, _mapper.Map<Movimentacao>(movimentacaoSalvarDTO))));
             }
             return BadRequest();
         }

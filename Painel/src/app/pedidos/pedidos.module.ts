@@ -10,21 +10,27 @@ import { ClientesAtivosResolve } from "../clientes/cliente/clientes-ativos.resol
 import { PedidoFormModule } from "./pedido-form/pedido-form.module";
 import { ClienteService } from "../clientes/cliente/cliente.service";
 import { ProdutoService } from "../produtos/produto/produto.service";
+import { OperacaoListResolve } from "../operacoes/operacao-list/operacao-list.resolve";
+import { OperacaoService } from "../operacoes/operacao/operacao.service";
+import { PedidoFinalizarModule } from "./pedido-finalizar/pedido-finalizar.module";
 
 @NgModule({
     imports: [
         CommonModule,
         PedidosRoutingModule,
         PedidoListModule,
-        PedidoFormModule
+        PedidoFormModule,
+        PedidoFinalizarModule
     ],
     providers: [
         PedidoService,
         ClienteService,
         ProdutoService,
+        OperacaoService,
         PedidoListResolve,
         PedidoFormResolve,
-        ClientesAtivosResolve
+        ClientesAtivosResolve,
+        OperacaoListResolve
     ]
 })
 export class PedidosModule { }
