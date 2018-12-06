@@ -24,7 +24,7 @@ namespace AFSport.Web.Core.Repository
                 from movimentacao m
                 inner join usuario u on m.idUsuario = u.idUsuario
                 inner join operacao o on m.idOperacao = o.idOperacao
-                where m.idOperacao = 1 and m.data between @dataInicial and @dataFinal group by m.data;", new { dataInicial, dataFinal });
+                where m.data between @dataInicial and @dataFinal group by m.data;", new { dataInicial, dataFinal });
         }
     }
 }

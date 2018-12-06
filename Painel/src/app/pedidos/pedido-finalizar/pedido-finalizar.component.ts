@@ -31,7 +31,7 @@ export class PedidoFinalizarComponent implements OnInit {
             idOperacao: [1, Validators.required],
             valor: [0, Validators.required]
         });
-        this.idOperacao.nativeElement.focus();
+        this.idOperacao.nativeElement.disabled = true;
     }
 
     salvar() {
