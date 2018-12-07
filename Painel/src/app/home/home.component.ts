@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
                 for (let dashboard of dashboards) {
                     this.graficoMovimentacao.push([dashboard.data, dashboard.valor, 'style', dashboard.valorFormat]);
                 }
+            }, err => {
+                console.log(err);
             });
     }
 

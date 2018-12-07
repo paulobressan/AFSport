@@ -9,11 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.rafaelalves.afsport.R;
-import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -35,7 +31,7 @@ public class InicioFragment extends Fragment {
     String descricao[] = {"1", "2", "3","4","5"};
 
     /*Grafico*/
-    BarChart grafico;
+    PieChart grafico;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,19 +41,19 @@ public class InicioFragment extends Fragment {
 
         
 
-        grafico = (BarChart) view.findViewById(R.id.graficoID);
+        grafico = (PieChart) view.findViewById(R.id.graficoID);
 
-        /*Lista criada do tipo <PieChart>*/
-        List<BarEntry> entradasGrafico = new ArrayList<>();
-        /*Preenchendo o grafco*/
+        //Lista criada do tipo <PieChart>*
+        List<PieEntry> entradasGrafico = new ArrayList<>();
+        //Preenchendo o grafco
 
         for (int i = 0; i < itensGrafico.length; i++) {
-            entradasGrafico.add(new BarEntry(itensGrafico[i], i));
+            entradasGrafico.add(new PieEntry(itensGrafico[i], i));
         }
-        BarDataSet dataSet = new BarDataSet(entradasGrafico, ("Descrição do Grafico"));
+        PieDataSet dataSet = new PieDataSet(entradasGrafico, ("Descrição do Grafico"));
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        BarData pieData = new BarData(dataSet);
+        PieData pieData = new PieData(dataSet);
 
         grafico.setData(pieData);
         grafico.invalidate();

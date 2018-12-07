@@ -27,16 +27,8 @@ public interface API {
     Call<List<Cliente>> getAllClientes(@Header("Authorization") String auth);
 
     @Headers("Content-Type: application/json")
-    @GET("cliente/ativo")
-    Call<List<Cliente>> getAllClientesAtivos(@Header("Authorization") String auth);
-
-    @Headers("Content-Type: application/json")
     @GET("produto")
     Call<List<Produto>> getAllProdutos(@Header("Authorization") String auth);
-
-    @Headers("Content-Type: application/json")
-    @GET("produto/ativo")
-    Call<List<Produto>> getAllProdutosAtivos(@Header("Authorization") String auth);
 
     @Headers("Content-Type: application/json")
     @GET("caixa")
@@ -46,11 +38,4 @@ public interface API {
     @GET("pedido")
     Call<List<Pedido>> getAllPedidos(@Header("Authorization") String auth);
 
-    @Headers("Content-Type: application/json")
-    @POST("pedido")
-    Call<Pedido> postPedido(@Header("Authorization") String auth, @Body Pedido pedido);
-
-    @Headers("Content-Type: application/json")
-    @POST("pedido/itens-pedido")
-    Call<Pedido> postItemPedido(@Header("Authorization") String auth, @Body Pedido pedido);
 }
